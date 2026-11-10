@@ -14,10 +14,10 @@
   "dependencies": {
     "@fontsource-variable/instrument-sans": "^5.2.0",
     "@petapp/types": "*",
-    "next": "15.5.28",
+    "next": "16.4.5",
     "qrcode": "^1.5.4",
-    "react": "19.1.9",
-    "react-dom": "19.1.9",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
