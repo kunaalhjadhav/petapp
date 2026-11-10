@@ -30,7 +30,7 @@ jobs:
       REDIS_URL_TEST: redis://localhost:6379/15
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - name: Media tooling for e2e (FFmpeg + S3-compatible test server)
@@ -144,7 +144,7 @@ jobs:
       E2E_ADMIN_PASSWORD: ci-admin-password-123
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run db:deploy
