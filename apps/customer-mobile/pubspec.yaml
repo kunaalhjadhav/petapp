@@ -31,8 +31,11 @@ dependencies:
   # Push is optional: it activates only when Firebase options are passed with --dart-define.
   firebase_core: ^3.8.0
   firebase_messaging: ^15.1.5
-
-dev_dependencies:
+  # Sign-in: Google on Android, Apple on iPhone (both verified by the API: /auth/google, /auth/apple).
+  google_sign_in: ^6.2.2
+  sign_in_with_apple: ^6.1.4
+  crypto: ^3.0.6
+
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0

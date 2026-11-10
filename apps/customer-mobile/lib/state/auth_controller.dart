@@ -6,6 +6,7 @@ import '../api/api_client.dart';
 import '../api/models.dart';
 import '../services/pending_payments.dart';
 import '../services/push_service.dart';
+import '../services/social_sign_in.dart';
 import 'providers.dart';
 
 enum AuthStatus { loading, signedOut, needsName, signedIn }
@@ -56,6 +57,18 @@ class AuthController extends StateNotifier<AuthState> {
     await _enter(await _ref.read(apiProvider).me(), notice: r.accountRestored ? 'Welcome back! Your account won’t be deleted.' : null);
   }
 
+  /// "Continue with Google" (Android) or "Sign in with Apple" (iPhone): the API checks the token with Google or Apple,
+  /// then signs in the account with that Google/Apple ID or email, or creates one.
+  Future<void> socialSignIn(SocialCredential c) async {
+    final api = _ref.read(apiProvider);
+    final r = switch (c.provider) {
+      SocialProvider.google => await api.googleLogin(c.token),
+      SocialProvider.apple => await api.appleLogin(c.token, c.nonce!, name: c.name),
+    };
+    await _ref.read(sessionStoreProvider).save(r.tokens.accessToken, r.tokens.refreshToken);
+    await _enter(await api.me(), notice: r.accountRestored ? 'Welcome back! Your account won’t be deleted.' : null);
+  }
+
   Future<void> saveName(String name) async {
     await _enter(await _ref.read(apiProvider).updateMe(name: name));
   }
@@ -78,6 +91,7 @@ class AuthController extends StateNotifier<AuthState> {
     }
     await _ref.read(sessionStoreProvider).clear();
     await _forgetLocalData();
+    await SocialSignIn.signOut();
     state = const AuthState(AuthStatus.signedOut);
   }
 

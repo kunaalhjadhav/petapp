@@ -13,4 +13,8 @@ class AppConfig {
       firebaseApiKey.isNotEmpty && firebaseAppId.isNotEmpty && firebaseSenderId.isNotEmpty && firebaseProjectId.isNotEmpty;
 
   static const appVersion = '0.1.0';
+
+  /// Google sign-in (Android): the OAuth *Web* client ID from Google Cloud, the same one the API lists in
+  /// GOOGLE_CLIENT_IDS. Without it the "Continue with Google" button is hidden. Sign in with Apple needs no setting.
+  static const googleServerClientId = String.fromEnvironment('GOOGLE_SERVER_CLIENT_ID');
 }

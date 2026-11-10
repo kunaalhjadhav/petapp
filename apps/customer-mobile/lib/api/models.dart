@@ -37,10 +37,13 @@ class AuthResult {
 }
 
 class Me {
-  Me({required this.id, this.name, this.phone, this.email, this.avatarUrl, this.city, required this.pets, required this.followers, required this.following, this.roles = const [], this.memberPlan});
+  Me({required this.id, this.name, this.phone, this.email, this.avatarUrl, this.city, required this.pets, required this.followers, required this.following, this.roles = const [], this.memberPlan, this.phoneVerified = false});
   final String id;
   final String? name;
   final String? phone;
+
+  /// Confirmed with a code. Accounts made with Google or Apple start without a number; voting needs one.
+  final bool phoneVerified;
   final String? email;
   final String? avatarUrl;
   final String? city;
@@ -67,6 +70,7 @@ class Me {
       following: _int(c['following']),
       roles: (j['roles'] as List?)?.whereType<String>().toList() ?? const [],
       memberPlan: (j['member'] as Json?)?['plan'] as String?,
+      phoneVerified: j['phoneVerifiedAt'] != null,
     );
   }
 }

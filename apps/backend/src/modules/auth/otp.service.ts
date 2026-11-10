@@ -56,9 +56,9 @@ export class OtpService {
   }
 
   /** Verifies and consumes the latest OTP. Throws on failure. */
-  async verify(phone: string, code: string): Promise<void> {
+  async verify(phone: string, code: string, purpose: OtpPurpose = 'LOGIN'): Promise<void> {
     const otp = await this.prisma.otpCode.findFirst({
-      where: { phone, consumedAt: null, expiresAt: { gt: new Date() } },
+      where: { phone, purpose, consumedAt: null, expiresAt: { gt: new Date() } },
       orderBy: { createdAt: 'desc' },
     });
     if (!otp) throw new BadRequestException('This code has expired. Please request a new one.');

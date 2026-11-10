@@ -1,6 +1,7 @@
+import { createHash } from 'crypto';
 import { Injectable, ServiceUnavailableException, UnauthorizedException } from '@nestjs/common';
 import { OAuth2Client } from 'google-auth-library';
-import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { createRemoteJWKSet, jwtVerify, type JWTVerifyGetKey } from 'jose';
 import { AppConfig } from '../../config/app-config.service';
 
 export interface SocialProfile {
@@ -16,8 +17,9 @@ const APPLE_ISSUER = 'https://appleid.apple.com';
 /** Verifies Google / Apple ID tokens server-side. Client-side claims are never trusted. */
 @Injectable()
 export class SocialAuthService {
-  private readonly google = new OAuth2Client();
-  private readonly appleJwks = createRemoteJWKSet(new URL(`${APPLE_ISSUER}/auth/keys`));
+  /** Replaced in tests. */
+  google = new OAuth2Client();
+  appleKeys: JWTVerifyGetKey = createRemoteJWKSet(new URL(`${APPLE_ISSUER}/auth/keys`));
 
   constructor(private readonly config: AppConfig) {}
 
@@ -34,12 +36,17 @@ export class SocialAuthService {
     }
   }
 
-  async verifyApple(identityToken: string, name?: string): Promise<SocialProfile> {
+  /**
+   * Apple: the app gives Apple the SHA-256 of a random nonce and sends us the nonce itself. A token whose nonce
+   * doesn't match was issued for another sign-in (a replay), and is refused.
+   */
+  async verifyApple(identityToken: string, name: string | undefined, nonce: string): Promise<SocialProfile> {
     const audience = this.config.get('APPLE_CLIENT_IDS');
     if (!audience.length) throw new ServiceUnavailableException('Apple sign-in is not configured.');
     try {
-      const { payload } = await jwtVerify(identityToken, this.appleJwks, { issuer: APPLE_ISSUER, audience });
+      const { payload } = await jwtVerify(identityToken, this.appleKeys, { issuer: APPLE_ISSUER, audience });
       if (!payload.sub) throw new Error('no subject');
+      if (payload.nonce !== createHash('sha256').update(nonce).digest('hex')) throw new Error('nonce mismatch');
       const email = typeof payload.email === 'string' ? payload.email.toLowerCase() : undefined;
       const verified = payload.email_verified === true || payload.email_verified === 'true';
       return { providerUserId: payload.sub, email, emailVerified: verified, name };

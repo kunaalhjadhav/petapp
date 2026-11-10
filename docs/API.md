@@ -1,6 +1,6 @@
 # API reference
 
-Generated from the running API (443 operations). Interactive docs: `/api/docs`; machine-readable: `docs/openapi.json`.
+Generated from the running API (445 operations). Interactive docs: `/api/docs`; machine-readable: `docs/openapi.json`.
 Regenerate with `python3 scripts/gen_api_md.py` after exporting `/api/docs-json`.
 
 Every response uses one envelope:
@@ -367,6 +367,8 @@ Every response uses one envelope:
 | POST | `/api/v1/auth/logout-all` | User token |
 | POST | `/api/v1/auth/otp/request` | Public |
 | POST | `/api/v1/auth/otp/verify` | Public |
+| POST | `/api/v1/auth/phone/request` | User token |
+| POST | `/api/v1/auth/phone/verify` | User token |
 | POST | `/api/v1/auth/refresh` | Public |
 
 ## Challenges

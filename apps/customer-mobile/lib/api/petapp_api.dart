@@ -11,6 +11,13 @@ class PetAppApi {
   Future<void> requestOtp(String phone) => _c.post('/auth/otp/request', {'phone': phone});
   Future<AuthResult> verifyOtp(String phone, String code) async =>
       AuthResult.fromJson(await _c.post('/auth/otp/verify', {'phone': phone, 'code': code}) as Json);
+  Future<AuthResult> googleLogin(String idToken) async => AuthResult.fromJson(await _c.post('/auth/google', {'idToken': idToken}) as Json);
+  Future<AuthResult> appleLogin(String identityToken, String nonce, {String? name}) async =>
+      AuthResult.fromJson(await _c.post('/auth/apple', {'identityToken': identityToken, 'nonce': nonce, if (name != null) 'name': name}) as Json);
+
+  /// Add or change the mobile number on a Google or Apple account: a code goes to [phone], then [verifyPhone].
+  Future<void> requestPhoneCode(String phone) => _c.post('/auth/phone/request', {'phone': phone});
+  Future<void> verifyPhone(String phone, String code) => _c.post('/auth/phone/verify', {'phone': phone, 'code': code});
   Future<void> logout() => _c.post('/auth/logout');
 
   // ── config ──

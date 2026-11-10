@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../chat/chat_screens.dart';
 import '../../api/models.dart';
 import '../../common/widgets.dart';
+import '../../services/phone.dart';
 import '../../state/paged_controller.dart';
 import '../../state/providers.dart';
 import '../../theme.dart';
@@ -226,6 +227,19 @@ class SettingsScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
       body: ListView(children: [
+        ...switch (ref.watch(meProvider)) {
+          AsyncData(value: final me) => [
+              ListTile(
+                leading: const Icon(Icons.phone_iphone),
+                title: const Text('Mobile number'),
+                subtitle: Text(me.phoneVerified && me.phone != null ? formatIndianMobile(me.phone!) : 'Add one to vote in contests and sign in with it'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => context.push('/settings/phone'),
+              ),
+              const Divider(),
+            ],
+          _ => const <Widget>[],
+        },
         const ListTile(title: Text('Notifications', style: TextStyle(fontWeight: FontWeight.w700))),
         prefs.when(
           loading: () => const LoadingView(),

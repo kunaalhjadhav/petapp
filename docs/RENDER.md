@@ -88,6 +88,7 @@ In a public bucket, anyone who knows a file's address can open it. The addresses
    | petapp-api | `DASHBOARD_URL` | `https://petapp-admin.onrender.com` |
    | petapp-api | `CORS_ORIGINS` | `https://petapp-admin.onrender.com,https://petapp-web.onrender.com` |
    | petapp-api | `S3_ENDPOINT`, `S3_REGION`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `MEDIA_PUBLIC_BASE_URL` | from step 3, or leave empty |
+   | petapp-api | `GOOGLE_CLIENT_IDS`, `APPLE_CLIENT_IDS` | Google and Apple sign-in (`docs/SOCIAL-LOGIN.md`), or leave empty: phone sign-in still works |
    | petapp-admin | `BACKEND_URL` | `https://petapp-api.onrender.com` |
    | petapp-web | `API_URL` | `https://petapp-api.onrender.com` |
    | petapp-web | `SITE_URL` | `https://petapp-web.onrender.com` |
@@ -150,7 +151,7 @@ Open each service in the Render dashboard and compare its address at the top wit
 | A grooming partner (Pawfect Grooming Spa) | 9000000005 |
 | A seller (no shop yet) | 9000000006 |
 
-Any other phone number creates a new account. The sign-in code isn't texted; find it in **petapp-api → Logs** (search for `DEV SMS`):
+Any other phone number creates a new account. With Google set up (`docs/SOCIAL-LOGIN.md`), **Continue with Google** works on Android too. The sign-in code isn't texted; find it in **petapp-api → Logs** (search for `DEV SMS`):
 
 ```
 DEV SMS → +91******0001] 482913 is your PetApp verification code…
@@ -171,26 +172,29 @@ flutter doctor --android-licenses
 flutter doctor
 ```
 
-Build each app against your Render API. The first command creates the Android project files; run it once per app.
+Build each app against your Render API. The `flutter create` line creates the Android project files; run it once per app, with the `--org` shown (Google sign-in is tied to the resulting package names).
+
+`$GOOGLE` is your Google Web client ID (`docs/SOCIAL-LOGIN.md`). Leave it as `""` to build without the Google button.
 
 ```powershell
 $API = "https://petapp-api.onrender.com"
 $SITE = "https://petapp-web.onrender.com"
+$GOOGLE = ""   # e.g. "1234567890-abc123.apps.googleusercontent.com"
 
 cd D:\PetApp\petapp\apps\customer-mobile
 flutter create . --org com.petapp --project-name petapp --platforms android
 flutter pub get
-flutter build apk --release --dart-define=API_BASE_URL=$API --dart-define=SHARE_BASE_URL=$SITE
+flutter build apk --release --dart-define=API_BASE_URL=$API --dart-define=SHARE_BASE_URL=$SITE --dart-define=GOOGLE_SERVER_CLIENT_ID=$GOOGLE
 
 cd ..\service-partner-mobile
-flutter create . --org com.petapp --project-name petapp_partner --platforms android
+flutter create . --org com.petapp.partner --project-name petapp_partner --platforms android
 flutter pub get
-flutter build apk --release --dart-define=API_BASE_URL=$API
+flutter build apk --release --dart-define=API_BASE_URL=$API --dart-define=GOOGLE_SERVER_CLIENT_ID=$GOOGLE
 
 cd ..\product-partner-mobile
-flutter create . --org com.petapp --project-name petapp_seller --platforms android
+flutter create . --org com.petapp.seller --project-name petapp_seller --platforms android
 flutter pub get
-flutter build apk --release --dart-define=API_BASE_URL=$API
+flutter build apk --release --dart-define=API_BASE_URL=$API --dart-define=GOOGLE_SERVER_CLIENT_ID=$GOOGLE
 ```
 
 Each APK is in that app's `build\app\outputs\flutter-apk\app-release.apk`. Copy it to an Android phone and open it, allowing installs from that source. These APKs are signed with Flutter's test key, which is fine for trying them; Play Store builds are covered in `STORE-RELEASE.md`.
@@ -227,6 +231,7 @@ New database migrations are applied automatically when the API starts.
 | The dashboard says it can't reach the server | `BACKEND_URL` is wrong (step 6), or the API is waking up: wait a minute and reload. |
 | Sign-in on the dashboard loops back to the login page | Use the `https://` address. `COOKIE_SECURE=true` needs HTTPS. |
 | "Media storage is not configured." when uploading | Storage isn't set up (step 3). |
+| No Google button, or "Google sign-in isn't set up" | See the table at the end of `docs/SOCIAL-LOGIN.md`. |
 | Photos load but videos don't play | `MEDIA_PUBLIC_BASE_URL` is empty or not public (step 3). |
 | Out of memory, or the API restarts | Free instances have 512 MB. Set `RUN_WORKER=false`, or move petapp-api to the Starter plan. |
 | Everything stopped near the end of the month | The 750 free hours ran out. They reset on the 1st, or you can upgrade one service. |

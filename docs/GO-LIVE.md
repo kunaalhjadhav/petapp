@@ -195,6 +195,7 @@ Set these in `prod.env`. Everything not listed can stay as it is in the template
 | `SMS_PROVIDER` | `smslocal`, with `SMSLOCAL_*` and your DLT template and entity ids |
 | `EMAIL_PROVIDER` | `smtp`, with `SMTP_*` and `EMAIL_FROM` (or `none` until you have email) |
 | `DASHBOARD_URL` | `https://admin.yourdomain.in` |
+| `GOOGLE_CLIENT_IDS`, `APPLE_CLIENT_IDS` | Google sign-in (Android) and Apple sign-in (iPhone): see `docs/SOCIAL-LOGIN.md`. Empty switches them off. |
 | `S3_ENDPOINT` | `https://blr1.digitaloceanspaces.com` (empty on AWS) |
 | `S3_REGION` | `us-east-1` for Spaces (the endpoint picks the real region); `ap-south-1` on AWS |
 | `S3_BUCKET` | `yourname-petapp-media` |

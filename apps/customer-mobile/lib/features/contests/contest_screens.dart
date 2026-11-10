@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../config_share.dart';
+import '../../api/api_client.dart';
 import '../../api/models.dart';
 import '../../common/widgets.dart';
 import '../../services/payment_service.dart';
@@ -392,7 +393,15 @@ class LeaderboardScreen extends ConsumerWidget {
                                 await ref.read(apiProvider).vote(r.entryId);
                                 if (context.mounted) showMessage(context, 'Voted for ${r.pet?.name ?? 'this entry'}!');
                               } catch (e) {
-                                if (context.mounted) showError(context, e);
+                                if (context.mounted) {
+                                  final err = ApiException.from(e);
+                                  // Accounts made with Google or Apple have no verified number yet: add one, then vote.
+                                  if (err.status == 403 && err.message.contains('mobile number')) {
+                                    context.push('/settings/phone');
+                                  } else {
+                                    showError(context, e);
+                                  }
+                                }
                               }
                               ref.invalidate(_boardProvider(contestId));
                             },

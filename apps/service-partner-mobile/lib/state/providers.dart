@@ -9,6 +9,7 @@ import '../api/partner_api.dart';
 import '../api/session_store.dart';
 import '../config.dart';
 import '../services/push_service.dart';
+import '../services/social_sign_in.dart';
 
 final sessionStoreProvider = Provider<SessionStore>((_) => throw UnimplementedError('override in main'));
 
@@ -71,12 +72,26 @@ class AuthController extends StateNotifier<AuthState> {
     unawaited(_ref.read(pushServiceProvider).start());
   }
 
+  /// "Continue with Google" (Android) or "Sign in with Apple" (iPhone), checked by the API with Google or Apple.
+  Future<void> socialSignIn(SocialCredential c) async {
+    final api = _ref.read(apiProvider);
+    final t = switch (c.provider) {
+      SocialProvider.google => await api.googleLogin(c.token),
+      SocialProvider.apple => await api.appleLogin(c.token, c.nonce!, name: c.name),
+    };
+    await _ref.read(sessionStoreProvider).save(t.accessToken, t.refreshToken);
+    _ref.invalidate(profileProvider);
+    state = const AuthState(AuthStatus.signedIn);
+    unawaited(_ref.read(pushServiceProvider).start());
+  }
+
   Future<void> logout() async {
     await _ref.read(pushServiceProvider).stop();
     try {
       await _ref.read(apiProvider).logout();
     } catch (_) {}
     await _ref.read(sessionStoreProvider).clear();
+    await SocialSignIn.signOut();
     // The next person to sign in on this phone must never see this business's saved screens.
     await _ref.read(offlineCacheProvider).clear().catchError((_) {});
     state = const AuthState(AuthStatus.signedOut);

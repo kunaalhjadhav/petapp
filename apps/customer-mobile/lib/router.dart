@@ -80,6 +80,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/hashtag/:tag', builder: (_, s) => HashtagScreen(tag: s.pathParameters['tag']!)),
       GoRoute(path: '/settings', builder: (_, __) => const SettingsScreen()),
       GoRoute(path: '/membership', builder: (_, __) => const MembershipScreen()),
+      GoRoute(path: '/settings/phone', builder: (_, __) => const AddPhoneScreen()),
       GoRoute(path: '/settings/privacy', builder: (_, __) => const PrivacyScreen()),
       GoRoute(path: '/legal/:slug', builder: (_, s) => LegalDocScreen(slug: s.pathParameters['slug']!)),
       GoRoute(path: '/money', builder: (_, __) => const MoneyScreen()),

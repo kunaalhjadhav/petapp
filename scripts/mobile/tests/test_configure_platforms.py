@@ -66,6 +66,7 @@ class ConfigureTest(unittest.TestCase):
         self.assertTrue(plist['NSAppTransportSecurity']['NSAllowsLocalNetworking'])
         ent = plistlib.loads((root / 'ios/Runner/Runner.entitlements').read_bytes())
         self.assertEqual(ent['com.apple.developer.associated-domains'], ['applinks:petapp.in'])
+        self.assertEqual(ent['com.apple.developer.applesignin'], ['Default'])
         self.assertIn('CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;', (root / 'ios/Runner.xcodeproj/project.pbxproj').read_text())
         # A second run changes nothing.
         before = self.snapshot(root)
@@ -88,7 +89,13 @@ class ConfigureTest(unittest.TestCase):
         plist = plistlib.loads((root / 'ios/Runner/Info.plist').read_bytes())
         self.assertEqual(plist['LSApplicationQueriesSchemes'], ['tel', 'https'])
         self.assertNotIn('NSAppTransportSecurity', plist)  # --release
-        self.assertFalse((root / 'ios/Runner/Runner.entitlements').exists())
+        # Sign in with Apple, but no Universal Links, for the partner app.
+        ent = plistlib.loads((root / 'ios/Runner/Runner.entitlements').read_bytes())
+        self.assertEqual(ent, {'com.apple.developer.applesignin': ['Default']})
+        self.assertIn('CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;', (root / 'ios/Runner.xcodeproj/project.pbxproj').read_text())
+        before = self.snapshot(root)
+        self.run_script(root, '--release')
+        self.assertEqual(before, self.snapshot(root))
 
     def test_refuses_bad_input(self):
         root = make_app(self.tmp, 'product-partner-mobile', 'build.gradle.kts')

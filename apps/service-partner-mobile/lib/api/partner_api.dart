@@ -10,6 +10,9 @@ class PartnerApi {
   // ── sign-in ──
   Future<void> requestOtp(String phone) => _c.post('/auth/otp/request', {'phone': phone});
   Future<Tokens> verifyOtp(String phone, String code) async => Tokens.fromJson((await _c.post('/auth/otp/verify', {'phone': phone, 'code': code}) as Json)['tokens'] as Json);
+  Future<Tokens> googleLogin(String idToken) async => Tokens.fromJson((await _c.post('/auth/google', {'idToken': idToken}) as Json)['tokens'] as Json);
+  Future<Tokens> appleLogin(String identityToken, String nonce, {String? name}) async =>
+      Tokens.fromJson((await _c.post('/auth/apple', {'identityToken': identityToken, 'nonce': nonce, if (name != null) 'name': name}) as Json)['tokens'] as Json);
   Future<void> logout() => _c.post('/auth/logout');
   Future<Me> me() async => Me.fromJson(await _c.get('/users/me') as Json);
   Future<void> setName(String name) => _c.patch('/users/me', {'name': name});

@@ -72,6 +72,11 @@ export class AppleLoginDto {
   @IsString()
   @MaxLength(80)
   name?: string;
+
+  @ApiProperty({ description: 'The random nonce the app generated; its SHA-256 was given to Apple and must match the token' })
+  @IsString()
+  @Length(16, 128)
+  nonce: string;
 }
 
 export class RefreshDto {

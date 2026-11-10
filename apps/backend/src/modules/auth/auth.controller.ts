@@ -62,7 +62,7 @@ export class AuthController {
   @Post('apple')
   @HttpCode(200)
   apple(@Body() dto: AppleLoginDto, @RequestMeta() meta: RequestMetaInfo) {
-    return this.auth.apple(dto.identityToken, dto.name, meta);
+    return this.auth.apple(dto.identityToken, dto.name, dto.nonce, meta);
   }
 
   /** Works for both app and admin sessions; the audience is kept from the original session. */
@@ -72,6 +72,23 @@ export class AuthController {
   @HttpCode(200)
   refresh(@Body() dto: RefreshDto, @RequestMeta() meta: RequestMetaInfo) {
     return this.auth.refresh(dto.refreshToken, meta);
+  }
+
+  /** Add (or change) the mobile number on a Google or Apple account: a code goes to the new number. */
+  @ApiBearerAuth()
+  @Throttle(STRICT)
+  @Post('phone/request')
+  @HttpCode(200)
+  async requestPhone(@CurrentUser() me: Principal, @Body() dto: RequestOtpDto, @RequestMeta() meta: RequestMetaInfo) {
+    return new WithMessage(await this.auth.requestPhoneLink(me.userId, dto.phone, meta), 'Verification code sent.');
+  }
+
+  @ApiBearerAuth()
+  @Throttle(LOGIN)
+  @Post('phone/verify')
+  @HttpCode(200)
+  async verifyPhone(@CurrentUser() me: Principal, @Body() dto: VerifyOtpDto, @RequestMeta() meta: RequestMetaInfo) {
+    return new WithMessage(await this.auth.verifyPhoneLink(me.userId, dto.phone, dto.code, meta), 'Mobile number verified.');
   }
 
   @ApiBearerAuth()

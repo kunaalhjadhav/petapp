@@ -2,17 +2,19 @@
 
 Three apps ship to the stores. Their IDs come from `flutter create --org …`; change them before the first upload if you want different ones, because they can't be changed afterwards.
 
-| App | Android package / iOS bundle ID | Store name (suggested) |
-|---|---|---|
-| `apps/customer-mobile` | `com.petapp.petapp` | PetApp |
-| `apps/service-partner-mobile` | `com.petapp.partner.petapp_partner` | PetApp Partners |
-| `apps/product-partner-mobile` | `com.petapp.seller.petapp_seller` | PetApp Sellers |
+| App | Android package | iOS bundle ID | Store name (suggested) |
+|---|---|---|---|
+| `apps/customer-mobile` | `com.petapp.petapp` | `com.petapp.petapp` | PetApp |
+| `apps/service-partner-mobile` | `com.petapp.partner.petapp_partner` | `com.petapp.partner.petappPartner` | PetApp Partners |
+| `apps/product-partner-mobile` | `com.petapp.seller.petapp_seller` | `com.petapp.seller.petappSeller` | PetApp Sellers |
+
+Google and Apple sign-in are tied to these IDs: see `docs/SOCIAL-LOGIN.md`.
 
 ## Building
 1. **Run the workflow.** In GitHub, open **Actions → mobile release → Run workflow**, then pick the app, a build number higher than the last upload, and the platforms.
 2. **What it does:**
    - checks the code (`flutter analyze`, `flutter test`)
-   - generates the platform folders and applies PetApp's settings with `scripts/mobile/configure_platforms.py`: permissions, app links, release signing, iOS usage texts
+   - generates the platform folders and applies PetApp's settings with `scripts/mobile/configure_platforms.py`: permissions, app links, release signing, iOS usage texts, the Sign in with Apple entitlement
    - builds a signed App Bundle and an iOS archive, with obfuscation (the symbol files are kept as artifacts, so crash reports can be read)
 3. **Uploading:** builds go to Play internal testing and to TestFlight when those keys are set; the secrets are listed at the top of `.github/workflows/mobile-release.yml`. Without the keys, download the artifacts and upload them by hand.
 4. **Promote** from internal testing or TestFlight to production in the store consoles once testers are happy.
@@ -23,12 +25,12 @@ Three apps ship to the stores. Their IDs come from `flutter create --org …`; c
 cd apps\customer-mobile
 flutter create . --org com.petapp --project-name petapp --platforms android,ios
 python ..\..\scripts\mobile\configure_platforms.py . --domain petapp.in
-flutter build appbundle --release --dart-define=API_BASE_URL=https://api.petapp.in --dart-define=SHARE_BASE_URL=https://petapp.in --dart-define=APP_ENV=production
+flutter build appbundle --release --dart-define=API_BASE_URL=https://api.petapp.in --dart-define=SHARE_BASE_URL=https://petapp.in --dart-define=APP_ENV=production --dart-define=GOOGLE_SERVER_CLIENT_ID=<Web client ID>
 ```
 
 **Signing keys:**
 - **Android:** create the upload key once with `keytool -genkey -v -keystore upload.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload`, and use Play App Signing. Keep `upload.jks` and its passwords in your password manager and the CI secrets, never in the repository (`key.properties` and `*.jks` are git-ignored).
-- **iOS:** the distribution certificate and an App Store provisioning profile come from the Apple Developer account. The customer app's App ID needs the **Associated Domains** capability (for `applinks:`) and **Push Notifications**.
+- **iOS:** the distribution certificate and an App Store provisioning profile come from the Apple Developer account. Every app's App ID needs **Sign in with Apple** and **Push Notifications**; the customer app's also needs **Associated Domains** (for `applinks:`).
 
 ## Crash reporting
 - **How it's switched on:** builds report crashes and errors to Sentry (or GlitchTip) when `SENTRY_DSN_MOBILE` is set (`--dart-define=SENTRY_DSN`). Use a separate Sentry project per app.

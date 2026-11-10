@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../api/api_client.dart';
+import '../common/social_buttons.dart';
 import '../services/phone.dart';
 import '../state/providers.dart';
 import '../theme.dart';
@@ -65,6 +66,7 @@ class _PhoneScreenState extends ConsumerState<PhoneScreen> {
             ),
             const SizedBox(height: 24),
             FilledButton(onPressed: _busy ? null : _send, child: Text(_busy ? 'Sending…' : 'Send code')),
+            SocialSignInButtons(onCredential: (c) => ref.read(authProvider.notifier).socialSignIn(c)),
           ]),
         ),
       );

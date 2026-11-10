@@ -289,6 +289,7 @@ docs/               architecture, ERD, roles & permissions, API, roadmap, deploy
 ## Docs
 
 - `docs/RENDER.md`: host the whole system free on Render as a demo (one-click Blueprint, `render.yaml`)
+- `docs/SOCIAL-LOGIN.md`: Continue with Google (Android) and Sign in with Apple (iPhone) in the three apps
 - `docs/GO-LIVE.md`: step by step from the zip to a live site (GitHub, a server, a managed database, HTTPS, backups)
 - `docs/FINAL-VERIFICATION.md`: the spec's production checklist (§86) and deliverables (§89), item by item, with the tests that prove each
 - `docs/ARCHITECTURE.md`

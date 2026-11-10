@@ -118,8 +118,37 @@ export class AuthService {
     return this.social.verifyGoogle(idToken).then((p) => this.loginSocial('GOOGLE', p, meta));
   }
 
-  apple(identityToken: string, name: string | undefined, meta: RequestMetaInfo) {
-    return this.social.verifyApple(identityToken, name).then((p) => this.loginSocial('APPLE', p, meta));
+  apple(identityToken: string, name: string | undefined, nonce: string, meta: RequestMetaInfo) {
+    return this.social.verifyApple(identityToken, name, nonce).then((p) => this.loginSocial('APPLE', p, meta));
+  }
+
+  /**
+   * Adding a mobile number to an account that signed in with Google or Apple (or changing it): a code goes to the
+   * new number, and the number is saved only when that code comes back. A number that already belongs to another
+   * account is refused: that person should sign in with it instead.
+   */
+  async requestPhoneLink(userId: string, rawPhone: string, meta: RequestMetaInfo) {
+    const phone = this.normalize(rawPhone);
+    await this.assertPhoneFree(userId, phone);
+    return this.otp.request(phone, meta.ip, 'VERIFY_PHONE');
+  }
+
+  async verifyPhoneLink(userId: string, rawPhone: string, code: string, meta: RequestMetaInfo) {
+    const phone = this.normalize(rawPhone);
+    await this.assertPhoneFree(userId, phone);
+    await this.otp.verify(phone, code, 'VERIFY_PHONE');
+    const before = await this.prisma.user.findUniqueOrThrow({ where: { id: userId }, select: { phone: true } });
+    const user = await this.prisma.user.update({ where: { id: userId }, data: { phone, phoneVerifiedAt: new Date() } });
+    await this.audit.log({ actorId: userId, action: 'user.phone_verified', entityType: 'User', entityId: userId, before: { phone: before.phone }, after: { phone }, meta });
+    return { phone: user.phone, phoneVerified: true };
+  }
+
+  private async assertPhoneFree(userId: string, phone: string) {
+    const owner = await this.prisma.user.findUnique({ where: { phone }, select: { id: true, phoneVerifiedAt: true } });
+    if (owner && owner.id === userId && owner.phoneVerifiedAt) throw new BadRequestException('This number is already verified on your account.');
+    if (owner && owner.id !== userId) {
+      throw new ConflictException('This number already has a PetApp account. Sign in with it instead, or use a different number.');
+    }
   }
 
   /** Admin Dashboard sign-in: email + password, staff roles only, ADMIN-audience tokens. */

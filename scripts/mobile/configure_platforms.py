@@ -3,14 +3,14 @@
 
 The repo keeps only lib/, test/ and pubspec.yaml for the three Flutter apps; the release workflow (and you, once)
 generate android/ and ios/ with `flutter create`, then run this to add permissions, app links, release signing and
-the iOS usage texts that each app's README lists. Safe to run again: it only adds what is missing.
+the iOS usage texts that each app's README lists, and the iOS Sign in with Apple entitlement. Safe to run again: it only adds what is missing.
 
   python3 scripts/mobile/configure_platforms.py apps/customer-mobile --domain petapp.in [--release]
 
   --domain   the website (SHARE_BASE_URL) whose https links open the customer app
   --release  leave out the development-only allowance for http to your local machine (iOS)
 """
-import argparse, pathlib, re, sys
+import argparse, pathlib, plistlib, re, sys
 
 ANDROID = 'http://schemas.android.com/apk/res/android'
 LINK_PATHS = ['pet', 'reel', 'contest', 'challenge', 'product', 'service', 'booking']
@@ -193,30 +193,30 @@ def ios_plist(path: pathlib.Path, cfg: dict, scheme: str, release: bool) -> list
     return ['iOS usage texts and settings']
 
 
-def ios_entitlements(runner: pathlib.Path, domain: str) -> list[str]:
-    """Universal Links: the Associated Domains entitlement. Also tick the capability for the app ID in Apple's portal."""
+def ios_entitlements(runner: pathlib.Path, domain: str | None) -> list[str]:
+    """Runner.entitlements: Sign in with Apple for every app, and Universal Links (Associated Domains) for the
+    customer app when [domain] is given. Also tick both capabilities for the app ID in Apple's developer portal."""
     path = runner / 'Runner.entitlements'
-    entry = f'<string>applinks:{domain}</string>'
-    if path.exists() and entry in path.read_text():
-        return []
-    path.write_text(f'''<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-\t<key>com.apple.developer.associated-domains</key>
-\t<array>
-\t\t{entry}
-\t</array>
-</dict>
-</plist>
-''')
+    ent = plistlib.loads(path.read_bytes()) if path.exists() else {}
+    before = dict(ent)
+    done = []
+    if ent.get('com.apple.developer.applesignin') != ['Default']:
+        ent['com.apple.developer.applesignin'] = ['Default']
+        done.append('iOS Sign in with Apple')
+    if domain:
+        links = ent.setdefault('com.apple.developer.associated-domains', [])
+        if f'applinks:{domain}' not in links:
+            links.append(f'applinks:{domain}')
+            done.append('iOS associated domains')
+    if ent != before or not path.exists():
+        path.write_bytes(plistlib.dumps(ent, sort_keys=True))
     pbx = runner.parent / 'Runner.xcodeproj' / 'project.pbxproj'
     if pbx.exists():
         p = pbx.read_text()
         if 'CODE_SIGN_ENTITLEMENTS' not in p:
             p = re.sub(r'(\n(\t+)PRODUCT_BUNDLE_IDENTIFIER = [^;]+;)', lambda m: f'\n{m.group(2)}CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;' + m.group(1), p)
             pbx.write_text(p)
-    return ['iOS associated domains']
+    return done
 
 
 def main(argv=None) -> int:
@@ -245,8 +245,7 @@ def main(argv=None) -> int:
     plist = root / 'ios/Runner/Info.plist'
     if plist.exists():
         done += ios_plist(plist, cfg, a.scheme, a.release)
-        if cfg['deep_links']:
-            done += ios_entitlements(plist.parent, a.domain)
+        done += ios_entitlements(plist.parent, a.domain if cfg['deep_links'] else None)
     if not main_manifest.exists() and not plist.exists():
         raise SystemExit(f'{root}: no android/ or ios/ folder. Run `flutter create .` there first (see its README).')
     print(f'{root.name}: ' + (', '.join(done) if done else 'already configured'))
