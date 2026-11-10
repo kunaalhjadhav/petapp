@@ -168,7 +168,7 @@ jobs:
       - name: Public website (browser tests)
         run: npm run test:e2e -w @petapp/web
       - if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: admin-browser-report
           path: |

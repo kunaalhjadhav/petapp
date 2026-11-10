@@ -89,7 +89,7 @@ jobs:
             --dart-define=FIREBASE_PROJECT_ID="${{ secrets.FIREBASE_PROJECT_ID }}" \
             --dart-define=GOOGLE_SERVER_CLIENT_ID="${{ vars.GOOGLE_SERVER_CLIENT_ID }}" \
             --obfuscate --split-debug-info=build/symbols
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ inputs.app }}-android-${{ inputs.build_number }}
           path: |
@@ -167,7 +167,7 @@ jobs:
             --dart-define=FIREBASE_PROJECT_ID="${{ secrets.FIREBASE_PROJECT_ID }}" \
             --dart-define=GOOGLE_SERVER_CLIENT_ID="${{ vars.GOOGLE_SERVER_CLIENT_ID }}" \
             --obfuscate --split-debug-info=build/symbols
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ inputs.app }}-ios-${{ inputs.build_number }}
           path: |
