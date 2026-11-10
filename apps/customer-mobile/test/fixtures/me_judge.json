@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "data": {
+    "id": "901adf97-f154-4268-8543-22c7452f815f",
+    "name": "Dr. Judge Fixture",
+    "phone": "+919872872706",
+    "email": null,
+    "avatarUrl": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "city": null,
+    "status": "ACTIVE",
+    "phoneVerifiedAt": "2026-10-04T01:52:08.185Z",
+    "emailVerifiedAt": null,
+    "preferences": {},
+    "marketingConsent": false,
+    "createdAt": "2026-10-04T01:52:08.187Z",
+    "roles": [
+      "CUSTOMER",
+      "JUDGE"
+    ],
+    "counts": {
+      "pets": 0,
+      "followers": 0,
+      "following": 0
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c689502b-661c-4da4-b094-551abce43087"
+  }
+}

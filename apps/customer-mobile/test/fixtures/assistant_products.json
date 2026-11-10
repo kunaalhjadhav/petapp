@@ -1,0 +1,234 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "08293493-3cb0-4045-b96a-41eba3bd798f",
+      "role": "USER",
+      "text": "buy dog food",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:04.865Z"
+    },
+    "answer": {
+      "id": "02048274-2444-4739-b510-2c32e9088bbf",
+      "role": "ASSISTANT",
+      "text": "Nothing in the shop matched “dog food”. Here are some picks for your pets instead.",
+      "cards": [
+        {
+          "item": {
+            "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+            "slug": "chicken-jerky-6687-60f28f",
+            "brand": "Wag",
+            "image": {
+              "id": "f870e233-f732-4255-8e6d-00e371ab0459",
+              "kind": "IMAGE",
+              "width": 1600,
+              "height": 1200,
+              "images": [
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=90f64b6670c89f7f95327785d48d4a0d298a3012c061202fccd9c76c190fef32&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 1080
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c524cb8869fe41c87bd32b35c877489f1f755133b6d7b530fcc2d19f6005ca29&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 640
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=754901091c3dd1ed025187522fdaffade6c7dc7fe0d3b15b4140dcd0afdfbb7e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 320
+                }
+              ],
+              "status": "READY",
+              "durationMs": null
+            },
+            "title": "Chicken Jerky 6687",
+            "reason": null,
+            "vendor": {
+              "id": "7081925b-a136-45d7-b591-774559305405",
+              "slug": "wag-co-6687-075b53",
+              "businessName": "Wag & Co 6687"
+            },
+            "inStock": true,
+            "mrpPaise": 34900,
+            "fromPaise": 29900
+          },
+          "type": "PRODUCT"
+        },
+        {
+          "item": {
+            "id": "227f842f-f826-4e8a-a83d-7d782f03aea8",
+            "slug": "chicken-jerky-6078-e0c5af",
+            "brand": "Wag",
+            "image": {
+              "id": "3cf07ecd-8784-486e-893a-a34161cb061d",
+              "kind": "IMAGE",
+              "width": 1600,
+              "height": 1200,
+              "images": [
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=496e8a3d1aa803c1d664119650cdee3f366574a643055c9a51e8db1be90b733d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 1080
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=afd556272fcabc0849d957b5609c293c297a9a0c75d83867e25d1f985b67432b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 640
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=31cd1dc9b1c8e516b5bbeee61edafd119d334336ddc16a9123bfb2b202bb5a4a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 320
+                }
+              ],
+              "status": "READY",
+              "durationMs": null
+            },
+            "title": "Chicken Jerky 6078",
+            "reason": null,
+            "vendor": {
+              "id": "ba4f707e-fc62-4056-b28a-0a5731cd83f3",
+              "slug": "wag-co-6078-7f84be",
+              "businessName": "Wag & Co 6078"
+            },
+            "inStock": true,
+            "mrpPaise": 34900,
+            "fromPaise": 29900
+          },
+          "type": "PRODUCT"
+        },
+        {
+          "item": {
+            "id": "122a02ba-08f1-425e-bd07-9728dda1d6a7",
+            "slug": "yak-chew-0966-eb6bc4",
+            "brand": "Wag",
+            "image": {
+              "id": "f891beee-a6e3-412b-8a3a-fa6b44c5ae3b",
+              "kind": "IMAGE",
+              "width": 1600,
+              "height": 1200,
+              "images": [
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=ce409ab28eb76b96825d82887b2fbc7953c296a6f01896d2709da8b10ab90e92&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 1080
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=f8ec71c33d78c55c78ac6c2d2aa2de4bd1368e5dfadaf975af4d6d5bef41922a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 640
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c5c46b5604636c6ea29184f5719665084b50fa6455e6ee9b599dbe6699be40ba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 320
+                }
+              ],
+              "status": "READY",
+              "durationMs": null
+            },
+            "title": "Yak Chew 0966",
+            "reason": null,
+            "vendor": {
+              "id": "e30daf20-9c31-473f-8259-7b0a97171203",
+              "slug": "wag-co-0966-28be85",
+              "businessName": "Wag & Co 0966"
+            },
+            "inStock": true,
+            "mrpPaise": 59900,
+            "fromPaise": 49900
+          },
+          "type": "PRODUCT"
+        },
+        {
+          "item": {
+            "id": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+            "slug": "chicken-jerky-5960-813fb3",
+            "brand": "Wag",
+            "image": {
+              "id": "a7229592-ef7c-4990-bcf2-4c63e278d134",
+              "kind": "IMAGE",
+              "width": 1600,
+              "height": 1200,
+              "images": [
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=7755510f2911b895dd0fbc8bad2fe0f31118e8d1e68874e1e829a1464fe323a4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 1080
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=58812ce7e3dc1b9cfd9e89298db83c63375880f6eca33d63039ea07eab48c5f3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 640
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c2ae5ab771c6b89701e582bb8a0ee69d125eb9316b38c5bb4ee9657055541335&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 320
+                }
+              ],
+              "status": "READY",
+              "durationMs": null
+            },
+            "title": "Chicken Jerky 5960",
+            "reason": null,
+            "vendor": {
+              "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+              "slug": "wag-co-5960-7f3c74",
+              "businessName": "Wag & Co 5960"
+            },
+            "inStock": true,
+            "mrpPaise": 34900,
+            "fromPaise": 29900
+          },
+          "type": "PRODUCT"
+        },
+        {
+          "item": {
+            "id": "b45ff592-de7e-4e87-aea7-fcc2ec653638",
+            "slug": "yak-chew-0216-32f244",
+            "brand": "Wag",
+            "image": {
+              "id": "49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730",
+              "kind": "IMAGE",
+              "width": 1600,
+              "height": 1200,
+              "images": [
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=2445b5d7dc6ceb38219de5ae192424ae19416be4b4405402e466b0687c7500c8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 1080
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=10040310cb276963633733440263e2b38eca90ae07067be101556c724bdf5014&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 640
+                },
+                {
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=16fd3eb8a7be866f8ed78bcc5384ca42c0e05ee47d73bab2f8eaa1e98cc2da4c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                  "width": 320
+                }
+              ],
+              "status": "READY",
+              "durationMs": null
+            },
+            "title": "Yak Chew 0216",
+            "reason": null,
+            "vendor": {
+              "id": "253f2ae0-d308-45c5-bba1-753bafd524f1",
+              "slug": "wag-co-0216-13a8a2",
+              "businessName": "Wag & Co 0216"
+            },
+            "inStock": true,
+            "mrpPaise": 59900,
+            "fromPaise": 49900
+          },
+          "type": "PRODUCT"
+        }
+      ],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:04.922Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "365ed854-afa4-42be-96b3-b11fe9a3ba51"
+  }
+}

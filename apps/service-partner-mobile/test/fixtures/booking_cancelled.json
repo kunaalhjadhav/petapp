@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": {
+    "id": "4891c03b-0d06-4175-ae2b-3075b373951a",
+    "code": "PB-83Q46J",
+    "status": "CANCELLED",
+    "startsAt": "2026-10-10T03:30:00.000Z",
+    "endsAt": "2026-10-10T04:30:00.000Z",
+    "mode": "AT_CENTER",
+    "service": {
+      "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+      "name": "Full groom"
+    },
+    "pet": {
+      "id": "12d8fe00-3fcf-47c2-9b10-1f29e36df304",
+      "name": "Mango"
+    },
+    "pricePaise": 84900,
+    "partner": {
+      "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+      "businessName": "Pawfect Grooming",
+      "addressLine": "12 Hill Road",
+      "city": "Mumbai",
+      "lat": 19.0596,
+      "lng": 72.8295,
+      "phone": "+919873632007"
+    },
+    "customer": {
+      "id": "31331b35-d418-47db-99bf-db83da9e5697",
+      "name": "Bilal Customer",
+      "phone": "+919875632009"
+    },
+    "address": null,
+    "customerNote": "Gentle with the ears please",
+    "earnings": {
+      "platformFeePaise": 12735,
+      "partnerEarningPaise": 72165
+    },
+    "cancelledBy": "PARTNER",
+    "cancelReason": "Groomer unwell today",
+    "refundPaise": 84900,
+    "review": null,
+    "payment": null,
+    "createdAt": "2026-10-06T19:52:02.818Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "364a4490-a2f4-4df3-a57a-fc0d6fd1fbb6"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "b0ee640b-1d21-4a15-9c3c-72a01b58e45a",
+        "type": "REEL",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Zoomies #zoomies",
+        "locationName": null,
+        "author": {
+          "id": "d05a5086-5859-43aa-b72f-469b009d685d",
+          "name": "Reel Maker",
+          "avatarUrl": null
+        },
+        "pets": [],
+        "hashtags": [
+          "zoomies"
+        ],
+        "media": [
+          {
+            "id": "bc186b63-b2a1-4002-87dc-a46f89769966",
+            "kind": "VIDEO",
+            "status": "READY",
+            "width": 720,
+            "height": 1280,
+            "durationMs": 3000,
+            "hls": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=da228d319494008e371171abafab4e4d3434cb0b1932bb3afa9c1111983fa825&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+            "poster": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=a844960cc8c2b984b8d9bc43f0ab653e0feb8a9cfeb7b8c7f2876e809fdb0f8b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ],
+        "counts": {
+          "likes": 1,
+          "comments": 0,
+          "saves": 0,
+          "shares": 0,
+          "views": 0
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-11T07:39:44.265Z",
+        "createdAt": "2026-10-11T07:39:44.269Z"
+      }
+    ],
+    "nextCursor": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c2ef1cee-5210-42df-bf0b-d1dee8367b05"
+  }
+}

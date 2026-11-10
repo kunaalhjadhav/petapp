@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": {
+    "id": "75dec7af-f327-4f1d-a856-b63879493d33",
+    "name": "Bruno",
+    "handle": "bruno.b9ca76",
+    "avatarUrl": null,
+    "species": {
+      "id": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "key": "dog",
+      "name": "Dog"
+    },
+    "breed": {
+      "id": "f2d884df-8da9-4969-b94f-25abdb0ff264",
+      "name": "Beagle"
+    },
+    "isVerified": false,
+    "followerCount": 0,
+    "visibility": "PUBLIC",
+    "coverUrl": null,
+    "gender": "MALE",
+    "dateOfBirth": "2023-08-14T00:00:00.000Z",
+    "ageMonths": 37,
+    "weightKg": 31.5,
+    "color": null,
+    "about": "Beach walks.",
+    "personality": [
+      "playful"
+    ],
+    "city": null,
+    "status": "ACTIVE",
+    "owner": {
+      "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+      "name": "Aanya Test",
+      "avatarUrl": null
+    },
+    "createdAt": "2026-10-02T12:14:38.037Z",
+    "microchipId": "985100001234567",
+    "medicalNotes": null,
+    "vaccinations": [],
+    "latitude": null,
+    "longitude": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "73e2c3aa-d636-4796-ab0e-c662b22f6647"
+  }
+}

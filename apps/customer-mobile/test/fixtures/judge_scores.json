@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "entryId": "ca2b534a-b3f1-45dc-a958-4673aa2a0905",
+    "myScore": 8.4
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "d6e0f738-1a09-49b7-9efe-b1f47355d391"
+  }
+}

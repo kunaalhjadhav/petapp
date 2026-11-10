@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "data": {
+    "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+    "vendorId": "7081925b-a136-45d7-b591-774559305405",
+    "categoryId": "7a81a55a-856e-491c-8bf6-0afb98ecc51e",
+    "title": "Chicken Jerky 6687",
+    "slug": "chicken-jerky-6687-60f28f",
+    "description": "Single-ingredient chicken treats.",
+    "brand": "Wag",
+    "speciesIds": [],
+    "imageIds": [
+      "f870e233-f732-4255-8e6d-00e371ab0459"
+    ],
+    "status": "DRAFT",
+    "blockReason": null,
+    "createdAt": "2026-10-10T12:51:30.085Z",
+    "updatedAt": "2026-10-10T12:51:30.085Z",
+    "variants": [
+      {
+        "id": "b59d5d6c-0606-4d38-a782-e9f33a756c78",
+        "productId": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+        "sku": "CJ-100",
+        "title": "100 g",
+        "mrpPaise": 34900,
+        "pricePaise": 29900,
+        "gstRateBps": 1800,
+        "stock": 40,
+        "weightGrams": 120,
+        "isActive": true,
+        "createdAt": "2026-10-10T12:51:30.085Z",
+        "updatedAt": "2026-10-10T12:51:30.085Z"
+      },
+      {
+        "id": "a3986146-c13d-4b32-a8cd-87b2df2ff6a3",
+        "productId": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+        "sku": "CJ-250",
+        "title": "250 g",
+        "mrpPaise": 74900,
+        "pricePaise": 64900,
+        "gstRateBps": 1800,
+        "stock": 3,
+        "weightGrams": null,
+        "isActive": true,
+        "createdAt": "2026-10-10T12:51:30.085Z",
+        "updatedAt": "2026-10-10T12:51:30.085Z"
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "3229b046-eb73-4870-b73c-9cd0cde6a744"
+  }
+}

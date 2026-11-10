@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "availablePaise": 0,
+    "holdDays": 0,
+    "account": null,
+    "payouts": []
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "2f32e714-34fa-46c2-8117-c8adbea9b2e6"
+  }
+}

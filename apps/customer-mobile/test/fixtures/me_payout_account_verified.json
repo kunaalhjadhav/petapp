@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "active": {
+      "id": "6dcb0ae4-9584-4838-8cfd-fffa9535a395",
+      "method": "UPI",
+      "holderName": "Asha Rao",
+      "ifsc": null,
+      "accountLast4": null,
+      "vpa": "asha0966@oksbi",
+      "status": "VERIFIED",
+      "verifiedName": "ASHA RAO",
+      "nameMatches": true,
+      "failureReason": null,
+      "verifiedAt": "2026-10-11T01:10:30.175Z",
+      "payableFrom": "2026-10-11T01:10:30.175Z",
+      "createdAt": "2026-10-11T01:10:30.167Z"
+    },
+    "pending": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "ae58897d-62e4-4d5c-90b9-7ebebca0fbd5"
+  }
+}

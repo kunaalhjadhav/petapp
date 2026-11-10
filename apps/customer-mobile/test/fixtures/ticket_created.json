@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": "96d78069-56e5-4653-af2c-dc2d9eb5968b",
+    "code": "T-VHSXE2",
+    "subject": "Groomer arrived late",
+    "status": "OPEN",
+    "statusLabel": "Open",
+    "category": "Service bookings",
+    "conversationId": "ebcc1e63-b2ec-4d33-9612-ea72d966adc5",
+    "refType": "BOOKING",
+    "refId": "6d12605d-f2a5-46ca-9c1a-4b7251ff3f24",
+    "unread": 0,
+    "lastMessageText": "The groomer came an hour late on Saturday.",
+    "lastMessageAt": "2026-10-18T17:31:45.448Z",
+    "canReply": true,
+    "createdAt": "2026-10-18T17:31:45.444Z",
+    "updatedAt": "2026-10-18T17:31:45.444Z"
+  },
+  "message": "Thanks. Your ticket is T-VHSXE2; we’ll reply here.",
+  "meta": {
+    "requestId": "492024ef-7bc5-46c9-949d-c3f0bd296bdf"
+  }
+}

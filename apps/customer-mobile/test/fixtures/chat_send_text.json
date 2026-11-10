@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "id": "d3024bcc-c67a-4e16-9ebf-3072af8eac42",
+    "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+    "side": "CUSTOMER",
+    "mine": true,
+    "body": "Hi! Can I book the same groomer next Saturday?",
+    "removed": false,
+    "media": null,
+    "ref": null,
+    "clientId": "k1792344704a",
+    "createdAt": "2026-10-18T17:31:44.041Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "af14e572-12cb-44e3-a9cf-0995657cfdd8"
+  }
+}

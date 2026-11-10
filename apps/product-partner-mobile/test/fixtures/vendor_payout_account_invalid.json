@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "message": "IFSC must be 11 characters, like HDFC0001234.",
+  "errors": [],
+  "requestId": "3f21eb91-46f5-4f0b-b8f4-8ae39776bfd5"
+}

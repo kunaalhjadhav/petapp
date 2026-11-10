@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "c39e2fa1-b349-4bc0-a173-2b4a86861a44",
+      "name": "Pip",
+      "handle": "pip.b58617",
+      "avatarUrl": null,
+      "gender": "FEMALE",
+      "dateOfBirth": "2026-06-13T00:00:00.000Z",
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "e44611b6-aec8-48a6-822d-c9728cfe9142",
+    "page": 1,
+    "limit": 5,
+    "total": 1,
+    "totalPages": 1
+  }
+}

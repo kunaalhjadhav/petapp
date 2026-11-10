@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "2a631f57-0a48-4c18-b1af-27d753e87abe",
+      "slug": "fixture-walk-day-8727-a1a166",
+      "title": "Fixture Walk Day 8727",
+      "bannerUrl": null,
+      "kind": "FREE",
+      "feePaise": 0,
+      "startsAt": "2026-10-04T00:52:07.906Z",
+      "endsAt": "2026-10-06T01:52:07.906Z",
+      "status": "PUBLISHED",
+      "requiredCheckIns": 1,
+      "proof": "TEXT",
+      "pointsPerCheckIn": 10,
+      "streakBonusEvery": 7,
+      "streakBonusPoints": 50,
+      "participants": 1,
+      "badge": {
+        "name": "First Step",
+        "iconUrl": null
+      },
+      "mine": {
+        "status": "ACTIVE",
+        "points": 0,
+        "checkIns": 0,
+        "streak": 0,
+        "checkedInToday": false
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "5ce8aa41-0f3f-4ea0-ac2e-e0e0f2012dd6",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "60282b83-7d6c-4949-9da3-1e791119aec2",
+      "code": "FLAT6687",
+      "description": null,
+      "kind": "FLAT",
+      "value": 5000,
+      "maxDiscountPaise": null,
+      "minOrderPaise": 50000,
+      "vendorId": "7081925b-a136-45d7-b591-774559305405",
+      "startsAt": "2026-10-10T11:51:30.178Z",
+      "endsAt": "2026-10-20T12:51:30.178Z",
+      "usageLimit": null,
+      "perUserLimit": 1,
+      "usedCount": 0,
+      "isActive": false,
+      "createdAt": "2026-10-10T12:51:30.187Z",
+      "updatedAt": "2026-10-10T12:51:30.213Z"
+    },
+    {
+      "id": "54141f56-a20c-4c3e-9c9d-d3bb26d4d99e",
+      "code": "WAG6687",
+      "description": "Launch offer",
+      "kind": "PERCENT",
+      "value": 1500,
+      "maxDiscountPaise": 15000,
+      "minOrderPaise": 0,
+      "vendorId": "7081925b-a136-45d7-b591-774559305405",
+      "startsAt": "2026-10-10T11:51:30.159Z",
+      "endsAt": "2026-10-20T12:51:30.159Z",
+      "usageLimit": null,
+      "perUserLimit": 1,
+      "usedCount": 0,
+      "isActive": true,
+      "createdAt": "2026-10-10T12:51:30.169Z",
+      "updatedAt": "2026-10-10T12:51:30.169Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "bc486749-d38f-46b4-b7bc-7aeb133cefb7"
+  }
+}

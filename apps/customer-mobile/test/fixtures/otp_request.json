@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "expiresIn": 300,
+    "resendIn": 30
+  },
+  "message": "Verification code sent.",
+  "meta": {
+    "requestId": "6d84ddfd-c270-47d2-9b6e-9f3989b30847"
+  }
+}

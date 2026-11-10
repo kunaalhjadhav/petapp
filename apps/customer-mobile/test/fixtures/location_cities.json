@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "52cc1872-8cf0-46b8-bf58-039f4c692c3f",
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    },
+    {
+      "id": "e820da67-d811-499b-bfb7-1655a4e6cde4",
+      "slug": "pune",
+      "name": "Pune",
+      "lat": 18.5204,
+      "lng": 73.8567,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    },
+    {
+      "id": "cc139bda-3337-4b06-8b24-4d53c1fe3d03",
+      "slug": "thane",
+      "name": "Thane",
+      "lat": 19.2183,
+      "lng": 72.9781,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    },
+    {
+      "id": "25baf41f-3786-4e39-99d4-3fc08d3c15a0",
+      "slug": "navi-mumbai",
+      "name": "Navi Mumbai",
+      "lat": 19.033,
+      "lng": 73.0297,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    },
+    {
+      "id": "86c58819-cd23-458c-b4be-528303e75099",
+      "slug": "nagpur",
+      "name": "Nagpur",
+      "lat": 21.1458,
+      "lng": 79.0882,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "c3be8c04-aa0c-4514-afc2-ca8a70aa1f19"
+  }
+}

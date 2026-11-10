@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "977610d3-bad4-4a62-a62a-073a485673b9",
+      "key": "dog-food-7109",
+      "name": "Dog food 7109",
+      "parentId": null
+    },
+    {
+      "id": "6656719d-03c4-4652-82b1-3f3b793d249e",
+      "key": "toys-muy3mw7w",
+      "name": "Toys muy3mw7w",
+      "parentId": null
+    },
+    {
+      "id": "01edb309-6e7f-4eaf-baef-acead6097926",
+      "key": "treats-muy3mkfg",
+      "name": "Treats muy3mkfg",
+      "parentId": null
+    },
+    {
+      "id": "628c07a0-cfdf-4756-9b4e-fb177dd189ac",
+      "key": "treats-muy3mw7w",
+      "name": "Treats muy3mw7w",
+      "parentId": null
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "3aecda48-5532-42b8-8580-aa39945253c7"
+  }
+}

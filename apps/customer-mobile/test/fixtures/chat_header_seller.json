@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+    "kind": "SHOP",
+    "status": "OPEN",
+    "side": "BUSINESS",
+    "counterpart": {
+      "type": "CUSTOMER",
+      "name": "Riya Shopper",
+      "avatarUrl": null
+    },
+    "canSend": true,
+    "cannotSendReason": null,
+    "blockedByMe": false,
+    "unread": 0,
+    "otherReadAt": "2026-10-18T17:31:44.874Z",
+    "ticket": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "663d6b8d-54d5-4aca-9100-51f18d0277cd"
+  }
+}

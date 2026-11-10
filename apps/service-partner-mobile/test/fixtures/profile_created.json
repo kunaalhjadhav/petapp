@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": {
+    "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+    "userId": "32956841-cea8-478a-9f6f-9c1b357d699b",
+    "slug": "pawfect-grooming-ab98",
+    "businessName": "Pawfect Grooming",
+    "kind": "BUSINESS",
+    "about": null,
+    "phone": "+919873632007",
+    "email": null,
+    "addressLine": "12 Hill Road",
+    "area": "Bandra West",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400050",
+    "lat": 19.0596,
+    "lng": 72.8295,
+    "homeVisitRadiusKm": 5,
+    "concurrency": 1,
+    "slotStepMin": 30,
+    "gstin": null,
+    "commissionBps": null,
+    "status": "DRAFT",
+    "statusReason": null,
+    "submittedAt": null,
+    "reviewedAt": null,
+    "reviewedById": null,
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "createdAt": "2026-10-06T19:52:01.886Z",
+    "updatedAt": "2026-10-06T19:52:01.886Z",
+    "documents": [],
+    "services": [],
+    "hours": [],
+    "timeOff": [],
+    "checklist": [
+      "Upload an ID proof.",
+      "Add at least one service.",
+      "Set your opening hours."
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c89955a4-091b-454b-90a1-88c8c0721ad6"
+  }
+}

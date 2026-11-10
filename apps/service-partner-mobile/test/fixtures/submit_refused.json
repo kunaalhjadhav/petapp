@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "message": "A few things are still missing.",
+  "errors": [
+    {
+      "message": "Add at least one service."
+    },
+    {
+      "message": "Set your opening hours."
+    }
+  ],
+  "requestId": "c4e35eec-2f3b-438b-ae13-df2b6a9015a4"
+}

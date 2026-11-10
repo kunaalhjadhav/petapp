@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "slug": "privacy-policy",
+    "title": "Privacy Policy",
+    "version": 1,
+    "body": "# Privacy Policy\n\nThis policy explains how [Company legal name] (\"PetApp\", \"we\") handles your personal data, in line with the Digital Personal Data Protection Act, 2023.\n\n## What we collect\n- **Account:** your mobile number, name, and email if you add one.\n- **Pets:** profiles you create, including optional health records.\n- **Content:** photos, videos, captions, comments, votes and reports. Location metadata is removed from photos and videos when they are processed.\n- **Transactions:** orders, bookings, contest entries, payments and refunds, and invoices. For payouts and prizes: your bank account or UPI ID (account numbers are encrypted) and PAN where tax law needs it.\n- **Location:** only when you allow it, to find nearby services, and only while you're using the app.\n- **Use of the app:** pages you view in the shop, services and contests (for recommendations, if you allow it), and device and log data for security.\n- **Assistant chats:** your questions to PetApp Assistant and its answers.\n\n## Why we use it\nTo run your account and the features you use; to process payments, refunds and payouts; to keep PetApp safe (moderation, fraud prevention, including automated checks that staff review); to recommend things you may like (you can turn this off); to send notifications you can control; and to meet legal and tax duties.\n\n## Who we share it with\n- **Service partners and sellers:** what they need to serve you, such as your name, your pet and the delivery or visit address.\n- **Service providers:** payments ([Payment gateway]), payouts, SMS, push notifications, cloud hosting ([Cloud provider, region]) and, when enabled, AI processing for moderation and the assistant ([AI provider]).\n- **Authorities:** where the law requires it.\n\nWe don't sell your personal data.\n\n## How long we keep it\n- **Most data:** while your account is open.\n- **Viewing history:** 90 days.\n- **Assistant chats:** 30 days.\n- **After you delete your account:** personal details are erased after a 14-day grace period. Records that tax and accounting law require us to keep (invoices, payments, refunds, payouts) are kept for 8 years, without your profile.\n\n## Your rights\nIn the app you can:\n- see and correct your information\n- download a copy of your data (Settings → Your data)\n- withdraw consent for marketing and personalised recommendations\n- delete pets, posts and your account\n\nYou can also nominate someone to exercise your rights. You can complain to our Grievance Officer, and then to the Data Protection Board of India.\n\n## Children\nPetApp is for adults. If a child uses it, a parent or guardian must consent and supervise.\n\n## Security\nEncryption in transit, encrypted bank details, access controls and audit logs for staff, and regular security testing.\n\n## Contact and grievances\n\nGrievance Officer: [Grievance Officer name], [Company legal name], [Registered address].\nEmail: [grievance email]. We acknowledge complaints within 48 hours and resolve them within one month.\n",
+    "changeSummary": "First version",
+    "effectiveAt": "2026-10-11T19:07:07.655Z",
+    "publishedAt": "2026-10-11T19:07:07.655Z",
+    "requiresAcceptance": true,
+    "audience": "everyone"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "bb6ebb6e-df17-4716-904f-8ff448e1c9ba"
+  }
+}

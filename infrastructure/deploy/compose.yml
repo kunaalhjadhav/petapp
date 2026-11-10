@@ -1,0 +1,51 @@
+# PetApp on a server (staging or production), from images built by .github/workflows/deploy.yml.
+# PostgreSQL (with PostGIS), Redis and object storage are managed services, set in .env, not run here.
+# Put a TLS-terminating reverse proxy or load balancer in front: api.<domain> → api:4000, admin.<domain> → admin:3000,
+# <domain> → web:3001.
+#
+#   IMAGE_TAG=<git sha> docker compose -f compose.yml up -d     (deploy.sh does this, with a backup and migrations)
+
+x-common: &common
+  restart: unless-stopped
+  env_file: .env
+  logging: { driver: json-file, options: { max-size: 20m, max-file: '5' } }
+
+services:
+  api:
+    <<: *common
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/backend:${IMAGE_TAG:?set IMAGE_TAG}
+    ports: ['127.0.0.1:4000:4000']
+    deploy: { replicas: 1 }
+
+  worker:
+    <<: *common
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/backend:${IMAGE_TAG:?set IMAGE_TAG}
+    command: ['node', 'apps/backend/dist/worker.js']
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://127.0.0.1:'+(process.env.WORKER_METRICS_PORT||9464)+'/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  admin:
+    <<: *common
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/admin-${DEPLOY_ENV:?set DEPLOY_ENV}:${IMAGE_TAG:?set IMAGE_TAG}
+    ports: ['127.0.0.1:3000:3000']
+    environment: { BACKEND_URL: http://api:4000, COOKIE_SECURE: 'true' }
+
+  web:
+    <<: *common
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/web:${IMAGE_TAG:?set IMAGE_TAG}
+    ports: ['127.0.0.1:3001:3001']
+    environment: { API_URL: http://api:4000 }
+
+  # One-off jobs (deploy.sh runs them; not started by `up`).
+  migrate:
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/migrate:${IMAGE_TAG:?set IMAGE_TAG}
+    env_file: .env
+    profiles: ['jobs']
+
+  backup:
+    image: ${REGISTRY:-ghcr.io/your-org/petapp}/ops:${IMAGE_TAG:?set IMAGE_TAG}
+    env_file: .env
+    profiles: ['jobs']

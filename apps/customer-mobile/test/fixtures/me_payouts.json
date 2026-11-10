@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "availablePaise": 0,
+    "holdDays": 0,
+    "account": {
+      "id": "6dcb0ae4-9584-4838-8cfd-fffa9535a395",
+      "method": "UPI",
+      "accountLast4": null,
+      "vpa": "asha0966@oksbi",
+      "payableFrom": "2026-10-11T01:10:30.175Z"
+    },
+    "payouts": [
+      {
+        "id": "04cb2c63-8c59-4da0-b391-c0b6dad0289b",
+        "amountPaise": 1050000,
+        "purpose": "PRIZE",
+        "status": "PROCESSED",
+        "utr": "FAKEUTR1791681059193",
+        "failureReason": null,
+        "processedAt": "2026-10-11T01:10:59.195Z",
+        "createdAt": "2026-10-11T01:10:30.206Z",
+        "account": {
+          "method": "UPI",
+          "accountLast4": null,
+          "vpa": "asha0966@oksbi",
+          "ifsc": null
+        }
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "6838c1af-d7e1-4f52-8c13-e8a845f2523f"
+  }
+}

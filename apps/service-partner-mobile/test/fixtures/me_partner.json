@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "data": {
+    "id": "32956841-cea8-478a-9f6f-9c1b357d699b",
+    "name": "Priya Groomer",
+    "phone": "+919873632007",
+    "email": null,
+    "avatarUrl": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "city": null,
+    "status": "ACTIVE",
+    "phoneVerifiedAt": "2026-10-06T19:52:01.650Z",
+    "emailVerifiedAt": null,
+    "preferences": {},
+    "marketingConsent": false,
+    "createdAt": "2026-10-06T19:52:01.672Z",
+    "roles": [
+      "CUSTOMER",
+      "SERVICE_PARTNER"
+    ],
+    "counts": {
+      "pets": 0,
+      "followers": 0,
+      "following": 0
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "01c1f93c-d136-45c5-bad2-e42a20136163"
+  }
+}

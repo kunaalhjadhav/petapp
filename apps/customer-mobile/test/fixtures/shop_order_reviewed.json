@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "data": {
+    "id": "e08d649f-89ea-41ff-8b8a-6ad62f7b36c7",
+    "code": "PO-5D8KBUMS",
+    "status": "COMPLETED",
+    "createdAt": "2026-10-10T12:41:21.738Z",
+    "shipTo": {
+      "city": "Pune",
+      "name": "Home",
+      "line1": "21 MG Road",
+      "line2": null,
+      "state": "Maharashtra",
+      "pincode": "411001",
+      "locality": "Camp"
+    },
+    "itemsPaise": 29900,
+    "discountPaise": 0,
+    "shippingPaise": 4900,
+    "totalPaise": 34800,
+    "payment": null,
+    "refunds": [],
+    "parcels": [
+      {
+        "id": "272a4869-0453-4f5f-b980-9a7a37c43005",
+        "code": "SO-9G88TFAC0",
+        "status": "DELIVERED",
+        "vendor": {
+          "id": "ba4f707e-fc62-4056-b28a-0a5731cd83f3",
+          "businessName": "Wag & Co 6078"
+        },
+        "itemsPaise": 29900,
+        "discountPaise": 0,
+        "shippingPaise": 4900,
+        "totalPaise": 34800,
+        "courier": "Blue Dart",
+        "trackingNumber": "BD7770002IN",
+        "shippedAt": "2026-10-10T12:41:22.303Z",
+        "deliveredAt": "2026-10-10T12:41:22.327Z",
+        "cancelReason": null,
+        "cancelledBy": null,
+        "items": [
+          {
+            "productTitle": "Chicken Jerky 6078",
+            "variantTitle": "100 g",
+            "qty": 1,
+            "unitPricePaise": 29900,
+            "lineTotalPaise": 29900,
+            "productId": "227f842f-f826-4e8a-a83d-7d782f03aea8",
+            "productSlug": "chicken-jerky-6078-e0c5af",
+            "review": {
+              "id": "141e356c-9165-4ead-902c-6a442a63c3c7",
+              "rating": 4,
+              "status": "VISIBLE"
+            },
+            "canReview": false
+          }
+        ],
+        "canCancel": false,
+        "canReturn": false,
+        "returnRequest": null
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "841f6522-2cac-4753-ab4e-637626620298"
+  }
+}

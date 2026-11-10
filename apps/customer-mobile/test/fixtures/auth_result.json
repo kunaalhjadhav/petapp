@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "data": {
+    "user": {
+      "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+      "name": null,
+      "phone": "+919844403277",
+      "email": null,
+      "avatarUrl": null,
+      "status": "ACTIVE",
+      "roles": [
+        "CUSTOMER"
+      ]
+    },
+    "tokens": {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YzY5ODA5ZC1kYzU1LTRhZWQtYTlmZS1kZDY1ZTExZDk5MWMiLCJzaWQiOiJhNGNmNjkwOS0yZDI1LTQ3MTktOGNhYy05YTdmN2I2NzdkYzciLCJpYXQiOjE3OTA5NDMyNzcsImV4cCI6MTc5MDk0NDE3NywiYXVkIjoicGV0YXBwOmFwcCIsImlzcyI6InBldGFwcCJ9.6D8PsmCPqKs_ulH4NX5gfvYLhpDB_3M7IbH9cVxnZ4Y",
+      "refreshToken": "4upVgwvdLUmxEVsOLmjJ60IXMIXLMDTFJQp-gjlGpL5aLjq7xQWnqQ9M8pyaNNrR",
+      "accessTokenExpiresIn": 900,
+      "refreshTokenExpiresAt": "2026-11-01T12:14:37.837Z"
+    },
+    "isNewUser": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "1d125210-fe8b-4787-b513-ae051593535e"
+  }
+}

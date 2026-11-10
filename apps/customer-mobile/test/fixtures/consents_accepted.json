@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "data": {
+    "documents": [
+      {
+        "slug": "terms-of-service",
+        "title": "Terms of Service",
+        "version": 1,
+        "changeSummary": "First version",
+        "effectiveAt": "2026-10-11T19:07:07.604Z",
+        "audience": "everyone",
+        "acceptedVersion": 1,
+        "acceptedAt": "2026-10-11T19:07:45.103Z",
+        "pending": false,
+        "updated": false
+      },
+      {
+        "slug": "privacy-policy",
+        "title": "Privacy Policy",
+        "version": 1,
+        "changeSummary": "First version",
+        "effectiveAt": "2026-10-11T19:07:07.655Z",
+        "audience": "everyone",
+        "acceptedVersion": 1,
+        "acceptedAt": "2026-10-11T19:07:45.116Z",
+        "pending": false,
+        "updated": false
+      }
+    ],
+    "pending": [],
+    "marketing": {
+      "granted": true,
+      "changedAt": "2026-10-11T19:07:45.133Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "cbeafc7a-d79a-498d-9596-ea9f689a6898"
+  }
+}

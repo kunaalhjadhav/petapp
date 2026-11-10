@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": {
+    "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+    "name": "Aanya Test",
+    "avatarUrl": null,
+    "city": "Mumbai",
+    "createdAt": "2026-10-02T12:14:37.825Z",
+    "pets": [
+      {
+        "id": "75dec7af-f327-4f1d-a856-b63879493d33",
+        "name": "Bruno",
+        "handle": "bruno.b9ca76",
+        "avatarUrl": null,
+        "species": {
+          "key": "dog",
+          "name": "Dog"
+        }
+      }
+    ],
+    "followers": 1,
+    "following": 0,
+    "isFollowing": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "3eaa364a-4c6e-4b47-9e3a-70b085cb94fe"
+  }
+}

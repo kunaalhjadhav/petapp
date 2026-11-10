@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": {
+    "customer": 0,
+    "partner": 0,
+    "seller": 0,
+    "support": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8f550d2c-0ab6-4061-9ed5-724d7912f80f"
+  }
+}

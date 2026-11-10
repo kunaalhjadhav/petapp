@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "active": null,
+    "pending": {
+      "id": "1097cddb-6003-4ca2-b9ba-92563e5a624d",
+      "method": "BANK",
+      "holderName": "Wag and Co Pvt Ltd",
+      "ifsc": "HDFC0001234",
+      "accountLast4": "0000",
+      "vpa": null,
+      "status": "FAILED",
+      "verifiedName": null,
+      "nameMatches": null,
+      "failureReason": "The bank says this account can’t receive money. Check the details.",
+      "verifiedAt": null,
+      "payableFrom": null,
+      "createdAt": "2026-10-11T01:09:29.292Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "97a14657-e4f7-48f0-ae7a-65f52baff781"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "key": "dog",
+      "name": "Dog",
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-09-30T12:08:56.995Z",
+      "updatedAt": "2026-09-30T12:08:56.995Z",
+      "breedCount": 18
+    },
+    {
+      "id": "a6b37292-fe86-4317-b08b-a8a2093191f2",
+      "key": "cat",
+      "name": "Cat",
+      "isActive": true,
+      "sortOrder": 1,
+      "createdAt": "2026-09-30T12:08:57.034Z",
+      "updatedAt": "2026-09-30T12:08:57.034Z",
+      "breedCount": 9
+    },
+    {
+      "id": "6e98e38c-29cf-4b20-ae4d-fa5657925ae6",
+      "key": "bird",
+      "name": "Bird",
+      "isActive": true,
+      "sortOrder": 2,
+      "createdAt": "2026-09-30T12:08:57.055Z",
+      "updatedAt": "2026-09-30T12:08:57.055Z",
+      "breedCount": 8
+    },
+    {
+      "id": "d00c1dac-259c-474a-a651-eb050ef756ac",
+      "key": "rabbit",
+      "name": "Rabbit",
+      "isActive": true,
+      "sortOrder": 3,
+      "createdAt": "2026-09-30T12:08:57.086Z",
+      "updatedAt": "2026-09-30T12:08:57.086Z",
+      "breedCount": 6
+    },
+    {
+      "id": "150d1c79-21c6-4459-987d-bfb50d7f4d59",
+      "key": "hamster",
+      "name": "Hamster",
+      "isActive": true,
+      "sortOrder": 4,
+      "createdAt": "2026-09-30T12:08:57.119Z",
+      "updatedAt": "2026-09-30T12:08:57.119Z",
+      "breedCount": 5
+    },
+    {
+      "id": "04ae8581-6e37-4c51-b69e-0d73ad2c3716",
+      "key": "fish",
+      "name": "Fish",
+      "isActive": true,
+      "sortOrder": 5,
+      "createdAt": "2026-09-30T12:08:57.135Z",
+      "updatedAt": "2026-09-30T12:08:57.135Z",
+      "breedCount": 7
+    },
+    {
+      "id": "b4153624-6cbd-4c28-a4be-b67eadbb542e",
+      "key": "reptile",
+      "name": "Reptile",
+      "isActive": true,
+      "sortOrder": 6,
+      "createdAt": "2026-09-30T12:08:57.151Z",
+      "updatedAt": "2026-09-30T12:08:57.151Z",
+      "breedCount": 5
+    },
+    {
+      "id": "0f37887b-be8d-49d3-a259-4736d44bbdfe",
+      "key": "other",
+      "name": "Other",
+      "isActive": true,
+      "sortOrder": 7,
+      "createdAt": "2026-09-30T12:08:57.175Z",
+      "updatedAt": "2026-09-30T12:08:57.175Z",
+      "breedCount": 5
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "6aeead5e-9d47-4970-9d2d-9ca5965075a5"
+  }
+}

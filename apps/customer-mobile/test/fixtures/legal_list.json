@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "data": [
+    {
+      "slug": "terms-of-service",
+      "title": "Terms of Service",
+      "version": 1,
+      "effectiveAt": "2026-10-11T19:07:07.604Z",
+      "publishedAt": "2026-10-11T19:07:07.604Z",
+      "requiresAcceptance": true,
+      "audience": "everyone"
+    },
+    {
+      "slug": "privacy-policy",
+      "title": "Privacy Policy",
+      "version": 1,
+      "effectiveAt": "2026-10-11T19:07:07.655Z",
+      "publishedAt": "2026-10-11T19:07:07.655Z",
+      "requiresAcceptance": true,
+      "audience": "everyone"
+    },
+    {
+      "slug": "community-guidelines",
+      "title": "Community Guidelines",
+      "version": 3,
+      "effectiveAt": "2026-10-11T19:03:32.055Z",
+      "publishedAt": "2026-10-11T19:03:32.055Z",
+      "requiresAcceptance": false,
+      "audience": "everyone"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "12080833-477d-499d-b109-2a4da13ef306"
+  }
+}

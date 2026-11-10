@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "personalised": true,
+    "availableOnPlatform": true,
+    "historyDays": 90,
+    "basedOn": [
+      "Your pets: their species and age",
+      "What you buy, book and enter",
+      "Pets and people you follow, and posts you like or save",
+      "What you look at in the shop, services and contests"
+    ],
+    "viewsKept": 3,
+    "hiddenItems": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "1ced697f-9763-4f39-b2dc-bf702e0e8dd9"
+  }
+}

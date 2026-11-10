@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "membershipId": "69b6dc2e-af74-45b3-80e3-e6fc90e9bba6",
+    "payment": {
+      "paymentId": "dca6284b-68d4-41e9-96da-36b12120ae52",
+      "provider": "fake",
+      "orderId": "fake_order_5db429153a9242069dc9c1922b2a3020",
+      "amountPaise": 14900,
+      "currency": "INR",
+      "key": "fake_key",
+      "status": "CREATED"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "907763f4-982c-4e8c-943f-a845cfb39bb2"
+  }
+}

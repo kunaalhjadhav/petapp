@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/instrument-sans';
+
+@theme {
+  --font-sans: 'Instrument Sans Variable', 'Segoe UI', system-ui, sans-serif;
+
+  --color-paper: #f6f7f5;
+  --color-panel: #ffffff;
+  --color-ink: #1b2430;
+  --color-muted: #5b6573;
+  --color-faint: #8a939e;
+  --color-line: #dce0dc;
+  --color-line-soft: #eceeeb;
+
+  --color-teal: #1d5c58;
+  --color-teal-hover: #164a47;
+  --color-teal-wash: #e3efed;
+
+  --color-danger: #b42318;
+  --color-danger-wash: #fbe9e7;
+  --color-warn: #8a5a00;
+  --color-warn-wash: #f7eed8;
+  --color-good: #1f6b3f;
+  --color-good-wash: #e2f1e7;
+
+  --text-title: 1.75rem;
+  --text-title--line-height: 2.125rem;
+  --text-title--letter-spacing: -0.015em;
+}
+
+html {
+  font-feature-settings: 'tnum' 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+dialog::backdrop {
+  background: rgb(27 36 48 / 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog[open] {
+    animation: dialog-in 140ms ease-out;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

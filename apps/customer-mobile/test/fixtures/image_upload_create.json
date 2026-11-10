@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": {
+    "media": {
+      "id": "dc2b871c-e068-4480-8c3d-d25ba2767ce6",
+      "kind": "IMAGE",
+      "status": "PENDING_UPLOAD"
+    },
+    "upload": {
+      "url": "http://127.0.0.1:9000/petapp-media/uploads/9c69809d-dc55-4aed-a9fe-dd65e11d991c/dc2b871c-e068-4480-8c3d-d25ba2767ce6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121438Z&X-Amz-Expires=900&X-Amz-Signature=784f6642fd372f9d87a19072ae1c7f963cc13bba7d2371be51536561deadab7e&X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "image/jpeg"
+      },
+      "expiresInSeconds": 900
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "d6e75ba9-3877-4a1f-9c3a-54f923a1dcff"
+  }
+}

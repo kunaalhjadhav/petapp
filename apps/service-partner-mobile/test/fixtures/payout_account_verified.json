@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "active": {
+      "id": "a76d093f-3839-4b1d-99e5-36926e799891",
+      "method": "UPI",
+      "holderName": "Priya Nair",
+      "ifsc": null,
+      "accountLast4": null,
+      "vpa": "priya0966@okicici",
+      "status": "VERIFIED",
+      "verifiedName": "PAWFECT GROOMING 0966",
+      "nameMatches": true,
+      "failureReason": null,
+      "verifiedAt": "2026-10-11T01:10:00.282Z",
+      "payableFrom": "2026-10-11T01:10:00.282Z",
+      "createdAt": "2026-10-11T01:10:00.272Z"
+    },
+    "pending": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "22da3b79-e8d9-4cf7-aa84-5a928be1e434"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "5639d7c8-14c3-4391-a22b-8d301fa0b052",
+      "key": "grooming-3579",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:40.705Z",
+      "updatedAt": "2026-10-06T07:59:40.705Z"
+    },
+    {
+      "id": "7f33ce45-46ec-4e3e-93e4-cbe570139561",
+      "key": "grooming-3593",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:53.777Z",
+      "updatedAt": "2026-10-06T07:59:53.777Z"
+    },
+    {
+      "id": "bb329889-d0ca-4c14-8473-9e0d29a9fbdf",
+      "key": "grooming-3597",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:58.307Z",
+      "updatedAt": "2026-10-06T07:59:58.307Z"
+    },
+    {
+      "id": "0fc2d1ae-916a-405d-beca-f19709e3ba10",
+      "key": "grooming",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 1,
+      "createdAt": "2026-10-06T08:04:31.917Z",
+      "updatedAt": "2026-10-06T08:04:31.917Z"
+    },
+    {
+      "id": "fc075b43-8fca-4453-aa6f-f3be6e40c52b",
+      "key": "vet-consultation",
+      "name": "Vet consultation",
+      "description": null,
+      "commissionBps": 1000,
+      "isActive": true,
+      "sortOrder": 2,
+      "createdAt": "2026-10-06T08:04:31.926Z",
+      "updatedAt": "2026-10-06T08:04:31.926Z"
+    },
+    {
+      "id": "fdc37885-4270-4d23-8119-43414db2b414",
+      "key": "training",
+      "name": "Training",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 3,
+      "createdAt": "2026-10-06T08:04:31.930Z",
+      "updatedAt": "2026-10-06T08:04:31.930Z"
+    },
+    {
+      "id": "a35cdff4-f129-475c-9d6f-cd4ce35517cf",
+      "key": "boarding",
+      "name": "Boarding",
+      "description": null,
+      "commissionBps": 1200,
+      "isActive": true,
+      "sortOrder": 4,
+      "createdAt": "2026-10-06T08:04:31.938Z",
+      "updatedAt": "2026-10-06T08:04:31.938Z"
+    },
+    {
+      "id": "6131ddab-2785-429e-b723-d49f3eb27f96",
+      "key": "walking",
+      "name": "Dog walking",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 5,
+      "createdAt": "2026-10-06T08:04:31.945Z",
+      "updatedAt": "2026-10-06T08:04:31.945Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "d879f016-a015-4ffa-931d-4e9cd12c3bfa"
+  }
+}

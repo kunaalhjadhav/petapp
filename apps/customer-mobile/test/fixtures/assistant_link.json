@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "b3c62df9-b0bb-44d7-91cc-22a9db6d23ae",
+      "role": "USER",
+      "text": "How do I add my pet?",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.078Z"
+    },
+    "answer": {
+      "id": "74378e46-6970-4a3f-9f6b-4d91d9334b7a",
+      "role": "ASSISTANT",
+      "text": "Add a pet:\n1. Open Me.\n2. Tap Add pet.\n3. Enter your pet’s name, species and birthday, then save.",
+      "cards": [
+        {
+          "item": {
+            "id": "add-pet",
+            "route": "/pets/new",
+            "steps": [
+              "Open Me.",
+              "Tap Add pet.",
+              "Enter your pet’s name, species and birthday, then save."
+            ],
+            "title": "Add a pet"
+          },
+          "type": "LINK"
+        }
+      ],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.084Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c26a5fae-a533-4bd0-b83a-f13dbdd2c598"
+  }
+}

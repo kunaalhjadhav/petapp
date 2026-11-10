@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "id": "7b8785ea-95f1-4af7-b06f-49bbd4ff33a2",
+    "conversationId": "ebcc1e63-b2ec-4d33-9612-ea72d966adc5",
+    "side": "CUSTOMER",
+    "mine": true,
+    "body": "Thank you!",
+    "removed": false,
+    "media": null,
+    "ref": null,
+    "clientId": "t1792344704a",
+    "createdAt": "2026-10-18T17:31:45.566Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8587a836-af50-4b69-97a2-b1ba6063af66"
+  }
+}

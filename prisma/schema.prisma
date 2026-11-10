@@ -1,0 +1,3053 @@
+// PetApp — Prisma schema
+// Phase 1 (Foundation): identity, auth, RBAC, users, addresses, pets, species/breeds,
+// follows, settings, feature flags, audit log.
+// Later phases add their models through new migrations (see docs/ERD.md for the full target model).
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../apps/backend/src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+// Connection URL lives in prisma.config.ts (Prisma 7).
+datasource db {
+  provider = "postgresql"
+}
+
+// ───────────────────────────── Enums ─────────────────────────────
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+  BLOCKED
+  PENDING_DELETION
+  DELETED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  UNDISCLOSED
+}
+
+enum AuthProvider {
+  PHONE
+  EMAIL
+  GOOGLE
+  APPLE
+}
+
+enum OtpPurpose {
+  LOGIN
+  VERIFY_PHONE
+}
+
+enum TokenAudience {
+  APP
+  ADMIN
+}
+
+enum PetGender {
+  MALE
+  FEMALE
+  UNKNOWN
+}
+
+enum PetVisibility {
+  PUBLIC
+  FOLLOWERS
+  PRIVATE
+}
+
+enum PetStatus {
+  ACTIVE
+  HIDDEN
+  REMOVED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+// ───────────────────────────── Identity ─────────────────────────────
+
+model User {
+  id                String     @id @default(uuid()) @db.Uuid
+  phone             String?    @unique // E.164, e.g. +919812345678
+  email             String?    @unique // stored lower-cased
+  passwordHash      String?
+  /// Phase 9e: when the password was last set by its owner (null: still the one they were given).
+  passwordChangedAt DateTime?
+  /// Phase 10a: staff two-factor sign-in. The authenticator secret, sealed (AES-GCM, MFA_DATA_KEY).
+  mfaSecret         String?
+  mfaEnabledAt      DateTime?
+  /// The last time step a code was accepted for: a code can't be used twice.
+  mfaLastStep       Int?
+  name              String?
+  avatarUrl         String?
+  gender            Gender?
+  dateOfBirth       DateTime?  @db.Date
+  city              String?
+  status            UserStatus @default(ACTIVE)
+  statusReason      String?
+  phoneVerifiedAt   DateTime?
+  emailVerifiedAt   DateTime?
+  lastLoginAt       DateTime?
+  preferences       Json       @default("{}")
+  marketingConsent  Boolean    @default(false)
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  deletedAt         DateTime?
+
+  roles                  UserRole[]              @relation("UserRoles")
+  rolesGiven             UserRole[]              @relation("RoleAssigner")
+  identities             AuthIdentity[]
+  sessions               Session[]
+  addresses              Address[]
+  pets                   Pet[]
+  risk                   AccountRisk?
+  interestEvents         InterestEvent[]
+  recoDismissals         RecoDismissal[]
+  assistantConversations AssistantConversation[]
+  consents               ConsentRecord[]
+  dataExports            DataExport[]
+  petFollows             PetFollower[]
+  following              UserFollower[]          @relation("Follower")
+  followers              UserFollower[]          @relation("Following")
+  auditLogs              AuditLog[]
+
+  // Phase 2 — social
+  media         MediaAsset[]
+  posts         Post[]
+  postLikes     PostLike[]
+  postSaves     PostSave[]
+  postShares    PostShare[]
+  comments      Comment[]
+  blocking      Block[]          @relation("Blocker")
+  blockedBy     Block[]          @relation("Blocked")
+  reports       Report[]
+  resolvedCases ModerationCase[] @relation("CaseResolver")
+
+  // Phase 2b — notifications
+  notifications          Notification[]          @relation("Recipient")
+  notificationsCaused    Notification[]          @relation("Actor")
+  devices                DeviceToken[]
+  notificationPreference NotificationPreference?
+
+  // Phase 3 — contests
+  contestsCreated Contest[]            @relation("ContestCreator")
+  contestEntries  ContestParticipant[]
+  contestVotes    ContestVote[]
+  judging         ContestJudge[]
+  judgeScores     ContestJudgeScore[]
+  payments        Payment[]
+
+  // Phase 3c — challenges and badges
+  challengesCreated Challenge[]            @relation("ChallengeCreator")
+  challengeEntries  ChallengeParticipant[]
+  badges            UserBadge[]
+
+  // Phase 4 — services marketplace
+  servicePartner ServicePartner?
+  bookings       Booking[]       @relation("BookingCustomer")
+  serviceReviews ServiceReview[]
+  productReviews ProductReview[]
+
+  // Phase 5 — product marketplace
+  vendor     Vendor?
+  cartItems  CartItem[]
+  orders     Order[]
+  returns    ReturnRequest[]
+  couponUses CouponRedemption[]
+
+  // Phase 9a — chat and support
+  conversations   Conversation[]  @relation("ConversationCustomer")
+  chatMessages    ChatMessage[]   @relation("ChatSender")
+  supportTickets  SupportTicket[] @relation("TicketUser")
+  ticketsAssigned SupportTicket[] @relation("TicketAssignee")
+  ticketsCreated  SupportTicket[] @relation("TicketCreator")
+
+  // Phase 9d — analytics and memberships
+  activity         UserActivity[]
+  memberships      Membership[]   @relation("MembershipUser")
+  membershipGrants Membership[]   @relation("MembershipGrantor")
+  promotions       Promotion[]
+
+  // Phase 9e — staff passwords and uploads
+  passwordResets PasswordReset[]
+  recoveryCodes  MfaRecoveryCode[]
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([city])
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model AuthIdentity {
+  id             String       @id @default(uuid()) @db.Uuid
+  userId         String       @db.Uuid
+  provider       AuthProvider
+  providerUserId String
+  email          String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerUserId])
+  @@index([userId])
+}
+
+model OtpCode {
+  id         String     @id @default(uuid()) @db.Uuid
+  phone      String
+  codeHash   String
+  purpose    OtpPurpose @default(LOGIN)
+  attempts   Int        @default(0)
+  expiresAt  DateTime
+  consumedAt DateTime?
+  ipAddress  String?
+  createdAt  DateTime   @default(now())
+
+  @@index([phone, createdAt])
+  @@index([expiresAt])
+}
+
+/// Refresh-token session. Tokens are rotated on every refresh; reuse of a rotated
+/// token revokes the whole family (theft detection).
+model Session {
+  id           String        @id @default(uuid()) @db.Uuid
+  userId       String        @db.Uuid
+  familyId     String        @db.Uuid
+  tokenHash    String        @unique
+  audience     TokenAudience
+  userAgent    String?
+  ipAddress    String?
+  expiresAt    DateTime
+  revokedAt    DateTime?
+  revokeReason String?
+  replacedById String?       @db.Uuid
+  createdAt    DateTime      @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([familyId])
+  @@index([expiresAt])
+}
+
+// ───────────────────────────── RBAC ─────────────────────────────
+
+model Role {
+  id          String   @id @default(uuid()) @db.Uuid
+  key         String   @unique // CUSTOMER, SERVICE_PARTNER, ADMIN, ...
+  name        String
+  description String?
+  isSystem    Boolean  @default(false) // system roles cannot be deleted
+  isStaff     Boolean  @default(false) // may sign in to the Admin Dashboard
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  permissions RolePermission[]
+  users       UserRole[]
+}
+
+model Permission {
+  id          String   @id @default(uuid()) @db.Uuid
+  key         String   @unique // e.g. users.suspend
+  module      String
+  description String?
+  createdAt   DateTime @default(now())
+
+  roles RolePermission[]
+
+  @@index([module])
+}
+
+model RolePermission {
+  roleId       String   @db.Uuid
+  permissionId String   @db.Uuid
+  createdAt    DateTime @default(now())
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model UserRole {
+  userId       String   @db.Uuid
+  roleId       String   @db.Uuid
+  assignedById String?  @db.Uuid
+  createdAt    DateTime @default(now())
+
+  user       User  @relation("UserRoles", fields: [userId], references: [id], onDelete: Cascade)
+  role       Role  @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  assignedBy User? @relation("RoleAssigner", fields: [assignedById], references: [id], onDelete: SetNull)
+
+  @@id([userId, roleId])
+  @@index([roleId])
+}
+
+// ───────────────────────────── Profile ─────────────────────────────
+
+model Address {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  label     String? // Home, Work
+  line1     String
+  line2     String?
+  locality  String?
+  city      String
+  state     String
+  pincode   String
+  country   String   @default("IN")
+  latitude  Decimal? @db.Decimal(9, 6)
+  longitude Decimal? @db.Decimal(9, 6)
+  isDefault Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([pincode])
+}
+
+model UserFollower {
+  followerId  String   @db.Uuid
+  followingId String   @db.Uuid
+  createdAt   DateTime @default(now())
+
+  follower  User @relation("Follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation("Following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId])
+  @@index([followingId])
+}
+
+// ───────────────────────────── Pets ─────────────────────────────
+
+model PetSpecies {
+  id        String   @id @default(uuid()) @db.Uuid
+  key       String   @unique // dog, cat, bird ...
+  name      String
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  breeds PetBreed[]
+  pets   Pet[]
+}
+
+model PetBreed {
+  id        String   @id @default(uuid()) @db.Uuid
+  speciesId String   @db.Uuid
+  name      String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  species PetSpecies @relation(fields: [speciesId], references: [id], onDelete: Restrict)
+  pets    Pet[]
+
+  @@unique([speciesId, name])
+}
+
+model Pet {
+  id            String                                 @id @default(uuid()) @db.Uuid
+  ownerId       String                                 @db.Uuid
+  speciesId     String                                 @db.Uuid
+  breedId       String?                                @db.Uuid
+  name          String
+  handle        String                                 @unique // public @handle used in deep links
+  avatarUrl     String?
+  coverUrl      String?
+  gender        PetGender                              @default(UNKNOWN)
+  dateOfBirth   DateTime?                              @db.Date
+  weightKg      Decimal?                               @db.Decimal(6, 2)
+  color         String?
+  about         String?
+  personality   String[]                               @default([])
+  city          String?
+  latitude      Decimal?                               @db.Decimal(9, 6)
+  longitude     Decimal?                               @db.Decimal(9, 6)
+  /// Phase 9c: maintained from latitude/longitude by a database trigger, for "nearby pets".
+  location      Unsupported("geography(Point, 4326)")?
+  /// Phase 9c: the owner chose to show this pet in "Pets near you" (off by default; only the distance is shown).
+  discoverable  Boolean                                @default(false)
+  microchipId   String? // owner-only field
+  medicalNotes  String? // owner-only field
+  visibility    PetVisibility                          @default(PUBLIC)
+  status        PetStatus                              @default(ACTIVE)
+  isVerified    Boolean                                @default(false)
+  followerCount Int                                    @default(0)
+  createdAt     DateTime                               @default(now())
+  updatedAt     DateTime                               @updatedAt
+  deletedAt     DateTime?
+
+  owner            User                   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  species          PetSpecies             @relation(fields: [speciesId], references: [id], onDelete: Restrict)
+  breed            PetBreed?              @relation(fields: [breedId], references: [id], onDelete: SetNull)
+  media            PetMedia[]
+  vaccinations     PetVaccination[]
+  followers        PetFollower[]
+  postTags         PostPet[]
+  contestEntries   ContestParticipant[]
+  challengeEntries ChallengeParticipant[]
+  bookings         Booking[]
+
+  @@index([ownerId])
+  @@index([speciesId, breedId])
+  @@index([city])
+  @@index([followerCount])
+  @@index([location], type: Gist)
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+  @@index([handle(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model PetVaccination {
+  id         String    @id @default(uuid()) @db.Uuid
+  petId      String    @db.Uuid
+  name       String
+  givenOn    DateTime? @db.Date
+  validUntil DateTime? @db.Date
+  notes      String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  pet Pet @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  @@index([petId])
+}
+
+model PetMedia {
+  id           String    @id @default(uuid()) @db.Uuid
+  petId        String    @db.Uuid
+  type         MediaType
+  storageKey   String
+  url          String
+  thumbnailUrl String?
+  caption      String?
+  createdAt    DateTime  @default(now())
+
+  pet Pet @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  @@index([petId, createdAt])
+}
+
+model PetFollower {
+  userId    String   @db.Uuid
+  petId     String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  @@id([userId, petId])
+  @@index([petId])
+}
+
+// ───────────────────────────── Platform ─────────────────────────────
+
+model AppSetting {
+  key         String   @id
+  value       Json
+  description String?
+  updatedById String?  @db.Uuid
+  updatedAt   DateTime @updatedAt
+}
+
+model FeatureFlag {
+  key         String   @id // ENABLE_CONTESTS ...
+  enabled     Boolean  @default(false)
+  description String?
+  updatedById String?  @db.Uuid
+  updatedAt   DateTime @updatedAt
+}
+
+/// Append-only. The application never updates or deletes rows here.
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  actorId    String?  @db.Uuid
+  action     String // e.g. user.suspend
+  entityType String
+  entityId   String?
+  before     Json?
+  after      Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([actorId, createdAt])
+  @@index([action, createdAt])
+}
+
+// ═════════════════════════════ Phase 2 — Social ═════════════════════════════
+
+enum MediaKind {
+  IMAGE
+  VIDEO
+  /// Private verification documents (PDF or photo). Never processed or made public.
+  DOCUMENT
+}
+
+enum MediaStatus {
+  PENDING_UPLOAD
+  UPLOADED
+  PROCESSING
+  READY
+  FAILED
+  REJECTED
+}
+
+enum PostType {
+  PHOTO
+  VIDEO
+  REEL
+}
+
+enum PostStatus {
+  PROCESSING
+  PUBLISHED
+  HIDDEN
+  REMOVED
+  FAILED
+}
+
+enum PostVisibility {
+  PUBLIC
+  FOLLOWERS
+}
+
+enum CommentStatus {
+  VISIBLE
+  HIDDEN
+  REMOVED
+}
+
+enum ReportTarget {
+  USER
+  PET
+  POST
+  COMMENT
+  /// Phase 7a: checked by AI moderation (and reportable in future).
+  PRODUCT
+  SERVICE_REVIEW
+  CONTEST_ENTRY
+  /// Phase 9a: a message in a chat. Only someone in the conversation can report it.
+  CHAT_MESSAGE
+  /// Phase 9b: a service business (its page), and a product review.
+  SERVICE_PARTNER
+  PRODUCT_REVIEW
+}
+
+enum ReportReason {
+  SPAM
+  ABUSE
+  ANIMAL_WELFARE
+  NUDITY
+  VIOLENCE
+  MISINFORMATION
+  IMPERSONATION
+  OTHER
+}
+
+enum ReportStatus {
+  OPEN
+  ACTIONED
+  DISMISSED
+}
+
+enum CaseStatus {
+  OPEN
+  RESOLVED
+}
+
+enum CaseResolution {
+  DISMISSED
+  CONTENT_HIDDEN
+  CONTENT_REMOVED
+  USER_SUSPENDED
+}
+
+/// An uploaded file. The original lives in object storage; the worker writes processed variants.
+model MediaAsset {
+  id                String      @id @default(uuid()) @db.Uuid
+  ownerId           String      @db.Uuid
+  kind              MediaKind
+  status            MediaStatus @default(PENDING_UPLOAD)
+  mimeType          String
+  sizeBytes         Int
+  storageKey        String      @unique
+  /// Phase 9e: resumable (multipart) upload in progress: the storage's upload id and the part size in bytes.
+  multipartUploadId String?
+  partSize          Int?
+  width             Int?
+  height            Int?
+  durationMs        Int?
+  /// { images: [{ width, key }], hls: key, poster: key }
+  variants          Json        @default("{}")
+  error             String?
+  attempts          Int         @default(0)
+  readyAt           DateTime?
+  /// 64-bit difference hash of an image (hex), for finding the same photo uploaded by someone else.
+  perceptualHash    String?
+  /// Phase 9a: chat and support photos. Processed copies go under private/ and are only ever served by short-lived
+  /// signed links, to people in the conversation (and staff for support).
+  private           Boolean     @default(false)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  owner            User              @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  chatMessages     ChatMessage[]
+  posts            PostMedia[]
+  partnerDocuments PartnerDocument[]
+  vendorDocuments  VendorDocument[]  @relation("VendorDocMedia")
+
+  @@index([ownerId, createdAt])
+  @@index([status, createdAt])
+  @@index([perceptualHash])
+}
+
+model Post {
+  id           String         @id @default(uuid()) @db.Uuid
+  authorId     String         @db.Uuid
+  type         PostType
+  caption      String?
+  locationName String?
+  latitude     Decimal?       @db.Decimal(9, 6)
+  longitude    Decimal?       @db.Decimal(9, 6)
+  status       PostStatus     @default(PROCESSING)
+  visibility   PostVisibility @default(PUBLIC)
+  likeCount    Int            @default(0)
+  commentCount Int            @default(0)
+  saveCount    Int            @default(0)
+  shareCount   Int            @default(0)
+  viewCount    Int            @default(0)
+  /// Trending score, recomputed by the worker.
+  score        Float          @default(0)
+  publishedAt  DateTime?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  deletedAt    DateTime?
+
+  author   User            @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  media    PostMedia[]
+  pets     PostPet[]
+  hashtags PostHashtag[]
+  likes    PostLike[]
+  saves    PostSave[]
+  shares   PostShare[]
+  comments Comment[]
+  daily    PostDailyStat[]
+
+  @@index([authorId, createdAt])
+  @@index([status, type, publishedAt])
+  @@index([status, score])
+  @@index([caption(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model PostMedia {
+  postId   String @db.Uuid
+  mediaId  String @db.Uuid
+  position Int
+
+  post  Post       @relation(fields: [postId], references: [id], onDelete: Cascade)
+  media MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+
+  @@id([postId, mediaId])
+  @@index([mediaId])
+}
+
+model PostPet {
+  postId String @db.Uuid
+  petId  String @db.Uuid
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  pet  Pet  @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  @@id([postId, petId])
+  @@index([petId])
+}
+
+model Hashtag {
+  id        String   @id @default(uuid()) @db.Uuid
+  tag       String   @unique // lower-case, without "#"
+  postCount Int      @default(0)
+  createdAt DateTime @default(now())
+
+  posts PostHashtag[]
+
+  @@index([postCount])
+}
+
+model PostHashtag {
+  postId    String @db.Uuid
+  hashtagId String @db.Uuid
+
+  post    Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  hashtag Hashtag @relation(fields: [hashtagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, hashtagId])
+  @@index([hashtagId])
+}
+
+model PostLike {
+  userId    String   @db.Uuid
+  postId    String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([userId, postId])
+  @@index([postId])
+}
+
+model PostSave {
+  userId    String   @db.Uuid
+  postId    String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([userId, postId])
+  @@index([postId])
+}
+
+model PostShare {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  postId    String   @db.Uuid
+  channel   String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([userId, createdAt])
+}
+
+model Comment {
+  id         String        @id @default(uuid()) @db.Uuid
+  postId     String        @db.Uuid
+  authorId   String        @db.Uuid
+  parentId   String?       @db.Uuid
+  body       String
+  status     CommentStatus @default(VISIBLE)
+  replyCount Int           @default(0)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  deletedAt  DateTime?
+
+  post    Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author  User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parent  Comment?  @relation("Replies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies Comment[] @relation("Replies")
+
+  @@index([postId, createdAt])
+  @@index([parentId, createdAt])
+  @@index([authorId])
+}
+
+model Block {
+  blockerId String   @db.Uuid
+  blockedId String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  blocker User @relation("Blocker", fields: [blockerId], references: [id], onDelete: Cascade)
+  blocked User @relation("Blocked", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  @@id([blockerId, blockedId])
+  @@index([blockedId])
+}
+
+/// One report per reporter per target. Reports on the same target are grouped into one open case.
+model Report {
+  id          String       @id @default(uuid()) @db.Uuid
+  reporterId  String       @db.Uuid
+  targetType  ReportTarget
+  targetId    String       @db.Uuid
+  reason      ReportReason
+  details     String?
+  /// Phase 9b: up to 3 private screenshots or photos the reporter attached.
+  evidenceIds String[]     @default([])
+  status      ReportStatus @default(OPEN)
+  caseId      String?      @db.Uuid
+  createdAt   DateTime     @default(now())
+
+  reporter User            @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+  case     ModerationCase? @relation(fields: [caseId], references: [id], onDelete: SetNull)
+
+  @@unique([reporterId, targetType, targetId])
+  @@index([caseId])
+  @@index([targetType, targetId])
+}
+
+model ModerationCase {
+  id             String          @id @default(uuid()) @db.Uuid
+  targetType     ReportTarget
+  targetId       String          @db.Uuid
+  /// "TYPE:id" while the case is open, NULL once resolved — at most one open case per target.
+  openKey        String?         @unique
+  status         CaseStatus      @default(OPEN)
+  reportCount    Int             @default(0)
+  lastReportedAt DateTime        @default(now())
+  resolution     CaseResolution?
+  resolutionNote String?
+  resolvedById   String?         @db.Uuid
+  resolvedAt     DateTime?
+  /// Opened or raised by AI moderation: the assessment that flagged it (reports may join later).
+  aiAssessmentId String?         @db.Uuid
+  aiFlaggedAt    DateTime?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  reports      Report[]
+  resolvedBy   User?         @relation("CaseResolver", fields: [resolvedById], references: [id], onDelete: SetNull)
+  aiAssessment AiAssessment? @relation(fields: [aiAssessmentId], references: [id], onDelete: SetNull)
+
+  @@index([status, lastReportedAt])
+  @@index([targetType, targetId])
+  @@index([status, aiFlaggedAt])
+}
+
+// ═════════════════════════════ Phase 2b — Notifications ═════════════════════════════
+
+enum NotificationType {
+  POST_LIKE
+  POST_COMMENT
+  COMMENT_REPLY
+  MENTION
+  NEW_FOLLOWER
+  PET_FOLLOWER
+  POST_PUBLISHED
+  POST_FAILED
+  CONTENT_REMOVED
+  ACCOUNT_STATUS
+  CONTEST_ENTRY_CONFIRMED
+  CONTEST_VOTING_OPEN
+  CONTEST_RESULT
+  CHALLENGE_COMPLETED
+  BADGE_EARNED
+  PARTNER_STATUS
+  BOOKING_CONFIRMED
+  BOOKING_CANCELLED
+  BOOKING_COMPLETED
+  VENDOR_STATUS
+  VENDOR_NEW_ORDER
+  ORDER_CONFIRMED
+  ORDER_UPDATE
+  REFUND_PROCESSED
+  PAYOUT_UPDATE
+  PAYOUT_ACCOUNT
+  DATA_EXPORT_READY
+  /// Phase 9a: staff replied to a support ticket, or changed its status.
+  SUPPORT_UPDATE
+  /// Phase 9a: push only (chat has its own unread counts; no row in the notifications list).
+  CHAT_MESSAGE
+  /// Phase 9b: a business got a review; a customer's review got a reply.
+  REVIEW_RECEIVED
+  REVIEW_REPLY
+  /// Phase 9d: reminders (spec §36), new votes on an entry, membership changes, and admin promotions.
+  BOOKING_REMINDER
+  CONTEST_REMINDER
+  CONTEST_VOTES
+  MEMBERSHIP_UPDATE
+  PROMOTION
+}
+
+enum DevicePlatform {
+  ANDROID
+  IOS
+  WEB
+}
+
+/// In-app notification. Repeated events of one kind on one thing (likes on a post) share a
+/// groupKey and update a single row: "Riya and 4 others liked your post".
+model Notification {
+  id         String           @id @default(uuid()) @db.Uuid
+  userId     String           @db.Uuid
+  type       NotificationType
+  actorId    String?          @db.Uuid
+  entityType String?
+  entityId   String?
+  /// Small display payload: snippets, pet name, reason. Never secrets.
+  data       Json             @default("{}")
+  groupKey   String?
+  count      Int              @default(1)
+  readAt     DateTime?
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+
+  user  User  @relation("Recipient", fields: [userId], references: [id], onDelete: Cascade)
+  actor User? @relation("Actor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@unique([userId, groupKey])
+  @@index([userId, updatedAt])
+  @@index([userId, readAt])
+}
+
+model DeviceToken {
+  id         String         @id @default(uuid()) @db.Uuid
+  userId     String         @db.Uuid
+  token      String         @unique
+  platform   DevicePlatform
+  appVersion String?
+  lastSeenAt DateTime       @default(now())
+  createdAt  DateTime       @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+/// Per-category switches. Account and safety notices can't be turned off.
+model NotificationPreference {
+  userId     String   @id @db.Uuid
+  push       Boolean  @default(true)
+  likes      Boolean  @default(true)
+  comments   Boolean  @default(true)
+  mentions   Boolean  @default(true)
+  follows    Boolean  @default(true)
+  posts      Boolean  @default(true)
+  /// Phase 9a: push for new chat messages.
+  chat       Boolean  @default(true)
+  /// Phase 9d: booking and contest reminders.
+  reminders  Boolean  @default(true)
+  /// Phase 9d: new votes on your contest entries.
+  votes      Boolean  @default(true)
+  /// Phase 9d: offers and announcements from PetApp. Opt-in.
+  promotions Boolean  @default(false)
+  updatedAt  DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ═════════════════════════════ Phase 3 — Contests ═════════════════════════════
+// All money is integer paise (₹1 = 100 paise). Percentages are whole numbers.
+
+enum ContestStatus {
+  DRAFT
+  REVIEW
+  SCHEDULED
+  LIVE
+  VOTING
+  EVALUATION
+  WINNER_DECLARATION
+  COMPLETED
+  CANCELLED
+}
+
+enum ParticipantStatus {
+  PENDING_PAYMENT
+  REGISTERED
+  SUBMITTED
+  QUALIFIED
+  FINALIST
+  WINNER
+  DISQUALIFIED
+  WITHDRAWN
+}
+
+enum ContestTaskType {
+  POST
+  TEXT
+}
+
+enum PaymentStatus {
+  CREATED
+  CAPTURED
+  FAILED
+  /// The whole amount is owed back and not yet fully refunded.
+  REFUND_PENDING
+  REFUNDED
+  /// Part of it was refunded (e.g. one parcel of an order, or a late-cancellation refund).
+  PARTIALLY_REFUNDED
+}
+
+/// Admin-managed: Beauty › Best Groomed Pet, Talent › Best Trick, …
+model ContestCategory {
+  id        String   @id @default(uuid()) @db.Uuid
+  key       String   @unique
+  name      String
+  group     String
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  contests Contest[]
+}
+
+model Contest {
+  id                    String        @id @default(uuid()) @db.Uuid
+  slug                  String        @unique
+  title                 String
+  description           String
+  bannerUrl             String?
+  categoryId            String?       @db.Uuid
+  status                ContestStatus @default(DRAFT)
+  feePaise              Int           @default(0)
+  currency              String        @default("INR")
+  minParticipants       Int           @default(0)
+  maxParticipants       Int?
+  registrationOpensAt   DateTime
+  registrationClosesAt  DateTime
+  submissionClosesAt    DateTime
+  votingClosesAt        DateTime
+  /// Public vote share of the final score (0–100). Judges get the rest.
+  publicWeight          Int           @default(40)
+  votesPerUserPerDay    Int           @default(1)
+  minAccountAgeDays     Int           @default(0)
+  eligibleSpeciesIds    String[]      @default([])
+  rules                 String?
+  terms                 String?
+  /// { prizePoolPct, platformFeePct, gatewayPct, gstOnPlatformFeePct, promotionPct, refundReservePct, judgeFeesPaise }
+  finance               Json          @default("{}")
+  legalReviewApprovedAt DateTime?
+  legalReviewApprovedBy String?       @db.Uuid
+  legalReviewNote       String?
+  leaderboardFrozenAt   DateTime?
+  cancelReason          String?
+  /// Phase 9d: only members whose plan includes exclusive contests can enter (spec §40).
+  membersOnly           Boolean       @default(false)
+  createdById           String        @db.Uuid
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  category     ContestCategory?      @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  createdBy    User                  @relation("ContestCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  tasks        ContestTask[]
+  criteria     JudgeCriterion[]
+  judges       ContestJudge[]
+  prizes       ContestPrize[]
+  participants ContestParticipant[]
+  votes        ContestVote[]
+  snapshots    LeaderboardSnapshot[]
+
+  @@index([status, registrationClosesAt])
+  @@index([categoryId])
+  @@index([title(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model ContestTask {
+  id          String          @id @default(uuid()) @db.Uuid
+  contestId   String          @db.Uuid
+  position    Int
+  type        ContestTaskType
+  title       String
+  description String?
+  required    Boolean         @default(true)
+
+  contest     Contest             @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  submissions ContestSubmission[]
+
+  @@index([contestId, position])
+}
+
+model JudgeCriterion {
+  id        String @id @default(uuid()) @db.Uuid
+  contestId String @db.Uuid
+  name      String
+  /// Weights of a contest's criteria add up to 100.
+  weight    Int
+
+  contest Contest             @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  scores  ContestJudgeScore[]
+
+  @@index([contestId])
+}
+
+model ContestJudge {
+  contestId String   @db.Uuid
+  userId    String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  contest Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([contestId, userId])
+  @@index([userId])
+}
+
+model ContestPrize {
+  id            String   @id @default(uuid()) @db.Uuid
+  contestId     String   @db.Uuid
+  /// 1, 2, 3 … for ranked prizes; null for special awards chosen by admins.
+  rank          Int?
+  title         String
+  /// CASH | PRODUCT | VOUCHER | SERVICE | SPONSORED
+  kind          String
+  amountPaise   Int?
+  description   String?
+  participantId String?  @db.Uuid
+  /// NONE until awarded, then PENDING → APPROVED → PAID (payouts arrive in Phase 6).
+  payoutStatus  String   @default("NONE")
+  /// The payout that carries this prize to the winner (Phase 6b).
+  payoutId      String?  @db.Uuid
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  contest     Contest             @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  participant ContestParticipant? @relation(fields: [participantId], references: [id], onDelete: SetNull)
+
+  @@index([contestId, rank])
+}
+
+model ContestParticipant {
+  id           String            @id @default(uuid()) @db.Uuid
+  contestId    String            @db.Uuid
+  userId       String            @db.Uuid
+  petId        String            @db.Uuid
+  status       ParticipantStatus @default(PENDING_PAYMENT)
+  statusReason String?
+  paymentId    String?           @unique @db.Uuid
+  registeredAt DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  contest     Contest             @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  user        User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pet         Pet                 @relation(fields: [petId], references: [id], onDelete: Cascade)
+  payment     Payment?            @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  submissions ContestSubmission[]
+  votes       ContestVote[]
+  judgeScores ContestJudgeScore[]
+  prizes      ContestPrize[]
+
+  @@unique([contestId, petId])
+  @@index([contestId, status])
+  @@index([userId])
+}
+
+model ContestSubmission {
+  id            String   @id @default(uuid()) @db.Uuid
+  participantId String   @db.Uuid
+  taskId        String   @db.Uuid
+  postId        String?  @db.Uuid
+  text          String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  participant ContestParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  task        ContestTask        @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([participantId, taskId])
+}
+
+/// Public votes. Risky votes are flagged and left out of the leaderboard until reviewed — never auto-banned.
+model ContestVote {
+  id            String    @id @default(uuid()) @db.Uuid
+  contestId     String    @db.Uuid
+  participantId String    @db.Uuid
+  voterId       String    @db.Uuid
+  voteDate      DateTime  @db.Date
+  ipHash        String?
+  riskScore     Int       @default(0)
+  riskReasons   String[]  @default([])
+  flagged       Boolean   @default(false)
+  reviewedAt    DateTime?
+  createdAt     DateTime  @default(now())
+
+  contest     Contest            @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  participant ContestParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  voter       User               @relation(fields: [voterId], references: [id], onDelete: Cascade)
+
+  @@unique([contestId, voterId, participantId, voteDate])
+  @@index([contestId, voterId, voteDate])
+  @@index([participantId, flagged])
+  @@index([contestId, ipHash, voteDate])
+}
+
+model ContestJudgeScore {
+  id            String   @id @default(uuid()) @db.Uuid
+  participantId String   @db.Uuid
+  judgeId       String   @db.Uuid
+  criterionId   String   @db.Uuid
+  /// 0–10
+  score         Float
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  participant ContestParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  judge       User               @relation(fields: [judgeId], references: [id], onDelete: Cascade)
+  criterion   JudgeCriterion     @relation(fields: [criterionId], references: [id], onDelete: Cascade)
+
+  @@unique([participantId, judgeId, criterionId])
+}
+
+/// The frozen leaderboard winners are declared from.
+model LeaderboardSnapshot {
+  id         String   @id @default(uuid()) @db.Uuid
+  contestId  String   @db.Uuid
+  rows       Json
+  frozenById String   @db.Uuid
+  createdAt  DateTime @default(now())
+
+  contest Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  @@index([contestId, createdAt])
+}
+
+// ── Payments (the full ledger, refunds and payouts arrive in Phase 6) ──
+
+model Payment {
+  id                String        @id @default(uuid()) @db.Uuid
+  userId            String        @db.Uuid
+  /// CONTEST_REGISTRATION (later: ORDER, BOOKING …)
+  purpose           String
+  referenceId       String        @db.Uuid
+  amountPaise       Int
+  currency          String        @default("INR")
+  provider          String
+  providerOrderId   String        @unique
+  providerPaymentId String?       @unique
+  status            PaymentStatus @default(CREATED)
+  failureReason     String?
+  capturedAt        DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  user           User                  @relation(fields: [userId], references: [id], onDelete: Restrict)
+  participant    ContestParticipant?
+  challengeEntry ChallengeParticipant?
+  booking        Booking?
+
+  order   Order?
+  refunds Refund[]
+
+  @@index([userId, createdAt])
+  @@index([purpose, referenceId])
+}
+
+/// Every webhook is stored once by its event id, which makes redelivery harmless.
+model PaymentWebhookEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  provider    String
+  eventId     String
+  type        String
+  payload     Json
+  processedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@unique([provider, eventId])
+}
+
+// ═════════════════════════════ Phase 3c — Challenges & badges ═════════════════════════════
+
+enum ChallengeKind {
+  FREE
+  PAID
+  CONTEST_LINKED
+}
+
+enum ChallengeStatus {
+  DRAFT
+  PUBLISHED
+  ENDED
+  CANCELLED
+}
+
+enum CheckInProof {
+  NONE
+  POST
+  TEXT
+}
+
+enum ChallengeEntryStatus {
+  PENDING_PAYMENT
+  ACTIVE
+  COMPLETED
+  WITHDRAWN
+}
+
+model Badge {
+  id          String   @id @default(uuid()) @db.Uuid
+  key         String   @unique
+  name        String
+  description String
+  iconUrl     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  awarded    UserBadge[]
+  challenges Challenge[]
+}
+
+model UserBadge {
+  userId    String   @db.Uuid
+  badgeId   String   @db.Uuid
+  /// What earned it, e.g. "challenge:<id>"
+  source    String?
+  awardedAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@id([userId, badgeId])
+  @@index([badgeId])
+}
+
+/// "7 Days Walking", "30 Days Training" … One check-in per day (India time) builds a streak.
+model Challenge {
+  id                String          @id @default(uuid()) @db.Uuid
+  slug              String          @unique
+  title             String
+  description       String
+  bannerUrl         String?
+  kind              ChallengeKind   @default(FREE)
+  feePaise          Int             @default(0)
+  contestId         String?         @db.Uuid
+  status            ChallengeStatus @default(DRAFT)
+  startsAt          DateTime
+  endsAt            DateTime
+  /// Check-ins needed to complete.
+  requiredCheckIns  Int
+  proof             CheckInProof    @default(NONE)
+  pointsPerCheckIn  Int             @default(10)
+  /// Every N consecutive days earns bonus points (0 = no bonus).
+  streakBonusEvery  Int             @default(0)
+  streakBonusPoints Int             @default(0)
+  badgeId           String?         @db.Uuid
+  /// Phase 9d: a premium challenge, only for members whose plan includes them (spec §40).
+  membersOnly       Boolean         @default(false)
+  createdById       String          @db.Uuid
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  badge        Badge?                 @relation(fields: [badgeId], references: [id], onDelete: SetNull)
+  createdBy    User                   @relation("ChallengeCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  participants ChallengeParticipant[]
+
+  @@index([status, startsAt])
+  @@index([title(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model ChallengeParticipant {
+  id             String               @id @default(uuid()) @db.Uuid
+  challengeId    String               @db.Uuid
+  userId         String               @db.Uuid
+  petId          String?              @db.Uuid
+  status         ChallengeEntryStatus @default(ACTIVE)
+  paymentId      String?              @unique @db.Uuid
+  points         Int                  @default(0)
+  checkIns       Int                  @default(0)
+  currentStreak  Int                  @default(0)
+  longestStreak  Int                  @default(0)
+  lastCheckInDay DateTime?            @db.Date
+  joinedAt       DateTime             @default(now())
+  completedAt    DateTime?
+  updatedAt      DateTime             @updatedAt
+
+  challenge Challenge          @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pet       Pet?               @relation(fields: [petId], references: [id], onDelete: SetNull)
+  payment   Payment?           @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  days      ChallengeCheckIn[]
+
+  @@unique([challengeId, userId])
+  @@index([challengeId, points])
+}
+
+model ChallengeCheckIn {
+  id            String   @id @default(uuid()) @db.Uuid
+  participantId String   @db.Uuid
+  /// Calendar day in India (Asia/Kolkata).
+  day           DateTime @db.Date
+  postId        String?  @db.Uuid
+  text          String?
+  points        Int
+  createdAt     DateTime @default(now())
+
+  participant ChallengeParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+
+  @@unique([participantId, day])
+}
+
+// ═════════════════════════════ Phase 4 — Services marketplace ═════════════════════════════
+// Times are stored in UTC; weekly hours are minutes after midnight India time (Asia/Kolkata).
+
+enum PartnerStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum PartnerDocKind {
+  ID_PROOF
+  ADDRESS_PROOF
+  BUSINESS_REGISTRATION
+  GST_CERTIFICATE
+  PROFESSIONAL_LICENSE
+  OTHER
+}
+
+enum ServiceMode {
+  AT_CENTER
+  AT_HOME
+}
+
+enum BookingStatus {
+  PENDING_PAYMENT
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+  EXPIRED
+}
+
+/// Grooming, Vet consultation, Boarding, Training, Walking, Sitting, Daycare … (admin-managed)
+model ServiceCategory {
+  id            String   @id @default(uuid()) @db.Uuid
+  key           String   @unique
+  name          String
+  description   String?
+  /// Platform commission in basis points (1500 = 15%). Partners can have an override.
+  commissionBps Int      @default(1500)
+  isActive      Boolean  @default(true)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  services PartnerService[]
+}
+
+model ServicePartner {
+  id                String                                 @id @default(uuid()) @db.Uuid
+  userId            String                                 @unique @db.Uuid
+  slug              String                                 @unique
+  businessName      String
+  /// INDIVIDUAL | BUSINESS
+  kind              String                                 @default("INDIVIDUAL")
+  about             String?
+  phone             String
+  email             String?
+  addressLine       String
+  area              String?
+  city              String
+  state             String
+  pincode           String
+  lat               Float
+  lng               Float
+  /// Maintained from lat/lng by a database trigger; used for nearby search (PostGIS).
+  location          Unsupported("geography(Point, 4326)")?
+  homeVisitRadiusKm Int                                    @default(0)
+  /// How many bookings can run at the same time (staff, tables, kennels).
+  concurrency       Int                                    @default(1)
+  slotStepMin       Int                                    @default(30)
+  gstin             String?
+  /// PAN, for income-tax TDS (section 194-O). Without it a higher rate applies.
+  pan               String?
+  commissionBps     Int?
+  status            PartnerStatus                          @default(DRAFT)
+  statusReason      String?
+  submittedAt       DateTime?
+  reviewedAt        DateTime?
+  reviewedById      String?                                @db.Uuid
+  ratingAvg         Float                                  @default(0)
+  ratingCount       Int                                    @default(0)
+  createdAt         DateTime                               @default(now())
+  updatedAt         DateTime                               @updatedAt
+
+  user          User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  documents     PartnerDocument[]
+  services      PartnerService[]
+  hours         PartnerHours[]
+  timeOff       PartnerTimeOff[]
+  bookings      Booking[]
+  reviews       ServiceReview[]
+  conversations Conversation[]
+
+  @@index([status, city])
+  @@index([location], type: Gist)
+  @@index([businessName(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model PartnerDocument {
+  id        String         @id @default(uuid()) @db.Uuid
+  partnerId String         @db.Uuid
+  kind      PartnerDocKind
+  mediaId   String         @db.Uuid
+  /// PENDING | ACCEPTED | REJECTED
+  status    String         @default("PENDING")
+  note      String?
+  createdAt DateTime       @default(now())
+
+  partner ServicePartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  media   MediaAsset     @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+
+  @@index([partnerId])
+}
+
+model PartnerService {
+  id          String        @id @default(uuid()) @db.Uuid
+  partnerId   String        @db.Uuid
+  categoryId  String        @db.Uuid
+  name        String
+  description String?
+  durationMin Int
+  /// Gap kept free after each booking (cleaning, travel).
+  bufferMin   Int           @default(0)
+  pricePaise  Int
+  modes       ServiceMode[]
+  speciesIds  String[]      @default([])
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  partner  ServicePartner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  category ServiceCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  bookings Booking[]
+
+  @@index([partnerId, isActive])
+  @@index([categoryId])
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+/// Opening hours. Several rows per weekday allow a lunch break.
+model PartnerHours {
+  id        String @id @default(uuid()) @db.Uuid
+  partnerId String @db.Uuid
+  /// 0 = Sunday … 6 = Saturday (India time)
+  weekday   Int
+  opensMin  Int
+  closesMin Int
+
+  partner ServicePartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+
+  @@index([partnerId, weekday])
+}
+
+model PartnerTimeOff {
+  id        String   @id @default(uuid()) @db.Uuid
+  partnerId String   @db.Uuid
+  startsAt  DateTime
+  endsAt    DateTime
+  reason    String?
+
+  partner ServicePartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+
+  @@index([partnerId, startsAt])
+}
+
+/// A database exclusion constraint makes overlapping active bookings for the same partner and
+/// staff slot impossible (see the migration). Unpaid bookings expire after the payment hold.
+model Booking {
+  id                  String        @id @default(uuid()) @db.Uuid
+  code                String        @unique
+  customerId          String        @db.Uuid
+  partnerId           String        @db.Uuid
+  serviceId           String        @db.Uuid
+  petId               String        @db.Uuid
+  slotIndex           Int
+  startsAt            DateTime
+  /// Includes the service's buffer.
+  endsAt              DateTime
+  mode                ServiceMode
+  /// Visit address for home services (snapshot).
+  address             Json?
+  pricePaise          Int
+  commissionBps       Int
+  platformFeePaise    Int
+  partnerEarningPaise Int
+  status              BookingStatus @default(PENDING_PAYMENT)
+  paymentId           String?       @unique @db.Uuid
+  customerNote        String?
+  /// CUSTOMER | PARTNER | ADMIN | SYSTEM
+  cancelledBy         String?
+  cancelReason        String?
+  refundPaise         Int?
+  completedAt         DateTime?
+  /// Phase 9d: when the customer was reminded of the visit.
+  remindedAt          DateTime?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  customer User           @relation("BookingCustomer", fields: [customerId], references: [id], onDelete: Restrict)
+  partner  ServicePartner @relation(fields: [partnerId], references: [id], onDelete: Restrict)
+  service  PartnerService @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+  pet      Pet            @relation(fields: [petId], references: [id], onDelete: Restrict)
+  payment  Payment?       @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  review   ServiceReview?
+
+  @@index([partnerId, startsAt])
+  @@index([customerId, startsAt])
+  @@index([status, createdAt])
+}
+
+model ServiceReview {
+  id         String    @id @default(uuid()) @db.Uuid
+  bookingId  String    @unique @db.Uuid
+  partnerId  String    @db.Uuid
+  customerId String    @db.Uuid
+  rating     Int
+  comment    String?
+  /// Phase 9b: public photo uploads (up to 4)
+  photoIds   String[]  @default([])
+  reply      String?
+  repliedAt  DateTime?
+  /// VISIBLE | HIDDEN (moderation)
+  status     String    @default("VISIBLE")
+  createdAt  DateTime  @default(now())
+
+  booking  Booking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  partner  ServicePartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  customer User           @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([partnerId, createdAt])
+}
+
+// ═════════════════════════════ Phase 5 — Product marketplace ═════════════════════════════
+// Prices are GST-inclusive (as Indian retail prices are). Money is integer paise; rates are basis points.
+
+enum VendorStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  COMPLETED
+  CANCELLED
+  EXPIRED
+}
+
+enum SubOrderStatus {
+  PENDING_PAYMENT
+  CONFIRMED
+  PACKED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  RETURN_REQUESTED
+  RETURNED
+}
+
+enum ReturnStatus {
+  REQUESTED
+  APPROVED
+  REJECTED
+  RECEIVED
+}
+
+enum CouponKind {
+  PERCENT
+  FLAT
+}
+
+enum RefundStatus {
+  /// Owed; waiting for (another) attempt at the gateway.
+  PENDING
+  /// Accepted by the gateway; waiting for it to complete.
+  PROCESSING
+  PROCESSED
+  /// Gave up after repeated attempts; finance staff retry it or settle it another way.
+  FAILED
+  /// Paid back outside the gateway (e.g. a bank transfer), recorded by finance staff with a reference.
+  SETTLED_MANUALLY
+}
+
+model Vendor {
+  id            String       @id @default(uuid()) @db.Uuid
+  userId        String       @unique @db.Uuid
+  businessName  String
+  slug          String       @unique
+  legalName     String?
+  gstin         String?
+  /// PAN, for income-tax TDS (section 194-O). Without it a higher rate applies.
+  pan           String?
+  phone         String
+  email         String?
+  /// Pickup / return address
+  addressLine   String
+  city          String
+  state         String
+  pincode       String
+  status        VendorStatus @default(DRAFT)
+  statusReason  String?
+  /// An agreed commission (basis points); null = each category's standard rate.
+  commissionBps Int?
+  ratingAvg     Float        @default(0)
+  ratingCount   Int          @default(0)
+  submittedAt   DateTime?
+  reviewedAt    DateTime?
+  reviewedById  String?      @db.Uuid
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  user           User             @relation(fields: [userId], references: [id], onDelete: Restrict)
+  documents      VendorDocument[]
+  products       Product[]
+  subOrders      SubOrder[]
+  coupons        Coupon[]
+  conversations  Conversation[]
+  productReviews ProductReview[]
+
+  @@index([status])
+}
+
+model VendorDocument {
+  id        String         @id @default(uuid()) @db.Uuid
+  vendorId  String         @db.Uuid
+  kind      PartnerDocKind
+  mediaId   String         @db.Uuid
+  /// PENDING | ACCEPTED | REJECTED
+  status    String         @default("PENDING")
+  note      String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  vendor Vendor     @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  media  MediaAsset @relation("VendorDocMedia", fields: [mediaId], references: [id], onDelete: Restrict)
+
+  @@index([vendorId])
+}
+
+/// Food, Treats, Toys, Grooming supplies, Health, Accessories … (admin-managed, one level of nesting)
+model ProductCategory {
+  id            String   @id @default(uuid()) @db.Uuid
+  key           String   @unique
+  name          String
+  parentId      String?  @db.Uuid
+  /// Standard commission for products in this category (basis points).
+  commissionBps Int      @default(1000)
+  isActive      Boolean  @default(true)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  parent   ProductCategory?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: Restrict)
+  children ProductCategory[] @relation("CategoryTree")
+  products Product[]
+}
+
+model Product {
+  id          String        @id @default(uuid()) @db.Uuid
+  vendorId    String        @db.Uuid
+  categoryId  String        @db.Uuid
+  title       String
+  slug        String        @unique
+  description String
+  brand       String?
+  speciesIds  String[]      @default([])
+  /// Ordered image media ids
+  imageIds    String[]      @default([])
+  status      ProductStatus @default(DRAFT)
+  blockReason String?
+  /// Phase 9b: average of visible reviews (one decimal) and how many there are.
+  ratingAvg   Float         @default(0)
+  ratingCount Int           @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  vendor   Vendor           @relation(fields: [vendorId], references: [id], onDelete: Restrict)
+  category ProductCategory  @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  variants ProductVariant[]
+  reviews  ProductReview[]
+
+  @@index([status, categoryId])
+  @@index([vendorId])
+  @@index([title(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model ProductVariant {
+  id          String   @id @default(uuid()) @db.Uuid
+  productId   String   @db.Uuid
+  /// Vendor's stock-keeping code, unique per product
+  sku         String
+  /// "3 kg", "Large / Red"
+  title       String
+  mrpPaise    Int
+  pricePaise  Int
+  /// GST rate included in the price (basis points, e.g. 1800 = 18%)
+  gstRateBps  Int      @default(1800)
+  stock       Int      @default(0)
+  weightGrams Int?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  product   Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cartItems CartItem[]
+  lines     OrderItem[]
+
+  @@unique([productId, sku])
+}
+
+model CartItem {
+  userId    String   @db.Uuid
+  variantId String   @db.Uuid
+  qty       Int
+  addedAt   DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  variant ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@id([userId, variantId])
+}
+
+model Coupon {
+  id               String     @id @default(uuid()) @db.Uuid
+  code             String     @unique
+  description      String?
+  kind             CouponKind
+  /// PERCENT: basis points; FLAT: paise
+  value            Int
+  maxDiscountPaise Int?
+  minOrderPaise    Int        @default(0)
+  /// Vendor-funded coupon for that vendor's items only; null = platform-funded, whole cart
+  vendorId         String?    @db.Uuid
+  startsAt         DateTime
+  endsAt           DateTime
+  usageLimit       Int?
+  perUserLimit     Int        @default(1)
+  usedCount        Int        @default(0)
+  isActive         Boolean    @default(true)
+  /// Phase 9d: only members whose plan includes member discounts can use it.
+  membersOnly      Boolean    @default(false)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  vendor      Vendor?            @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  redemptions CouponRedemption[]
+  orders      Order[]
+}
+
+model CouponRedemption {
+  id        String   @id @default(uuid()) @db.Uuid
+  couponId  String   @db.Uuid
+  userId    String   @db.Uuid
+  orderId   String   @unique @db.Uuid
+  createdAt DateTime @default(now())
+
+  coupon Coupon @relation(fields: [couponId], references: [id], onDelete: Restrict)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  order  Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([couponId, userId])
+}
+
+/// One checkout = one payment; split into a SubOrder per vendor.
+model Order {
+  id            String      @id @default(uuid()) @db.Uuid
+  code          String      @unique
+  userId        String      @db.Uuid
+  status        OrderStatus @default(PENDING_PAYMENT)
+  itemsPaise    Int
+  discountPaise Int
+  shippingPaise Int
+  totalPaise    Int
+  couponId      String?     @db.Uuid
+  paymentId     String?     @unique @db.Uuid
+  /// Snapshot of the delivery address at checkout
+  shipTo        Json
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  user       User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  coupon     Coupon?           @relation(fields: [couponId], references: [id], onDelete: SetNull)
+  payment    Payment?          @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  subOrders  SubOrder[]
+  redemption CouponRedemption?
+
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+}
+
+model SubOrder {
+  id                 String         @id @default(uuid()) @db.Uuid
+  orderId            String         @db.Uuid
+  vendorId           String         @db.Uuid
+  code               String         @unique
+  status             SubOrderStatus @default(PENDING_PAYMENT)
+  itemsPaise         Int
+  discountPaise      Int
+  shippingPaise      Int
+  totalPaise         Int
+  commissionPaise    Int
+  vendorEarningPaise Int
+  courier            String?
+  trackingNumber     String?
+  packedAt           DateTime?
+  shippedAt          DateTime?
+  deliveredAt        DateTime?
+  cancelledAt        DateTime?
+  cancelledBy        String?
+  cancelReason       String?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+
+  order   Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  vendor  Vendor          @relation(fields: [vendorId], references: [id], onDelete: Restrict)
+  items   OrderItem[]
+  returns ReturnRequest[]
+  reviews ProductReview[]
+
+  @@index([vendorId, status, createdAt])
+  @@index([orderId])
+}
+
+/// A line, with the product as it was when ordered.
+model OrderItem {
+  id             String  @id @default(uuid()) @db.Uuid
+  subOrderId     String  @db.Uuid
+  variantId      String? @db.Uuid
+  productTitle   String
+  variantTitle   String
+  sku            String
+  qty            Int
+  unitPricePaise Int
+  gstRateBps     Int
+  /// GST contained in the line (price is GST-inclusive)
+  gstPaise       Int
+  lineTotalPaise Int
+  commissionBps  Int
+
+  subOrder SubOrder        @relation(fields: [subOrderId], references: [id], onDelete: Cascade)
+  variant  ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+
+  @@index([subOrderId])
+}
+
+/// Phase 9b: a review of a product by someone it was delivered to (a verified purchase).
+/// One per person per product; the parcel that proves the purchase is kept.
+model ProductReview {
+  id           String    @id @default(uuid()) @db.Uuid
+  productId    String    @db.Uuid
+  vendorId     String    @db.Uuid
+  customerId   String    @db.Uuid
+  subOrderId   String    @db.Uuid
+  /// The variant bought, as its title at the time ("1 kg")
+  variantTitle String?
+  rating       Int
+  comment      String?
+  /// Public photo uploads (up to 4)
+  photoIds     String[]  @default([])
+  reply        String?
+  repliedAt    DateTime?
+  /// VISIBLE | HIDDEN (moderation)
+  status       String    @default("VISIBLE")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  vendor   Vendor   @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  customer User     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  subOrder SubOrder @relation(fields: [subOrderId], references: [id], onDelete: Cascade)
+
+  @@unique([customerId, productId])
+  @@index([productId, status, createdAt])
+  @@index([vendorId, createdAt])
+}
+
+model ReturnRequest {
+  id          String       @id @default(uuid()) @db.Uuid
+  subOrderId  String       @db.Uuid
+  userId      String       @db.Uuid
+  reason      String
+  status      ReturnStatus @default(REQUESTED)
+  refundPaise Int
+  note        String?
+  decidedAt   DateTime?
+  receivedAt  DateTime?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  subOrder SubOrder @relation(fields: [subOrderId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([subOrderId])
+}
+
+/// Money owed back to a customer. Created here; executed through the gateway by the finance module (Phase 6).
+model Refund {
+  id               String       @id @default(uuid()) @db.Uuid
+  paymentId        String       @db.Uuid
+  amountPaise      Int
+  /// SUB_ORDER_CANCELLED | RETURN | ORDER_UNFULFILLABLE …
+  reason           String
+  /// What it refunds, e.g. "SubOrder:<id>"
+  reference        String
+  status           RefundStatus @default(PENDING)
+  createdAt        DateTime     @default(now())
+  processedAt      DateTime?
+  /// The gateway's refund id (e.g. rfnd_…), once it accepted the refund.
+  providerRefundId String?      @unique
+  /// Gateway attempts so far (never reset: each attempt has its own idempotency key).
+  attempts         Int          @default(0)
+  /// Times finance staff sent a FAILED refund back to the queue; each allows another round of attempts.
+  retries          Int          @default(0)
+  lastError        String?
+  /// SETTLED_MANUALLY: how it was paid (e.g. a bank transfer UTR) and by whom.
+  manualReference  String?
+  settledById      String?      @db.Uuid
+  /// When the next attempt is due (exponential backoff after errors).
+  nextAttemptAt    DateTime?
+  updatedAt        DateTime     @default(now()) @updatedAt
+
+  payment Payment @relation(fields: [paymentId], references: [id], onDelete: Restrict)
+
+  @@unique([reference])
+  @@index([status, createdAt])
+  @@index([status, nextAttemptAt])
+  @@index([paymentId])
+}
+
+// ═════════════════════════════ Phase 6a — Finance: ledger, refunds, reconciliation ═════════════════════════════
+
+enum LedgerAccountType {
+  ASSET
+  LIABILITY
+  REVENUE
+  EXPENSE
+}
+
+/// Chart of accounts. System accounts have fixed codes (GATEWAY_CLEARING, CUSTOMER_FUNDS …);
+/// every seller and service partner has its own payable account (VENDOR:<id>, PARTNER:<id>).
+model LedgerAccount {
+  id        String            @id @default(uuid()) @db.Uuid
+  code      String            @unique
+  name      String
+  type      LedgerAccountType
+  /// VENDOR | PARTNER for payee accounts; null for system accounts.
+  ownerType String?
+  ownerId   String?           @db.Uuid
+  createdAt DateTime          @default(now())
+
+  entries LedgerEntry[]
+
+  @@index([ownerType, ownerId])
+}
+
+/// One balanced journal entry (debits = credits, checked by the database at commit).
+/// Append-only. `reference` makes every posting idempotent, e.g. "capture:Payment:<id>".
+model LedgerTransaction {
+  id         String   @id @default(uuid()) @db.Uuid
+  /// PAYMENT_CAPTURED | REFUND_OWED | REFUND_PAID | PARCEL_DELIVERED | PARCEL_RETURNED | BOOKING_EARNED …
+  kind       String
+  reference  String   @unique
+  memo       String
+  /// What it's about, for drill-down: SubOrder, Booking, Payment, Refund, ReturnRequest.
+  sourceType String?
+  sourceId   String?  @db.Uuid
+  occurredAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+
+  entries LedgerEntry[]
+
+  @@index([sourceType, sourceId])
+  @@index([kind, occurredAt])
+  @@index([occurredAt])
+}
+
+/// A debit or a credit (exactly one is positive — a database check).
+model LedgerEntry {
+  id            String   @id @default(uuid()) @db.Uuid
+  transactionId String   @db.Uuid
+  accountId     String   @db.Uuid
+  debitPaise    Int      @default(0)
+  creditPaise   Int      @default(0)
+  createdAt     DateTime @default(now())
+
+  transaction LedgerTransaction @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+  account     LedgerAccount     @relation(fields: [accountId], references: [id], onDelete: Restrict)
+
+  @@index([accountId, createdAt])
+  @@index([transactionId])
+}
+
+enum ReconciliationStatus {
+  RUNNING
+  OK
+  ISSUES
+  FAILED
+}
+
+/// A check that our records, the ledger and the payment gateway agree.
+model ReconciliationRun {
+  id          String               @id @default(uuid()) @db.Uuid
+  status      ReconciliationStatus @default(RUNNING)
+  /// SCHEDULE | MANUAL
+  trigger     String
+  startedById String?              @db.Uuid
+  /// Counts per check, and what was repaired.
+  summary     Json?
+  error       String?
+  startedAt   DateTime             @default(now())
+  finishedAt  DateTime?
+
+  issues ReconciliationIssue[]
+
+  @@index([startedAt])
+}
+
+model ReconciliationIssue {
+  id           String    @id @default(uuid()) @db.Uuid
+  runId        String    @db.Uuid
+  /// MISSED_CAPTURE | AMOUNT_MISMATCH | GATEWAY_STATUS | MISSING_POSTING | UNBALANCED | REFUND_STUCK | OVER_REFUNDED …
+  kind         String
+  /// ERROR (money is wrong or at risk) | WARNING (needs a look)
+  severity     String
+  /// The record it concerns, e.g. "Payment:<id>"
+  reference    String
+  detail       String
+  /// Fixed automatically by this run (e.g. a missing posting was made).
+  repaired     Boolean   @default(false)
+  resolvedAt   DateTime?
+  resolvedById String?   @db.Uuid
+  resolution   String?
+  createdAt    DateTime  @default(now())
+
+  run ReconciliationRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+  @@index([resolvedAt, severity])
+  @@index([reference])
+}
+
+// ═════════════════════════════ Phase 6b — Payouts, settlements, invoices ═════════════════════════════
+
+enum PayoutAccountStatus {
+  /// Being checked with the bank (a small validation transfer).
+  PENDING
+  VERIFIED
+  /// The bank says the account is invalid or closed.
+  FAILED
+  /// Replaced by a newer account, or switched off by staff.
+  DISABLED
+}
+
+/// Where a seller, partner or prize winner is paid. Account numbers are encrypted at rest; only the last 4 are shown.
+model PayoutAccount {
+  id                    String              @id @default(uuid()) @db.Uuid
+  /// VENDOR | PARTNER | USER (prize winners)
+  ownerType             String
+  ownerId               String              @db.Uuid
+  /// BANK | UPI
+  method                String
+  holderName            String
+  ifsc                  String?
+  accountLast4          String?
+  /// AES-256-GCM, "v1:<iv>:<tag>:<ciphertext>" (base64). Never returned by the API.
+  accountNumberEnc      String?
+  vpa                   String?
+  status                PayoutAccountStatus @default(PENDING)
+  /// The name the bank has on the account, from the validation.
+  verifiedName          String?
+  failureReason         String?
+  providerContactId     String?
+  providerFundAccountId String?
+  providerValidationId  String?
+  verifiedAt            DateTime?
+  /// Payouts to a new account wait this long after it's verified (protection against account takeover).
+  payableFrom           DateTime?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  payouts Payout[]
+
+  @@index([ownerType, ownerId, status])
+  @@index([status, updatedAt])
+}
+
+enum PayoutBatchStatus {
+  /// Prepared; can still be cancelled.
+  DRAFT
+  /// Approved by a second person; payouts are being sent.
+  PROCESSING
+  /// Every payout reached an end state.
+  COMPLETED
+  CANCELLED
+}
+
+/// A set of payouts prepared by one staff member and approved by another.
+model PayoutBatch {
+  id           String            @id @default(uuid()) @db.Uuid
+  code         String            @unique
+  status       PayoutBatchStatus @default(DRAFT)
+  note         String?
+  createdById  String            @db.Uuid
+  approvedById String?           @db.Uuid
+  approvedAt   DateTime?
+  cancelledAt  DateTime?
+  completedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  payouts Payout[]
+
+  @@index([status, createdAt])
+}
+
+enum PayoutStatus {
+  /// In a draft batch.
+  DRAFT
+  /// Approved; waiting to be sent.
+  QUEUED
+  /// Accepted by the payout provider.
+  PROCESSING
+  PROCESSED
+  /// Not paid; the amount is back on the payee's balance.
+  FAILED
+  /// Paid, then returned by the bank; the amount is back on the payee's balance.
+  REVERSED
+  /// Removed from a cancelled batch.
+  CANCELLED
+}
+
+model Payout {
+  id               String       @id @default(uuid()) @db.Uuid
+  batchId          String       @db.Uuid
+  /// VENDOR | PARTNER | USER
+  payeeType        String
+  payeeId          String       @db.Uuid
+  payeeName        String
+  accountId        String       @db.Uuid
+  amountPaise      Int
+  /// EARNINGS | PRIZE
+  purpose          String
+  status           PayoutStatus @default(DRAFT)
+  providerPayoutId String?      @unique
+  /// Bank reference (UTR) once paid.
+  utr              String?
+  attempts         Int          @default(0)
+  lastError        String?
+  nextAttemptAt    DateTime?
+  failureReason    String?
+  processedAt      DateTime?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  batch   PayoutBatch   @relation(fields: [batchId], references: [id], onDelete: Restrict)
+  account PayoutAccount @relation(fields: [accountId], references: [id], onDelete: Restrict)
+
+  @@index([batchId])
+  @@index([payeeType, payeeId, createdAt])
+  @@index([status, nextAttemptAt])
+}
+
+/// A transfer from the payment gateway to PetApp's bank: payments less refunds and the gateway's fees.
+model GatewaySettlement {
+  id                   String   @id @default(uuid()) @db.Uuid
+  provider             String
+  providerSettlementId String
+  /// What reached the bank.
+  amountPaise          Int
+  /// The gateway's fees, GST included.
+  feesPaise            Int
+  /// The GST inside those fees (input tax credit).
+  taxPaise             Int
+  utr                  String?
+  settledAt            DateTime
+  createdAt            DateTime @default(now())
+
+  @@unique([provider, providerSettlementId])
+  @@index([settledAt])
+}
+
+enum InvoiceKind {
+  /// Issued by a seller or partner to the customer (PetApp issues it on their behalf).
+  CUSTOMER
+  /// Issued by PetApp to a seller or partner for its commission and fees, monthly.
+  COMMISSION
+  /// Issued by the seller when a returned parcel is refunded; reduces the original invoice.
+  CREDIT_NOTE
+}
+
+/// Gapless numbering per series (one series per issuer and financial year).
+model InvoiceSequence {
+  series    String   @id
+  next      Int      @default(1)
+  updatedAt DateTime @updatedAt
+}
+
+/// An issued invoice. Its content is fixed when issued; the PDF is rendered from it on demand.
+model Invoice {
+  id                String      @id @default(uuid()) @db.Uuid
+  kind              InvoiceKind
+  /// "TAX_INVOICE" or "BILL_OF_SUPPLY" (supplier not GST-registered)
+  title             String
+  series            String
+  seq               Int
+  number            String
+  /// e.g. "2026-27"
+  financialYear     String
+  issuedAt          DateTime    @default(now())
+  /// What it's for, unique per kind: "SubOrder:<id>", "Booking:<id>", "VENDOR:<id>:2026-10" …
+  sourceKey         String
+  /// Who issues it and who receives it: name, GSTIN, PAN, address, state.
+  issuer            Json
+  recipient         Json
+  placeOfSupply     String
+  /// [{ description, hsnSac, qty, unitPaise, taxablePaise, rateBps, cgstPaise, sgstPaise, igstPaise, totalPaise }]
+  lines             Json
+  taxablePaise      Int
+  cgstPaise         Int
+  sgstPaise         Int
+  igstPaise         Int
+  totalPaise        Int
+  /// Who may download it besides staff: the customer's user id, and the payee (VENDOR:<id> / PARTNER:<id>).
+  customerId        String?     @db.Uuid
+  payeeKey          String?
+  /// CREDIT_NOTE: the invoice it reduces.
+  originalInvoiceId String?     @db.Uuid
+  createdAt         DateTime    @default(now())
+
+  @@unique([kind, sourceKey])
+  @@unique([series, seq])
+  @@index([customerId])
+  @@index([payeeKey, issuedAt])
+}
+
+// ═════════════════════════════ Phase 7a — AI moderation and account risk ═════════════════════════════
+
+enum AiVerdict {
+  /// Nothing above the flag threshold.
+  CLEAR
+  /// Above the threshold: a moderation case was opened or raised. Moderators decide; AI never removes anything.
+  FLAGGED
+  /// The provider failed after retries; the content stays as it is.
+  ERROR
+}
+
+/// One AI (or rules) check of a piece of content. Kept for every check: result, confidence, reason, model and version.
+model AiAssessment {
+  id         String       @id @default(uuid()) @db.Uuid
+  targetType ReportTarget
+  targetId   String       @db.Uuid
+  /// Who posted it (for account risk), when known.
+  ownerId    String?      @db.Uuid
+  /// SHA-256 of the text and media checked, so unchanged content isn't checked twice.
+  inputHash  String
+  verdict    AiVerdict
+  /// [{ label, score }], highest first. Labels: SPAM, UNSAFE, ABUSE, INAPPROPRIATE, FAKE_PROFILE, DUPLICATE, SUSPICIOUS_ENTRY.
+  labels     Json         @default("[]")
+  topLabel   String?
+  /// The highest label score, 0–1.
+  confidence Float        @default(0)
+  reason     String?
+  provider   String
+  model      String
+  version    String
+  latencyMs  Int?
+  error      String?
+  createdAt  DateTime     @default(now())
+
+  cases ModerationCase[]
+
+  @@unique([targetType, targetId, inputHash])
+  @@index([targetType, targetId, createdAt])
+  @@index([verdict, createdAt])
+  @@index([ownerId, verdict, createdAt])
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+/// An account's fraud-risk score from automated signals. Staff review HIGH accounts; nobody is banned automatically.
+model AccountRisk {
+  userId        String    @id @db.Uuid
+  /// 0–100.
+  score         Int       @default(0)
+  level         RiskLevel @default(LOW)
+  /// [{ signal, points, detail }], largest first.
+  signals       Json      @default("[]")
+  computedAt    DateTime  @default(now())
+  /// Staff looked at it. A review covers the score it saw; a higher score later needs another look.
+  reviewedAt    DateTime?
+  reviewedById  String?   @db.Uuid
+  reviewNote    String?
+  reviewedScore Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([level, score])
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Phase 7b — recommendations and the home screen
+// ════════════════════════════════════════════════════════════════════
+
+enum HomeSectionKind {
+  FEATURED_REELS
+  TRENDING_PETS
+  ACTIVE_CONTESTS
+  CHALLENGES
+  NEARBY_SERVICES
+  RECOMMENDED_PRODUCTS
+  PARTNER_OFFERS
+  UPCOMING_EVENTS
+}
+
+/// A section of the customer app's home screen, arranged by admins. The app shows active sections in order.
+model HomeSection {
+  id          String          @id @default(uuid()) @db.Uuid
+  kind        HomeSectionKind
+  title       String
+  subtitle    String?
+  position    Int
+  isActive    Boolean         @default(true)
+  /// Optional schedule: shown only between these times.
+  startsAt    DateTime?
+  endsAt      DateTime?
+  /// Shown only to people in these cities (lower-case). Empty = everywhere.
+  cities      String[]        @default([])
+  /// Shown only to people with a pet of one of these species. Empty = everyone.
+  speciesIds  String[]        @default([])
+  itemLimit   Int             @default(10)
+  /// Items chosen by admins, shown first in this order: reel, pet, contest, challenge, partner, product or coupon ids.
+  pinnedIds   String[]        @default([])
+  createdById String?         @db.Uuid
+  updatedById String?         @db.Uuid
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([isActive, position])
+}
+
+enum InterestKind {
+  PRODUCT_VIEW
+  SERVICE_VIEW
+  CONTEST_VIEW
+}
+
+/// What someone looked at (one row per item per day), used for recommendations. Not recorded when they turn personalisation off; deleted after the retention period.
+model InterestEvent {
+  userId     String       @db.Uuid
+  kind       InterestKind
+  targetId   String       @db.Uuid
+  /// Product category, service category or contest category, for affinity.
+  categoryId String?      @db.Uuid
+  day        DateTime     @db.Date
+  createdAt  DateTime     @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, kind, targetId, day])
+  @@index([userId, createdAt])
+  @@index([createdAt])
+}
+
+/// "Not interested": the item is never recommended to this person again.
+model RecoDismissal {
+  userId     String   @db.Uuid
+  /// PRODUCT, PARTNER, CONTEST, CHALLENGE, POST or PET
+  targetType String
+  targetId   String   @db.Uuid
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, targetType, targetId])
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Phase 7c — PetApp Assistant
+// ════════════════════════════════════════════════════════════════════
+
+/// A chat with the PetApp Assistant. Deleted by the person, or after the retention period.
+model AssistantConversation {
+  id            String   @id @default(uuid()) @db.Uuid
+  userId        String   @db.Uuid
+  /// The first question, shortened.
+  title         String
+  createdAt     DateTime @default(now())
+  lastMessageAt DateTime @default(now())
+
+  user     User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages AssistantMessage[]
+
+  @@index([userId, lastMessageAt])
+  @@index([lastMessageAt])
+}
+
+enum AssistantRole {
+  USER
+  ASSISTANT
+}
+
+/// GENERAL_INFO: pet-health information, not a diagnosis. URGENT: signs of an emergency, see a vet now.
+enum AssistantSafety {
+  NONE
+  GENERAL_INFO
+  URGENT
+}
+
+model AssistantMessage {
+  id             String          @id @default(uuid()) @db.Uuid
+  conversationId String          @db.Uuid
+  role           AssistantRole
+  text           String
+  /// Results shown with the answer: services, products, contests, challenges, bookings, app links, care notes.
+  cards          Json            @default("[]")
+  safety         AssistantSafety @default(NONE)
+  /// Which tools ran, with their inputs (assistant messages only).
+  tools          Json            @default("[]")
+  provider       String?
+  model          String?
+  version        String?
+  latencyMs      Int?
+  inputTokens    Int?
+  outputTokens   Int?
+  error          String?
+  /// The person's rating of an answer: UP or DOWN, with an optional note.
+  rating         String?
+  ratingNote     String?
+  ratedAt        DateTime?
+  createdAt      DateTime        @default(now())
+
+  conversation AssistantConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, createdAt])
+  @@index([role, createdAt])
+  @@index([rating, ratedAt])
+}
+
+// ════════════════════════════════════════════════════════════════════
+// Phase 8b — privacy and legal
+// ════════════════════════════════════════════════════════════════════
+
+enum LegalStatus {
+  DRAFT
+  PUBLISHED
+  /// An older published version, replaced by a newer one.
+  RETIRED
+}
+
+/// A version of a legal document (privacy policy, terms…). Drafts are edited in the dashboard; publishing makes it current.
+model LegalDocument {
+  id                 String      @id @default(uuid()) @db.Uuid
+  /// privacy-policy, terms-of-service, contest-terms, refund-policy, cancellation-policy, partner-terms, vendor-terms, community-guidelines
+  slug               String
+  version            Int
+  title              String
+  /// Markdown.
+  body               String
+  /// What changed in this version, shown when people are asked to accept it again.
+  changeSummary      String?
+  status             LegalStatus @default(DRAFT)
+  /// People must accept this version (terms and privacy for everyone; partner and vendor terms before onboarding).
+  requiresAcceptance Boolean     @default(false)
+  effectiveAt        DateTime?
+  publishedAt        DateTime?
+  createdById        String?     @db.Uuid
+  publishedById      String?     @db.Uuid
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+
+  @@unique([slug, version])
+  @@index([slug, status])
+}
+
+/// Every consent given or withdrawn, append-only: a legal document version accepted, or marketing turned on or off.
+model ConsentRecord {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  /// DOCUMENT or MARKETING
+  kind      String
+  /// The document slug, or "marketing".
+  subject   String
+  version   Int?
+  granted   Boolean
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, subject, createdAt])
+  @@index([subject, version])
+}
+
+enum DataExportStatus {
+  PENDING
+  READY
+  FAILED
+  EXPIRED
+}
+
+/// A copy of everything PetApp holds about a person, built by the worker and downloadable for a few days.
+model DataExport {
+  id         String           @id @default(uuid()) @db.Uuid
+  userId     String           @db.Uuid
+  status     DataExportStatus @default(PENDING)
+  storageKey String?
+  sizeBytes  Int?
+  error      String?
+  createdAt  DateTime         @default(now())
+  readyAt    DateTime?
+  expiresAt  DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([status, expiresAt])
+}
+
+// ═════════════════════════════ Phase 9a — Chat and support ═════════════════════════════
+
+enum ConversationKind {
+  /// A customer and a service partner.
+  SERVICE
+  /// A customer and a seller.
+  SHOP
+  /// A person and PetApp staff. Every support ticket has one.
+  SUPPORT
+}
+
+enum ConversationStatus {
+  OPEN
+  /// Support: the ticket is closed. Others: closed by a moderator. Nobody can send.
+  CLOSED
+}
+
+enum ChatSide {
+  CUSTOMER
+  /// The service partner or seller.
+  BUSINESS
+  STAFF
+  /// Status changes and similar notices, written by PetApp.
+  SYSTEM
+}
+
+/// One thread between a customer and a business (one per pair), or one support ticket's thread.
+model Conversation {
+  id              String             @id @default(uuid()) @db.Uuid
+  kind            ConversationKind
+  /// The customer, or for SUPPORT the person asking for help (who may also be a partner or seller).
+  customerId      String             @db.Uuid
+  partnerId       String?            @db.Uuid
+  vendorId        String?            @db.Uuid
+  status          ConversationStatus @default(OPEN)
+  lastMessageAt   DateTime?
+  /// Short preview for conversation lists ("Photo" for a photo). Never contains staff notes.
+  lastMessageText String?
+  customerUnread  Int                @default(0)
+  /// The business's unread count (for SUPPORT: staff's).
+  otherUnread     Int                @default(0)
+  customerReadAt  DateTime?
+  otherReadAt     DateTime?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  customer User            @relation("ConversationCustomer", fields: [customerId], references: [id], onDelete: Cascade)
+  partner  ServicePartner? @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  vendor   Vendor?         @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  messages ChatMessage[]
+  ticket   SupportTicket?
+
+  @@unique([kind, customerId, partnerId])
+  @@unique([kind, customerId, vendorId])
+  @@index([customerId, lastMessageAt])
+  @@index([partnerId, lastMessageAt])
+  @@index([vendorId, lastMessageAt])
+}
+
+model ChatMessage {
+  id             String   @id @default(uuid()) @db.Uuid
+  conversationId String   @db.Uuid
+  /// NULL for SYSTEM messages.
+  senderId       String?  @db.Uuid
+  side           ChatSide
+  body           String?
+  /// A photo (IMAGE, private) or, in support, a PDF (DOCUMENT).
+  mediaId        String?  @db.Uuid
+  /// A card for something both people can open: BOOKING, PRODUCT or ORDER (a seller's parcel).
+  refType        String?
+  refId          String?  @db.Uuid
+  /// Support only: a note between staff that the person never sees.
+  internal       Boolean  @default(false)
+  /// The sender's own id for the message, so a retried send is stored once.
+  clientId       String?
+  /// VISIBLE | HIDDEN | REMOVED (moderation). Hidden and removed messages show as "removed".
+  status         String   @default("VISIBLE")
+  createdAt      DateTime @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User?        @relation("ChatSender", fields: [senderId], references: [id], onDelete: SetNull)
+  media        MediaAsset?  @relation(fields: [mediaId], references: [id], onDelete: SetNull)
+
+  @@unique([senderId, clientId])
+  @@index([conversationId, createdAt])
+}
+
+model SupportCategory {
+  id        String   @id @default(uuid()) @db.Uuid
+  key       String   @unique
+  name      String
+  /// Which apps offer it: ALL, CUSTOMER, PARTNER or SELLER.
+  audience  String   @default("ALL")
+  sortOrder Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  faqs    SupportFaq[]
+  tickets SupportTicket[]
+}
+
+model SupportFaq {
+  id         String   @id @default(uuid()) @db.Uuid
+  categoryId String?  @db.Uuid
+  question   String
+  /// Markdown (the same subset as legal documents).
+  answer     String
+  audience   String   @default("ALL")
+  sortOrder  Int      @default(0)
+  published  Boolean  @default(false)
+  helpful    Int      @default(0)
+  notHelpful Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  category SupportCategory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  @@index([published, audience, sortOrder])
+}
+
+enum TicketStatus {
+  OPEN
+  ASSIGNED
+  IN_PROGRESS
+  /// Waiting for the person to answer.
+  WAITING
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+model SupportTicket {
+  id              String         @id @default(uuid()) @db.Uuid
+  /// Short code people can quote: T-7K2M9Q.
+  code            String         @unique
+  userId          String         @db.Uuid
+  categoryId      String         @db.Uuid
+  subject         String
+  status          TicketStatus   @default(OPEN)
+  priority        TicketPriority @default(NORMAL)
+  assigneeId      String?        @db.Uuid
+  conversationId  String         @unique @db.Uuid
+  /// The app it came from: CUSTOMER, PARTNER, SELLER (or STAFF when staff started it).
+  app             String         @default("CUSTOMER")
+  /// What it's about, when the person picked one: BOOKING or ORDER (a parcel).
+  refType         String?
+  refId           String?        @db.Uuid
+  createdById     String?        @db.Uuid
+  firstResponseAt DateTime?
+  resolvedAt      DateTime?
+  closedAt        DateTime?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  user         User            @relation("TicketUser", fields: [userId], references: [id], onDelete: Cascade)
+  category     SupportCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  assignee     User?           @relation("TicketAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
+  createdBy    User?           @relation("TicketCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  conversation Conversation    @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([status, priority, updatedAt])
+  @@index([userId, createdAt])
+  @@index([assigneeId, status])
+}
+
+// ═════════════════════════════ Phase 9c — Locations ═════════════════════════════
+// The location database (spec §44) and what staff manage on it (spec §45). Countries and states are seeded;
+// cities, areas and PIN codes are managed (and imported) in the dashboard.
+
+model Country {
+  /// ISO 3166-1 alpha-2 ("IN")
+  code     String  @id
+  name     String
+  isActive Boolean @default(true)
+
+  states State[]
+}
+
+model State {
+  id               String  @id @default(uuid()) @db.Uuid
+  countryCode      String
+  /// ISO 3166-2 subdivision code without the country ("MH")
+  code             String
+  name             String
+  isUnionTerritory Boolean @default(false)
+
+  country Country @relation(fields: [countryCode], references: [code], onDelete: Restrict)
+  cities  City[]
+
+  @@unique([countryCode, code])
+}
+
+model City {
+  id           String                                 @id @default(uuid()) @db.Uuid
+  stateId      String                                 @db.Uuid
+  name         String
+  slug         String                                 @unique
+  lat          Float
+  lng          Float
+  /// Maintained from lat/lng by a database trigger (PostGIS).
+  location     Unsupported("geography(Point, 4326)")?
+  isActive     Boolean                                @default(true)
+  /// Service coverage: the services marketplace operates here.
+  servicesLive Boolean                                @default(false)
+  sortOrder    Int                                    @default(0)
+  createdAt    DateTime                               @default(now())
+  updatedAt    DateTime                               @updatedAt
+
+  state      State      @relation(fields: [stateId], references: [id], onDelete: Restrict)
+  localities Locality[]
+  pincodes   Pincode[]
+
+  @@index([stateId])
+  @@index([location], type: Gist)
+}
+
+/// An area of a city ("Koregaon Park").
+model Locality {
+  id        String                                 @id @default(uuid()) @db.Uuid
+  cityId    String                                 @db.Uuid
+  name      String
+  slug      String
+  lat       Float?
+  lng       Float?
+  location  Unsupported("geography(Point, 4326)")?
+  isActive  Boolean                                @default(true)
+  createdAt DateTime                               @default(now())
+  updatedAt DateTime                               @updatedAt
+
+  city     City      @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  pincodes Pincode[]
+
+  @@unique([cityId, slug])
+  @@index([location], type: Gist)
+}
+
+model Pincode {
+  /// Six digits
+  code       String   @id
+  cityId     String   @db.Uuid
+  localityId String?  @db.Uuid
+  lat        Float?
+  lng        Float?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  city     City      @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  locality Locality? @relation(fields: [localityId], references: [id], onDelete: SetNull)
+
+  @@index([cityId])
+  @@index([localityId])
+}
+
+/// Where the shop delivers, at what shipping charge and how fast (spec §45). The most specific match wins:
+/// a PIN code, then a PIN prefix, then a city, then a state. With no zones, the global shipping settings apply.
+model DeliveryZone {
+  id                String   @id @default(uuid()) @db.Uuid
+  name              String
+  isActive          Boolean  @default(true)
+  /// Six-digit PIN codes, or prefixes ending in * ("4110*")
+  pincodes          String[] @default([])
+  cityIds           String[] @default([])
+  /// State codes ("MH")
+  stateCodes        String[] @default([])
+  /// false = a zone the shop doesn't deliver to
+  deliverable       Boolean  @default(true)
+  /// Shipping per parcel here; null = the global setting
+  shippingFlatPaise Int?
+  freeAbovePaise    Int?
+  minDays           Int      @default(2)
+  maxDays           Int      @default(5)
+  note              String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ───────────── Phase 9d: analytics, memberships, promotions ─────────────
+
+/// One row per person per day (India time) they used the app signed in. Feeds daily and monthly active users and
+/// retention (spec §55). Written at most once a day per person.
+model UserActivity {
+  day    DateTime @db.Date
+  userId String   @db.Uuid
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([day, userId])
+  @@index([userId])
+}
+
+/// Views (one per viewer per day) and watched-to-the-end counts for a post, per day (India time).
+model PostDailyStat {
+  postId      String   @db.Uuid
+  day         DateTime @db.Date
+  views       Int      @default(0)
+  completions Int      @default(0)
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([postId, day])
+  @@index([day])
+}
+
+/// A membership plan (spec §40). Plans are off unless ENABLE_MEMBERSHIPS is on, and nothing is ever members-only
+/// unless an admin marks it so. Each benefit switch is enforced where it applies.
+model MembershipPlan {
+  id                String   @id @default(uuid()) @db.Uuid
+  /// FREE, PLUS, PREMIUM, or a key the admin adds
+  key               String   @unique
+  name              String
+  description       String   @default("")
+  pricePaise        Int      @default(0)
+  periodDays        Int      @default(30)
+  /// Higher ranks are shown after lower ones
+  rank              Int      @default(0)
+  /// Can enter contests marked members-only
+  exclusiveContests Boolean  @default(false)
+  /// Can join challenges marked members-only
+  premiumChallenges Boolean  @default(false)
+  /// Can use coupons marked members-only
+  memberDiscounts   Boolean  @default(false)
+  /// Can book this many more days ahead than everyone else (0 = no priority)
+  priorityDays      Int      @default(0)
+  /// Shows a member badge on the profile
+  badge             Boolean  @default(false)
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  memberships Membership[]
+}
+
+enum MembershipStatus {
+  PENDING_PAYMENT
+  ACTIVE
+  REVOKED
+  EXPIRED
+}
+
+/// One paid (or staff-granted) period of a plan. A renewal is a new row starting when the previous one ends.
+model Membership {
+  id          String           @id @default(uuid()) @db.Uuid
+  userId      String           @db.Uuid
+  planId      String           @db.Uuid
+  status      MembershipStatus @default(PENDING_PAYMENT)
+  startsAt    DateTime?
+  endsAt      DateTime?
+  pricePaise  Int
+  paymentId   String?          @unique @db.Uuid
+  /// PURCHASE or GRANT
+  source      String           @default("PURCHASE")
+  grantedById String?          @db.Uuid
+  note        String?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  user      User           @relation("MembershipUser", fields: [userId], references: [id], onDelete: Cascade)
+  plan      MembershipPlan @relation(fields: [planId], references: [id], onDelete: Restrict)
+  grantedBy User?          @relation("MembershipGrantor", fields: [grantedById], references: [id], onDelete: SetNull)
+
+  @@index([userId, status, endsAt])
+  @@index([planId, status])
+}
+
+enum PromotionAudience {
+  ALL
+  MEMBERS
+  CITY
+}
+
+enum PromotionStatus {
+  QUEUED
+  SENDING
+  SENT
+  CANCELLED
+}
+
+/// An announcement or offer from PetApp (spec §36 "promotional"). Reaches only people who turned promotions on.
+model Promotion {
+  id          String            @id @default(uuid()) @db.Uuid
+  title       String
+  body        String
+  /// Where it opens in the app, e.g. /contest/summer-smiles
+  link        String?
+  audience    PromotionAudience @default(ALL)
+  city        String?
+  status      PromotionStatus   @default(QUEUED)
+  sendAt      DateTime          @default(now())
+  sentAt      DateTime?
+  recipients  Int               @default(0)
+  createdById String            @db.Uuid
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  createdBy User @relation(fields: [createdById], references: [id], onDelete: Restrict)
+
+  @@index([status, sendAt])
+}
+
+// ───────────── Phase 9e: staff password resets, resumable uploads ─────────────
+
+/// A password-reset link sent by email. Only a SHA-256 hash of the token is stored; a link works once, for a short time.
+model PasswordReset {
+  id          String    @id @default(uuid()) @db.Uuid
+  userId      String    @db.Uuid
+  tokenHash   String    @unique
+  expiresAt   DateTime
+  usedAt      DateTime?
+  /// SELF (forgot password) or STAFF (sent by an admin)
+  requestedBy String    @default("SELF")
+  requestedIp String?
+  createdAt   DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+// ───────────── Phase 10a: staff two-factor sign-in ─────────────
+
+/// One-time recovery codes for when the authenticator app is lost. Only a SHA-256 hash is stored.
+model MfaRecoveryCode {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  codeHash  String
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, codeHash])
+}

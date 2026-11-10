@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "19c34195-65c8-4829-98da-f3a4db6d96a5",
+      "key": "account",
+      "name": "Account and signing in"
+    },
+    {
+      "id": "d781ad0a-288a-42be-8937-122545d44e43",
+      "key": "payments",
+      "name": "Payments and refunds"
+    },
+    {
+      "id": "bed4fcad-ce2b-43a0-9a7b-213b986b6188",
+      "key": "orders",
+      "name": "Shop orders and returns"
+    },
+    {
+      "id": "2f787eb5-4d32-47d6-8c82-d61ae5541646",
+      "key": "bookings",
+      "name": "Service bookings"
+    },
+    {
+      "id": "b9fd6bcf-86c5-4c62-af2f-2ea2e396d86e",
+      "key": "contests",
+      "name": "Contests and challenges"
+    },
+    {
+      "id": "b94ef98c-60c9-4ef8-8e6e-88cd9c01b82f",
+      "key": "payouts",
+      "name": "Payouts, invoices and tax"
+    },
+    {
+      "id": "d5dd1836-5049-450a-b7fc-a4435a6af5d2",
+      "key": "safety",
+      "name": "Safety, abuse or a report"
+    },
+    {
+      "id": "cefb7e69-183d-48ef-9822-a4ab7c7bf87a",
+      "key": "app",
+      "name": "Something isn’t working in the app"
+    },
+    {
+      "id": "be61ea90-40aa-40eb-b108-48e2600f6909",
+      "key": "other",
+      "name": "Something else"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "d8e73993-36a6-45e6-951f-7273d2758d3f"
+  }
+}

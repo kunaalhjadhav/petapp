@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "totals": {
+      "earnedPaise": 83172,
+      "paidOutPaise": 83172,
+      "tcsPaise": 423,
+      "tdsPaise": 4229,
+      "feesPaise": 11976
+    },
+    "items": [
+      {
+        "id": "7bada7ed-b1de-4714-a95a-9d3b677e8f38",
+        "occurredAt": "2026-10-11T01:09:29.443Z",
+        "kind": "PAYOUT_APPROVED",
+        "memo": "Payout approved (batch PB-20261011-E58D)",
+        "sourceType": "Payout",
+        "sourceId": "5908c472-910a-43e0-8e55-11dff8a3a3c5",
+        "amountPaise": -83172,
+        "salePaise": null,
+        "feePaise": 0,
+        "tcsPaise": 0,
+        "tdsPaise": 0
+      },
+      {
+        "id": "70f5182d-45a1-40f7-bc63-ae1fead258b1",
+        "occurredAt": "2026-10-11T01:09:29.136Z",
+        "kind": "PARCEL_DELIVERED",
+        "memo": "Parcel SO-JPQZJJSZ0 delivered",
+        "sourceType": "SubOrder",
+        "sourceId": "554cfffb-3ca6-4e1a-882b-f1200be964e0",
+        "amountPaise": 83172,
+        "salePaise": 99800,
+        "feePaise": 11976,
+        "tcsPaise": 423,
+        "tdsPaise": 4229
+      }
+    ],
+    "meta": {
+      "page": 1,
+      "limit": 20,
+      "total": 2,
+      "totalPages": 1
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "244c7d2e-33a3-4b9c-aada-d3e4b519a23b"
+  }
+}

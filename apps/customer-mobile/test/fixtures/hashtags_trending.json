@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": [
+    {
+      "tag": "zoomies",
+      "postCount": 3
+    },
+    {
+      "tag": "beach",
+      "postCount": 3
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "7eefce79-2001-4c44-b452-ce611187697b"
+  }
+}

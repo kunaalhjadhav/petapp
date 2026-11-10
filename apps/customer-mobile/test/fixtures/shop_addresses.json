@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "2ad3ea58-1d3a-4e7c-b652-930f24d254c2",
+      "userId": "d5ee08f1-e867-44ad-8c7d-53ae5c7e8335",
+      "label": "Home",
+      "line1": "4 Lake View",
+      "line2": null,
+      "locality": "Koregaon Park",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411001",
+      "country": "IN",
+      "latitude": null,
+      "longitude": null,
+      "isDefault": true,
+      "createdAt": "2026-10-07T12:45:10.372Z",
+      "updatedAt": "2026-10-07T12:45:10.372Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "34bb25b7-ec71-4fa9-bf6b-25c24bfba974"
+  }
+}

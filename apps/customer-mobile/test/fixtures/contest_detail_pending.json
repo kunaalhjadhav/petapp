@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "data": {
+    "id": "d7217601-74d2-41e1-b159-027e5bf535f2",
+    "slug": "fixture-talent-cup-8725-b390a7",
+    "title": "Fixture Talent Cup 8725",
+    "bannerUrl": null,
+    "category": {
+      "name": "Best Trick",
+      "group": "TALENT"
+    },
+    "status": "LIVE",
+    "feePaise": 9900,
+    "currency": "INR",
+    "entries": 0,
+    "maxParticipants": 50,
+    "registrationOpensAt": "2026-10-04T00:52:06.809Z",
+    "registrationClosesAt": "2026-10-04T02:52:06.809Z",
+    "submissionClosesAt": "2026-10-04T03:52:06.809Z",
+    "votingClosesAt": "2026-10-04T04:52:06.809Z",
+    "prizes": [
+      {
+        "rank": 1,
+        "title": "Winner",
+        "kind": "CASH",
+        "amountPaise": 50000
+      },
+      {
+        "rank": null,
+        "title": "Crowd favourite",
+        "kind": "VOUCHER",
+        "amountPaise": null
+      }
+    ],
+    "description": "Show us your best trick.",
+    "rules": null,
+    "terms": null,
+    "publicWeight": 100,
+    "votesPerUserPerDay": 1,
+    "cancelReason": null,
+    "leaderboardFrozen": false,
+    "tasks": [
+      {
+        "id": "0c51961e-f14d-4cf3-a043-5ec21299b9ee",
+        "type": "TEXT",
+        "title": "Describe the trick in one line",
+        "description": null,
+        "required": true
+      }
+    ],
+    "judgingCriteria": [],
+    "viewer": {
+      "entries": [
+        {
+          "id": "ee3a3f5f-9a41-438f-b682-8d13a1bdcd63",
+          "status": "PENDING_PAYMENT",
+          "pet": {
+            "id": "ba13af61-5dfc-4f25-aaef-58bb0595ce84",
+            "name": "Tara"
+          },
+          "submittedTaskIds": [],
+          "payment": {
+            "paymentId": "663dda13-1b91-4782-b890-6d02c2bc1e35",
+            "provider": "fake",
+            "orderId": "fake_order_18b69030471c4f2c8201787cd19a26b7",
+            "amountPaise": 9900,
+            "currency": "INR",
+            "key": "fake_key",
+            "status": "CREATED"
+          }
+        }
+      ]
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "74269759-24d9-498f-95d7-a42259329154"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "availablePaise": 0,
+    "holdDays": 0,
+    "account": {
+      "id": "a76d093f-3839-4b1d-99e5-36926e799891",
+      "method": "UPI",
+      "accountLast4": null,
+      "vpa": "priya0966@okicici",
+      "payableFrom": "2026-10-11T01:10:00.282Z"
+    },
+    "payouts": [
+      {
+        "id": "b1436f2b-b08d-45aa-a0bc-5ce0b8b3d8e8",
+        "amountPaise": 67920,
+        "purpose": "EARNINGS",
+        "status": "PROCESSED",
+        "utr": "FAKEUTR1791681029255",
+        "failureReason": null,
+        "processedAt": "2026-10-11T01:10:29.257Z",
+        "createdAt": "2026-10-11T01:10:00.312Z",
+        "account": {
+          "method": "UPI",
+          "accountLast4": null,
+          "vpa": "priya0966@okicici",
+          "ifsc": null
+        }
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "48bb0de4-0d0c-46ab-825c-c8e209d4b02a"
+  }
+}

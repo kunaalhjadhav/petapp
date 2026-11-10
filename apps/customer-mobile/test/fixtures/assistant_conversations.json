@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me",
+      "createdAt": "2026-10-11T10:02:04.808Z",
+      "lastMessageAt": "2026-10-11T10:02:05.187Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "43b92617-b2db-457f-b59a-f1ed5017de64",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "id": "d69143e6-ddf6-4bd7-bbc8-118e94c9147a",
+    "kind": "VIDEO",
+    "status": "READY",
+    "width": 720,
+    "height": 1280,
+    "durationMs": 3000,
+    "hls": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=553ef03d95bd4a67936c0fb7d0a4b9c3fb1884b8ef90011f84b82901dcd62853&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "poster": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=43425f9e0205dcc9442499e39566acb8b2ce2284c8bcdd3bab191c1ffa2c4770&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c223f6e3-a2fb-463e-ba8f-5242bd3d1b73"
+  }
+}

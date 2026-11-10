@@ -1,0 +1,33 @@
+name: petapp_seller
+description: PetApp for sellers — list products, manage stock, fulfil orders and returns, run coupons and track earnings.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  sentry_flutter: ^8.14.0
+  go_router: ^14.6.0
+  dio: ^5.7.0
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.3
+  image_picker: ^1.1.2
+  file_picker: ^8.1.4
+  url_launcher: ^6.3.1
+  # Chat (Phase 9a): live connection, and push for new messages and bookings or orders.
+  web_socket_channel: ^3.0.1
+  firebase_core: ^3.8.0
+  firebase_messaging: ^15.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

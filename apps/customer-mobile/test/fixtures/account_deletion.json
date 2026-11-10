@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "graceDays": 14,
+    "eraseAfter": "2026-10-25T19:07:45.491Z"
+  },
+  "message": "Your account will be deleted in 14 days and you have been signed out. Sign in again before then to keep it.",
+  "meta": {
+    "requestId": "46809cd4-d74e-426d-93f4-6bbf0f20d91a"
+  }
+}

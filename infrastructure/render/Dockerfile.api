@@ -1,0 +1,30 @@
+# syntax=docker/dockerfile:1.7
+# PetApp API + worker for Render's free plan (render.yaml). One image runs migrations, the first-time seed,
+# the API and the background worker: see scripts/render/start-api.mjs.
+# For paid plans or your own server, use infrastructure/Dockerfile.backend (smaller, API and worker as separate services).
+
+FROM node:22-bookworm-slim
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false NPM_CONFIG_FUND=false
+# FFmpeg: the worker transcodes videos and makes thumbnails.
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates ffmpeg && rm -rf /var/lib/apt/lists/* \
+  && mkdir /app && chown node:node /app
+WORKDIR /app
+USER node
+
+# All dependencies are kept: the Prisma CLI (migrations) and tsx (the seed) run at start.
+COPY --chown=node:node package.json package-lock.json tsconfig.base.json prisma.config.ts ./
+COPY --chown=node:node prisma ./prisma
+COPY --chown=node:node packages/types ./packages/types
+COPY --chown=node:node apps/backend/package.json ./apps/backend/package.json
+RUN DATABASE_URL=postgresql://build:build@localhost:5432/build npm ci
+
+COPY --chown=node:node apps/backend ./apps/backend
+RUN npm run build -w @petapp/backend
+COPY --chown=node:node scripts/render ./scripts/render
+
+# Render passes RENDER_GIT_COMMIT at build time; it is shown on the dashboard's System health page.
+ARG RENDER_GIT_COMMIT=
+ENV APP_RELEASE=$RENDER_GIT_COMMIT
+# Render sets $PORT (10000 by default); the API listens on it.
+EXPOSE 10000
+CMD ["node", "scripts/render/start-api.mjs"]

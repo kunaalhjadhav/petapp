@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "2f1233cc-1763-43b8-8698-578d25367593",
+      "role": "USER",
+      "text": "cancel my booking",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.180Z"
+    },
+    "answer": {
+      "id": "04d26d2d-cd0d-4824-8102-7fdc4024df9b",
+      "role": "ASSISTANT",
+      "text": "You have 1 upcoming booking. Open one to see the details or cancel it.",
+      "cards": [
+        {
+          "item": {
+            "id": "243b5b8f-bd7f-434f-bda5-1fbac7c5cc73",
+            "code": "PB-72D5DP",
+            "title": "Full groom at Pawfect Grooming 0966",
+            "status": "PENDING_PAYMENT",
+            "petName": "Momo",
+            "startsAt": "2026-10-12T11:30:00.000Z"
+          },
+          "type": "BOOKING"
+        },
+        {
+          "item": {
+            "id": "bookings",
+            "route": "/my-bookings",
+            "steps": [
+              "Open Services, then My bookings.",
+              "Tap a booking to see it or cancel it."
+            ],
+            "title": "Your bookings: change or cancel"
+          },
+          "type": "LINK"
+        }
+      ],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.187Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "fd870a4f-f74b-4fd8-bc59-db4b6c00415c"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "90bcf4f9-62a9-46b1-95ef-5f920aede1f1",
+      "rating": 5,
+      "comment": "Coco came back fluffy and calm. Thank you!",
+      "reply": null,
+      "by": "Kabir Customer",
+      "at": "2026-10-06T07:59:59.381Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "6d8f013c-f059-4532-92ee-09ee27aa8044",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

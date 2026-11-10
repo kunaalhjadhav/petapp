@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "day": "2026-10-04",
+    "earned": 10,
+    "bonus": 0,
+    "points": 10,
+    "streak": 1,
+    "checkIns": 1,
+    "requiredCheckIns": 1,
+    "completed": true,
+    "badge": {
+      "name": "First Step"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "f1c4c22a-bd02-45c3-afe5-7fe391607778"
+  }
+}

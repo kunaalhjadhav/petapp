@@ -1,0 +1,398 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "74bcdc72-8cec-405f-968c-c0f9f70650a2",
+      "name": "Bruno",
+      "handle": "bruno.demo",
+      "avatarUrl": null,
+      "gender": "MALE",
+      "dateOfBirth": "2023-08-14T00:00:00.000Z",
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 2,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": {
+        "id": "6ac9378f-3f54-4892-967a-8e0a9e5b05bb",
+        "name": "Golden Retriever"
+      },
+      "reason": null
+    },
+    {
+      "id": "08e28ab0-e33d-450b-b342-925f380e7907",
+      "name": "Star mv3ianah",
+      "handle": "starmv3ianah",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "10da10a6-6741-44f4-b1a7-99498b779151",
+      "name": "Biscuit mv49e1ws",
+      "handle": "public.mv49e1ws",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "153d5451-a427-4d2a-8944-e7ddb670133e",
+      "name": "Star mv3iv740",
+      "handle": "starmv3iv740",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "1646f1d8-a738-4537-9d2e-927ed6448324",
+      "name": "Biscuit mve4c8j0",
+      "handle": "public.mve4c8j0",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "209aad73-8d0c-4303-9d70-60283c77c244",
+      "name": "Tara",
+      "handle": "tara.f96a12",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "2a20480e-4247-4783-af70-6bbee60fa17e",
+      "name": "Star mv3ialma",
+      "handle": "starmv3ialma",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "2f693de8-bd48-47ae-ac81-d3aff0dde2ab",
+      "name": "Momo",
+      "handle": "momo.f279f8",
+      "avatarUrl": null,
+      "gender": "MALE",
+      "dateOfBirth": "2026-03-25T00:00:00.000Z",
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "33ed1412-dcbe-47f3-94f0-1d9620e9cff9",
+      "name": "Momo",
+      "handle": "momo.46c5d1",
+      "avatarUrl": null,
+      "gender": "MALE",
+      "dateOfBirth": "2026-03-25T00:00:00.000Z",
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "34be93a4-1998-44f4-b2d3-df2706b2c8bb",
+      "name": "Biscuit mv49e53z",
+      "handle": "public.mv49e53z",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "36252d4a-5fe5-48a9-b13e-94d6cacafe81",
+      "name": "Star mveg8mfp",
+      "handle": "starmveg8mfp",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "41638c93-9d4f-4f62-97f3-aa5ebf0825e7",
+      "name": "Coco",
+      "handle": "coco.1e4a80",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "443cf9db-a7ac-46b4-a144-614c5bc4657a",
+      "name": "Mishti",
+      "handle": "mishti.demo",
+      "avatarUrl": null,
+      "gender": "FEMALE",
+      "dateOfBirth": "2022-02-01T00:00:00.000Z",
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "da9b1546-b89a-406d-8bf0-a8fcf175cd96",
+        "key": "cat",
+        "name": "Cat"
+      },
+      "breed": {
+        "id": "ff348ea5-6f27-4e5d-88a9-e780bf3f3894",
+        "name": "Persian"
+      },
+      "reason": null
+    },
+    {
+      "id": "473d8f0e-7e3d-47c9-97e9-89b0ca9c5c8f",
+      "name": "Star mv478zca",
+      "handle": "starmv478zca",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "4f977277-24cb-4e23-8c4f-57650529f833",
+      "name": "Bagel",
+      "handle": "bagel.ad417b",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "56edc6a9-78d5-4d32-98ae-838c67a733c3",
+      "name": "Bolt",
+      "handle": "bolt.12870d",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "58f07fc9-978a-4044-b508-c45c901ef38b",
+      "name": "Biscuit mv49oje9",
+      "handle": "public.mv49oje9",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "590485fc-436d-4c5b-903d-9e8f4e2b30fb",
+      "name": "Kiwi",
+      "handle": "kiwi.demo",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": "2024-05-10T00:00:00.000Z",
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "be5b7133-384f-4245-9600-9705557c58f6",
+        "key": "bird",
+        "name": "Bird"
+      },
+      "breed": {
+        "id": "157db480-bcfe-4e6e-9828-2eed9b786523",
+        "name": "Budgerigar"
+      },
+      "reason": null
+    },
+    {
+      "id": "59195fa0-ee23-430a-8e58-fd4719f05d71",
+      "name": "Star mvdz4p6d",
+      "handle": "starmvdz4p6d",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Pune",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    },
+    {
+      "id": "5ae207ad-d5e4-438d-af07-61d1d577e603",
+      "name": "Coco",
+      "handle": "coco.35521e",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "reason": null
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "7eeb4167-0b01-45eb-82e7-835cce532056"
+  }
+}

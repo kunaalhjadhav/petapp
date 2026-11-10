@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "covered": false,
+    "city": null,
+    "nearest": {
+      "name": "Mumbai",
+      "slug": "mumbai",
+      "distanceKm": 1075.5
+    },
+    "liveCities": 1
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "df5e35b3-fc0a-47ad-87ac-1f814102ece4"
+  }
+}

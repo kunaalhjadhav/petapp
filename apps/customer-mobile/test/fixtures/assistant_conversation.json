@@ -1,0 +1,652 @@
+{
+  "success": true,
+  "data": {
+    "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+    "title": "Find a groomer near me",
+    "createdAt": "2026-10-11T10:02:04.808Z",
+    "lastMessageAt": "2026-10-11T10:02:05.187Z",
+    "messages": [
+      {
+        "id": "15a82d7f-1234-40ae-85b7-7adfb2040d3d",
+        "role": "USER",
+        "text": "Find a groomer near me",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:04.811Z"
+      },
+      {
+        "id": "b256886f-69ff-488b-8772-a13821dbab1a",
+        "role": "ASSISTANT",
+        "text": "Here are grooming partners near you, best rated first. Tap one to see services, prices and free times.",
+        "cards": [
+          {
+            "item": {
+              "id": "b53ce8ca-36fb-49dd-871e-be049c61d43d",
+              "area": "Bandra West",
+              "city": "Mumbai",
+              "slug": "pawfect-grooming-0216-1592",
+              "fromPaise": 84900,
+              "ratingAvg": 0,
+              "distanceKm": 0,
+              "ratingCount": 0,
+              "businessName": "Pawfect Grooming 0216",
+              "homeVisitRadiusKm": 5
+            },
+            "type": "SERVICE"
+          },
+          {
+            "item": {
+              "id": "da895388-2578-482e-b399-3071689fb3d2",
+              "area": "Bandra West",
+              "city": "Mumbai",
+              "slug": "pawfect-grooming-0966-191d",
+              "fromPaise": 84900,
+              "ratingAvg": 0,
+              "distanceKm": 0,
+              "ratingCount": 0,
+              "businessName": "Pawfect Grooming 0966",
+              "homeVisitRadiusKm": 5
+            },
+            "type": "SERVICE"
+          },
+          {
+            "item": {
+              "id": "e55e8afb-44ec-426e-b520-74cdc1d4a4a8",
+              "area": "Bandra West",
+              "city": "Mumbai",
+              "slug": "pawfect-grooming-0433-488d",
+              "fromPaise": 84900,
+              "ratingAvg": 0,
+              "distanceKm": 0,
+              "ratingCount": 0,
+              "businessName": "Pawfect Grooming 0433",
+              "homeVisitRadiusKm": 5
+            },
+            "type": "SERVICE"
+          }
+        ],
+        "safety": "NONE",
+        "notice": null,
+        "rating": "UP",
+        "createdAt": "2026-10-11T10:02:04.848Z"
+      },
+      {
+        "id": "08293493-3cb0-4045-b96a-41eba3bd798f",
+        "role": "USER",
+        "text": "buy dog food",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:04.865Z"
+      },
+      {
+        "id": "02048274-2444-4739-b510-2c32e9088bbf",
+        "role": "ASSISTANT",
+        "text": "Nothing in the shop matched “dog food”. Here are some picks for your pets instead.",
+        "cards": [
+          {
+            "item": {
+              "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+              "slug": "chicken-jerky-6687-60f28f",
+              "brand": "Wag",
+              "image": {
+                "id": "f870e233-f732-4255-8e6d-00e371ab0459",
+                "kind": "IMAGE",
+                "width": 1600,
+                "height": 1200,
+                "images": [
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=90f64b6670c89f7f95327785d48d4a0d298a3012c061202fccd9c76c190fef32&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 1080
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c524cb8869fe41c87bd32b35c877489f1f755133b6d7b530fcc2d19f6005ca29&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 640
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=754901091c3dd1ed025187522fdaffade6c7dc7fe0d3b15b4140dcd0afdfbb7e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 320
+                  }
+                ],
+                "status": "READY",
+                "durationMs": null
+              },
+              "title": "Chicken Jerky 6687",
+              "reason": null,
+              "vendor": {
+                "id": "7081925b-a136-45d7-b591-774559305405",
+                "slug": "wag-co-6687-075b53",
+                "businessName": "Wag & Co 6687"
+              },
+              "inStock": true,
+              "mrpPaise": 34900,
+              "fromPaise": 29900
+            },
+            "type": "PRODUCT"
+          },
+          {
+            "item": {
+              "id": "227f842f-f826-4e8a-a83d-7d782f03aea8",
+              "slug": "chicken-jerky-6078-e0c5af",
+              "brand": "Wag",
+              "image": {
+                "id": "3cf07ecd-8784-486e-893a-a34161cb061d",
+                "kind": "IMAGE",
+                "width": 1600,
+                "height": 1200,
+                "images": [
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=496e8a3d1aa803c1d664119650cdee3f366574a643055c9a51e8db1be90b733d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 1080
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=afd556272fcabc0849d957b5609c293c297a9a0c75d83867e25d1f985b67432b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 640
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=31cd1dc9b1c8e516b5bbeee61edafd119d334336ddc16a9123bfb2b202bb5a4a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 320
+                  }
+                ],
+                "status": "READY",
+                "durationMs": null
+              },
+              "title": "Chicken Jerky 6078",
+              "reason": null,
+              "vendor": {
+                "id": "ba4f707e-fc62-4056-b28a-0a5731cd83f3",
+                "slug": "wag-co-6078-7f84be",
+                "businessName": "Wag & Co 6078"
+              },
+              "inStock": true,
+              "mrpPaise": 34900,
+              "fromPaise": 29900
+            },
+            "type": "PRODUCT"
+          },
+          {
+            "item": {
+              "id": "122a02ba-08f1-425e-bd07-9728dda1d6a7",
+              "slug": "yak-chew-0966-eb6bc4",
+              "brand": "Wag",
+              "image": {
+                "id": "f891beee-a6e3-412b-8a3a-fa6b44c5ae3b",
+                "kind": "IMAGE",
+                "width": 1600,
+                "height": 1200,
+                "images": [
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=ce409ab28eb76b96825d82887b2fbc7953c296a6f01896d2709da8b10ab90e92&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 1080
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=f8ec71c33d78c55c78ac6c2d2aa2de4bd1368e5dfadaf975af4d6d5bef41922a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 640
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c5c46b5604636c6ea29184f5719665084b50fa6455e6ee9b599dbe6699be40ba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 320
+                  }
+                ],
+                "status": "READY",
+                "durationMs": null
+              },
+              "title": "Yak Chew 0966",
+              "reason": null,
+              "vendor": {
+                "id": "e30daf20-9c31-473f-8259-7b0a97171203",
+                "slug": "wag-co-0966-28be85",
+                "businessName": "Wag & Co 0966"
+              },
+              "inStock": true,
+              "mrpPaise": 59900,
+              "fromPaise": 49900
+            },
+            "type": "PRODUCT"
+          },
+          {
+            "item": {
+              "id": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+              "slug": "chicken-jerky-5960-813fb3",
+              "brand": "Wag",
+              "image": {
+                "id": "a7229592-ef7c-4990-bcf2-4c63e278d134",
+                "kind": "IMAGE",
+                "width": 1600,
+                "height": 1200,
+                "images": [
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=7755510f2911b895dd0fbc8bad2fe0f31118e8d1e68874e1e829a1464fe323a4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 1080
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=58812ce7e3dc1b9cfd9e89298db83c63375880f6eca33d63039ea07eab48c5f3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 640
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=c2ae5ab771c6b89701e582bb8a0ee69d125eb9316b38c5bb4ee9657055541335&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 320
+                  }
+                ],
+                "status": "READY",
+                "durationMs": null
+              },
+              "title": "Chicken Jerky 5960",
+              "reason": null,
+              "vendor": {
+                "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+                "slug": "wag-co-5960-7f3c74",
+                "businessName": "Wag & Co 5960"
+              },
+              "inStock": true,
+              "mrpPaise": 34900,
+              "fromPaise": 29900
+            },
+            "type": "PRODUCT"
+          },
+          {
+            "item": {
+              "id": "b45ff592-de7e-4e87-aea7-fcc2ec653638",
+              "slug": "yak-chew-0216-32f244",
+              "brand": "Wag",
+              "image": {
+                "id": "49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730",
+                "kind": "IMAGE",
+                "width": 1600,
+                "height": 1200,
+                "images": [
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=2445b5d7dc6ceb38219de5ae192424ae19416be4b4405402e466b0687c7500c8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 1080
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=10040310cb276963633733440263e2b38eca90ae07067be101556c724bdf5014&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 640
+                  },
+                  {
+                    "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T100204Z&X-Amz-Expires=3600&X-Amz-Signature=16fd3eb8a7be866f8ed78bcc5384ca42c0e05ee47d73bab2f8eaa1e98cc2da4c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                    "width": 320
+                  }
+                ],
+                "status": "READY",
+                "durationMs": null
+              },
+              "title": "Yak Chew 0216",
+              "reason": null,
+              "vendor": {
+                "id": "253f2ae0-d308-45c5-bba1-753bafd524f1",
+                "slug": "wag-co-0216-13a8a2",
+                "businessName": "Wag & Co 0216"
+              },
+              "inStock": true,
+              "mrpPaise": 59900,
+              "fromPaise": 49900
+            },
+            "type": "PRODUCT"
+          }
+        ],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:04.922Z"
+      },
+      {
+        "id": "7af36578-ba2e-4a32-b658-27e78a3ce0d1",
+        "role": "USER",
+        "text": "Which contests can my pet enter?",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:04.942Z"
+      },
+      {
+        "id": "392ef6d9-42c6-4d0c-ac7d-15822f51b2e4",
+        "role": "ASSISTANT",
+        "text": "There are no contests open right now. New ones are announced in Alerts.",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.017Z"
+      },
+      {
+        "id": "e1afd0e7-75a1-4a5f-8f17-b5387264ee85",
+        "role": "USER",
+        "text": "any challenges running?",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.044Z"
+      },
+      {
+        "id": "8806fbea-0bbc-421b-9f09-857872fe1026",
+        "role": "ASSISTANT",
+        "text": "Here are challenges you can join. Check in every day to build your streak and earn points and badges.",
+        "cards": [
+          {
+            "item": {
+              "id": "b2fba3ce-d07b-443e-915f-5e8d31852a61",
+              "kind": "FREE",
+              "mine": null,
+              "slug": "walk-week-mv324rkz-c88ceb",
+              "badge": {
+                "name": "Walker mv324rkz",
+                "iconUrl": null
+              },
+              "proof": "POST",
+              "title": "Walk Week mv324rkz",
+              "endsAt": "2026-10-19T00:00:00.000Z",
+              "reason": null,
+              "status": "PUBLISHED",
+              "feePaise": 0,
+              "startsAt": "2026-10-11T01:00:00.000Z",
+              "bannerUrl": null,
+              "participants": 0,
+              "pointsPerCheckIn": 10,
+              "requiredCheckIns": 5,
+              "streakBonusEvery": 7,
+              "streakBonusPoints": 50
+            },
+            "type": "CHALLENGE"
+          },
+          {
+            "item": {
+              "id": "c02bd334-c10a-4867-862d-0fd5d8c62385",
+              "kind": "FREE",
+              "mine": null,
+              "slug": "walk-week-mv3d40db-f5cd71",
+              "badge": {
+                "name": "Walker mv3d40db",
+                "iconUrl": null
+              },
+              "proof": "POST",
+              "title": "Walk Week mv3d40db",
+              "endsAt": "2026-10-19T05:08:00.000Z",
+              "reason": null,
+              "status": "PUBLISHED",
+              "feePaise": 0,
+              "startsAt": "2026-10-11T06:08:00.000Z",
+              "bannerUrl": null,
+              "participants": 0,
+              "pointsPerCheckIn": 10,
+              "requiredCheckIns": 5,
+              "streakBonusEvery": 7,
+              "streakBonusPoints": 50
+            },
+            "type": "CHALLENGE"
+          },
+          {
+            "item": {
+              "id": "c17c40a8-7480-4ca1-9ed2-3c1e798c0d2b",
+              "kind": "FREE",
+              "mine": null,
+              "slug": "walk-week-mv3dezdz-085558",
+              "badge": {
+                "name": "Walker mv3dezdz",
+                "iconUrl": null
+              },
+              "proof": "POST",
+              "title": "Walk Week mv3dezdz",
+              "endsAt": "2026-10-19T05:16:00.000Z",
+              "reason": null,
+              "status": "PUBLISHED",
+              "feePaise": 0,
+              "startsAt": "2026-10-11T06:16:00.000Z",
+              "bannerUrl": null,
+              "participants": 0,
+              "pointsPerCheckIn": 10,
+              "requiredCheckIns": 5,
+              "streakBonusEvery": 7,
+              "streakBonusPoints": 50
+            },
+            "type": "CHALLENGE"
+          },
+          {
+            "item": {
+              "id": "3db053af-8200-4dbe-9c6d-ada45f7b953e",
+              "kind": "FREE",
+              "mine": null,
+              "slug": "walk-week-mv3idaho-cbd275",
+              "badge": {
+                "name": "Walker mv3idaho",
+                "iconUrl": null
+              },
+              "proof": "POST",
+              "title": "Walk Week mv3idaho",
+              "endsAt": "2026-10-19T07:35:00.000Z",
+              "reason": null,
+              "status": "PUBLISHED",
+              "feePaise": 0,
+              "startsAt": "2026-10-11T08:35:00.000Z",
+              "bannerUrl": null,
+              "participants": 0,
+              "pointsPerCheckIn": 10,
+              "requiredCheckIns": 5,
+              "streakBonusEvery": 7,
+              "streakBonusPoints": 50
+            },
+            "type": "CHALLENGE"
+          },
+          {
+            "item": {
+              "id": "7e03780a-9aa8-4d8a-98fd-55d986893168",
+              "kind": "FREE",
+              "mine": null,
+              "slug": "walk-week-mv3iu4rj-d1a66a",
+              "badge": {
+                "name": "Walker mv3iu4rj",
+                "iconUrl": null
+              },
+              "proof": "POST",
+              "title": "Walk Week mv3iu4rj",
+              "endsAt": "2026-10-19T07:48:00.000Z",
+              "reason": null,
+              "status": "PUBLISHED",
+              "feePaise": 0,
+              "startsAt": "2026-10-11T08:48:00.000Z",
+              "bannerUrl": null,
+              "participants": 0,
+              "pointsPerCheckIn": 10,
+              "requiredCheckIns": 5,
+              "streakBonusEvery": 7,
+              "streakBonusPoints": 50
+            },
+            "type": "CHALLENGE"
+          }
+        ],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.067Z"
+      },
+      {
+        "id": "b3c62df9-b0bb-44d7-91cc-22a9db6d23ae",
+        "role": "USER",
+        "text": "How do I add my pet?",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.078Z"
+      },
+      {
+        "id": "74378e46-6970-4a3f-9f6b-4d91d9334b7a",
+        "role": "ASSISTANT",
+        "text": "Add a pet:\n1. Open Me.\n2. Tap Add pet.\n3. Enter your pet’s name, species and birthday, then save.",
+        "cards": [
+          {
+            "item": {
+              "id": "add-pet",
+              "route": "/pets/new",
+              "steps": [
+                "Open Me.",
+                "Tap Add pet.",
+                "Enter your pet’s name, species and birthday, then save."
+              ],
+              "title": "Add a pet"
+            },
+            "type": "LINK"
+          }
+        ],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.084Z"
+      },
+      {
+        "id": "32fb50ab-950d-4ea3-aed0-c5f1f7d30ad3",
+        "role": "USER",
+        "text": "my dog has fleas",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.097Z"
+      },
+      {
+        "id": "220585a6-ab46-46ae-afc8-05acb946bbd6",
+        "role": "ASSISTANT",
+        "text": "Ticks and fleas are common, especially in the monsoon. Check your pet’s coat, ears and between the toes after walks, and use a preventive your vet recommends regularly. Some ticks carry serious diseases, so tell your vet if your pet seems tired, pale or off their food after a tick bite. Your vet knows your pet and can advise for them specifically.",
+        "cards": [
+          {
+            "item": {
+              "id": "parasites",
+              "body": "Ticks and fleas are common, especially in the monsoon. Check your pet’s coat, ears and between the toes after walks, and use a preventive your vet recommends regularly. Some ticks carry serious diseases, so tell your vet if your pet seems tired, pale or off their food after a tick bite. Your vet knows your pet and can advise for them specifically.",
+              "title": "Ticks, fleas and worms"
+            },
+            "type": "CARE"
+          }
+        ],
+        "safety": "GENERAL_INFO",
+        "notice": "General information, not a diagnosis. For anything about your pet’s health, talk to a vet.",
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.104Z"
+      },
+      {
+        "id": "872c1782-5771-4aad-94be-8c537d82da0a",
+        "role": "USER",
+        "text": "Help, my dog ate chocolate!",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.119Z"
+      },
+      {
+        "id": "967f120c-1e9c-447e-a5d2-8f2f0fb4becb",
+        "role": "ASSISTANT",
+        "text": "What you describe can be serious and needs a vet straight away. Call or go to the nearest vet or animal emergency clinic now, and keep your pet calm and still on the way. If your pet swallowed something, take the packet or a photo of it with you. Don’t give food, water, human medicine or home remedies, and don’t try to make your pet vomit unless a vet tells you to.",
+        "cards": [
+          {
+            "item": {
+              "id": "services",
+              "route": "/services",
+              "steps": [
+                "Open Services to search other categories or another place."
+              ],
+              "title": "Pet services"
+            },
+            "type": "LINK"
+          },
+          {
+            "item": {
+              "id": "toxic-foods",
+              "body": "Keep these away from pets: chocolate, grapes and raisins, onions and garlic, xylitol (in sugar-free gum and some peanut butters), alcohol, caffeine, cooked bones, and human medicines such as paracetamol and ibuprofen. Lilies are very dangerous for cats. If your pet has eaten any of these, contact a vet straight away, even if they seem fine.",
+              "title": "Foods and things that are poisonous to pets"
+            },
+            "type": "CARE"
+          }
+        ],
+        "safety": "URGENT",
+        "notice": "This could be an emergency. Contact a vet or an animal hospital now. Don’t wait to see if it gets better.",
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.146Z"
+      },
+      {
+        "id": "08a253ad-52f8-4f65-8017-c4e60073d0f6",
+        "role": "USER",
+        "text": "How much paracetamol can I give my dog?",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.161Z"
+      },
+      {
+        "id": "9591e97d-fca2-4635-b852-926e6c4fd463",
+        "role": "ASSISTANT",
+        "text": "I can’t suggest medicine doses. The right amount depends on your pet’s weight, age, health and the exact product, and several human medicines (such as paracetamol and ibuprofen) are poisonous to pets. Please ask a vet before giving any medicine. I can help you find one nearby.",
+        "cards": [
+          {
+            "item": {
+              "id": "services",
+              "route": "/services",
+              "steps": [
+                "Open Services and choose your location to see partners near you."
+              ],
+              "title": "Pet services"
+            },
+            "type": "LINK"
+          }
+        ],
+        "safety": "GENERAL_INFO",
+        "notice": "General information, not a diagnosis. For anything about your pet’s health, talk to a vet.",
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.169Z"
+      },
+      {
+        "id": "2f1233cc-1763-43b8-8698-578d25367593",
+        "role": "USER",
+        "text": "cancel my booking",
+        "cards": [],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.180Z"
+      },
+      {
+        "id": "04d26d2d-cd0d-4824-8102-7fdc4024df9b",
+        "role": "ASSISTANT",
+        "text": "You have 1 upcoming booking. Open one to see the details or cancel it.",
+        "cards": [
+          {
+            "item": {
+              "id": "243b5b8f-bd7f-434f-bda5-1fbac7c5cc73",
+              "code": "PB-72D5DP",
+              "title": "Full groom at Pawfect Grooming 0966",
+              "status": "PENDING_PAYMENT",
+              "petName": "Momo",
+              "startsAt": "2026-10-12T11:30:00.000Z"
+            },
+            "type": "BOOKING"
+          },
+          {
+            "item": {
+              "id": "bookings",
+              "route": "/my-bookings",
+              "steps": [
+                "Open Services, then My bookings.",
+                "Tap a booking to see it or cancel it."
+              ],
+              "title": "Your bookings: change or cancel"
+            },
+            "type": "LINK"
+          }
+        ],
+        "safety": "NONE",
+        "notice": null,
+        "rating": null,
+        "createdAt": "2026-10-11T10:02:05.187Z"
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "d51455a2-1358-424b-acd5-617090e3d9bc"
+  }
+}

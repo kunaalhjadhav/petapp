@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+      "userId": "da49eb90-78c5-487c-b688-5040651eadc7",
+      "slug": "pawfect-grooming-3597-4802",
+      "businessName": "Pawfect Grooming 3597",
+      "kind": "BUSINESS",
+      "about": "Gentle grooming for dogs and cats.",
+      "phone": "+919873000007",
+      "email": null,
+      "addressLine": "12 Hill Road",
+      "area": "Bandra West",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400050",
+      "lat": 19.0596,
+      "lng": 72.8295,
+      "homeVisitRadiusKm": 5,
+      "concurrency": 1,
+      "slotStepMin": 30,
+      "gstin": null,
+      "commissionBps": null,
+      "status": "SUBMITTED",
+      "statusReason": null,
+      "submittedAt": "2026-10-06T07:59:58.497Z",
+      "reviewedAt": null,
+      "reviewedById": null,
+      "ratingAvg": 0,
+      "ratingCount": 0,
+      "createdAt": "2026-10-06T07:59:58.383Z",
+      "updatedAt": "2026-10-06T07:59:58.497Z",
+      "user": {
+        "id": "da49eb90-78c5-487c-b688-5040651eadc7",
+        "name": "Meera Groomer"
+      },
+      "_count": {
+        "services": 1,
+        "documents": 1,
+        "bookings": 0
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "e8296891-c80b-4e32-b586-c69c70e96171",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,13 @@
+# Example Prometheus scrape config for PetApp. Put the METRICS_TOKEN in a file next to it (metrics-token).
+global:
+  scrape_interval: 30s
+rule_files: [alerts.yml]
+scrape_configs:
+  - job_name: petapp-api
+    metrics_path: /metrics
+    authorization: { type: Bearer, credentials_file: metrics-token }
+    static_configs: [{ targets: ['api:4000'] }]     # every API instance (use service discovery in Kubernetes/ECS)
+  - job_name: petapp-worker
+    metrics_path: /metrics
+    authorization: { type: Bearer, credentials_file: metrics-token }
+    static_configs: [{ targets: ['worker:9464'] }]

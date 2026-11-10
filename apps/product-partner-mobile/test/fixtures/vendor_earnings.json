@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "delivered": {
+      "orders": 1,
+      "salesPaise": 34800,
+      "commissionPaise": 3588,
+      "earnedPaise": 31212
+    },
+    "inProgress": {
+      "orders": 0,
+      "expectedPaise": 0
+    },
+    "months": [
+      {
+        "month": "2026-10",
+        "orders": 1,
+        "earnedPaise": 31212,
+        "commissionPaise": 3588
+      }
+    ],
+    "payouts": "Payouts to your bank account start with the finance release. Earnings are recorded for every delivered order."
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "d52f55b0-7b5e-4581-a9ae-cfd9e61f24e2"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "data": {
+    "id": "d7217601-74d2-41e1-b159-027e5bf535f2",
+    "slug": "fixture-talent-cup-8725-b390a7",
+    "title": "Fixture Talent Cup 8725",
+    "bannerUrl": null,
+    "category": {
+      "name": "Best Trick",
+      "group": "TALENT"
+    },
+    "status": "LIVE",
+    "feePaise": 9900,
+    "currency": "INR",
+    "entries": 0,
+    "maxParticipants": 50,
+    "registrationOpensAt": "2026-10-04T00:52:06.809Z",
+    "registrationClosesAt": "2026-10-04T02:52:06.809Z",
+    "submissionClosesAt": "2026-10-04T03:52:06.809Z",
+    "votingClosesAt": "2026-10-04T04:52:06.809Z",
+    "prizes": [
+      {
+        "rank": 1,
+        "title": "Winner",
+        "kind": "CASH",
+        "amountPaise": 50000
+      },
+      {
+        "rank": null,
+        "title": "Crowd favourite",
+        "kind": "VOUCHER",
+        "amountPaise": null
+      }
+    ],
+    "description": "Show us your best trick.",
+    "rules": null,
+    "terms": null,
+    "publicWeight": 100,
+    "votesPerUserPerDay": 1,
+    "cancelReason": null,
+    "leaderboardFrozen": false,
+    "tasks": [
+      {
+        "id": "0c51961e-f14d-4cf3-a043-5ec21299b9ee",
+        "type": "TEXT",
+        "title": "Describe the trick in one line",
+        "description": null,
+        "required": true
+      }
+    ],
+    "judgingCriteria": [],
+    "viewer": {
+      "entries": []
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "2c389d9f-de29-4c7c-90bc-d1eae16d3e97"
+  }
+}

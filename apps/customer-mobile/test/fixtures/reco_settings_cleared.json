@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": {
+    "personalised": false,
+    "availableOnPlatform": true,
+    "historyDays": 90,
+    "basedOn": [],
+    "viewsKept": 0,
+    "hiddenItems": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "661336e9-0ed5-4777-8e09-beb95b94134c"
+  }
+}

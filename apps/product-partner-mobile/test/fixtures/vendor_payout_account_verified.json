@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "active": {
+      "id": "7fa83b15-362f-493f-bfcf-b51cf5460df9",
+      "method": "BANK",
+      "holderName": "Wag and Co Pvt Ltd",
+      "ifsc": "HDFC0001234",
+      "accountLast4": "6789",
+      "vpa": null,
+      "status": "VERIFIED",
+      "verifiedName": "WAG AND CO PVT LTD",
+      "nameMatches": true,
+      "failureReason": null,
+      "verifiedAt": "2026-10-11T01:09:29.363Z",
+      "payableFrom": "2026-10-11T01:09:29.363Z",
+      "createdAt": "2026-10-11T01:09:29.342Z"
+    },
+    "pending": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "3036d07a-f388-4f6e-8244-f4b41ad8f710"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": {
+    "id": "b2fba3ce-d07b-443e-915f-5e8d31852a61",
+    "slug": "walk-week-mv324rkz-c88ceb",
+    "title": "Walk Week mv324rkz",
+    "bannerUrl": null,
+    "kind": "FREE",
+    "feePaise": 0,
+    "startsAt": "2026-10-11T01:00:00.000Z",
+    "endsAt": "2026-10-19T00:00:00.000Z",
+    "status": "PUBLISHED",
+    "requiredCheckIns": 5,
+    "proof": "POST",
+    "pointsPerCheckIn": 10,
+    "streakBonusEvery": 7,
+    "streakBonusPoints": 50,
+    "participants": 0,
+    "membersOnly": false,
+    "badge": {
+      "name": "Walker mv324rkz",
+      "iconUrl": null
+    },
+    "mine": null,
+    "description": "Walk your dog every day for a week.",
+    "contestId": null,
+    "entry": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "2a83f2fa-307f-4023-98e6-c38ed03c81a8"
+  }
+}

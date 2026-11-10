@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": {
+    "id": "83694ede-464e-4b65-b62e-1d8aa2f0e056",
+    "code": "PB-H5KJ9Q",
+    "status": "IN_PROGRESS",
+    "startsAt": "2026-10-06T19:42:02.941Z",
+    "endsAt": "2026-10-06T20:42:02.941Z",
+    "mode": "AT_CENTER",
+    "service": {
+      "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+      "name": "Full groom"
+    },
+    "pet": {
+      "id": "3696f2ed-f1f1-4b70-bef9-eb53c1f96eec",
+      "name": "Coco"
+    },
+    "pricePaise": 84900,
+    "partner": {
+      "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+      "businessName": "Pawfect Grooming",
+      "addressLine": "12 Hill Road",
+      "city": "Mumbai",
+      "lat": 19.0596,
+      "lng": 72.8295,
+      "phone": "+919873632007"
+    },
+    "customer": {
+      "id": "2ab76ca0-88fe-4f6b-b1cf-0ffb87f3ccb5",
+      "name": "Asha Customer",
+      "phone": "+919874632008"
+    },
+    "address": null,
+    "customerNote": "Gentle with the ears please",
+    "earnings": {
+      "platformFeePaise": 12735,
+      "partnerEarningPaise": 72165
+    },
+    "cancelledBy": null,
+    "cancelReason": null,
+    "refundPaise": null,
+    "review": null,
+    "payment": null,
+    "createdAt": "2026-10-06T19:52:02.525Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8bfed1be-fc26-4653-97af-d4767fe3488e"
+  }
+}

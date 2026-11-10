@@ -1,0 +1,350 @@
+{
+  "success": true,
+  "data": {
+    "types": [
+      "pets",
+      "users",
+      "reels",
+      "products",
+      "services",
+      "partners",
+      "contests",
+      "challenges"
+    ],
+    "pets": {
+      "species": [
+        {
+          "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+          "name": "Dog"
+        },
+        {
+          "id": "da9b1546-b89a-406d-8bf0-a8fcf175cd96",
+          "name": "Cat"
+        },
+        {
+          "id": "be5b7133-384f-4245-9600-9705557c58f6",
+          "name": "Bird"
+        },
+        {
+          "id": "57fdb1f8-27d0-4bf4-91a5-853323c273eb",
+          "name": "Rabbit"
+        },
+        {
+          "id": "37eed93f-5eb1-4c9b-811b-368c60321e70",
+          "name": "Hamster"
+        },
+        {
+          "id": "2eea8dd8-c03b-4f2a-8cdf-32e64d96a47e",
+          "name": "Fish"
+        },
+        {
+          "id": "743a1c95-f65c-4985-bc00-84699e6c0f3d",
+          "name": "Reptile"
+        },
+        {
+          "id": "d9d8771b-3417-4f21-943a-da9fc3270fb1",
+          "name": "Other"
+        }
+      ],
+      "city": true
+    },
+    "users": {
+      "city": true
+    },
+    "reels": {},
+    "products": {
+      "categories": [
+        {
+          "id": "5a24461d-3ff0-40f3-99bf-dfe3a1a3b0b3",
+          "name": "Treats 5736"
+        },
+        {
+          "id": "5ec0cb48-416c-4c14-8933-f9a9a857dbc7",
+          "name": "Treats 5960"
+        },
+        {
+          "id": "90496adb-2315-4683-9462-e4a7fc0f9d02",
+          "name": "Treats 6078"
+        },
+        {
+          "id": "7a81a55a-856e-491c-8bf6-0afb98ecc51e",
+          "name": "Treats 6687"
+        },
+        {
+          "id": "9404caf8-a519-4c14-9b79-c96fbcfc60f5",
+          "name": "Treats mv325zs4"
+        },
+        {
+          "id": "0ced2c04-711f-4e2e-9dd5-a7a6e207686f",
+          "name": "Toys mv325zs4"
+        },
+        {
+          "id": "466a02fb-2318-4a05-bc1b-8ebac4f0b6fb",
+          "name": "Chews 0193"
+        },
+        {
+          "id": "a96238ff-3bbd-4871-a6ee-07325e8a430c",
+          "name": "Chews 0197"
+        },
+        {
+          "id": "fd3b390d-0e70-41cf-915b-f4065a0da8bd",
+          "name": "Chews 0206"
+        },
+        {
+          "id": "e6da258c-f644-4a9e-9309-b061f4b50f17",
+          "name": "Chews 0216"
+        },
+        {
+          "id": "80326182-1b3f-4abb-a0d9-af52387c492c",
+          "name": "Chews 0433"
+        },
+        {
+          "id": "314154bb-582f-4716-8a52-f1b4b2a72653",
+          "name": "Chews 0966"
+        },
+        {
+          "id": "6c41b206-34b0-48a5-8a7e-ebb48528c854",
+          "name": "Treats mv3d4trr"
+        },
+        {
+          "id": "9e0cc4d0-82ad-4034-a54e-31ee2d7c10c0",
+          "name": "Toys mv3d4trr"
+        },
+        {
+          "id": "7c578754-6b13-4915-a297-f97989ee9d0e",
+          "name": "Treats mv3dft8t"
+        },
+        {
+          "id": "5c276437-c0d4-4906-97fa-a7cf08e8ca04",
+          "name": "Toys mv3dft8t"
+        },
+        {
+          "id": "8c7866d4-0c83-4116-aa56-7e8463d8e5a3",
+          "name": "Treats mv3iep7z"
+        },
+        {
+          "id": "92bde133-965c-4c92-851b-d70423e85360",
+          "name": "Toys mv3iep7z"
+        },
+        {
+          "id": "3297252e-991f-4f73-a493-3944c7754fcc",
+          "name": "Treats mv3ivjke"
+        },
+        {
+          "id": "06f75ca4-3352-4394-97db-7a771401072a",
+          "name": "Toys mv3ivjke"
+        },
+        {
+          "id": "5264a301-6eab-416d-a3c4-5ec2ca68053b",
+          "name": "Treats mv3ix649"
+        },
+        {
+          "id": "486bd5c8-f1fe-498a-8994-e09efcb2fa79",
+          "name": "Toys mv3ix649"
+        },
+        {
+          "id": "b0c713d5-41c0-45d2-869a-748f4fa49c5b",
+          "name": "Treats mv3izvg0"
+        },
+        {
+          "id": "1c484703-1dcd-4d66-a90c-888fc0a8a83e",
+          "name": "Toys mv3izvg0"
+        },
+        {
+          "id": "d700e79b-1cd7-42ac-bc05-57ca256b4da5",
+          "name": "Treats mv3nqail"
+        },
+        {
+          "id": "336f5393-8b55-432d-b2a2-b170f9c07afa",
+          "name": "Toys mv3nqail"
+        },
+        {
+          "id": "e3e1cc34-c893-4028-88cf-1a34a612fe09",
+          "name": "Treats mv3plu5i"
+        },
+        {
+          "id": "3c5f5654-76a1-4896-81c7-9969a7455479",
+          "name": "Toys mv3plu5i"
+        },
+        {
+          "id": "87ef64c7-3420-4271-89ff-588b5604a9bc",
+          "name": "Treats mv479g2q"
+        },
+        {
+          "id": "aee541d1-89ea-4d13-9387-23648aabeb04",
+          "name": "Toys mv479g2q"
+        },
+        {
+          "id": "0d66560a-9dab-476f-af0d-e2d741b75d82",
+          "name": "Treats mvdz50ic"
+        },
+        {
+          "id": "0702984a-bee7-4473-b500-2036a3b7f657",
+          "name": "Toys mvdz50ic"
+        },
+        {
+          "id": "e0d2cd7b-44b7-4d2e-94b0-61d447301191",
+          "name": "Treats mve4ls1v"
+        },
+        {
+          "id": "b168aae6-8124-45fa-b18f-d206fdbd146c",
+          "name": "Toys mve4ls1v"
+        },
+        {
+          "id": "46fb8f1a-afad-474d-9a03-9cd05882745a",
+          "name": "Treats mveg8yj0"
+        },
+        {
+          "id": "0c7743d9-ce9d-4866-9f78-c03a6af0bb72",
+          "name": "Toys mveg8yj0"
+        }
+      ],
+      "species": [
+        {
+          "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+          "name": "Dog"
+        },
+        {
+          "id": "da9b1546-b89a-406d-8bf0-a8fcf175cd96",
+          "name": "Cat"
+        },
+        {
+          "id": "be5b7133-384f-4245-9600-9705557c58f6",
+          "name": "Bird"
+        },
+        {
+          "id": "57fdb1f8-27d0-4bf4-91a5-853323c273eb",
+          "name": "Rabbit"
+        },
+        {
+          "id": "37eed93f-5eb1-4c9b-811b-368c60321e70",
+          "name": "Hamster"
+        },
+        {
+          "id": "2eea8dd8-c03b-4f2a-8cdf-32e64d96a47e",
+          "name": "Fish"
+        },
+        {
+          "id": "743a1c95-f65c-4985-bc00-84699e6c0f3d",
+          "name": "Reptile"
+        },
+        {
+          "id": "d9d8771b-3417-4f21-943a-da9fc3270fb1",
+          "name": "Other"
+        }
+      ],
+      "inStock": true
+    },
+    "services": {
+      "categories": [
+        {
+          "id": "9e126406-edb3-4b10-8f0d-28bdb25a17b9",
+          "name": "Grooming"
+        },
+        {
+          "id": "3827d27e-f054-4892-a8f7-f7dc04bd87ca",
+          "name": "Vet consultation"
+        },
+        {
+          "id": "9e7c2f2b-e886-4614-82a7-292fb606ff00",
+          "name": "Training"
+        },
+        {
+          "id": "a760c2d8-41a1-458d-a86b-a138e4fd04ff",
+          "name": "Boarding"
+        },
+        {
+          "id": "096b1754-525e-45ed-99f2-8d1b47dd718d",
+          "name": "Dog walking"
+        }
+      ],
+      "modes": [
+        {
+          "id": "AT_CENTER",
+          "name": "At the centre"
+        },
+        {
+          "id": "AT_HOME",
+          "name": "Home visit"
+        }
+      ],
+      "near": true
+    },
+    "partners": {
+      "categories": [
+        {
+          "id": "9e126406-edb3-4b10-8f0d-28bdb25a17b9",
+          "name": "Grooming"
+        },
+        {
+          "id": "3827d27e-f054-4892-a8f7-f7dc04bd87ca",
+          "name": "Vet consultation"
+        },
+        {
+          "id": "9e7c2f2b-e886-4614-82a7-292fb606ff00",
+          "name": "Training"
+        },
+        {
+          "id": "a760c2d8-41a1-458d-a86b-a138e4fd04ff",
+          "name": "Boarding"
+        },
+        {
+          "id": "096b1754-525e-45ed-99f2-8d1b47dd718d",
+          "name": "Dog walking"
+        }
+      ],
+      "city": true,
+      "near": true
+    },
+    "contests": {
+      "categories": [
+        {
+          "id": "e7036703-ac3f-4307-8d9d-bddfdec40038",
+          "name": "Best Trick"
+        },
+        {
+          "id": "747803d1-45d6-4ed5-8815-9c77d4bdd489",
+          "name": "Best Trick"
+        },
+        {
+          "id": "a61f4155-c2b0-412e-b790-52c2791fdaff",
+          "name": "Best Trick"
+        }
+      ],
+      "when": [
+        {
+          "id": "open",
+          "name": "Open for entries"
+        },
+        {
+          "id": "voting",
+          "name": "Voting"
+        },
+        {
+          "id": "past",
+          "name": "Finished"
+        }
+      ]
+    },
+    "challenges": {
+      "when": [
+        {
+          "id": "active",
+          "name": "On now"
+        },
+        {
+          "id": "upcoming",
+          "name": "Starting soon"
+        },
+        {
+          "id": "past",
+          "name": "Finished"
+        }
+      ]
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "acfaf064-663c-4ae3-98f3-ebb056d1a336"
+  }
+}

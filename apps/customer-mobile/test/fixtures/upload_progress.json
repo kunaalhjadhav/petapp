@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "mediaId": "18cbae94-b6f5-42eb-8ebb-7014e200ef26",
+    "status": "PENDING_UPLOAD",
+    "method": "MULTIPART",
+    "sizeBytes": 20971841,
+    "partSize": 8388608,
+    "partCount": 3,
+    "uploaded": [
+      1
+    ],
+    "missing": [
+      2,
+      3
+    ],
+    "uploadedBytes": 8388608
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9cadbed9-fa11-4398-a3b9-f34c800aa512"
+  }
+}

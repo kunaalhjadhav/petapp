@@ -1,0 +1,105 @@
+name: deploy
+
+# After CI passes on main: build the images once, deploy them to staging automatically, then to production once
+# someone approves (set required reviewers on the "production" environment in GitHub → Settings → Environments).
+# Production gets a database backup before its migrations, and every deploy is smoke-tested; a deploy that doesn't
+# become healthy is rolled back to the previous version on the server (infrastructure/deploy/deploy.sh).
+#
+# Secrets per environment (staging, production): DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY, DEPLOY_PATH.
+# Variables per environment: API_URL, WEB_URL, ADMIN_URL.
+# One server only (no staging yet)? Set the repository variable SKIP_STAGING=true: production then follows the image
+# build directly (still behind its approval).
+on:
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Commit to deploy (default: the latest on main)'
+        required: false
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+
+jobs:
+  images:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+      registry: ${{ steps.tag.outputs.registry }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.event.workflow_run.head_sha || github.sha }}
+      - id: tag
+        # Image names must be lowercase, and GitHub user names often aren't.
+        run: |
+          echo "tag=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_OUTPUT"
+          echo "registry=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/petapp" >> "$GITHUB_OUTPUT"
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: '${{ github.actor }}', password: '${{ secrets.GITHUB_TOKEN }}' }
+      - uses: docker/setup-buildx-action@v3
+      - name: Build and push
+        env: { TAG: '${{ steps.tag.outputs.tag }}', REGISTRY: '${{ steps.tag.outputs.registry }}' }
+        run: |
+          set -e
+          build() { docker buildx build --push --cache-from type=gha,scope=$1 --cache-to type=gha,mode=max,scope=$1 "${@:2}"; }
+          build backend -f infrastructure/Dockerfile.backend --target runtime -t "$REGISTRY/backend:$TAG" --build-arg APP_RELEASE="$TAG" .
+          build migrate -f infrastructure/Dockerfile.backend --target migrate -t "$REGISTRY/migrate:$TAG" .
+          build web -f infrastructure/Dockerfile.web -t "$REGISTRY/web:$TAG" .
+          build ops -f infrastructure/Dockerfile.ops -t "$REGISTRY/ops:$TAG" .
+          # The dashboard shows its environment name, which is baked in at build time.
+          build admin-staging -f infrastructure/Dockerfile.admin --build-arg NEXT_PUBLIC_ENV_LABEL=Staging -t "$REGISTRY/admin-staging:$TAG" .
+          build admin-production -f infrastructure/Dockerfile.admin --build-arg NEXT_PUBLIC_ENV_LABEL=Production -t "$REGISTRY/admin-production:$TAG" .
+
+  staging:
+    needs: images
+    if: vars.SKIP_STAGING != 'true'
+    runs-on: ubuntu-latest
+    environment: { name: staging, url: '${{ vars.WEB_URL }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: ./.github/actions/deploy
+        with:
+          tag: ${{ needs.images.outputs.tag }}
+          environment: staging
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USER }}
+          ssh-key: ${{ secrets.DEPLOY_SSH_KEY }}
+          path: ${{ secrets.DEPLOY_PATH }}
+          registry: ${{ needs.images.outputs.registry }}
+          registry-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Smoke test
+        run: node scripts/ops/smoke.mjs --env staging --api "${{ vars.API_URL }}" --web "${{ vars.WEB_URL }}" --admin "${{ vars.ADMIN_URL }}"
+
+  production:
+    needs: [images, staging]
+    # After a successful staging deploy, or straight after the build when staging is skipped (SKIP_STAGING).
+    if: always() && needs.images.result == 'success' && (needs.staging.result == 'success' || needs.staging.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment: { name: production, url: '${{ vars.WEB_URL }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy (backs up the database first)
+        uses: ./.github/actions/deploy
+        with:
+          tag: ${{ needs.images.outputs.tag }}
+          environment: production
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USER }}
+          ssh-key: ${{ secrets.DEPLOY_SSH_KEY }}
+          path: ${{ secrets.DEPLOY_PATH }}
+          registry: ${{ needs.images.outputs.registry }}
+          registry-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Smoke test
+        run: node scripts/ops/smoke.mjs --env production --api "${{ vars.API_URL }}" --web "${{ vars.WEB_URL }}" --admin "${{ vars.ADMIN_URL }}"

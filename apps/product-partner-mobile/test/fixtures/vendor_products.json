@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+      "vendorId": "7081925b-a136-45d7-b591-774559305405",
+      "categoryId": "7a81a55a-856e-491c-8bf6-0afb98ecc51e",
+      "title": "Chicken Jerky 6687",
+      "slug": "chicken-jerky-6687-60f28f",
+      "description": "Single-ingredient chicken treats.",
+      "brand": "Wag",
+      "speciesIds": [],
+      "imageIds": [
+        "f870e233-f732-4255-8e6d-00e371ab0459"
+      ],
+      "status": "ACTIVE",
+      "blockReason": null,
+      "createdAt": "2026-10-10T12:51:30.085Z",
+      "updatedAt": "2026-10-10T12:51:30.132Z",
+      "variants": [
+        {
+          "id": "b59d5d6c-0606-4d38-a782-e9f33a756c78",
+          "productId": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+          "sku": "CJ-100",
+          "title": "100 g",
+          "mrpPaise": 34900,
+          "pricePaise": 29900,
+          "gstRateBps": 1800,
+          "stock": 29,
+          "weightGrams": 120,
+          "isActive": true,
+          "createdAt": "2026-10-10T12:51:30.085Z",
+          "updatedAt": "2026-10-10T12:51:31.444Z",
+          "inventoryStatus": "IN_STOCK"
+        },
+        {
+          "id": "a3986146-c13d-4b32-a8cd-87b2df2ff6a3",
+          "productId": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+          "sku": "CJ-250",
+          "title": "250 g",
+          "mrpPaise": 74900,
+          "pricePaise": 64900,
+          "gstRateBps": 1800,
+          "stock": 3,
+          "weightGrams": null,
+          "isActive": true,
+          "createdAt": "2026-10-10T12:51:30.085Z",
+          "updatedAt": "2026-10-10T12:51:30.085Z",
+          "inventoryStatus": "LOW_STOCK"
+        }
+      ],
+      "category": {
+        "id": "7a81a55a-856e-491c-8bf6-0afb98ecc51e",
+        "name": "Treats 6687"
+      },
+      "images": [
+        {
+          "id": "f870e233-f732-4255-8e6d-00e371ab0459",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125131Z&X-Amz-Expires=3600&X-Amz-Signature=8b9cc115d4e9b93c402559bbc1087ad57c83f2fe427e845b1b9b4b3e2db5fc7b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125131Z&X-Amz-Expires=3600&X-Amz-Signature=a71eb88a5608d857d1ee7bc97d48662e4bca7695036aa140e0af6fec702741a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125131Z&X-Amz-Expires=3600&X-Amz-Signature=a9644cfe8be76776319efec9177a3b22d7592e91549681e093ce68e72cb563f6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "30624f67-6d81-408c-bf0c-8a877ef9d8e3"
+  }
+}

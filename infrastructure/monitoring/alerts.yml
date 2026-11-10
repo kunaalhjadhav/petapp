@@ -1,0 +1,63 @@
+# Alert rules for PetApp (Prometheus / Alertmanager, Grafana alerting, or Amazon Managed Prometheus).
+# Thresholds are starting points; tune them after a few weeks of real traffic.
+groups:
+  - name: petapp-availability
+    rules:
+      - alert: ApiDown
+        expr: up{job="petapp-api"} == 0
+        for: 2m
+        labels: { severity: page }
+        annotations: { summary: "An API instance has been unreachable for 2 minutes", runbook: "docs/runbooks/api-down.md" }
+      - alert: WorkerDown
+        expr: up{job="petapp-worker"} == 0
+        for: 5m
+        labels: { severity: page }
+        annotations: { summary: "The worker is down: media, notifications, refunds and payouts are not being processed", runbook: "docs/runbooks/worker-down.md" }
+      - alert: DatabaseDown
+        expr: petapp_db_up == 0
+        for: 1m
+        labels: { severity: page }
+        annotations: { summary: "The API can't reach the database", runbook: "docs/runbooks/database-down.md" }
+      - alert: HighErrorRate
+        expr: sum(rate(petapp_http_requests_total{status=~"5.."}[5m])) / sum(rate(petapp_http_requests_total[5m])) > 0.02
+        for: 10m
+        labels: { severity: page }
+        annotations: { summary: "Over 2% of API requests are failing (5xx)", runbook: "docs/runbooks/high-error-rate.md" }
+      - alert: SlowApi
+        expr: histogram_quantile(0.95, sum by (le) (rate(petapp_http_request_duration_seconds_bucket{route!="unmatched"}[10m]))) > 1
+        for: 15m
+        labels: { severity: ticket }
+        annotations: { summary: "95th percentile API response time is over 1 second", runbook: "docs/runbooks/slow-api.md" }
+  - name: petapp-jobs
+    rules:
+      - alert: QueueBacklog
+        expr: petapp_queue_jobs{state="waiting"} > 500
+        for: 15m
+        labels: { severity: ticket }
+        annotations: { summary: "{{ $labels.queue }} has over 500 jobs waiting for 15 minutes: add worker capacity or check for a stuck job", runbook: "docs/runbooks/queue-backlog.md" }
+      - alert: JobsFailing
+        expr: increase(petapp_jobs_failed_total{final="true"}[30m]) > 5
+        labels: { severity: ticket }
+        annotations: { summary: "{{ $labels.queue }}/{{ $labels.job }} jobs are failing after all retries (see System health)", runbook: "docs/runbooks/jobs-failing.md" }
+  - name: petapp-money
+    rules:
+      - alert: PaymentWebhooksStuck
+        expr: petapp_payment_webhooks_unprocessed > 0
+        for: 15m
+        labels: { severity: page }
+        annotations: { summary: "Payment webhooks have not been processed: customers may have paid without confirmation", runbook: "docs/runbooks/payment-webhooks-stuck.md" }
+      - alert: PaymentFailuresSpike
+        expr: petapp_payments_last_hour{status="FAILED"} > 20 and petapp_payments_last_hour{status="FAILED"} > 2 * petapp_payments_last_hour{status="CAPTURED"}
+        for: 15m
+        labels: { severity: page }
+        annotations: { summary: "Most payments in the last hour failed: check the payment gateway", runbook: "docs/runbooks/payment-failures-spike.md" }
+      - alert: RefundsOverdue
+        expr: petapp_money_attention{kind="refunds_overdue"} > 0
+        for: 1h
+        labels: { severity: ticket }
+        annotations: { summary: "Refunds have been owed for over a day (Finance → Refunds)", runbook: "docs/runbooks/refunds-and-payouts.md" }
+      - alert: MoneyFailures
+        expr: petapp_money_attention{kind=~"refunds_failed|payouts_failed"} > 0
+        for: 30m
+        labels: { severity: ticket }
+        annotations: { summary: "Failed {{ $labels.kind }} need finance staff (dashboard → Finance)", runbook: "docs/runbooks/refunds-and-payouts.md" }

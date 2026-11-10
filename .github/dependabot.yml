@@ -1,0 +1,28 @@
+# Weekly update pull requests. Security updates are opened as soon as an advisory is published.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }
+    open-pull-requests-limit: 10
+    groups:
+      nestjs: { patterns: ['@nestjs/*'] }
+      prisma: { patterns: ['prisma', '@prisma/*'] }
+      next-react: { patterns: ['next', 'react', 'react-dom', '@types/react*'] }
+      aws: { patterns: ['@aws-sdk/*'] }
+      dev-tools: { dependency-type: development, update-types: [minor, patch] }
+  - package-ecosystem: pub
+    directory: /apps/customer-mobile
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }
+  - package-ecosystem: pub
+    directory: /apps/service-partner-mobile
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }
+  - package-ecosystem: pub
+    directory: /apps/product-partner-mobile
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }
+  - package-ecosystem: docker
+    directory: /infrastructure
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly, day: monday, time: '08:00', timezone: Asia/Kolkata }

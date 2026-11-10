@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "data": {
+    "id": "b201c6d6-4e84-46ee-bb46-ccc20050f7d4",
+    "code": "PO-MY373W86",
+    "status": "CANCELLED",
+    "createdAt": "2026-10-07T12:45:10.909Z",
+    "shipTo": {
+      "city": "Pune",
+      "name": "Home",
+      "line1": "4 Lake View",
+      "line2": null,
+      "state": "Maharashtra",
+      "pincode": "411001",
+      "locality": "Koregaon Park"
+    },
+    "itemsPaise": 349900,
+    "discountPaise": 0,
+    "shippingPaise": 0,
+    "totalPaise": 349900,
+    "payment": null,
+    "refunds": [
+      {
+        "amountPaise": 349900,
+        "reason": "SUB_ORDER_CANCELLED",
+        "status": "PENDING",
+        "createdAt": "2026-10-07T12:45:10.966Z"
+      }
+    ],
+    "parcels": [
+      {
+        "id": "f14f21d9-f008-4e41-94e4-fe05096dd3ed",
+        "code": "SO-2UFMN9DT0",
+        "status": "CANCELLED",
+        "vendor": {
+          "id": "d5019c4c-dc59-4e74-908b-82352955943c",
+          "businessName": "Happy Tails 7109"
+        },
+        "itemsPaise": 349900,
+        "discountPaise": 0,
+        "shippingPaise": 0,
+        "totalPaise": 349900,
+        "courier": null,
+        "trackingNumber": null,
+        "shippedAt": null,
+        "deliveredAt": null,
+        "cancelReason": "Ordered twice by mistake",
+        "cancelledBy": "CUSTOMER",
+        "items": [
+          {
+            "productTitle": "Royal Kibble 7109",
+            "variantTitle": "7 kg",
+            "qty": 1,
+            "unitPricePaise": 349900,
+            "lineTotalPaise": 349900
+          }
+        ],
+        "canCancel": false,
+        "canReturn": false,
+        "returnRequest": null
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "7b8203aa-cfe8-494e-958c-adfa3a16c565"
+  }
+}

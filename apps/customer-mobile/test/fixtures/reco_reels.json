@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "b0ee640b-1d21-4a15-9c3c-72a01b58e45a",
+        "type": "REEL",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Zoomies #zoomies",
+        "locationName": null,
+        "author": {
+          "id": "d05a5086-5859-43aa-b72f-469b009d685d",
+          "name": "Reel Maker",
+          "avatarUrl": null
+        },
+        "pets": [],
+        "hashtags": [
+          "zoomies"
+        ],
+        "media": [
+          {
+            "id": "bc186b63-b2a1-4002-87dc-a46f89769966",
+            "kind": "VIDEO",
+            "status": "READY",
+            "width": 720,
+            "height": 1280,
+            "durationMs": 3000,
+            "hls": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=369579f8fcc82f95ca3fcb0377119cf2321cac3c63231675bdf7127199be0eba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+            "poster": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=d2859b1164a821a3fba51357060361bd97e7d2ff4ce9251cd556a1b6af9085f1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ],
+        "counts": {
+          "likes": 1,
+          "comments": 0,
+          "saves": 0,
+          "shares": 0,
+          "views": 0
+        },
+        "viewer": {
+          "liked": true,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-11T07:39:44.265Z",
+        "createdAt": "2026-10-11T07:39:44.269Z",
+        "reason": "From someone you follow"
+      }
+    ],
+    "nextCursor": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9b1ed756-8cbd-41ce-9be8-7c8effd4dd86"
+  }
+}

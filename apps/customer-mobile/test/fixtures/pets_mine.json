@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "75dec7af-f327-4f1d-a856-b63879493d33",
+      "name": "Bruno",
+      "handle": "bruno.b9ca76",
+      "avatarUrl": null,
+      "gender": "MALE",
+      "dateOfBirth": "2023-08-14T00:00:00.000Z",
+      "city": null,
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "6b124905-77fb-4595-aaab-579e6353b0ca",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": {
+        "id": "f2d884df-8da9-4969-b94f-25abdb0ff264",
+        "name": "Beagle"
+      },
+      "status": "ACTIVE"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "6783924c-3bf9-43b1-81c4-e562b3b3481b"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "places": [
+      {
+        "kind": "PINCODE",
+        "label": "Bandra West, Mumbai",
+        "detail": "Maharashtra 400050",
+        "lat": 19.0596,
+        "lng": 72.8295,
+        "pincode": "400050",
+        "city": "Mumbai",
+        "citySlug": "mumbai",
+        "source": "petapp"
+      }
+    ],
+    "maps": "none"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "cc5efb01-baf7-4db2-9e28-521550c83e19"
+  }
+}

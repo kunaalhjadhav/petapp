@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "path": "/invoices/a4bfe0b0-6c55-47a6-9833-b7c6061721fe/file?expires=1791681299&sig=3732cdb3709953ccf96cb931689deca2d60561601b6442dcb6f2b6ecbe98e130",
+    "expiresAt": "2026-10-11T01:14:59.000Z",
+    "fileName": "WAGI-2627-00001.pdf"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "194261e1-28c8-45c9-9d83-283bcba9c16b"
+  }
+}

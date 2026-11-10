@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "media": {
+      "id": "d874dae4-1abc-4478-b7c7-76af8fe4b5e2",
+      "kind": "DOCUMENT",
+      "status": "PENDING_UPLOAD"
+    },
+    "upload": {
+      "url": "http://127.0.0.1:9000/petapp-media/uploads/d835cfb6-be24-4680-a3e7-0651532c216b/d874dae4-1abc-4478-b7c7-76af8fe4b5e2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125128Z&X-Amz-Expires=900&X-Amz-Signature=44b90b9337a19ab0cc02dbfa41df82ea92bec460038df76890e309a8f32060c5&X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/pdf"
+      },
+      "expiresInSeconds": 900
+    }
+  }
+}

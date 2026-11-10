@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "data": {
+    "registered": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "cc714224-38f7-43ac-89db-c6511fb30ca0"
+  }
+}

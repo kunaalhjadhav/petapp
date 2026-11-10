@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "0b1399ca-f8ff-47f1-ba6c-a73f3ad9d174",
+      "rating": 5,
+      "comment": "Gentle with Coco and on time. Will book again.",
+      "reply": "Thank you, Kabir! Coco was a delight.",
+      "repliedAt": "2026-10-18T23:12:25.929Z",
+      "by": "Kabir M.",
+      "at": "2026-10-18T23:12:25.820Z",
+      "photos": [
+        {
+          "id": "45b9a848-ff0d-4662-a5bf-f499f14b4b60",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=51d3a6b301742e58e6f68adee411f6395d5c7fa98019eb44526b9e999f8c22a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=a7810d2c0f8bfdc7f8d40e72fef9d48b44c629e0966d6fcd946f7df8f295f45b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=7bc9abd58a9325573dba04376827924d4c8f007ce9941541b874b643396a7dab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "variantTitle": null
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "e30ed2ab-5290-422c-8d1c-16a5586392db",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

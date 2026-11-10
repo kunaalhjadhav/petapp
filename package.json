@@ -1,0 +1,71 @@
+{
+  "name": "petapp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PetApp \u2014 pet ecosystem monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "dev": "npm run start:dev -w @petapp/backend",
+    "build": "npm run build -w @petapp/types && npm run build -w @petapp/backend && npm run build -w @petapp/admin-dashboard && npm run build -w @petapp/web",
+    "lint": "npm run lint -w @petapp/backend && npm run lint -w @petapp/admin-dashboard && npm run lint -w @petapp/web",
+    "typecheck": "npm run typecheck -w @petapp/backend && npm run typecheck -w @petapp/admin-dashboard && npm run typecheck -w @petapp/web",
+    "test": "npm run test -w @petapp/backend && npm run test -w @petapp/admin-dashboard && npm run test -w @petapp/web",
+    "test:e2e": "npm run test:e2e -w @petapp/backend",
+    "format": "prettier --write \"**/*.{ts,json,md,yml}\"",
+    "postinstall": "prisma generate && npm run build -w @petapp/types",
+    "db:check-drift": "prisma migrate diff --from-migrations prisma/migrations --to-schema prisma/schema.prisma --exit-code",
+    "dev:admin": "npm run dev -w @petapp/admin-dashboard",
+    "worker": "npm run dev:worker -w @petapp/backend",
+    "dev:web": "npm run dev -w @petapp/web",
+    "ops:backup": "node scripts/ops/backup.mjs",
+    "ops:restore-drill": "node scripts/ops/restore-drill.mjs",
+    "ops:smoke": "node scripts/ops/smoke.mjs",
+    "ops:preflight": "node scripts/ops/preflight.mjs",
+    "ops:check-runbooks": "node scripts/ops/check_runbooks.mjs",
+    "load:test": "k6 run load/petapp.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "^3.3.3",
+    "prisma": "7.10.1",
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "@prisma/client": "7.10.1",
+    "@prisma/adapter-pg": "7.10.1",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.7",
+    "bcryptjs": "^2.4.3"
+  },
+  "overrides": {
+    "rxjs": "7.8.1",
+    "react": "19.1.9",
+    "react-dom": "19.1.9",
+    "multer": "^2.5.0",
+    "body-parser": "^1.20.9",
+    "lodash": "^4.18.1",
+    "js-yaml@4": "^4.3.2",
+    "@nestjs/swagger": {
+      "js-yaml": "~5.4.3"
+    },
+    "postcss": "^8.5.30",
+    "sharp": "^0.35.5",
+    "qs": "^6.16.1",
+    "handlebars": "^4.7.10",
+    "picomatch@4": "^4.0.7",
+    "tmp": "^0.2.7",
+    "fast-uri": "^3.1.9"
+  }
+}

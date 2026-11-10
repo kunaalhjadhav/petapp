@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "f82c0a79-9208-4703-99fd-7c646c53948f",
+        "type": "PROMOTION",
+        "title": "Weekend treats 1792458129",
+        "body": "Free delivery on treats this weekend.",
+        "actor": null,
+        "entityType": "Promotion",
+        "entityId": "9a0bfe73-1396-4cc0-a3d6-d31225b289ef",
+        "link": "/shop",
+        "count": 1,
+        "read": false,
+        "at": "2026-10-20T01:02:45.938Z"
+      },
+      {
+        "id": "0e97f094-cad3-404f-9a14-ad6713ea3ae8",
+        "type": "MEMBERSHIP_UPDATE",
+        "title": "Membership renewed",
+        "body": "Your Plus membership now runs until 19 Dec 2026.",
+        "actor": null,
+        "entityType": "Membership",
+        "entityId": "1e94e7ae-2c66-4a02-a5b1-d6c88940635b",
+        "link": null,
+        "count": 1,
+        "read": false,
+        "at": "2026-10-20T01:02:14.074Z"
+      },
+      {
+        "id": "e4da3bd3-72ba-46f6-9487-aaa2f1c7aaea",
+        "type": "MEMBERSHIP_UPDATE",
+        "title": "Welcome to Plus",
+        "body": "Your Plus membership is active until 19 Nov 2026.",
+        "actor": null,
+        "entityType": "Membership",
+        "entityId": "69b6dc2e-af74-45b3-80e3-e6fc90e9bba6",
+        "link": null,
+        "count": 1,
+        "read": false,
+        "at": "2026-10-20T01:02:08.967Z"
+      }
+    ],
+    "nextCursor": null,
+    "unread": 3
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "98c41b2e-caf1-43dd-aee3-85e856f7f7c6"
+  }
+}

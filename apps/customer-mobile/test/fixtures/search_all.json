@@ -1,0 +1,98 @@
+{
+  "success": true,
+  "data": {
+    "query": "walk",
+    "groups": [
+      {
+        "type": "challenges",
+        "items": [
+          {
+            "type": "CHALLENGE",
+            "id": "1f39e783-b16d-42ab-95ca-c3f0878b1c78",
+            "title": "Walk Week mveg7qub",
+            "subtitle": "On now · 5 check-ins",
+            "imageUrl": null,
+            "link": {
+              "kind": "challenge",
+              "key": "walk-week-mveg7qub-fb88fe"
+            },
+            "meta": {
+              "state": "On now",
+              "feePaise": 0,
+              "participants": 0
+            }
+          },
+          {
+            "type": "CHALLENGE",
+            "id": "d92d9def-dcab-449f-a5a0-32c2b675b1d1",
+            "title": "Walk Week mve4kel2",
+            "subtitle": "On now · 5 check-ins",
+            "imageUrl": null,
+            "link": {
+              "kind": "challenge",
+              "key": "walk-week-mve4kel2-9e9636"
+            },
+            "meta": {
+              "state": "On now",
+              "feePaise": 0,
+              "participants": 0
+            }
+          },
+          {
+            "type": "CHALLENGE",
+            "id": "8bb4220b-5114-4ba3-a3f2-2f1f68836f23",
+            "title": "Walk Week mvdz3hrb",
+            "subtitle": "On now · 5 check-ins",
+            "imageUrl": null,
+            "link": {
+              "kind": "challenge",
+              "key": "walk-week-mvdz3hrb-25f4f8"
+            },
+            "meta": {
+              "state": "On now",
+              "feePaise": 0,
+              "participants": 1
+            }
+          },
+          {
+            "type": "CHALLENGE",
+            "id": "2f9bb677-6110-49a2-acf3-c17922c78bc2",
+            "title": "Walk Week mv477jo9",
+            "subtitle": "Finished · 5 check-ins",
+            "imageUrl": null,
+            "link": {
+              "kind": "challenge",
+              "key": "walk-week-mv477jo9-7dbf09"
+            },
+            "meta": {
+              "state": "Finished",
+              "feePaise": 0,
+              "participants": 0
+            }
+          },
+          {
+            "type": "CHALLENGE",
+            "id": "2b1e3845-c62e-49f9-9336-85d262a4f06f",
+            "title": "Walk Week mv3pkgo9",
+            "subtitle": "Finished · 5 check-ins",
+            "imageUrl": null,
+            "link": {
+              "kind": "challenge",
+              "key": "walk-week-mv3pkgo9-472752"
+            },
+            "meta": {
+              "state": "Finished",
+              "feePaise": 0,
+              "participants": 0
+            }
+          }
+        ],
+        "more": true
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8f2c10e6-1fbb-4623-9019-5fd1aa042baf"
+  }
+}

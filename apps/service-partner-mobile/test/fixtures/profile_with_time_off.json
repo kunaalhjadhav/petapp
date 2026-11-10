@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "data": {
+    "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+    "userId": "32956841-cea8-478a-9f6f-9c1b357d699b",
+    "slug": "pawfect-grooming-ab98",
+    "businessName": "Pawfect Grooming",
+    "kind": "BUSINESS",
+    "about": null,
+    "phone": "+919873632007",
+    "email": null,
+    "addressLine": "12 Hill Road",
+    "area": "Bandra West",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400050",
+    "lat": 19.0596,
+    "lng": 72.8295,
+    "homeVisitRadiusKm": 5,
+    "concurrency": 1,
+    "slotStepMin": 30,
+    "gstin": null,
+    "commissionBps": null,
+    "status": "DRAFT",
+    "statusReason": null,
+    "submittedAt": null,
+    "reviewedAt": null,
+    "reviewedById": null,
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "createdAt": "2026-10-06T19:52:01.886Z",
+    "updatedAt": "2026-10-06T19:52:01.886Z",
+    "documents": [
+      {
+        "id": "d8e63bc2-e38c-4d9f-b1b1-182e04b4c154",
+        "kind": "ID_PROOF",
+        "status": "PENDING",
+        "note": null,
+        "createdAt": "2026-10-06T19:52:01.990Z",
+        "mimeType": "application/pdf",
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/32956841-cea8-478a-9f6f-9c1b357d699b/064b5ed5-886c-4503-b751-7c084d05eca0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261006%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261006T195202Z&X-Amz-Expires=300&X-Amz-Signature=51500499b81ff41b923be6e0d1439d73726102a7738336e554b5abd1469fccfc&X-Amz-SignedHeaders=host&response-content-disposition=inline&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "services": [
+      {
+        "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "categoryId": "0fc2d1ae-916a-405d-beca-f19709e3ba10",
+        "name": "Full groom",
+        "description": "Bath, trim and nails.",
+        "durationMin": 60,
+        "bufferMin": 15,
+        "pricePaise": 84900,
+        "modes": [
+          "AT_CENTER",
+          "AT_HOME"
+        ],
+        "speciesIds": [],
+        "isActive": true,
+        "createdAt": "2026-10-06T19:52:02.039Z",
+        "updatedAt": "2026-10-06T19:52:02.057Z",
+        "category": {
+          "id": "0fc2d1ae-916a-405d-beca-f19709e3ba10",
+          "key": "grooming",
+          "name": "Grooming",
+          "description": null,
+          "commissionBps": 1500,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-10-06T08:04:31.917Z",
+          "updatedAt": "2026-10-06T08:04:31.917Z"
+        }
+      }
+    ],
+    "hours": [
+      {
+        "id": "b4414596-b65d-4d11-8053-cbf16448c926",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 0,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "dada2c07-9d94-4f69-a6e3-831edabaa31c",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 1,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "01a2879c-5da2-4075-8fc7-b74022426151",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 2,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "2fd3a345-12c0-430c-9c84-05a8f48432ad",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 3,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "f19b0c36-c5db-4070-bab6-3cace50d09b3",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 4,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "20390b97-0218-4701-b51a-607f3a1996b5",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 5,
+        "opensMin": 540,
+        "closesMin": 1080
+      },
+      {
+        "id": "d8bc06c3-16d3-463f-8217-0949416116e4",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "weekday": 6,
+        "opensMin": 540,
+        "closesMin": 1080
+      }
+    ],
+    "timeOff": [
+      {
+        "id": "a18c12c0-5f89-4039-ad5d-06558c599943",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "startsAt": "2026-11-05T03:30:00.000Z",
+        "endsAt": "2026-11-05T11:30:00.000Z",
+        "reason": "Family function"
+      }
+    ],
+    "checklist": [],
+    "warning": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c25a83aa-c396-47af-9f84-528338db80ad"
+  }
+}

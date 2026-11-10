@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "variantId": "9dbebefd-c58d-43e8-9348-3c6919e26ed2",
+        "qty": 2,
+        "productId": "e298f4fd-c4a2-419e-adb9-6c15b466e8a3",
+        "productTitle": "Royal Kibble 7109",
+        "variantTitle": "3 kg",
+        "vendor": {
+          "id": "d5019c4c-dc59-4e74-908b-82352955943c",
+          "businessName": "Happy Tails 7109"
+        },
+        "unitPricePaise": 169900,
+        "mrpPaise": 189900,
+        "image": {
+          "id": "b3b9db9b-7cad-4c64-9c55-065b99892a1a",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124511Z&X-Amz-Expires=3600&X-Amz-Signature=78dd11e2c64cc7619b9d730a7ad1376512f824b63d83baefd3ccd8863754a0e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124511Z&X-Amz-Expires=3600&X-Amz-Signature=d7065573f69716349cf9e5237f1ffb94f38477513f05e034d7c8a09d9e939bd7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124511Z&X-Amz-Expires=3600&X-Amz-Signature=d2cea0f9f7eaa3b90eb8e91b727f0c1cc91b430da95d0bdd1e766ece74c9b1db&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        },
+        "problem": "Only 1 left. Lower the quantity to continue."
+      }
+    ],
+    "parcels": [],
+    "itemsPaise": 0,
+    "discountPaise": 0,
+    "shippingPaise": 0,
+    "totalPaise": 0,
+    "coupon": null,
+    "couponProblem": null,
+    "canCheckout": false
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "6a3c4461-6d21-427a-9d3d-75a13325f2f4"
+  }
+}

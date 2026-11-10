@@ -1,0 +1,214 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env: { POSTGRES_USER: postgres, POSTGRES_PASSWORD: postgres, POSTGRES_DB: petapp_test }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-retries 20
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: --health-cmd "redis-cli ping" --health-interval 5s --health-retries 20
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/petapp_test
+      DATABASE_URL_TEST: postgresql://postgres:postgres@localhost:5432/petapp_test
+      SHADOW_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/petapp_shadow
+      REDIS_URL_TEST: redis://localhost:6379/15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Media tooling for e2e (FFmpeg + S3-compatible test server)
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install "moto[server]"
+          moto_server -H 127.0.0.1 -p 9000 > moto.log 2>&1 &
+      - name: Create shadow database
+        run: PGPASSWORD=postgres psql -h localhost -U postgres -c "CREATE DATABASE petapp_shadow;"
+      - name: Lint
+        run: npm run lint
+      - name: Every alert has a runbook
+        run: node scripts/ops/check_runbooks.mjs
+      - name: Type check
+        run: npm run typecheck
+      - name: Migrations match schema (drift check)
+        run: npm run db:check-drift
+      - name: Unit tests
+        run: npm test
+      - name: E2E tests (real Postgres + Redis)
+        run: npm run test:e2e
+      - name: Build
+        run: npm run build
+
+  mobile:
+    name: customer app (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/customer-mobile
+    steps:
+      - uses: actions/checkout@v4
+      - name: App ↔ API contract (endpoints + JSON fields vs recorded responses)
+        run: python3 tool/contract_check.py
+      - name: Bracket balance
+        run: python3 tool/balance_check.py
+      - name: Platform configuration script (store builds)
+        run: python3 ../../scripts/mobile/tests/test_configure_platforms.py
+      - name: Python mirrors of the Dart tests
+        run: for f in ../../scripts/check_*_mirrors.py; do python3 "$f"; done
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test
+
+  partner-app:
+    name: service partner app (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/service-partner-mobile
+    steps:
+      - uses: actions/checkout@v4
+      - name: App ↔ API contract (endpoints + JSON fields vs recorded responses)
+        run: python3 tool/contract_check.py
+      - name: Bracket balance
+        run: python3 tool/balance_check.py
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test
+
+  seller-app:
+    name: seller app (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/product-partner-mobile
+    steps:
+      - uses: actions/checkout@v4
+      - name: App ↔ API contract (endpoints + JSON fields vs recorded responses)
+        run: python3 tool/contract_check.py
+      - name: Bracket balance
+        run: python3 tool/balance_check.py
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test
+
+  admin-browser:
+    name: admin dashboard (browser tests)
+    needs: backend
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env: { POSTGRES_USER: postgres, POSTGRES_PASSWORD: postgres, POSTGRES_DB: petapp }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-retries 20
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: --health-cmd "redis-cli ping" --health-interval 5s --health-retries 20
+    env:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/petapp
+      REDIS_URL: redis://localhost:6379
+      JWT_ACCESS_SECRET: ci-access-secret-0123456789abcdef0123456789
+      JWT_REFRESH_SECRET: ci-refresh-secret-0123456789abcdef012345678
+      OTP_PEPPER: ci-otp-pepper-0123456789
+      SMS_PROVIDER: console
+      SEED_ADMIN_EMAIL: ci-admin@petapp.test
+      SEED_ADMIN_PASSWORD: ci-admin-password-123
+      SEED_DEMO_DATA: "true"
+      BACKEND_URL: http://localhost:4000
+      E2E_ADMIN_EMAIL: ci-admin@petapp.test
+      E2E_ADMIN_PASSWORD: ci-admin-password-123
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run db:deploy
+      - run: npm run db:seed
+      - name: Backup and restore drill (pg_dump, restore into a scratch database, verify)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-16
+          export PATH=/usr/lib/postgresql/16/bin:$PATH
+          node scripts/ops/backup.mjs --out backups
+          node scripts/ops/restore-drill.mjs --manifest "$(ls backups/*.json)" --report drill.json
+      - run: npm run build
+      - name: Start API and dashboard
+        run: |
+          node apps/backend/dist/main.js > api.log 2>&1 &
+          (cd apps/admin-dashboard && NODE_ENV=production npx next start -p 3000 > ../../web.log 2>&1 &)
+          (cd apps/web && NODE_ENV=production SITE_URL=http://localhost:3001 SITE_INDEXABLE=true ANDROID_PACKAGE_NAME=com.petapp.petapp ANDROID_SHA256_FINGERPRINTS=AA:BB IOS_APP_ID=ABCDE12345.com.petapp.petapp npx next start -p 3001 > ../../site.log 2>&1 &)
+          npx --yes wait-on@8 -t 60000 http://localhost:4000/ready http://localhost:3000/login http://localhost:3001/robots.txt
+      - run: npx playwright install --with-deps chromium
+        working-directory: apps/admin-dashboard
+      - run: npm run test:e2e -w @petapp/admin-dashboard
+      - name: Public website (browser tests)
+        run: npm run test:e2e -w @petapp/web
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-browser-report
+          path: |
+            apps/admin-dashboard/playwright-report
+            apps/admin-dashboard/test-results
+            apps/web/playwright-report
+            apps/web/test-results
+            api.log
+            web.log
+            site.log
+
+  docker:
+    needs: backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -f infrastructure/Dockerfile.backend --target runtime -t petapp-backend:${{ github.sha }} .
+      - name: Build admin dashboard image
+        run: docker build -f infrastructure/Dockerfile.admin -t petapp-admin:${{ github.sha }} .
+      - name: Build website image
+        run: docker build -f infrastructure/Dockerfile.web -t petapp-web:${{ github.sha }} .
+      - name: Scan API image (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: petapp-backend:${{ github.sha }}
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+          ignore-unfixed: true
+      - name: Scan admin image (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: petapp-admin:${{ github.sha }}
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+          ignore-unfixed: true
+      - name: Scan website image (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: petapp-web:${{ github.sha }}
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+          ignore-unfixed: true

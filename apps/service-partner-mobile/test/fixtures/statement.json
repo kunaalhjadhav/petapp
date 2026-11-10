@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "totals": {
+      "earnedPaise": 67920,
+      "paidOutPaise": 67920,
+      "tcsPaise": 0,
+      "tdsPaise": 4245,
+      "feesPaise": 12735
+    },
+    "items": [
+      {
+        "id": "a63651f9-5386-40bd-a18b-e8068e85bf94",
+        "occurredAt": "2026-10-11T01:10:00.334Z",
+        "kind": "PAYOUT_APPROVED",
+        "memo": "Payout approved (batch PB-20261011-4FDB)",
+        "sourceType": "Payout",
+        "sourceId": "b1436f2b-b08d-45aa-a0bc-5ce0b8b3d8e8",
+        "amountPaise": -67920,
+        "salePaise": null,
+        "feePaise": 0,
+        "tcsPaise": 0,
+        "tdsPaise": 0
+      },
+      {
+        "id": "7ab36468-dfab-4af3-9d09-05f390ca0787",
+        "occurredAt": "2026-10-11T01:10:00.149Z",
+        "kind": "BOOKING_EARNED",
+        "memo": "Visit completed (PB-G7YDNP)",
+        "sourceType": "Booking",
+        "sourceId": "6046f38f-0d77-4a9b-a560-7384465590d8",
+        "amountPaise": 67920,
+        "salePaise": 84900,
+        "feePaise": 12735,
+        "tcsPaise": 0,
+        "tdsPaise": 4245
+      }
+    ],
+    "meta": {
+      "page": 1,
+      "limit": 20,
+      "total": 2,
+      "totalPages": 1
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "35fda083-c61a-44df-8ac8-aa42352288d1"
+  }
+}

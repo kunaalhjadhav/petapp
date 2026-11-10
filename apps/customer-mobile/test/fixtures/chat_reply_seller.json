@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "id": "3685ab2c-0d97-439d-9947-a85d1cb92530",
+    "conversationId": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+    "side": "BUSINESS",
+    "mine": true,
+    "body": "About your earlier order: it’s soft enough for puppies.",
+    "removed": false,
+    "media": null,
+    "ref": {
+      "type": "ORDER",
+      "id": "599c7ff3-998a-4133-91e7-68225c184127",
+      "code": "SO-TQW8JRYY0",
+      "status": "CANCELLED",
+      "totalPaise": 34800,
+      "units": 1
+    },
+    "clientId": "w1792344704a",
+    "createdAt": "2026-10-18T17:31:44.930Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8ef62d9c-fbc9-47bd-845f-b675c9d8862f"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": {
+    "enabled": true,
+    "current": null,
+    "upcoming": [],
+    "history": [],
+    "benefits": {
+      "exclusiveContests": false,
+      "premiumChallenges": false,
+      "memberDiscounts": false,
+      "priorityDays": 0,
+      "badge": false,
+      "planKey": null,
+      "planName": null
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "e2acb609-01e2-48a7-9392-ea03a5b87f67"
+  }
+}

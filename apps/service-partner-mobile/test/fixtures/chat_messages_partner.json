@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "9fe6c322-db13-4ac2-99a4-692b4623a3dc",
+        "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+        "side": "BUSINESS",
+        "mine": true,
+        "body": "Yes! Saturday 11am is free. Book it from our page and I’ll be there.",
+        "removed": false,
+        "media": null,
+        "ref": null,
+        "clientId": "m1792344704a",
+        "createdAt": "2026-10-18T17:31:44.522Z"
+      },
+      {
+        "id": "67419891-9fbf-42d4-abd0-608d394754d2",
+        "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+        "side": "CUSTOMER",
+        "mine": false,
+        "body": "This is how Coco looked after last time 😍",
+        "removed": false,
+        "media": {
+          "id": "28dd8b8f-9879-46b5-afa3-268857db32e0",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/private/28dd8b8f-9879-46b5-afa3-268857db32e0/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T173144Z&X-Amz-Expires=900&X-Amz-Signature=6283c686c7646991cbb00dbb24d33255160623473abed416215e416927e1fe18&X-Amz-SignedHeaders=host&response-cache-control=private%2C%20max-age%3D900&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/private/28dd8b8f-9879-46b5-afa3-268857db32e0/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T173144Z&X-Amz-Expires=900&X-Amz-Signature=099928299b2fe4eb7dc2bc1190497925fe4b2fdb9d579510813947d455eae92c&X-Amz-SignedHeaders=host&response-cache-control=private%2C%20max-age%3D900&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/private/28dd8b8f-9879-46b5-afa3-268857db32e0/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T173144Z&X-Amz-Expires=900&X-Amz-Signature=b3caac46d5506b6ea5177fa95646691c54a4e43ac867098e9c3f280dd1b30ed5&X-Amz-SignedHeaders=host&response-cache-control=private%2C%20max-age%3D900&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        },
+        "ref": null,
+        "clientId": "k1792344704c",
+        "createdAt": "2026-10-18T17:31:44.441Z"
+      },
+      {
+        "id": "eef9e891-d1ae-4047-9883-638406e65744",
+        "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+        "side": "CUSTOMER",
+        "mine": false,
+        "body": null,
+        "removed": false,
+        "media": null,
+        "ref": {
+          "type": "BOOKING",
+          "id": "6d12605d-f2a5-46ca-9c1a-4b7251ff3f24",
+          "code": "PB-XLEXNV",
+          "title": "Full groom",
+          "petName": "Coco",
+          "startsAt": "2026-10-11T00:47:06.761Z",
+          "status": "COMPLETED"
+        },
+        "clientId": "k1792344704b",
+        "createdAt": "2026-10-18T17:31:44.088Z"
+      },
+      {
+        "id": "d3024bcc-c67a-4e16-9ebf-3072af8eac42",
+        "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+        "side": "CUSTOMER",
+        "mine": false,
+        "body": "Hi! Can I book the same groomer next Saturday?",
+        "removed": false,
+        "media": null,
+        "ref": null,
+        "clientId": "k1792344704a",
+        "createdAt": "2026-10-18T17:31:44.041Z"
+      }
+    ],
+    "nextCursor": null,
+    "more": false
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "0b2d370d-817b-4429-a5e4-eaae75b01660"
+  }
+}

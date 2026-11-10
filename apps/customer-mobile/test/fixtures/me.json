@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": {
+    "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+    "name": "Aanya Test",
+    "phone": "+919844403277",
+    "email": null,
+    "avatarUrl": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "city": "Mumbai",
+    "status": "ACTIVE",
+    "phoneVerifiedAt": "2026-10-02T12:14:37.811Z",
+    "emailVerifiedAt": null,
+    "preferences": {},
+    "marketingConsent": false,
+    "createdAt": "2026-10-02T12:14:37.825Z",
+    "roles": [
+      "CUSTOMER"
+    ],
+    "counts": {
+      "pets": 0,
+      "followers": 0,
+      "following": 0
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "b9ca0c8b-2268-456e-bbe5-d3a201245d78"
+  }
+}

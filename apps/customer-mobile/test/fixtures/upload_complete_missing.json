@@ -1,0 +1,12 @@
+{
+  "success": false,
+  "message": "Some parts haven’t arrived yet (2, 3). Send them, then finish.",
+  "errors": [
+    {
+      "field": "parts",
+      "code": "MISSING_PARTS",
+      "message": "2,3"
+    }
+  ],
+  "requestId": "1d08eaea-843f-4d56-94a8-522e1a65809d"
+}

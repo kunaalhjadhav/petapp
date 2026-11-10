@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "url": "http://127.0.0.1:9000/petapp-media/exports/87ffdc9f-377d-41ad-8e6f-14da109d2212/27ea5172-9238-478e-b439-6fc8f8fa1e2b.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T190745Z&X-Amz-Expires=300&X-Amz-Signature=2a22d65c1a713b29767fc3eb87305e0e4b914db6659efbacbfbc68b86b73919e&X-Amz-SignedHeaders=host&response-cache-control=no-store&response-content-disposition=attachment%3B%20filename%3D%22petapp-data-2026-10-11.json%22&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "expiresInSeconds": 300,
+    "fileName": "petapp-data-2026-10-11.json"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "997aac69-0621-4ebb-9275-70de62de34b5"
+  }
+}

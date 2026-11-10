@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "data": {
+    "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+    "userId": "32956841-cea8-478a-9f6f-9c1b357d699b",
+    "slug": "pawfect-grooming-ab98",
+    "businessName": "Pawfect Grooming",
+    "kind": "BUSINESS",
+    "about": null,
+    "phone": "+919873632007",
+    "email": null,
+    "addressLine": "12 Hill Road",
+    "area": "Bandra West",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400050",
+    "lat": 19.0596,
+    "lng": 72.8295,
+    "homeVisitRadiusKm": 5,
+    "concurrency": 1,
+    "slotStepMin": 30,
+    "gstin": null,
+    "commissionBps": null,
+    "status": "DRAFT",
+    "statusReason": null,
+    "submittedAt": null,
+    "reviewedAt": null,
+    "reviewedById": null,
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "createdAt": "2026-10-06T19:52:01.886Z",
+    "updatedAt": "2026-10-06T19:52:01.886Z",
+    "documents": [
+      {
+        "id": "d8e63bc2-e38c-4d9f-b1b1-182e04b4c154",
+        "kind": "ID_PROOF",
+        "status": "PENDING",
+        "note": null,
+        "createdAt": "2026-10-06T19:52:01.990Z",
+        "mimeType": "application/pdf",
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/32956841-cea8-478a-9f6f-9c1b357d699b/064b5ed5-886c-4503-b751-7c084d05eca0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261006%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261006T195202Z&X-Amz-Expires=300&X-Amz-Signature=51500499b81ff41b923be6e0d1439d73726102a7738336e554b5abd1469fccfc&X-Amz-SignedHeaders=host&response-content-disposition=inline&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "services": [
+      {
+        "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+        "partnerId": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "categoryId": "0fc2d1ae-916a-405d-beca-f19709e3ba10",
+        "name": "Full groom",
+        "description": "Bath, trim and nails.",
+        "durationMin": 60,
+        "bufferMin": 15,
+        "pricePaise": 79900,
+        "modes": [
+          "AT_CENTER",
+          "AT_HOME"
+        ],
+        "speciesIds": [],
+        "isActive": true,
+        "createdAt": "2026-10-06T19:52:02.039Z",
+        "updatedAt": "2026-10-06T19:52:02.039Z",
+        "category": {
+          "id": "0fc2d1ae-916a-405d-beca-f19709e3ba10",
+          "key": "grooming",
+          "name": "Grooming",
+          "description": null,
+          "commissionBps": 1500,
+          "isActive": true,
+          "sortOrder": 1,
+          "createdAt": "2026-10-06T08:04:31.917Z",
+          "updatedAt": "2026-10-06T08:04:31.917Z"
+        }
+      }
+    ],
+    "hours": [],
+    "timeOff": [],
+    "checklist": [
+      "Set your opening hours."
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "54cb0839-785b-449b-ac8b-d00cb072f00c"
+  }
+}

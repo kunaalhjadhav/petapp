@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "data": {
+    "id": "771defa7-b29a-472f-91dd-a22e01630774",
+    "name": "Biscuit",
+    "handle": "biscuit.46b6aa",
+    "avatarUrl": null,
+    "species": {
+      "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+      "key": "dog",
+      "name": "Dog"
+    },
+    "breed": null,
+    "isVerified": false,
+    "followerCount": 0,
+    "visibility": "PUBLIC",
+    "coverUrl": null,
+    "gender": "UNKNOWN",
+    "dateOfBirth": null,
+    "ageMonths": null,
+    "weightKg": null,
+    "color": null,
+    "about": null,
+    "personality": [],
+    "city": "Mumbai",
+    "status": "ACTIVE",
+    "owner": {
+      "id": "3e02dbcb-2d62-4745-9030-2fe41987f19a",
+      "name": "Isha Kulkarni",
+      "avatarUrl": null
+    },
+    "createdAt": "2026-10-19T23:58:57.446Z",
+    "microchipId": null,
+    "medicalNotes": null,
+    "vaccinations": [],
+    "latitude": 19.06,
+    "longitude": 72.84,
+    "discoverable": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8eb20e26-dd4d-497c-965f-58d558868221"
+  }
+}

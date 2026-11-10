@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+        "kind": "SHOP",
+        "status": "OPEN",
+        "counterpart": {
+          "type": "SELLER",
+          "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+          "slug": "wag-co-5960-7f3c74",
+          "name": "Wag & Co 5960",
+          "city": "Pune",
+          "avatarUrl": null
+        },
+        "lastMessageText": "About your earlier order: it’s soft enough for puppies.",
+        "lastMessageAt": "2026-10-18T17:31:44.930Z",
+        "unread": 1,
+        "blocked": false
+      }
+    ],
+    "nextCursor": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "a856661f-011d-418b-bd18-e41762067170"
+  }
+}

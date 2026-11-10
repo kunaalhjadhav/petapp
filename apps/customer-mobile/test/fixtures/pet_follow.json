@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "data": {
+    "following": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "fa23f6d1-d782-443b-ac65-53c5470e2299"
+  }
+}

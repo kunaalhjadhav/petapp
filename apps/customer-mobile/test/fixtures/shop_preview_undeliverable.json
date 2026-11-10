@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "variantId": "90396f8a-6c28-44f9-990d-71dd9b731aac",
+        "qty": 1,
+        "productId": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+        "productTitle": "Chicken Jerky 5960",
+        "variantTitle": "100 g",
+        "vendor": {
+          "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+          "businessName": "Wag & Co 5960"
+        },
+        "unitPricePaise": 29900,
+        "mrpPaise": 34900,
+        "image": {
+          "id": "a7229592-ef7c-4990-bcf2-4c63e278d134",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=9e9cf76b270e8873765d89f528210fd4b3351bffc2e5981760de46d263c13fd4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=fe941f04f1fb409f3840d60bce3d8d4a00069bb553df25f0d4c587dcb5724aa9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=5ed547b7206c37bfc350d49a656c051fa620d41947e4ef1394caa6fe21931c0a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        },
+        "problem": null
+      }
+    ],
+    "parcels": [
+      {
+        "vendorId": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+        "itemsPaise": 29900,
+        "discountPaise": 0,
+        "shippingPaise": 4900,
+        "totalPaise": 34800
+      }
+    ],
+    "itemsPaise": 29900,
+    "discountPaise": 0,
+    "shippingPaise": 4900,
+    "totalPaise": 34800,
+    "coupon": null,
+    "couponProblem": null,
+    "delivery": {
+      "deliverable": false,
+      "zone": {
+        "id": "9af057b5-2b34-4b1a-a392-4f17b91f83e9",
+        "name": "Mumbai city"
+      },
+      "line": null,
+      "minDays": null,
+      "maxDays": null,
+      "problem": "Paused for the monsoon."
+    },
+    "canCheckout": false
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "4b32ffc7-5d5b-4c99-a533-d030fe26d943"
+  }
+}

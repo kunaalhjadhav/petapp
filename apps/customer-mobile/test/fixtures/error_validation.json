@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": [
+    {
+      "message": "name must be longer than or equal to 1 characters"
+    },
+    {
+      "message": "speciesId must be a UUID"
+    }
+  ],
+  "requestId": "333083d9-4ff1-429e-9dee-f12c6fa0efac"
+}

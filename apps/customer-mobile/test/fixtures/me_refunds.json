@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "bb18d6bc-d860-41a4-9296-77d3dd68829f",
+      "amountPaise": 84900,
+      "reason": "BOOKING_CANCELLED",
+      "status": "PROCESSED",
+      "createdAt": "2026-10-11T01:10:00.221Z",
+      "processedAt": "2026-10-11T01:10:05.951Z",
+      "reference": "fake_rfnd_b9610ec1a69f44",
+      "paidPaise": 84900,
+      "paymentReference": "fake_pay_adeb8fbdeda54f",
+      "about": {
+        "kind": "BOOKING",
+        "id": "a3ef6a95-944e-4aba-ace8-45576fd16113",
+        "title": "Full groom (PB-VDKSKV)"
+      }
+    },
+    {
+      "id": "9dfcf4e0-d40d-47b8-aaa2-b885cf04f46f",
+      "amountPaise": 49900,
+      "reason": "SUB_ORDER_CANCELLED",
+      "status": "PROCESSED",
+      "createdAt": "2026-10-11T01:09:29.223Z",
+      "processedAt": "2026-10-11T01:09:35.986Z",
+      "reference": "fake_rfnd_24b63241c36142",
+      "paidPaise": 49900,
+      "paymentReference": "fake_pay_e5b245f2daf046",
+      "about": {
+        "kind": "ORDER",
+        "id": "8b8cdfac-6ba9-4365-8c69-2ff407258839",
+        "title": "Order PO-KJMLMDU5"
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "1d96b846-236c-48e1-90ae-cfba247dc1e8",
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "totalPages": 1
+  }
+}

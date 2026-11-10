@@ -1,0 +1,363 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "69d6f63c-ce51-43f0-818d-02794a712aaa",
+      "slug": "e2e-glam-contest-mv3251q-427c93",
+      "title": "E2E Glam Contest mv3251q4",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T00:00:00.000Z",
+      "registrationClosesAt": "2026-10-19T00:00:00.000Z",
+      "submissionClosesAt": "2026-10-23T00:00:00.000Z",
+      "votingClosesAt": "2026-10-30T00:00:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "b15b84e1-de75-4fc4-8b0f-9dc27f6bf2f8",
+      "slug": "e2e-glam-contest-mv3d4b4-bcdd14",
+      "title": "E2E Glam Contest mv3d4b40",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T05:08:00.000Z",
+      "registrationClosesAt": "2026-10-19T05:08:00.000Z",
+      "submissionClosesAt": "2026-10-23T05:08:00.000Z",
+      "votingClosesAt": "2026-10-30T05:08:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "6b2384f8-d69b-4a19-86b5-5c86ed82cdc4",
+      "slug": "e2e-glam-contest-mv3df9x-5bb741",
+      "title": "E2E Glam Contest mv3df9xv",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T05:16:00.000Z",
+      "registrationClosesAt": "2026-10-19T05:16:00.000Z",
+      "submissionClosesAt": "2026-10-23T05:16:00.000Z",
+      "votingClosesAt": "2026-10-30T05:16:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "4fc3517a-2b69-42fa-be74-a1f88f8cb3f4",
+      "slug": "e2e-glam-contest-mv3idld-65682a",
+      "title": "E2E Glam Contest mv3idldh",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T07:35:00.000Z",
+      "registrationClosesAt": "2026-10-19T07:35:00.000Z",
+      "submissionClosesAt": "2026-10-23T07:35:00.000Z",
+      "votingClosesAt": "2026-10-30T07:35:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "b478f1bf-12c1-49ac-9571-46f8020ff501",
+      "slug": "e2e-glam-contest-mv3iug3-b4eef9",
+      "title": "E2E Glam Contest mv3iug3a",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T07:48:00.000Z",
+      "registrationClosesAt": "2026-10-19T07:48:00.000Z",
+      "submissionClosesAt": "2026-10-23T07:48:00.000Z",
+      "votingClosesAt": "2026-10-30T07:48:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "e5cde750-a345-4727-991a-ec336ae3d63e",
+      "slug": "e2e-glam-contest-mv3iwlp-4134a3",
+      "title": "E2E Glam Contest mv3iwlpe",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T07:50:00.000Z",
+      "registrationClosesAt": "2026-10-19T07:50:00.000Z",
+      "submissionClosesAt": "2026-10-23T07:50:00.000Z",
+      "votingClosesAt": "2026-10-30T07:50:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "a29dc6fa-71bc-48df-b684-3a3a5785feb8",
+      "slug": "e2e-glam-contest-mv3iyro-5b3bf2",
+      "title": "E2E Glam Contest mv3iyrog",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T07:51:00.000Z",
+      "registrationClosesAt": "2026-10-19T07:51:00.000Z",
+      "submissionClosesAt": "2026-10-23T07:51:00.000Z",
+      "votingClosesAt": "2026-10-30T07:51:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "ed935e04-f9a1-4791-9816-d72a29fce104",
+      "slug": "e2e-glam-contest-mv3nppj-0007b5",
+      "title": "E2E Glam Contest mv3nppj8",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T10:04:00.000Z",
+      "registrationClosesAt": "2026-10-19T10:04:00.000Z",
+      "submissionClosesAt": "2026-10-23T10:04:00.000Z",
+      "votingClosesAt": "2026-10-30T10:04:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "b63aeb2d-670f-4b2b-8afe-64b7a16b729f",
+      "slug": "e2e-glam-contest-mv3pksu-706218",
+      "title": "E2E Glam Contest mv3pksuf",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T10:57:00.000Z",
+      "registrationClosesAt": "2026-10-19T10:57:00.000Z",
+      "submissionClosesAt": "2026-10-23T10:57:00.000Z",
+      "votingClosesAt": "2026-10-30T10:57:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "846b1e1a-9e88-4efb-a588-fd2b3fcf0f63",
+      "slug": "e2e-glam-contest-mv477z5-fb7206",
+      "title": "E2E Glam Contest mv477z5r",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-12T19:10:00.000Z",
+      "registrationClosesAt": "2026-10-19T19:10:00.000Z",
+      "submissionClosesAt": "2026-10-23T19:10:00.000Z",
+      "votingClosesAt": "2026-10-30T19:10:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "3f9ffac8-fb9c-402e-86aa-a32e5cf78950",
+      "slug": "e2e-glam-contest-mvdz3sg-df4954",
+      "title": "E2E Glam Contest mvdz3sgw",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-19T15:21:00.000Z",
+      "registrationClosesAt": "2026-10-26T15:21:00.000Z",
+      "submissionClosesAt": "2026-10-30T15:21:00.000Z",
+      "votingClosesAt": "2026-11-06T15:21:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "3cb10632-430d-48d5-ac1a-26921068a8d2",
+      "slug": "e2e-glam-contest-mve4kp1-bf7def",
+      "title": "E2E Glam Contest mve4kp1p",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-19T17:54:00.000Z",
+      "registrationClosesAt": "2026-10-26T17:54:00.000Z",
+      "submissionClosesAt": "2026-10-30T17:54:00.000Z",
+      "votingClosesAt": "2026-11-06T17:54:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "c4e9868a-aa10-4718-b285-520def0a3d74",
+      "slug": "e2e-glam-contest-mveg807-a069d6",
+      "title": "E2E Glam Contest mveg8072",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 1,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-19T23:20:00.000Z",
+      "registrationClosesAt": "2026-10-26T23:20:00.000Z",
+      "submissionClosesAt": "2026-10-30T23:20:00.000Z",
+      "votingClosesAt": "2026-11-06T23:20:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "7518c040-e16c-430f-baf8-b07d4d5778f7",
+      "slug": "e2e-glam-contest-mvfx5sf-74743a",
+      "title": "E2E Glam Contest mvfx5sfa",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "membersOnly": false,
+      "registrationOpensAt": "2026-10-21T00:02:00.000Z",
+      "registrationClosesAt": "2026-10-28T00:02:00.000Z",
+      "submissionClosesAt": "2026-11-01T00:02:00.000Z",
+      "votingClosesAt": "2026-11-08T00:02:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "591d8193-edb0-44eb-9113-68fce824ecce",
+    "page": 1,
+    "limit": 20,
+    "total": 14,
+    "totalPages": 1
+  }
+}

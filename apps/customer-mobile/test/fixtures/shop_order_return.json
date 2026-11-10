@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "data": {
+    "id": "d927b93a-3fbf-488a-9bc9-2d54e18e09dc",
+    "code": "PO-4E7R34RY",
+    "status": "COMPLETED",
+    "createdAt": "2026-10-07T12:45:10.427Z",
+    "shipTo": {
+      "city": "Pune",
+      "name": "Home",
+      "line1": "4 Lake View",
+      "line2": null,
+      "state": "Maharashtra",
+      "pincode": "411001",
+      "locality": "Koregaon Park"
+    },
+    "itemsPaise": 689700,
+    "discountPaise": 30000,
+    "shippingPaise": 0,
+    "totalPaise": 659700,
+    "payment": null,
+    "refunds": [],
+    "parcels": [
+      {
+        "id": "9be58a84-f216-4671-a3a9-f26ec000b485",
+        "code": "SO-JZF5ZC8M0",
+        "status": "RETURN_REQUESTED",
+        "vendor": {
+          "id": "d5019c4c-dc59-4e74-908b-82352955943c",
+          "businessName": "Happy Tails 7109"
+        },
+        "itemsPaise": 689700,
+        "discountPaise": 30000,
+        "shippingPaise": 0,
+        "totalPaise": 659700,
+        "courier": "Delhivery",
+        "trackingNumber": "DL123456789IN",
+        "shippedAt": "2026-10-07T12:45:10.576Z",
+        "deliveredAt": "2026-10-07T12:45:10.627Z",
+        "cancelReason": null,
+        "cancelledBy": null,
+        "items": [
+          {
+            "productTitle": "Royal Kibble 7109",
+            "variantTitle": "3 kg",
+            "qty": 2,
+            "unitPricePaise": 169900,
+            "lineTotalPaise": 339800
+          },
+          {
+            "productTitle": "Royal Kibble 7109",
+            "variantTitle": "7 kg",
+            "qty": 1,
+            "unitPricePaise": 349900,
+            "lineTotalPaise": 349900
+          }
+        ],
+        "canCancel": false,
+        "canReturn": false,
+        "returnRequest": {
+          "id": "bbd07cbe-a41b-4593-a817-cd24ac277caa",
+          "status": "REQUESTED",
+          "reason": "Our dog won’t eat it",
+          "note": null,
+          "refundPaise": 659700
+        }
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "6b318189-9899-4c06-94b6-ebe0ddabc7fa"
+  }
+}

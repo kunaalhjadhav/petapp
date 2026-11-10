@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "data": {
+    "id": "d835cfb6-be24-4680-a3e7-0651532c216b",
+    "name": "Meera Seller",
+    "phone": "+919863668731",
+    "email": null,
+    "avatarUrl": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "city": null,
+    "status": "ACTIVE",
+    "phoneVerifiedAt": "2026-10-10T12:51:28.628Z",
+    "emailVerifiedAt": null,
+    "preferences": {},
+    "marketingConsent": false,
+    "createdAt": "2026-10-10T12:51:28.646Z",
+    "roles": [
+      "CUSTOMER",
+      "PRODUCT_PARTNER"
+    ],
+    "counts": {
+      "pets": 0,
+      "followers": 0,
+      "following": 0
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "fffd4dce-5a05-4068-b1b6-6f4bc27adf0a"
+  }
+}

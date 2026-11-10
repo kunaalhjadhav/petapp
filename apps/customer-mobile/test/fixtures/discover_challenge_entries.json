@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "data": [
+    {
+      "entryId": "95464484-e376-4da8-a2c9-379411205871",
+      "status": "ACTIVE",
+      "points": 0,
+      "checkIns": 0,
+      "pet": {
+        "id": "0787c314-4af2-448d-94e1-d03d682ffe3e",
+        "name": "Bagel",
+        "handle": "bagel.e23b6b",
+        "avatarUrl": null,
+        "gender": "UNKNOWN",
+        "dateOfBirth": null,
+        "city": "Mumbai",
+        "isVerified": false,
+        "followerCount": 0,
+        "visibility": "PUBLIC",
+        "species": {
+          "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+          "key": "dog",
+          "name": "Dog"
+        },
+        "breed": null
+      },
+      "challenge": {
+        "id": "8bb4220b-5114-4ba3-a3f2-2f1f68836f23",
+        "slug": "walk-week-mvdz3hrb-25f4f8",
+        "title": "Walk Week mvdz3hrb",
+        "requiredCheckIns": 5,
+        "bannerUrl": null
+      },
+      "completed": false
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "b2797eab-fca2-4086-a775-893fc7c3f63b"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "totals": {
+      "earnedPaise": 1050000,
+      "paidOutPaise": 1050000,
+      "tcsPaise": 0,
+      "tdsPaise": 450000,
+      "feesPaise": 0
+    },
+    "items": [
+      {
+        "id": "a71c7b35-1aeb-4364-987f-368d0a2bb34c",
+        "occurredAt": "2026-10-11T01:10:30.223Z",
+        "kind": "PAYOUT_APPROVED",
+        "memo": "Payout approved (batch PB-20261011-08F4)",
+        "sourceType": "Payout",
+        "sourceId": "04cb2c63-8c59-4da0-b391-c0b6dad0289b",
+        "amountPaise": -1050000,
+        "salePaise": null,
+        "feePaise": 0,
+        "tcsPaise": 0,
+        "tdsPaise": 0
+      },
+      {
+        "id": "7a9c7886-c65c-46e1-9b2c-391134df3b33",
+        "occurredAt": "2026-10-11T01:10:30.153Z",
+        "kind": "PRIZE_APPROVED",
+        "memo": "Winner — Diwali Trick Cup 0966",
+        "sourceType": "ContestPrize",
+        "sourceId": "7cd333c9-1e92-4a74-9b3e-e5fe8a017eb8",
+        "amountPaise": 1050000,
+        "salePaise": 1500000,
+        "feePaise": 0,
+        "tcsPaise": 0,
+        "tdsPaise": 450000
+      }
+    ],
+    "meta": {
+      "page": 1,
+      "limit": 20,
+      "total": 2,
+      "totalPages": 1
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c5d126e6-0a7a-43a9-9e1c-bb5b6352cec5"
+  }
+}

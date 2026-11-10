@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "PRODUCT",
+      "id": "227f842f-f826-4e8a-a83d-7d782f03aea8",
+      "title": "Chicken Jerky 6078",
+      "subtitle": "Wag · Wag & Co 6078",
+      "imageUrl": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=48e97b0cae2dc625345988e1a29997d58fec8d2f65952d368214df81d00ecfa7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "link": {
+        "kind": "product",
+        "key": "chicken-jerky-6078-e0c5af"
+      },
+      "meta": {
+        "fromPaise": 29900,
+        "mrpPaise": 34900,
+        "inStock": true,
+        "ratingAvg": 4,
+        "ratingCount": 1
+      }
+    },
+    {
+      "type": "PRODUCT",
+      "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+      "title": "Chicken Jerky 6687",
+      "subtitle": "Wag · Wag & Co 6687",
+      "imageUrl": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=f99d185fc80685581672cbdb899b1f3401d139393f1e2527d3b5d8b1ee94f789&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "link": {
+        "kind": "product",
+        "key": "chicken-jerky-6687-60f28f"
+      },
+      "meta": {
+        "fromPaise": 29900,
+        "mrpPaise": 34900,
+        "inStock": true,
+        "ratingAvg": 0,
+        "ratingCount": 0
+      }
+    },
+    {
+      "type": "PRODUCT",
+      "id": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+      "title": "Chicken Jerky 5960",
+      "subtitle": "Wag · Wag & Co 5960",
+      "imageUrl": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=9e9cf76b270e8873765d89f528210fd4b3351bffc2e5981760de46d263c13fd4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "link": {
+        "kind": "product",
+        "key": "chicken-jerky-5960-813fb3"
+      },
+      "meta": {
+        "fromPaise": 29900,
+        "mrpPaise": 34900,
+        "inStock": true,
+        "ratingAvg": 0,
+        "ratingCount": 0
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "ffd49152-6bc4-49b7-a276-f74a1d3d2bc9",
+    "page": 1,
+    "limit": 20,
+    "total": 3,
+    "totalPages": 1
+  }
+}

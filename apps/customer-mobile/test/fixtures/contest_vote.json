@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "voted": true,
+    "votesLeftToday": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "13005db3-e495-4de0-bc2f-54325b496d07"
+  }
+}

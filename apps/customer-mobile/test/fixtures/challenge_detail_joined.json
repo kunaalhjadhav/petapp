@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "data": {
+    "id": "2a631f57-0a48-4c18-b1af-27d753e87abe",
+    "slug": "fixture-walk-day-8727-a1a166",
+    "title": "Fixture Walk Day 8727",
+    "bannerUrl": null,
+    "kind": "FREE",
+    "feePaise": 0,
+    "startsAt": "2026-10-04T00:52:07.906Z",
+    "endsAt": "2026-10-06T01:52:07.906Z",
+    "status": "PUBLISHED",
+    "requiredCheckIns": 1,
+    "proof": "TEXT",
+    "pointsPerCheckIn": 10,
+    "streakBonusEvery": 7,
+    "streakBonusPoints": 50,
+    "participants": 1,
+    "badge": {
+      "name": "First Step",
+      "iconUrl": null
+    },
+    "mine": {
+      "status": "ACTIVE",
+      "points": 0,
+      "checkIns": 0,
+      "streak": 0,
+      "checkedInToday": false
+    },
+    "description": "Walk your dog today and tell us about it.",
+    "contestId": null,
+    "entry": {
+      "id": "a373ec7a-136b-4d81-9c3c-d23f0636acff",
+      "longestStreak": 0,
+      "days": [],
+      "payment": null
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9a9a67ca-5aea-4da9-94c6-07a28fc78cfe"
+  }
+}

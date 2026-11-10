@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "data": {
+    "id": "6d12605d-f2a5-46ca-9c1a-4b7251ff3f24",
+    "code": "PB-XLEXNV",
+    "status": "COMPLETED",
+    "startsAt": "2026-10-11T00:47:06.761Z",
+    "endsAt": "2026-10-11T01:47:06.761Z",
+    "mode": "AT_CENTER",
+    "service": {
+      "id": "5c85b809-09f6-4a87-9611-c68ab7505247",
+      "name": "Full groom"
+    },
+    "pet": {
+      "id": "41638c93-9d4f-4f62-97f3-aa5ebf0825e7",
+      "name": "Coco"
+    },
+    "pricePaise": 84900,
+    "partner": {
+      "id": "b53ce8ca-36fb-49dd-871e-be049c61d43d",
+      "businessName": "Pawfect Grooming 0216",
+      "addressLine": "12 Hill Road",
+      "city": "Mumbai",
+      "lat": 19.0596,
+      "lng": 72.8295,
+      "phone": "+919883021643"
+    },
+    "address": null,
+    "customerNote": null,
+    "cancelledBy": null,
+    "cancelReason": null,
+    "refundPaise": null,
+    "review": {
+      "id": "0b1399ca-f8ff-47f1-ba6c-a73f3ad9d174",
+      "rating": 5,
+      "comment": "Gentle with Coco and on time. Will book again.",
+      "reply": "Thank you, Kabir! Coco was a delight.",
+      "repliedAt": "2026-10-18T23:12:25.929Z",
+      "status": "VISIBLE",
+      "photos": [
+        {
+          "id": "45b9a848-ff0d-4662-a5bf-f499f14b4b60",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=51d3a6b301742e58e6f68adee411f6395d5c7fa98019eb44526b9e999f8c22a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=a7810d2c0f8bfdc7f8d40e72fef9d48b44c629e0966d6fcd946f7df8f295f45b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/45b9a848-ff0d-4662-a5bf-f499f14b4b60/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=7bc9abd58a9325573dba04376827924d4c8f007ce9941541b874b643396a7dab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        }
+      ],
+      "at": "2026-10-18T23:12:25.820Z"
+    },
+    "payment": null,
+    "createdAt": "2026-10-11T00:57:06.578Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "f1c8cad5-9883-440f-ad75-0bda49ac9a3a"
+  }
+}

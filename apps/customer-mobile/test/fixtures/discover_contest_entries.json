@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "data": [
+    {
+      "entryId": "d059b33a-e9bb-4eaf-a6c5-315d76fd28bc",
+      "status": "REGISTERED",
+      "pet": {
+        "id": "0787c314-4af2-448d-94e1-d03d682ffe3e",
+        "name": "Bagel",
+        "handle": "bagel.e23b6b",
+        "avatarUrl": null,
+        "gender": "UNKNOWN",
+        "dateOfBirth": null,
+        "city": "Mumbai",
+        "isVerified": false,
+        "followerCount": 0,
+        "visibility": "PUBLIC",
+        "species": {
+          "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+          "key": "dog",
+          "name": "Dog"
+        },
+        "breed": null
+      },
+      "contest": {
+        "id": "c4e9868a-aa10-4718-b285-520def0a3d74",
+        "slug": "e2e-glam-contest-mveg807-a069d6",
+        "title": "E2E Glam Contest mveg8072",
+        "status": "LIVE",
+        "bannerUrl": null
+      },
+      "voting": false
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "13250960-b905-4f91-805d-2ae6926c5d3c"
+  }
+}

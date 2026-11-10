@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "places": [
+      {
+        "kind": "LOCALITY",
+        "label": "Bandra West",
+        "detail": "Mumbai 400050",
+        "lat": 19.076,
+        "lng": 72.8777,
+        "pincode": "400050",
+        "city": "Mumbai",
+        "citySlug": "mumbai",
+        "source": "petapp"
+      }
+    ],
+    "maps": "none"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c4021e61-30aa-4659-8889-91a3be221ecc"
+  }
+}

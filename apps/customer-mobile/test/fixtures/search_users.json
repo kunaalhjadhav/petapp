@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "USER",
+      "id": "9d666f6b-d9a3-4acd-96d3-b821d202843e",
+      "title": "Dev Kulkarni",
+      "subtitle": "2 pets",
+      "imageUrl": null,
+      "link": {
+        "kind": "user",
+        "key": "9d666f6b-d9a3-4acd-96d3-b821d202843e"
+      },
+      "meta": {
+        "followers": 0,
+        "pets": 2
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "e05e40ad-f1fb-4655-b2ff-f3bf47959ffc",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

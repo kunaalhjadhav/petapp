@@ -1,0 +1,42 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "32fb50ab-950d-4ea3-aed0-c5f1f7d30ad3",
+      "role": "USER",
+      "text": "my dog has fleas",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.097Z"
+    },
+    "answer": {
+      "id": "220585a6-ab46-46ae-afc8-05acb946bbd6",
+      "role": "ASSISTANT",
+      "text": "Ticks and fleas are common, especially in the monsoon. Check your pet’s coat, ears and between the toes after walks, and use a preventive your vet recommends regularly. Some ticks carry serious diseases, so tell your vet if your pet seems tired, pale or off their food after a tick bite. Your vet knows your pet and can advise for them specifically.",
+      "cards": [
+        {
+          "item": {
+            "id": "parasites",
+            "body": "Ticks and fleas are common, especially in the monsoon. Check your pet’s coat, ears and between the toes after walks, and use a preventive your vet recommends regularly. Some ticks carry serious diseases, so tell your vet if your pet seems tired, pale or off their food after a tick bite. Your vet knows your pet and can advise for them specifically.",
+            "title": "Ticks, fleas and worms"
+          },
+          "type": "CARE"
+        }
+      ],
+      "safety": "GENERAL_INFO",
+      "notice": "General information, not a diagnosis. For anything about your pet’s health, talk to a vet.",
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.104Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "1c3cd78f-829f-49ff-9415-0754f295bb43"
+  }
+}

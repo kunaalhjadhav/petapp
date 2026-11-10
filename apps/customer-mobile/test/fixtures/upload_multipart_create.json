@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "media": {
+      "id": "18cbae94-b6f5-42eb-8ebb-7014e200ef26",
+      "kind": "VIDEO",
+      "status": "PENDING_UPLOAD"
+    },
+    "upload": {
+      "method": "MULTIPART",
+      "partSize": 8388608,
+      "partCount": 3,
+      "expiresInSeconds": 86400
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "ababdaa7-8bca-4218-bf51-05e25286a7fb"
+  }
+}

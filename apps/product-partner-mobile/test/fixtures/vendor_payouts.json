@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 0,
+    "availablePaise": 0,
+    "holdDays": 0,
+    "account": {
+      "id": "7fa83b15-362f-493f-bfcf-b51cf5460df9",
+      "method": "BANK",
+      "accountLast4": "6789",
+      "vpa": null,
+      "payableFrom": "2026-10-11T01:09:29.363Z"
+    },
+    "payouts": [
+      {
+        "id": "5908c472-910a-43e0-8e55-11dff8a3a3c5",
+        "amountPaise": 83172,
+        "purpose": "EARNINGS",
+        "status": "PROCESSED",
+        "utr": "FAKEUTR1791680999219",
+        "failureReason": null,
+        "processedAt": "2026-10-11T01:09:59.222Z",
+        "createdAt": "2026-10-11T01:09:29.419Z",
+        "account": {
+          "method": "BANK",
+          "accountLast4": "6789",
+          "vpa": null,
+          "ifsc": "HDFC0001234"
+        }
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "aed34231-c9f9-4491-9659-99b872926286"
+  }
+}

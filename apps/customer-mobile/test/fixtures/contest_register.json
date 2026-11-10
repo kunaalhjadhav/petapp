@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "entryId": "ee3a3f5f-9a41-438f-b682-8d13a1bdcd63",
+    "status": "PENDING_PAYMENT",
+    "payment": {
+      "paymentId": "663dda13-1b91-4782-b890-6d02c2bc1e35",
+      "provider": "fake",
+      "orderId": "fake_order_18b69030471c4f2c8201787cd19a26b7",
+      "amountPaise": 9900,
+      "currency": "INR",
+      "key": "fake_key",
+      "status": "CREATED"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "cb249b48-d6c5-48f3-af84-adfa39f1fadb"
+  }
+}

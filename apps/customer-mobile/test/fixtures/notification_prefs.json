@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": {
+    "push": true,
+    "likes": true,
+    "comments": true,
+    "mentions": true,
+    "follows": true,
+    "posts": true,
+    "chat": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "63030671-dd87-4e1c-aa03-5f703dc4ebc0"
+  }
+}

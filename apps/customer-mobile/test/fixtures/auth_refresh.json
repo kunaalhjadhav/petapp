@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YzY5ODA5ZC1kYzU1LTRhZWQtYTlmZS1kZDY1ZTExZDk5MWMiLCJzaWQiOiJjYzM2Mjk4OS0zMzY4LTQ5ZDktYWFmYy1hOGRmZTVmOGNhMmEiLCJpYXQiOjE3OTA5NDMyNzgsImV4cCI6MTc5MDk0NDE3OCwiYXVkIjoicGV0YXBwOmFwcCIsImlzcyI6InBldGFwcCJ9.Ww7t9lUhqB3ns-COfkNZ-5PnQEv3ywmd2hmuN6pJ8js",
+    "refreshToken": "ME_qy1bqnfb2nnY92K0rfSVLyX0MH4fKt2wwTdKM-Ry1kIBi5YUF3inofRvtFcgH",
+    "accessTokenExpiresIn": 900,
+    "refreshTokenExpiresAt": "2026-11-01T12:14:38.004Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "2157697b-5593-4e60-8f52-39a0657249c1"
+  }
+}

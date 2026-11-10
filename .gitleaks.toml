@@ -1,0 +1,21 @@
+# Secret scanning (gitleaks), run in CI on every push. Extends the default rules.
+title = "PetApp"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Build output, dependencies, and test data recorded from a local development API"
+paths = [
+  '''(^|/)node_modules/''',
+  '''(^|/)\.next/''',
+  '''(^|/)dist/''',
+  '''(^|/)\.dart_tool/''',
+  '''(^|/)build/''',
+  '''(^|/)src/generated/''',
+  '''package-lock\.json$''',
+  # Responses recorded from a local API: the tokens in them are signed with throwaway development secrets.
+  '''apps/[a-z-]+/test/fixtures/''',
+  # Browser-test sign-in state on a developer's machine (git-ignored).
+  '''e2e/\.auth/''',
+]

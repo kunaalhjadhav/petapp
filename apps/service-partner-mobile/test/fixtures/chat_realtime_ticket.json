@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "ticket": "tLcf2v43vmJT8WWF82zLvzmAgofU6ST5",
+    "path": "/api/v1/chat/ws",
+    "expiresInSeconds": 60
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "5111863e-6d77-4d18-9a29-6f0f815eb4f9"
+  }
+}

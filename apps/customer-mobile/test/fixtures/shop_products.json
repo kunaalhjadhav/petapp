@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "e298f4fd-c4a2-419e-adb9-6c15b466e8a3",
+      "slug": "royal-kibble-7109-a19f82",
+      "title": "Royal Kibble 7109",
+      "brand": "Royal",
+      "vendor": {
+        "id": "d5019c4c-dc59-4e74-908b-82352955943c",
+        "businessName": "Happy Tails 7109",
+        "slug": "happy-tails-7109-c9157a"
+      },
+      "image": {
+        "id": "b3b9db9b-7cad-4c64-9c55-065b99892a1a",
+        "kind": "IMAGE",
+        "status": "READY",
+        "width": 1600,
+        "height": 1200,
+        "durationMs": null,
+        "images": [
+          {
+            "width": 1080,
+            "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124510Z&X-Amz-Expires=3600&X-Amz-Signature=5763160de1c11f2713e1e709d5f48cefea247d9d868fa6f5a1ea8e91442490bc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          },
+          {
+            "width": 640,
+            "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124510Z&X-Amz-Expires=3600&X-Amz-Signature=2ddc9c0bca92dbc7cc8bcec4843a22552b73701668970916c9994961bef550ec&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          },
+          {
+            "width": 320,
+            "url": "http://127.0.0.1:9000/petapp-media/media/b3b9db9b-7cad-4c64-9c55-065b99892a1a/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261007%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261007T124510Z&X-Amz-Expires=3600&X-Amz-Signature=ce324785e9fd9510e7b8478351ed41b22506f188ca2293ce52edb75e8e7fba95&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ]
+      },
+      "fromPaise": 169900,
+      "mrpPaise": 189900,
+      "inStock": true
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "242fdab0-39b0-4590-bde5-41709c5a4945",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

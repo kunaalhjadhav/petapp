@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "872c1782-5771-4aad-94be-8c537d82da0a",
+      "role": "USER",
+      "text": "Help, my dog ate chocolate!",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.119Z"
+    },
+    "answer": {
+      "id": "967f120c-1e9c-447e-a5d2-8f2f0fb4becb",
+      "role": "ASSISTANT",
+      "text": "What you describe can be serious and needs a vet straight away. Call or go to the nearest vet or animal emergency clinic now, and keep your pet calm and still on the way. If your pet swallowed something, take the packet or a photo of it with you. Don’t give food, water, human medicine or home remedies, and don’t try to make your pet vomit unless a vet tells you to.",
+      "cards": [
+        {
+          "item": {
+            "id": "services",
+            "route": "/services",
+            "steps": [
+              "Open Services to search other categories or another place."
+            ],
+            "title": "Pet services"
+          },
+          "type": "LINK"
+        },
+        {
+          "item": {
+            "id": "toxic-foods",
+            "body": "Keep these away from pets: chocolate, grapes and raisins, onions and garlic, xylitol (in sugar-free gum and some peanut butters), alcohol, caffeine, cooked bones, and human medicines such as paracetamol and ibuprofen. Lilies are very dangerous for cats. If your pet has eaten any of these, contact a vet straight away, even if they seem fine.",
+            "title": "Foods and things that are poisonous to pets"
+          },
+          "type": "CARE"
+        }
+      ],
+      "safety": "URGENT",
+      "notice": "This could be an emergency. Contact a vet or an animal hospital now. Don’t wait to see if it gets better.",
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.146Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "e8d66826-ab70-4d28-aeb1-6c88bff6920f"
+  }
+}

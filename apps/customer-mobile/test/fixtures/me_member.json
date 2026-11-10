@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "data": {
+    "id": "4ed1e13f-24d0-4dc3-b32f-4c2f32750bdc",
+    "name": "Mira Joshi",
+    "phone": "+919800000881",
+    "email": null,
+    "avatarUrl": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "city": null,
+    "status": "ACTIVE",
+    "phoneVerifiedAt": "2026-10-20T00:58:05.677Z",
+    "emailVerifiedAt": null,
+    "preferences": {},
+    "marketingConsent": false,
+    "createdAt": "2026-10-20T00:58:05.694Z",
+    "roles": [
+      "CUSTOMER"
+    ],
+    "counts": {
+      "pets": 0,
+      "followers": 0,
+      "following": 0
+    },
+    "member": {
+      "plan": "Plus",
+      "key": "PLUS"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "96f8a068-4f17-44e3-920f-0c8153c9a2f3"
+  }
+}

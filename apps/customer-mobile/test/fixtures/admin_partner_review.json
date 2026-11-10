@@ -1,0 +1,147 @@
+{
+  "success": true,
+  "data": {
+    "id": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+    "userId": "da49eb90-78c5-487c-b688-5040651eadc7",
+    "slug": "pawfect-grooming-3597-4802",
+    "businessName": "Pawfect Grooming 3597",
+    "kind": "BUSINESS",
+    "about": "Gentle grooming for dogs and cats.",
+    "phone": "+919873000007",
+    "email": null,
+    "addressLine": "12 Hill Road",
+    "area": "Bandra West",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400050",
+    "lat": 19.0596,
+    "lng": 72.8295,
+    "homeVisitRadiusKm": 5,
+    "concurrency": 1,
+    "slotStepMin": 30,
+    "gstin": null,
+    "commissionBps": null,
+    "status": "APPROVED",
+    "statusReason": null,
+    "submittedAt": "2026-10-06T07:59:58.497Z",
+    "reviewedAt": "2026-10-06T07:59:58.546Z",
+    "reviewedById": "893246c5-5024-4de8-a9fc-bdb47ad27926",
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "createdAt": "2026-10-06T07:59:58.383Z",
+    "updatedAt": "2026-10-06T07:59:58.546Z",
+    "user": {
+      "id": "da49eb90-78c5-487c-b688-5040651eadc7",
+      "name": "Meera Groomer",
+      "phone": "+919873359707",
+      "email": null,
+      "createdAt": "2026-10-06T07:59:58.348Z"
+    },
+    "documents": [
+      {
+        "id": "a65e992f-59a5-440b-9775-c34aead98881",
+        "kind": "ID_PROOF",
+        "status": "ACCEPTED",
+        "note": null,
+        "createdAt": "2026-10-06T07:59:58.443Z",
+        "mimeType": "application/pdf",
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/da49eb90-78c5-487c-b688-5040651eadc7/deeb57c9-e10c-4f85-8287-d163a1427c09?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261006%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261006T075958Z&X-Amz-Expires=300&X-Amz-Signature=ab2879437c96028dda6c9998c2d1e043db17b8ad0c1d2f373ac1c0ec85dbded8&X-Amz-SignedHeaders=host&response-content-disposition=inline&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "services": [
+      {
+        "id": "956e1b19-2550-4c33-ab70-cc1bb5f6dc8a",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "categoryId": "bb329889-d0ca-4c14-8473-9e0d29a9fbdf",
+        "name": "Full groom",
+        "description": "Bath, trim, nails and ears.",
+        "durationMin": 60,
+        "bufferMin": 15,
+        "pricePaise": 79900,
+        "modes": [
+          "AT_CENTER",
+          "AT_HOME"
+        ],
+        "speciesIds": [
+          "6b124905-77fb-4595-aaab-579e6353b0ca"
+        ],
+        "isActive": true,
+        "createdAt": "2026-10-06T07:59:58.466Z",
+        "updatedAt": "2026-10-06T07:59:58.466Z",
+        "category": {
+          "id": "bb329889-d0ca-4c14-8473-9e0d29a9fbdf",
+          "key": "grooming-3597",
+          "name": "Grooming",
+          "description": null,
+          "commissionBps": 1500,
+          "isActive": true,
+          "sortOrder": 0,
+          "createdAt": "2026-10-06T07:59:58.307Z",
+          "updatedAt": "2026-10-06T07:59:58.307Z"
+        }
+      }
+    ],
+    "hours": [
+      {
+        "id": "fd04501d-83bd-450a-8296-c6ea82903d88",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 0,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "a97d28b9-aadb-41ae-a428-9d67197c0713",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 1,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "d18a4df2-fa59-4912-ba0a-d9c12839e459",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 2,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "93217a67-1a27-4c13-a9bf-8557e8e020f1",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 3,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "484ffbb1-fa16-41df-9585-5f2d80ebb4f6",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 4,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "66f881a6-ae26-4354-b3c3-56140a01e483",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 5,
+        "opensMin": 540,
+        "closesMin": 1200
+      },
+      {
+        "id": "29c4ceba-28a6-4010-96d2-22b75b65e5f1",
+        "partnerId": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+        "weekday": 6,
+        "opensMin": 540,
+        "closesMin": 1200
+      }
+    ],
+    "checklist": [],
+    "bookings": {},
+    "completedTotals": {
+      "pricePaise": null,
+      "platformFeePaise": null,
+      "partnerEarningPaise": null
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "5f574bc9-5e58-44a3-8b8b-1a575ad60872"
+  }
+}

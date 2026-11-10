@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "active": {
+      "id": "b44ce879-390d-49be-9ebd-c89dcf70085f",
+      "method": "BANK",
+      "holderName": "Priya Nair",
+      "ifsc": "ICIC0000104",
+      "accountLast4": "4567",
+      "vpa": null,
+      "status": "VERIFIED",
+      "verifiedName": "PRIYA NAIR",
+      "nameMatches": true,
+      "failureReason": null,
+      "verifiedAt": "2026-10-11T01:10:29.420Z",
+      "payableFrom": "2026-10-12T01:10:29.420Z",
+      "createdAt": "2026-10-11T01:10:29.410Z"
+    },
+    "pending": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "a0e6ebc7-dc6e-41a7-9a88-71123fdbfd0d"
+  }
+}

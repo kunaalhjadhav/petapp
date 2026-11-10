@@ -1,0 +1,42 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "5639d7c8-14c3-4391-a22b-8d301fa0b052",
+      "key": "grooming-3579",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:40.705Z",
+      "updatedAt": "2026-10-06T07:59:40.705Z"
+    },
+    {
+      "id": "7f33ce45-46ec-4e3e-93e4-cbe570139561",
+      "key": "grooming-3593",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:53.777Z",
+      "updatedAt": "2026-10-06T07:59:53.777Z"
+    },
+    {
+      "id": "bb329889-d0ca-4c14-8473-9e0d29a9fbdf",
+      "key": "grooming-3597",
+      "name": "Grooming",
+      "description": null,
+      "commissionBps": 1500,
+      "isActive": true,
+      "sortOrder": 0,
+      "createdAt": "2026-10-06T07:59:58.307Z",
+      "updatedAt": "2026-10-06T07:59:58.307Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "6ece97c5-0fbb-41f5-b630-696f725bd532"
+  }
+}

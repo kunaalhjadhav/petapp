@@ -1,0 +1,99 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "83694ede-464e-4b65-b62e-1d8aa2f0e056",
+      "code": "PB-H5KJ9Q",
+      "status": "CONFIRMED",
+      "startsAt": "2026-10-09T03:30:00.000Z",
+      "endsAt": "2026-10-09T04:30:00.000Z",
+      "mode": "AT_CENTER",
+      "service": {
+        "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+        "name": "Full groom"
+      },
+      "pet": {
+        "id": "3696f2ed-f1f1-4b70-bef9-eb53c1f96eec",
+        "name": "Coco"
+      },
+      "pricePaise": 84900,
+      "partner": {
+        "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "businessName": "Pawfect Grooming",
+        "addressLine": "12 Hill Road",
+        "city": "Mumbai",
+        "lat": 19.0596,
+        "lng": 72.8295,
+        "phone": "+919873632007"
+      },
+      "customer": {
+        "id": "2ab76ca0-88fe-4f6b-b1cf-0ffb87f3ccb5",
+        "name": "Asha Customer",
+        "phone": "+919874632008"
+      },
+      "address": null,
+      "customerNote": "Gentle with the ears please",
+      "earnings": {
+        "platformFeePaise": 12735,
+        "partnerEarningPaise": 72165
+      },
+      "cancelledBy": null,
+      "cancelReason": null,
+      "refundPaise": null,
+      "review": null,
+      "payment": null,
+      "createdAt": "2026-10-06T19:52:02.525Z"
+    },
+    {
+      "id": "4891c03b-0d06-4175-ae2b-3075b373951a",
+      "code": "PB-83Q46J",
+      "status": "CONFIRMED",
+      "startsAt": "2026-10-10T03:30:00.000Z",
+      "endsAt": "2026-10-10T04:30:00.000Z",
+      "mode": "AT_CENTER",
+      "service": {
+        "id": "fb251c1e-f2db-427e-b419-339757ca097f",
+        "name": "Full groom"
+      },
+      "pet": {
+        "id": "12d8fe00-3fcf-47c2-9b10-1f29e36df304",
+        "name": "Mango"
+      },
+      "pricePaise": 84900,
+      "partner": {
+        "id": "eaa0889f-3a40-4def-a7f6-676100e1b823",
+        "businessName": "Pawfect Grooming",
+        "addressLine": "12 Hill Road",
+        "city": "Mumbai",
+        "lat": 19.0596,
+        "lng": 72.8295,
+        "phone": "+919873632007"
+      },
+      "customer": {
+        "id": "31331b35-d418-47db-99bf-db83da9e5697",
+        "name": "Bilal Customer",
+        "phone": "+919875632009"
+      },
+      "address": null,
+      "customerNote": "Gentle with the ears please",
+      "earnings": {
+        "platformFeePaise": 12735,
+        "partnerEarningPaise": 72165
+      },
+      "cancelledBy": null,
+      "cancelReason": null,
+      "refundPaise": null,
+      "review": null,
+      "payment": null,
+      "createdAt": "2026-10-06T19:52:02.818Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "e1f0275a-50c6-476e-bcb7-398b99315136",
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "totalPages": 1
+  }
+}

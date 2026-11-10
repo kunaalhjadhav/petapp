@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": {
+    "media": {
+      "id": "d69143e6-ddf6-4bd7-bbc8-118e94c9147a",
+      "kind": "VIDEO",
+      "status": "PENDING_UPLOAD"
+    },
+    "upload": {
+      "url": "http://127.0.0.1:9000/petapp-media/uploads/9c69809d-dc55-4aed-a9fe-dd65e11d991c/d69143e6-ddf6-4bd7-bbc8-118e94c9147a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121438Z&X-Amz-Expires=900&X-Amz-Signature=e839ff34297ea50c4d466da658f3f68092f13a35a55b121baf6847050fbd8db4&X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "video/mp4"
+      },
+      "expiresInSeconds": 900
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "fcad68ef-00bf-4d95-85ee-676f1cec60f3"
+  }
+}

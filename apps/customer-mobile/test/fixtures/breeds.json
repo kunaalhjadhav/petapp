@@ -1,0 +1,153 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "f2d884df-8da9-4969-b94f-25abdb0ff264",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Beagle",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "67c5e74f-58e0-459b-99e7-ebafa01d02a4",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Boxer",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "1c3ce107-874d-4a08-84f0-4edfbc294e47",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Chippiparai",
+      "isActive": true,
+      "createdAt": "2026-09-30T23:14:08.946Z",
+      "updatedAt": "2026-09-30T23:14:08.946Z"
+    },
+    {
+      "id": "ab2bd611-9b40-47f8-a21a-22354ef065e6",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Cocker Spaniel",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "b287651d-ea0f-4e8e-aec7-fa6ec96d3bbb",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Dachshund",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "e9669bdb-4eda-4278-8578-bf2eb44ffbe3",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Doberman",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "75031dea-6e95-4704-8453-d324a0cbd060",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "German Shepherd",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "1bfce1ef-061e-41ec-9f4f-ee0b98c1b694",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Golden Retriever",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "e05e0e8f-35a3-45c4-9fc4-1bdcdd118efd",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Great Dane",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "785e8ddb-bb2e-44b9-86de-ab14d67bf064",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Indie",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "3998c0be-48ee-4238-b9a1-36fc6fd0ce91",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Labrador Retriever",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "c25cb795-de86-42ea-b295-f5151414899a",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Mixed breed",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "5931ea20-6846-459d-a9ea-3dcf2b47212b",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Pomeranian",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "6964f325-42e7-4cfc-9ff5-8ee69de643b8",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Pug",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "bd5cf6ba-f8c7-4c30-88be-c9ba9c42f424",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Rajapalayam",
+      "isActive": true,
+      "createdAt": "2026-10-01T08:54:49.664Z",
+      "updatedAt": "2026-10-01T08:54:49.664Z"
+    },
+    {
+      "id": "c3bb32ca-99e4-4df6-8c57-1982ce39af44",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Rottweiler",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "e9927e2a-c754-4375-b399-c3ab44c27a30",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Shih Tzu",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    },
+    {
+      "id": "6a99b252-38ea-4236-847e-0c01fa54ee98",
+      "speciesId": "6b124905-77fb-4595-aaab-579e6353b0ca",
+      "name": "Siberian Husky",
+      "isActive": true,
+      "createdAt": "2026-09-30T12:08:57.011Z",
+      "updatedAt": "2026-09-30T12:08:57.011Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "c30439fd-00bc-4fd9-9f10-fbbfc39bd7e6"
+  }
+}

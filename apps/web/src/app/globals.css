@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque/standard.css';
+@import '@fontsource-variable/instrument-sans';
+
+/*
+ * PetApp public pages. One idea carries the identity: every page opens with its subject engraved on a pet ID tag
+ * (white, punched hole with a brass eyelet). Everything else stays quiet: a cool mist ground, collar-teal actions.
+ */
+@theme {
+  --font-sans: 'Instrument Sans Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Instrument Sans Variable', system-ui, sans-serif;
+
+  --color-mist: #edf2ef;
+  --color-card: #ffffff;
+  --color-ink: #15201d;
+  --color-muted: #586663;
+  --color-line: #d6e0db;
+  --color-collar: #1d5c58;
+  --color-collar-deep: #154541;
+  --color-collar-wash: #dce9e5;
+  --color-brass: #b88a1b;
+  --color-alert: #a3361a;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-collar);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-stretch: 86%;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+/* The tag: a rounded slab with a punched hole on its leading edge. The hole is a real cut-out (mask), so the page
+   ground shows through it, and a brass eyelet rings it. */
+.tag {
+  --hole: 15px;
+  --hole-x: 26px;
+  position: relative;
+  background: var(--color-card);
+  border-radius: 28px 28px 28px 28px;
+  -webkit-mask: radial-gradient(circle var(--hole) at var(--hole-x) 50%, transparent 98%, #000 100%);
+  mask: radial-gradient(circle var(--hole) at var(--hole-x) 50%, transparent 98%, #000 100%);
+  box-shadow: 0 1px 0 var(--color-line);
+}
+.tag-eyelet {
+  position: absolute;
+  left: calc(26px - 19px);
+  top: calc(50% - 19px);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 4px solid var(--color-brass);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tag-swing {
+    transform-origin: 26px 50%;
+    animation: tag-swing 900ms cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  }
+}
+@keyframes tag-swing {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+.prose-legal h2 {
+  font-family: var(--font-display);
+}

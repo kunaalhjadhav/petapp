@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": {
+    "id": "4ed1e13f-24d0-4dc3-b32f-4c2f32750bdc",
+    "name": "Mira Joshi",
+    "avatarUrl": null,
+    "city": null,
+    "createdAt": "2026-10-20T00:58:05.694Z",
+    "pets": [],
+    "followers": 0,
+    "following": 0,
+    "isFollowing": false,
+    "member": {
+      "plan": "Plus",
+      "key": "PLUS"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "df6bcf46-7b29-4df2-ab5f-49c65b89299a"
+  }
+}

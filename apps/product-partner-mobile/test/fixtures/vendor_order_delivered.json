@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "data": {
+    "id": "32595106-778e-4881-8e6a-f7ee2f108688",
+    "orderId": "46ab4c37-d0f9-4aba-a93c-15775927a984",
+    "vendorId": "7081925b-a136-45d7-b591-774559305405",
+    "code": "SO-JMZUT6AZ0",
+    "status": "DELIVERED",
+    "itemsPaise": 59800,
+    "discountPaise": 8970,
+    "shippingPaise": 0,
+    "totalPaise": 50830,
+    "commissionPaise": 6100,
+    "vendorEarningPaise": 44730,
+    "courier": "Delhivery",
+    "trackingNumber": "DL5550001IN",
+    "packedAt": "2026-10-10T12:51:31.044Z",
+    "shippedAt": "2026-10-10T12:51:31.087Z",
+    "deliveredAt": "2026-10-10T12:51:31.119Z",
+    "cancelledAt": null,
+    "cancelledBy": null,
+    "cancelReason": null,
+    "createdAt": "2026-10-10T12:51:30.495Z",
+    "updatedAt": "2026-10-10T12:51:31.128Z",
+    "items": [
+      {
+        "id": "882bead2-7d72-479a-a1b7-513b613600a2",
+        "subOrderId": "32595106-778e-4881-8e6a-f7ee2f108688",
+        "variantId": "b59d5d6c-0606-4d38-a782-e9f33a756c78",
+        "productTitle": "Chicken Jerky 6687",
+        "variantTitle": "100 g",
+        "sku": "CJ-100",
+        "qty": 2,
+        "unitPricePaise": 29900,
+        "gstRateBps": 1800,
+        "gstPaise": 7754,
+        "lineTotalPaise": 59800,
+        "commissionBps": 1200
+      }
+    ],
+    "returns": [],
+    "orderCode": "PO-99ZVCV8F",
+    "customer": {
+      "name": "Ravi Buyer",
+      "phone": "+919864668732"
+    },
+    "shipTo": {
+      "city": "Pune",
+      "name": "Ravi Buyer",
+      "label": "Home",
+      "line1": "21 MG Road",
+      "line2": null,
+      "phone": "+919864668732",
+      "state": "Maharashtra",
+      "pincode": "411001",
+      "locality": "Camp"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "23ccdd00-9b70-46ee-9ef8-1e95afa80d70"
+  }
+}

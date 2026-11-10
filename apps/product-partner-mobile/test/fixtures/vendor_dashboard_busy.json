@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "data": {
+    "store": {
+      "businessName": "Wag & Co 6687",
+      "status": "APPROVED",
+      "statusReason": null
+    },
+    "todo": {
+      "toPack": 3,
+      "toShip": 0,
+      "inTransit": 0,
+      "returnsToReview": 0
+    },
+    "sales": {
+      "today": {
+        "orders": 3,
+        "salesPaise": 120430,
+        "earningsPaise": 107154
+      },
+      "last7Days": {
+        "orders": 3,
+        "salesPaise": 120430,
+        "earningsPaise": 107154
+      },
+      "last30Days": {
+        "orders": 3,
+        "salesPaise": 120430,
+        "earningsPaise": 107154
+      }
+    },
+    "products": {
+      "ACTIVE": 1
+    },
+    "lowStockThreshold": 5,
+    "stockAlerts": [
+      {
+        "variantId": "a3986146-c13d-4b32-a8cd-87b2df2ff6a3",
+        "productId": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+        "productTitle": "Chicken Jerky 6687",
+        "variantTitle": "250 g",
+        "sku": "CJ-250",
+        "stock": 3,
+        "inventoryStatus": "LOW_STOCK"
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "f1dfc8fe-fe8b-4554-a286-461ecd3b1f7f"
+  }
+}

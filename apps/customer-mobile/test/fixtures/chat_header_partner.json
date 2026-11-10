@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": "d3e332a9-37d3-44ce-8498-826847a086d2",
+    "kind": "SERVICE",
+    "status": "OPEN",
+    "side": "BUSINESS",
+    "counterpart": {
+      "type": "CUSTOMER",
+      "name": "Kabir Customer",
+      "avatarUrl": null
+    },
+    "canSend": true,
+    "cannotSendReason": null,
+    "blockedByMe": false,
+    "unread": 3,
+    "otherReadAt": "2026-10-18T17:31:44.441Z",
+    "ticket": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "09c18735-e079-4317-8ac5-a343c7f7a542"
+  }
+}

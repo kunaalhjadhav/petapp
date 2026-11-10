@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "data": {
+    "id": "75d3e83f-3c58-4a2b-a85e-f28b6fc30e07",
+    "code": "PB-FVY7JM",
+    "status": "PENDING_PAYMENT",
+    "startsAt": "2026-10-08T03:30:00.000Z",
+    "endsAt": "2026-10-08T04:30:00.000Z",
+    "mode": "AT_CENTER",
+    "service": {
+      "id": "956e1b19-2550-4c33-ab70-cc1bb5f6dc8a",
+      "name": "Full groom"
+    },
+    "pet": {
+      "id": "4f66f81f-2304-4848-ad97-fb5411fd81b7",
+      "name": "Coco"
+    },
+    "pricePaise": 79900,
+    "partner": {
+      "id": "33a31e70-7e37-49c5-af77-17d1edbccbe8",
+      "businessName": "Pawfect Grooming 3597",
+      "addressLine": "12 Hill Road",
+      "city": "Mumbai",
+      "lat": 19.0596,
+      "lng": 72.8295,
+      "phone": null
+    },
+    "address": null,
+    "customerNote": null,
+    "cancelledBy": null,
+    "cancelReason": null,
+    "refundPaise": null,
+    "review": null,
+    "payment": {
+      "paymentId": "323cf99c-408c-46fa-bc3e-d899a688b61e",
+      "provider": "fake",
+      "orderId": "fake_order_1acfec34a817414abf62e9c72c8032f4",
+      "amountPaise": 79900,
+      "currency": "INR",
+      "key": "fake_key",
+      "status": "CREATED"
+    },
+    "createdAt": "2026-10-06T07:59:58.714Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "f3403d8c-7841-4e5e-8506-55fdb89ef3d2"
+  }
+}

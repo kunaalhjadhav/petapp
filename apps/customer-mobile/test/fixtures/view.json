@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "data": {
+    "counted": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "87e7609f-021e-4a3f-b525-411293f60664"
+  }
+}

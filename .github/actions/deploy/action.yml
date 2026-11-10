@@ -1,0 +1,39 @@
+name: Deploy to a server
+description: Copies the compose file and deploy script to the server and runs deploy.sh over SSH.
+inputs:
+  tag: { required: true, description: Image tag (git sha) }
+  environment: { required: true, description: staging or production }
+  host: { required: true, description: Server address }
+  user: { required: true, description: SSH user (in the docker group) }
+  ssh-key: { required: true, description: Private key for that user }
+  path: { required: true, description: Folder on the server holding .env }
+  registry: { required: true, description: Image registry prefix }
+  registry-token: { required: true, description: Token that can pull the images }
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        KEY: ${{ inputs.ssh-key }}
+        HOST: ${{ inputs.host }}
+        USER_: ${{ inputs.user }}
+        DIR: ${{ inputs.path }}
+      run: |
+        set -euo pipefail
+        install -m 700 -d ~/.ssh
+        printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+        ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+        scp -i ~/.ssh/deploy infrastructure/deploy/compose.yml infrastructure/deploy/deploy.sh "$USER_@$HOST:$DIR/"
+    - shell: bash
+      env:
+        HOST: ${{ inputs.host }}
+        USER_: ${{ inputs.user }}
+        DIR: ${{ inputs.path }}
+        TAG: ${{ inputs.tag }}
+        ENVIRONMENT: ${{ inputs.environment }}
+        REGISTRY: ${{ inputs.registry }}
+        TOKEN: ${{ inputs.registry-token }}
+        ACTOR: ${{ github.actor }}
+      run: |
+        ssh -i ~/.ssh/deploy "$USER_@$HOST" \
+          "cd '$DIR' && echo '$TOKEN' | docker login ghcr.io -u '$ACTOR' --password-stdin >/dev/null && REGISTRY='$REGISTRY' bash ./deploy.sh '$TAG' '$ENVIRONMENT'"

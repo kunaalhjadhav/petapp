@@ -1,0 +1,146 @@
+# PetApp on Render's free plan: a demo deployment of the whole system.
+#   Render Dashboard → New → Blueprint → choose this repository. Step-by-step guide: docs/RENDER.md
+#
+# What it creates (all in Singapore, the region closest to India):
+#   petapp-db     PostgreSQL 16 (PostGIS, pg_trgm), free: 1 GB, expires 30 days after creation unless upgraded
+#   petapp-redis  Key Value (Redis-compatible), free: 25 MB, in memory only
+#   petapp-api    the API and the background worker in one service and one process (scripts/render/start-api.mjs)
+#   petapp-admin  the admin dashboard
+#   petapp-web    the public website
+#
+# Demo mode: no paid accounts are needed. Sign-in codes are printed in petapp-api's Logs, payments and payouts
+# are simulated, and email is printed to the logs. For real users, follow docs/GO-LIVE.md instead.
+
+databases:
+  - name: petapp-db
+    plan: free
+    region: singapore
+    databaseName: petapp
+    user: petapp
+    postgresMajorVersion: "16"
+
+services:
+  - type: keyvalue
+    name: petapp-redis
+    plan: free
+    region: singapore
+    ipAllowList: [] # reachable only from your Render services
+    maxmemoryPolicy: noeviction # background jobs (BullMQ) must never be evicted
+
+  - type: web
+    name: petapp-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./infrastructure/render/Dockerfile.api
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: development # demo mode: allows the simulated providers below
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: petapp-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: petapp-redis
+          property: connectionString
+      # Secrets, generated once by Render (random 256-bit, base64)
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: OTP_PEPPER
+        generateValue: true
+      - key: PAYOUT_DATA_KEY
+        generateValue: true
+      - key: MFA_DATA_KEY
+        generateValue: true
+      - key: METRICS_TOKEN
+        generateValue: true
+      # Your first dashboard admin (asked when you create the Blueprint)
+      - key: SEED_ADMIN_EMAIL
+        sync: false
+      - key: SEED_ADMIN_PASSWORD
+        sync: false # 12+ characters, not a common password
+      - key: SEED_DEMO_DATA
+        value: "true" # demo pet owners, pets and a partner; set "false" for an empty start
+      - key: ENABLE_ALL_FEATURES
+        value: "true" # switch every feature on at the first start (paid voting stays off)
+      # Addresses of the other two services (asked at creation; see docs/RENDER.md)
+      - key: DASHBOARD_URL
+        sync: false # e.g. https://petapp-admin.onrender.com
+      - key: CORS_ORIGINS
+        sync: false # e.g. https://petapp-admin.onrender.com,https://petapp-web.onrender.com
+      # Simulated providers for the demo
+      - key: SMS_PROVIDER
+        value: console
+      - key: EMAIL_PROVIDER
+        value: console
+      - key: PAYMENT_PROVIDER
+        value: fake
+      - key: PAYOUT_PROVIDER
+        value: fake
+      - key: PUSH_PROVIDER
+        value: none
+      - key: AI_PROVIDER
+        value: rules
+      - key: MAP_PROVIDER
+        value: none
+      # Photo and video storage (S3-compatible, e.g. Cloudflare R2 or Backblaze B2). Optional: leave empty and the
+      # app runs, but uploads are switched off. See docs/RENDER.md, step 3.
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_REGION
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: MEDIA_PUBLIC_BASE_URL
+        sync: false
+      # The API and the worker share one process to fit the free plan's 512 MB (about 210 MB at rest, 340 MB busy)
+      - key: HEAP_MB
+        value: "300"
+      - key: LOG_FORMAT
+        value: pretty
+
+  - type: web
+    name: petapp-admin
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./infrastructure/Dockerfile.admin
+    dockerContext: .
+    healthCheckPath: /login
+    envVars:
+      - key: BACKEND_URL
+        sync: false # petapp-api's address, e.g. https://petapp-api.onrender.com
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: NEXT_PUBLIC_ENV_LABEL
+        value: Demo
+
+  - type: web
+    name: petapp-web
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./infrastructure/Dockerfile.web
+    dockerContext: .
+    healthCheckPath: /robots.txt
+    envVars:
+      - key: API_URL
+        sync: false # petapp-api's address, e.g. https://petapp-api.onrender.com
+      - key: SITE_URL
+        sync: false # this site's address, e.g. https://petapp-web.onrender.com
+      - key: SITE_INDEXABLE
+        value: "false" # keep the demo out of search engines
+      - key: SUPPORT_EMAIL
+        sync: false

@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "141e356c-9165-4ead-902c-6a442a63c3c7",
+      "rating": 4,
+      "comment": "My beagle loves these. The bag reseals well; a little pricey.",
+      "reply": "Thank you, Riya! A smaller pack is coming soon.",
+      "repliedAt": "2026-10-18T23:12:25.355Z",
+      "by": "Riya S.",
+      "at": "2026-10-18T23:12:25.210Z",
+      "photos": [
+        {
+          "id": "e86b90ec-5e36-400a-b24b-d42630731bba",
+          "kind": "IMAGE",
+          "status": "READY",
+          "width": 1600,
+          "height": 1200,
+          "durationMs": null,
+          "images": [
+            {
+              "width": 1080,
+              "url": "http://127.0.0.1:9000/petapp-media/media/e86b90ec-5e36-400a-b24b-d42630731bba/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=f66ebc49888625da3e60a06f429d6ecfa71aa6e9157bff4349612b74d82d4dee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 640,
+              "url": "http://127.0.0.1:9000/petapp-media/media/e86b90ec-5e36-400a-b24b-d42630731bba/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=03b20698d65f70e6cb1e1b2a4dd25670da3ee2becc6d2d3420fff05a7c987a2b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            },
+            {
+              "width": 320,
+              "url": "http://127.0.0.1:9000/petapp-media/media/e86b90ec-5e36-400a-b24b-d42630731bba/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T231225Z&X-Amz-Expires=3600&X-Amz-Signature=24fae59ad9ea93d8251ebd8021216a4d835e8300ef6585e187435b1f0f1b45b8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+            }
+          ]
+        }
+      ],
+      "verified": true,
+      "variantTitle": "100 g"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "882f35f5-710f-4fce-b36d-14b2bbbf71c6",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

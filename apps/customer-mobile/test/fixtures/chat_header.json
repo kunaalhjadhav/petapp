@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "data": {
+    "id": "d3e332a9-37d3-44ce-8498-826847a086d2",
+    "kind": "SERVICE",
+    "status": "OPEN",
+    "side": "CUSTOMER",
+    "counterpart": {
+      "type": "PARTNER",
+      "id": "b53ce8ca-36fb-49dd-871e-be049c61d43d",
+      "slug": "pawfect-grooming-0216-1592",
+      "name": "Pawfect Grooming 0216",
+      "city": "Mumbai",
+      "avatarUrl": null
+    },
+    "canSend": true,
+    "cannotSendReason": null,
+    "blockedByMe": false,
+    "unread": 1,
+    "otherReadAt": "2026-10-18T17:31:44.522Z",
+    "ticket": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "72783637-16b2-48f7-a1d0-4705157278c8"
+  }
+}

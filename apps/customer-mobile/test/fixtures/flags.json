@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "ENABLE_CONTESTS": false,
+    "ENABLE_PUBLIC_VOTING": false,
+    "ENABLE_PAID_VOTING": false,
+    "ENABLE_MARKETPLACE": false,
+    "ENABLE_SERVICES": false,
+    "ENABLE_AI_ASSISTANT": false,
+    "ENABLE_REELS": true,
+    "ENABLE_CHAT": false
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "cadec6c2-b049-42a3-856d-ea8238e95a1a"
+  }
+}

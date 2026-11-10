@@ -1,0 +1,757 @@
+{
+  "success": true,
+  "data": {
+    "city": null,
+    "personalised": true,
+    "sections": [
+      {
+        "id": "98a6b9e7-18a6-46bc-b741-a50bb917afb2",
+        "kind": "FEATURED_REELS",
+        "title": "Featured reels",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "b0ee640b-1d21-4a15-9c3c-72a01b58e45a",
+            "type": "REEL",
+            "status": "PUBLISHED",
+            "visibility": "PUBLIC",
+            "caption": "Zoomies #zoomies",
+            "locationName": null,
+            "author": {
+              "id": "d05a5086-5859-43aa-b72f-469b009d685d",
+              "name": "Reel Maker",
+              "avatarUrl": null
+            },
+            "pets": [],
+            "hashtags": [
+              "zoomies"
+            ],
+            "media": [
+              {
+                "id": "bc186b63-b2a1-4002-87dc-a46f89769966",
+                "kind": "VIDEO",
+                "status": "READY",
+                "width": 720,
+                "height": 1280,
+                "durationMs": 3000,
+                "hls": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=369579f8fcc82f95ca3fcb0377119cf2321cac3c63231675bdf7127199be0eba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+                "poster": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=d2859b1164a821a3fba51357060361bd97e7d2ff4ce9251cd556a1b6af9085f1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              }
+            ],
+            "counts": {
+              "likes": 1,
+              "comments": 0,
+              "saves": 0,
+              "shares": 0,
+              "views": 0
+            },
+            "viewer": {
+              "liked": true,
+              "saved": false,
+              "isAuthor": false
+            },
+            "publishedAt": "2026-10-11T07:39:44.265Z",
+            "createdAt": "2026-10-11T07:39:44.269Z",
+            "reason": "From someone you follow",
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "db8250b4-ff9a-4fe1-977a-5f0a62ea3ebd",
+        "kind": "TRENDING_PETS",
+        "title": "Trending pets",
+        "subtitle": "Most loved this week",
+        "items": [
+          {
+            "id": "74bcdc72-8cec-405f-968c-c0f9f70650a2",
+            "name": "Bruno",
+            "handle": "bruno.demo",
+            "avatarUrl": null,
+            "gender": "MALE",
+            "dateOfBirth": "2023-08-14T00:00:00.000Z",
+            "city": "Mumbai",
+            "isVerified": false,
+            "followerCount": 2,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": {
+              "id": "6ac9378f-3f54-4892-967a-8e0a9e5b05bb",
+              "name": "Golden Retriever"
+            },
+            "reason": "2 new followers this week",
+            "pinned": false
+          },
+          {
+            "id": "08e28ab0-e33d-450b-b342-925f380e7907",
+            "name": "Star mv3ianah",
+            "handle": "starmv3ianah",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": "Pune",
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "209aad73-8d0c-4303-9d70-60283c77c244",
+            "name": "Tara",
+            "handle": "tara.f96a12",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": null,
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "2a20480e-4247-4783-af70-6bbee60fa17e",
+            "name": "Star mv3ialma",
+            "handle": "starmv3ialma",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": "Pune",
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "41638c93-9d4f-4f62-97f3-aa5ebf0825e7",
+            "name": "Coco",
+            "handle": "coco.1e4a80",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": null,
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "443cf9db-a7ac-46b4-a144-614c5bc4657a",
+            "name": "Mishti",
+            "handle": "mishti.demo",
+            "avatarUrl": null,
+            "gender": "FEMALE",
+            "dateOfBirth": "2022-02-01T00:00:00.000Z",
+            "city": "Mumbai",
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "da9b1546-b89a-406d-8bf0-a8fcf175cd96",
+              "key": "cat",
+              "name": "Cat"
+            },
+            "breed": {
+              "id": "ff348ea5-6f27-4e5d-88a9-e780bf3f3894",
+              "name": "Persian"
+            },
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "56edc6a9-78d5-4d32-98ae-838c67a733c3",
+            "name": "Bolt",
+            "handle": "bolt.12870d",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": null,
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "590485fc-436d-4c5b-903d-9e8f4e2b30fb",
+            "name": "Kiwi",
+            "handle": "kiwi.demo",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": "2024-05-10T00:00:00.000Z",
+            "city": "Mumbai",
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "be5b7133-384f-4245-9600-9705557c58f6",
+              "key": "bird",
+              "name": "Bird"
+            },
+            "breed": {
+              "id": "157db480-bcfe-4e6e-9828-2eed9b786523",
+              "name": "Budgerigar"
+            },
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "5ae207ad-d5e4-438d-af07-61d1d577e603",
+            "name": "Coco",
+            "handle": "coco.35521e",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": null,
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "7563bc51-db67-4f4c-ae9f-adc9cde8641f",
+            "name": "Star mv3ib7zm",
+            "handle": "starmv3ib7zm",
+            "avatarUrl": null,
+            "gender": "UNKNOWN",
+            "dateOfBirth": null,
+            "city": "Pune",
+            "isVerified": false,
+            "followerCount": 0,
+            "visibility": "PUBLIC",
+            "species": {
+              "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+              "key": "dog",
+              "name": "Dog"
+            },
+            "breed": null,
+            "reason": null,
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "ce86d29e-9d2c-44f9-938c-1ada595a563e",
+        "kind": "CHALLENGES",
+        "title": "Challenges",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "b2fba3ce-d07b-443e-915f-5e8d31852a61",
+            "slug": "walk-week-mv324rkz-c88ceb",
+            "title": "Walk Week mv324rkz",
+            "bannerUrl": null,
+            "kind": "FREE",
+            "feePaise": 0,
+            "startsAt": "2026-10-11T01:00:00.000Z",
+            "endsAt": "2026-10-19T00:00:00.000Z",
+            "status": "PUBLISHED",
+            "requiredCheckIns": 5,
+            "proof": "POST",
+            "pointsPerCheckIn": 10,
+            "streakBonusEvery": 7,
+            "streakBonusPoints": 50,
+            "participants": 0,
+            "badge": {
+              "name": "Walker mv324rkz",
+              "iconUrl": null
+            },
+            "mine": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "c02bd334-c10a-4867-862d-0fd5d8c62385",
+            "slug": "walk-week-mv3d40db-f5cd71",
+            "title": "Walk Week mv3d40db",
+            "bannerUrl": null,
+            "kind": "FREE",
+            "feePaise": 0,
+            "startsAt": "2026-10-11T06:08:00.000Z",
+            "endsAt": "2026-10-19T05:08:00.000Z",
+            "status": "PUBLISHED",
+            "requiredCheckIns": 5,
+            "proof": "POST",
+            "pointsPerCheckIn": 10,
+            "streakBonusEvery": 7,
+            "streakBonusPoints": 50,
+            "participants": 0,
+            "badge": {
+              "name": "Walker mv3d40db",
+              "iconUrl": null
+            },
+            "mine": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "c17c40a8-7480-4ca1-9ed2-3c1e798c0d2b",
+            "slug": "walk-week-mv3dezdz-085558",
+            "title": "Walk Week mv3dezdz",
+            "bannerUrl": null,
+            "kind": "FREE",
+            "feePaise": 0,
+            "startsAt": "2026-10-11T06:16:00.000Z",
+            "endsAt": "2026-10-19T05:16:00.000Z",
+            "status": "PUBLISHED",
+            "requiredCheckIns": 5,
+            "proof": "POST",
+            "pointsPerCheckIn": 10,
+            "streakBonusEvery": 7,
+            "streakBonusPoints": 50,
+            "participants": 0,
+            "badge": {
+              "name": "Walker mv3dezdz",
+              "iconUrl": null
+            },
+            "mine": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "3db053af-8200-4dbe-9c6d-ada45f7b953e",
+            "slug": "walk-week-mv3idaho-cbd275",
+            "title": "Walk Week mv3idaho",
+            "bannerUrl": null,
+            "kind": "FREE",
+            "feePaise": 0,
+            "startsAt": "2026-10-11T08:35:00.000Z",
+            "endsAt": "2026-10-19T07:35:00.000Z",
+            "status": "PUBLISHED",
+            "requiredCheckIns": 5,
+            "proof": "POST",
+            "pointsPerCheckIn": 10,
+            "streakBonusEvery": 7,
+            "streakBonusPoints": 50,
+            "participants": 0,
+            "badge": {
+              "name": "Walker mv3idaho",
+              "iconUrl": null
+            },
+            "mine": null,
+            "reason": "Starts tomorrow",
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "2e6f7341-8283-4316-9c34-13a8abb5b78f",
+        "kind": "NEARBY_SERVICES",
+        "title": "Pet services near you",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "b53ce8ca-36fb-49dd-871e-be049c61d43d",
+            "slug": "pawfect-grooming-0216-1592",
+            "businessName": "Pawfect Grooming 0216",
+            "area": "Bandra West",
+            "city": "Mumbai",
+            "ratingAvg": 0,
+            "ratingCount": 0,
+            "homeVisitRadiusKm": 5,
+            "distanceKm": 0,
+            "fromPaise": 84900,
+            "reason": "Under 1 km away",
+            "pinned": false
+          },
+          {
+            "id": "da895388-2578-482e-b399-3071689fb3d2",
+            "slug": "pawfect-grooming-0966-191d",
+            "businessName": "Pawfect Grooming 0966",
+            "area": "Bandra West",
+            "city": "Mumbai",
+            "ratingAvg": 0,
+            "ratingCount": 0,
+            "homeVisitRadiusKm": 5,
+            "distanceKm": 0,
+            "fromPaise": 84900,
+            "reason": "Under 1 km away",
+            "pinned": false
+          },
+          {
+            "id": "e55e8afb-44ec-426e-b520-74cdc1d4a4a8",
+            "slug": "pawfect-grooming-0433-488d",
+            "businessName": "Pawfect Grooming 0433",
+            "area": "Bandra West",
+            "city": "Mumbai",
+            "ratingAvg": 0,
+            "ratingCount": 0,
+            "homeVisitRadiusKm": 5,
+            "distanceKm": 0,
+            "fromPaise": 84900,
+            "reason": "Under 1 km away",
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "5102048b-f4d0-4939-beae-aecff9f55948",
+        "kind": "RECOMMENDED_PRODUCTS",
+        "title": "Picked for your pets",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "122a02ba-08f1-425e-bd07-9728dda1d6a7",
+            "slug": "yak-chew-0966-eb6bc4",
+            "title": "Yak Chew 0966",
+            "brand": "Wag",
+            "vendor": {
+              "id": "e30daf20-9c31-473f-8259-7b0a97171203",
+              "businessName": "Wag & Co 0966",
+              "slug": "wag-co-0966-28be85"
+            },
+            "image": {
+              "id": "f891beee-a6e3-412b-8a3a-fa6b44c5ae3b",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=cf49ef0c60d994b314b56dd15f2c07171007f156d0ac597cdd1f6b146fde9419&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=7465e4c06e9f6b26a4d5af371197e3ee7aaaf243930540f72ae0b080914833f1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f891beee-a6e3-412b-8a3a-fa6b44c5ae3b/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=1f84bb6a460908be51c9688a10f41b9c2652bb0a19d1900ec947d4483edba9d6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 49900,
+            "mrpPaise": 59900,
+            "inStock": true,
+            "reason": "You looked at chews 0966",
+            "pinned": false
+          },
+          {
+            "id": "b45ff592-de7e-4e87-aea7-fcc2ec653638",
+            "slug": "yak-chew-0216-32f244",
+            "title": "Yak Chew 0216",
+            "brand": "Wag",
+            "vendor": {
+              "id": "253f2ae0-d308-45c5-bba1-753bafd524f1",
+              "businessName": "Wag & Co 0216",
+              "slug": "wag-co-0216-13a8a2"
+            },
+            "image": {
+              "id": "49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=26690eab034b124c2d971ee1d84a7e891eabdb3c62b3d911639d285f07dbcdfb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=aa70e0c8f0583077c09f08206738d6ad9ef8fc4c2be681686fc1f78bf1de2c3a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/49e7b67a-70a5-4b5c-9e3b-2ef88cb1c730/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=341b3f48c6b39a09bb70517ffaa68792cbc2cc8c07f3279e43c10c5d64af5391&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 49900,
+            "mrpPaise": 59900,
+            "inStock": true,
+            "reason": "You looked at chews 0216",
+            "pinned": false
+          },
+          {
+            "id": "fea45733-6d6c-4f68-8516-467b554a6a73",
+            "slug": "yak-chew-0433-bfef16",
+            "title": "Yak Chew 0433",
+            "brand": "Wag",
+            "vendor": {
+              "id": "6930820d-8edb-4f13-b34e-b37ad5b9fcd7",
+              "businessName": "Wag & Co 0433",
+              "slug": "wag-co-0433-4b429d"
+            },
+            "image": {
+              "id": "8e33d9f6-3a26-4d05-8b0b-472735a08381",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/8e33d9f6-3a26-4d05-8b0b-472735a08381/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=9021eb209bfb28d44d6f37d69ff5acadf01508c07557bb12a91ef0c34b0f4dac&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/8e33d9f6-3a26-4d05-8b0b-472735a08381/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=44004941acfd0294bc557f827abe9948938d25858fa41398762e9defe741ac2a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/8e33d9f6-3a26-4d05-8b0b-472735a08381/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=44549de5c86a12ba83edcd2e1df575d3a70c18e45202f89bcd7cfe15620f1c65&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 49900,
+            "mrpPaise": 59900,
+            "inStock": true,
+            "reason": "You looked at chews 0433",
+            "pinned": false
+          },
+          {
+            "id": "066f14bf-163c-4a37-b6bc-c3af3f530694",
+            "slug": "chicken-jerky-6687-60f28f",
+            "title": "Chicken Jerky 6687",
+            "brand": "Wag",
+            "vendor": {
+              "id": "7081925b-a136-45d7-b591-774559305405",
+              "businessName": "Wag & Co 6687",
+              "slug": "wag-co-6687-075b53"
+            },
+            "image": {
+              "id": "f870e233-f732-4255-8e6d-00e371ab0459",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=4ae4e7c5def228def2d99fd2f1d07273a04576426d54825f25ea8da4d1899d3d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=77e06e68735f79d35ee3d000806fd6adcd460f2cbd928ccaac0091438b322538&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/f870e233-f732-4255-8e6d-00e371ab0459/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=138f1083665a9b57cccd965e77bed286ee32fb0e14f1f9b33ad107766fc95e52&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 29900,
+            "mrpPaise": 34900,
+            "inStock": true,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "227f842f-f826-4e8a-a83d-7d782f03aea8",
+            "slug": "chicken-jerky-6078-e0c5af",
+            "title": "Chicken Jerky 6078",
+            "brand": "Wag",
+            "vendor": {
+              "id": "ba4f707e-fc62-4056-b28a-0a5731cd83f3",
+              "businessName": "Wag & Co 6078",
+              "slug": "wag-co-6078-7f84be"
+            },
+            "image": {
+              "id": "3cf07ecd-8784-486e-893a-a34161cb061d",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=884e516064dea901d1f4121b80fd4edbc3bd9e6e036227ceeba311620a2bf213&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=e19bd5c849e68c54b25fa915fb45f2c7a1b16cb727d6d6a8f4d48afee1b72746&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/3cf07ecd-8784-486e-893a-a34161cb061d/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=12dca4198657febbf34c73499c995330ee7d5cd537f8a4515d7a29544b079d44&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 29900,
+            "mrpPaise": 34900,
+            "inStock": true,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+            "slug": "chicken-jerky-5960-813fb3",
+            "title": "Chicken Jerky 5960",
+            "brand": "Wag",
+            "vendor": {
+              "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+              "businessName": "Wag & Co 5960",
+              "slug": "wag-co-5960-7f3c74"
+            },
+            "image": {
+              "id": "a7229592-ef7c-4990-bcf2-4c63e278d134",
+              "kind": "IMAGE",
+              "status": "READY",
+              "width": 1600,
+              "height": 1200,
+              "durationMs": null,
+              "images": [
+                {
+                  "width": 1080,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=823ce37adcf577c3318fcd444b9fd7100d7187377c0b472eab1b8222eb7a4d22&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 640,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=333a17e47710bff4258bb356bc0d39f7f3839fe756b1c480fa8b99932d97b267&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                },
+                {
+                  "width": 320,
+                  "url": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261011%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261011T073944Z&X-Amz-Expires=3600&X-Amz-Signature=203f7e6806c23b7f7a621f1fee698c66175ec0784196d27710ef953f3b512310&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+                }
+              ]
+            },
+            "fromPaise": 29900,
+            "mrpPaise": 34900,
+            "inStock": true,
+            "reason": null,
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "f77ba884-7a06-41e4-9357-a8aa1553fced",
+        "kind": "PARTNER_OFFERS",
+        "title": "Partner offers",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "44dd36ad-1e7f-4a89-a132-072aca6eda7b",
+            "code": "HOME4381",
+            "description": "10% off your first order",
+            "kind": "PERCENT",
+            "value": 1000,
+            "maxDiscountPaise": 20000,
+            "minOrderPaise": 0,
+            "endsAt": "2026-10-14T07:39:42.262Z",
+            "vendor": null,
+            "reason": null,
+            "pinned": false
+          }
+        ]
+      },
+      {
+        "id": "6bb1babf-b84a-400e-896b-eebd66d22dd8",
+        "kind": "UPCOMING_EVENTS",
+        "title": "Coming up",
+        "subtitle": null,
+        "items": [
+          {
+            "id": "3db053af-8200-4dbe-9c6d-ada45f7b953e",
+            "kind": "CHALLENGE",
+            "title": "Walk Week mv3idaho",
+            "subtitle": null,
+            "label": "Starts",
+            "at": "2026-10-11T08:35:00.000Z",
+            "imageUrl": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "69d6f63c-ce51-43f0-818d-02794a712aaa",
+            "kind": "CONTEST",
+            "title": "E2E Glam Contest mv3251q4",
+            "subtitle": null,
+            "label": "Entries open",
+            "at": "2026-10-12T00:00:00.000Z",
+            "imageUrl": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "b15b84e1-de75-4fc4-8b0f-9dc27f6bf2f8",
+            "kind": "CONTEST",
+            "title": "E2E Glam Contest mv3d4b40",
+            "subtitle": null,
+            "label": "Entries open",
+            "at": "2026-10-12T05:08:00.000Z",
+            "imageUrl": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "6b2384f8-d69b-4a19-86b5-5c86ed82cdc4",
+            "kind": "CONTEST",
+            "title": "E2E Glam Contest mv3df9xv",
+            "subtitle": null,
+            "label": "Entries open",
+            "at": "2026-10-12T05:16:00.000Z",
+            "imageUrl": null,
+            "reason": null,
+            "pinned": false
+          },
+          {
+            "id": "4fc3517a-2b69-42fa-be74-a1f88f8cb3f4",
+            "kind": "CONTEST",
+            "title": "E2E Glam Contest mv3idldh",
+            "subtitle": null,
+            "label": "Entries open",
+            "at": "2026-10-12T07:35:00.000Z",
+            "imageUrl": null,
+            "reason": null,
+            "pinned": false
+          }
+        ]
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "bb21e165-3616-4302-96bf-dbfed319c389"
+  }
+}

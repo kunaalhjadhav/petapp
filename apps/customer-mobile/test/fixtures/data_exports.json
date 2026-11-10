@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "27ea5172-9238-478e-b439-6fc8f8fa1e2b",
+        "status": "READY",
+        "sizeBytes": 3614,
+        "createdAt": "2026-10-11T19:07:45.157Z",
+        "readyAt": "2026-10-11T19:07:45.253Z",
+        "expiresAt": "2026-10-18T19:07:45.253Z"
+      }
+    ],
+    "canRequest": false,
+    "nextAllowedAt": "2026-10-12T19:07:45.157Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "1cd13d59-e69e-450f-a450-d882c3449843"
+  }
+}

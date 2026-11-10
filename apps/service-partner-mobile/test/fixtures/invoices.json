@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "c64f31f9-62d4-4233-a6d5-d5c4605b4cd9",
+      "kind": "CUSTOMER",
+      "title": "BILL_OF_SUPPLY",
+      "number": "PAWS/2627/00001",
+      "issuedAt": "2026-10-11T01:10:00.149Z",
+      "totalPaise": 84900,
+      "sourceKey": "Booking:6046f38f-0d77-4a9b-a560-7384465590d8",
+      "recipient": {
+        "name": "Ravi Kumar",
+        "gstin": null,
+        "state": "Maharashtra",
+        "address": "",
+        "bookingCode": "PB-G7YDNP"
+      },
+      "issuer": {
+        "pan": null,
+        "name": "Pawfect Grooming 0966",
+        "gstin": null,
+        "state": "Maharashtra",
+        "address": "12 Hill Road, Mumbai 400050"
+      },
+      "payeeKey": "PARTNER:da895388-2578-482e-b399-3071689fb3d2"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "5599dc52-7b16-45a5-881d-4590339886ad",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

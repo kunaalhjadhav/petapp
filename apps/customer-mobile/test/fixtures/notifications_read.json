@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "marked": 4,
+    "unread": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "b1e0a38b-eeb4-4b95-9c9b-7b97269f06e6"
+  }
+}

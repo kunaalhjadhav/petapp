@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "7af36578-ba2e-4a32-b658-27e78a3ce0d1",
+      "role": "USER",
+      "text": "Which contests can my pet enter?",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:04.942Z"
+    },
+    "answer": {
+      "id": "392ef6d9-42c6-4d0c-ac7d-15822f51b2e4",
+      "role": "ASSISTANT",
+      "text": "There are no contests open right now. New ones are announced in Alerts.",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.017Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "4f4a1449-1f4c-4553-805c-c7a7ff7fa7a8"
+  }
+}

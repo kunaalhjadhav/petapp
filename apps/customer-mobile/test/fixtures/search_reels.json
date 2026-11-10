@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "REEL",
+      "id": "b0ee640b-1d21-4a15-9c3c-72a01b58e45a",
+      "title": "Zoomies #zoomies",
+      "subtitle": "Reel Maker · 1 like",
+      "imageUrl": "http://127.0.0.1:9000/petapp-media/media/bc186b63-b2a1-4002-87dc-a46f89769966/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261019%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261019T235858Z&X-Amz-Expires=3600&X-Amz-Signature=a844960cc8c2b984b8d9bc43f0ab653e0feb8a9cfeb7b8c7f2876e809fdb0f8b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "link": {
+        "kind": "reel",
+        "key": "b0ee640b-1d21-4a15-9c3c-72a01b58e45a"
+      },
+      "meta": {
+        "likes": 1,
+        "comments": 0,
+        "durationMs": 3000
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "eae8c656-848f-49e4-8441-f54322a98f92",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

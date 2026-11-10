@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": {
+    "places": [
+      {
+        "kind": "CITY",
+        "label": "Mumbai",
+        "detail": "Maharashtra",
+        "lat": 19.076,
+        "lng": 72.8777,
+        "pincode": null,
+        "city": "Mumbai",
+        "citySlug": "mumbai",
+        "source": "petapp"
+      },
+      {
+        "kind": "CITY",
+        "label": "Navi Mumbai",
+        "detail": "Maharashtra",
+        "lat": 19.033,
+        "lng": 73.0297,
+        "pincode": null,
+        "city": "Navi Mumbai",
+        "citySlug": "navi-mumbai",
+        "source": "petapp"
+      }
+    ],
+    "maps": "none"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "d1624337-dcf8-44a0-bd22-918971fc3e5f"
+  }
+}

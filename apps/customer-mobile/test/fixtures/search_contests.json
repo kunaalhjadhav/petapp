@@ -1,0 +1,221 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "CONTEST",
+      "id": "c4e9868a-aa10-4718-b285-520def0a3d74",
+      "title": "E2E Glam Contest mveg8072",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mveg807-a069d6"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 1
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "3cb10632-430d-48d5-ac1a-26921068a8d2",
+      "title": "E2E Glam Contest mve4kp1p",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mve4kp1-bf7def"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "3f9ffac8-fb9c-402e-86aa-a32e5cf78950",
+      "title": "E2E Glam Contest mvdz3sgw",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mvdz3sg-df4954"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "846b1e1a-9e88-4efb-a588-fd2b3fcf0f63",
+      "title": "E2E Glam Contest mv477z5r",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv477z5-fb7206"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "b63aeb2d-670f-4b2b-8afe-64b7a16b729f",
+      "title": "E2E Glam Contest mv3pksuf",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3pksu-706218"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "ed935e04-f9a1-4791-9816-d72a29fce104",
+      "title": "E2E Glam Contest mv3nppj8",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3nppj-0007b5"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "a29dc6fa-71bc-48df-b684-3a3a5785feb8",
+      "title": "E2E Glam Contest mv3iyrog",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3iyro-5b3bf2"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "e5cde750-a345-4727-991a-ec336ae3d63e",
+      "title": "E2E Glam Contest mv3iwlpe",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3iwlp-4134a3"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "b478f1bf-12c1-49ac-9571-46f8020ff501",
+      "title": "E2E Glam Contest mv3iug3a",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3iug3-b4eef9"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "4fc3517a-2b69-42fa-be74-a1f88f8cb3f4",
+      "title": "E2E Glam Contest mv3idldh",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3idld-65682a"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "6b2384f8-d69b-4a19-86b5-5c86ed82cdc4",
+      "title": "E2E Glam Contest mv3df9xv",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3df9x-5bb741"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "b15b84e1-de75-4fc4-8b0f-9dc27f6bf2f8",
+      "title": "E2E Glam Contest mv3d4b40",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3d4b4-bcdd14"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    },
+    {
+      "type": "CONTEST",
+      "id": "69d6f63c-ce51-43f0-818d-02794a712aaa",
+      "title": "E2E Glam Contest mv3251q4",
+      "subtitle": "Open for entries",
+      "imageUrl": null,
+      "link": {
+        "kind": "contest",
+        "key": "e2e-glam-contest-mv3251q-427c93"
+      },
+      "meta": {
+        "status": "LIVE",
+        "feePaise": 10000,
+        "entries": 0
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "5d2b3538-744b-47a1-83fe-b55ebddd1923",
+    "page": 1,
+    "limit": 20,
+    "total": 13,
+    "totalPages": 1
+  }
+}

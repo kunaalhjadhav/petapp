@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "rows": [
+      {
+        "rank": 1,
+        "user": {
+          "id": "679a3ac0-5ee3-47d6-a95c-52d13fccb694",
+          "name": "Chandni Walker",
+          "avatarUrl": null
+        },
+        "pet": null,
+        "points": 10,
+        "checkIns": 1,
+        "streak": 1,
+        "completed": true
+      }
+    ],
+    "me": {
+      "rank": 1,
+      "points": 10
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "3cfb7172-bb3d-44e9-9b26-7a9cb61ac026"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": {
+    "entryId": "ee3a3f5f-9a41-438f-b682-8d13a1bdcd63",
+    "status": "SUBMITTED",
+    "completedTasks": 1,
+    "requiredTasks": 1
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "f8a04f5a-2d82-4496-8d32-10165aa57588"
+  }
+}

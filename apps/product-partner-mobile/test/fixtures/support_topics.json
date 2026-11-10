@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "19c34195-65c8-4829-98da-f3a4db6d96a5",
+      "key": "account",
+      "name": "Account and signing in"
+    },
+    {
+      "id": "d781ad0a-288a-42be-8937-122545d44e43",
+      "key": "payments",
+      "name": "Payments and refunds"
+    },
+    {
+      "id": "d84af903-22fe-4eef-84cd-b267a0d33819",
+      "key": "seller-shop",
+      "name": "My shop, products and orders"
+    },
+    {
+      "id": "b94ef98c-60c9-4ef8-8e6e-88cd9c01b82f",
+      "key": "payouts",
+      "name": "Payouts, invoices and tax"
+    },
+    {
+      "id": "d5dd1836-5049-450a-b7fc-a4435a6af5d2",
+      "key": "safety",
+      "name": "Safety, abuse or a report"
+    },
+    {
+      "id": "cefb7e69-183d-48ef-9822-a4ab7c7bf87a",
+      "key": "app",
+      "name": "Something isn’t working in the app"
+    },
+    {
+      "id": "be61ea90-40aa-40eb-b108-48e2600f6909",
+      "key": "other",
+      "name": "Something else"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "0e3f5d51-baf4-4104-9df6-4940c064bdd8"
+  }
+}

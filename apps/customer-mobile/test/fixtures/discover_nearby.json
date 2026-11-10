@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "0787c314-4af2-448d-94e1-d03d682ffe3e",
+      "name": "Bagel",
+      "handle": "bagel.e23b6b",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "distanceKm": 2
+    },
+    {
+      "id": "4f977277-24cb-4e23-8c4f-57650529f833",
+      "name": "Bagel",
+      "handle": "bagel.ad417b",
+      "avatarUrl": null,
+      "gender": "UNKNOWN",
+      "dateOfBirth": null,
+      "city": "Mumbai",
+      "isVerified": false,
+      "followerCount": 0,
+      "visibility": "PUBLIC",
+      "species": {
+        "id": "1c3310ba-35a9-4ab6-aba3-8a7e40598de9",
+        "key": "dog",
+        "name": "Dog"
+      },
+      "breed": null,
+      "distanceKm": 2
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "79f7d57f-3e48-45ab-aa45-dd2deaa9588b",
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "totalPages": 1
+  }
+}

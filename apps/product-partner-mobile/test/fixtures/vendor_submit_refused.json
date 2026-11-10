@@ -1,0 +1,10 @@
+{
+  "success": false,
+  "message": "A few things are still missing.",
+  "errors": [
+    {
+      "message": "Upload your GST certificate."
+    }
+  ],
+  "requestId": "d5ee3ab6-bfc4-4eb0-b39c-8e9bd5948ff0"
+}

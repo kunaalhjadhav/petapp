@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "data": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "length": 8388608,
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/0ca42a1a-fe36-424f-9953-f45f05abb11b/18cbae94-b6f5-42eb-8ebb-7014e200ef26?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261021%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261021T124605Z&X-Amz-Expires=900&X-Amz-Signature=b8cfc3c6cda3345d5c04b6c0da80de192c50ec3701d2f78bb3b09b0bf533a2a9&X-Amz-SignedHeaders=content-length%3Bhost&partNumber=1&uploadId=8Aer2u31sssyZgTSmHmJirmr8NEPZpKSyjVSQJZlqLXMytTCcZoG1aQQ&x-id=UploadPart",
+        "method": "PUT",
+        "headers": {
+          "Content-Length": "8388608"
+        }
+      },
+      {
+        "partNumber": 2,
+        "length": 8388608,
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/0ca42a1a-fe36-424f-9953-f45f05abb11b/18cbae94-b6f5-42eb-8ebb-7014e200ef26?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261021%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261021T124605Z&X-Amz-Expires=900&X-Amz-Signature=e266ba5609e5d19fecb4452d83bbe3169251455424002dadd9299a0349a74f1f&X-Amz-SignedHeaders=content-length%3Bhost&partNumber=2&uploadId=8Aer2u31sssyZgTSmHmJirmr8NEPZpKSyjVSQJZlqLXMytTCcZoG1aQQ&x-id=UploadPart",
+        "method": "PUT",
+        "headers": {
+          "Content-Length": "8388608"
+        }
+      }
+    ],
+    "expiresInSeconds": 900
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "eaccc700-e79d-4c3b-84c9-e56ddbde0e2e"
+  }
+}

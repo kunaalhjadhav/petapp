@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "6aed59b3-002f-47c2-9764-71a1f756dd5a",
+      "code": "T-L2B4NH",
+      "subject": "When is my next payout?",
+      "status": "OPEN",
+      "statusLabel": "Open",
+      "category": "Payouts, invoices and tax",
+      "conversationId": "76294252-f44d-4ad2-bb23-b22599bec440",
+      "refType": null,
+      "refId": null,
+      "unread": 0,
+      "lastMessageText": "My statement shows earnings but no payout yet.",
+      "lastMessageAt": "2026-10-18T17:31:45.611Z",
+      "canReply": true,
+      "createdAt": "2026-10-18T17:31:45.609Z",
+      "updatedAt": "2026-10-18T17:31:45.609Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "ab090c06-d8ef-4f90-80fb-e0f94bc70a9a"
+  }
+}

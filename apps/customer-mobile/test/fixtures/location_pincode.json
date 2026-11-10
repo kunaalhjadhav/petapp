@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "pincode": "400050",
+    "city": {
+      "id": "52cc1872-8cf0-46b8-bf58-039f4c692c3f",
+      "slug": "mumbai",
+      "name": "Mumbai"
+    },
+    "state": {
+      "code": "MH",
+      "name": "Maharashtra"
+    },
+    "locality": {
+      "id": "5c94d394-747a-493e-a42e-6aa405be7717",
+      "name": "Bandra West"
+    },
+    "lat": 19.0596,
+    "lng": 72.8295
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "4557325e-f556-4085-a199-0636ecab90fb"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "data": {
+    "blocked": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9cb785ff-f29e-4b17-88ea-e88197ff5d90"
+  }
+}

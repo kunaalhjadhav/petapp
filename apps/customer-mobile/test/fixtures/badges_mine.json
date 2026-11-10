@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": [
+    {
+      "key": "fixture-8727",
+      "name": "First Step",
+      "description": "Completed a first challenge.",
+      "iconUrl": null,
+      "awardedAt": "2026-10-04T01:52:08.094Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "128d44a0-6c6d-43af-8840-8b6868a8f68a"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 1050000,
+    "availablePaise": 1050000,
+    "holdDays": 0,
+    "account": {
+      "id": "6dcb0ae4-9584-4838-8cfd-fffa9535a395",
+      "method": "UPI",
+      "accountLast4": null,
+      "vpa": "asha0966@oksbi",
+      "payableFrom": "2026-10-11T01:10:30.175Z"
+    },
+    "payouts": []
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "df15ff11-3087-469b-a56c-22ae0c4a8f1f"
+  }
+}

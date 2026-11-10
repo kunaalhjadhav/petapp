@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "b201c6d6-4e84-46ee-bb46-ccc20050f7d4",
+      "code": "PO-MY373W86",
+      "status": "CANCELLED",
+      "totalPaise": 349900,
+      "createdAt": "2026-10-07T12:45:10.909Z",
+      "units": 1,
+      "parcels": [
+        {
+          "code": "SO-2UFMN9DT0",
+          "status": "CANCELLED",
+          "vendor": "Happy Tails 7109"
+        }
+      ]
+    },
+    {
+      "id": "d927b93a-3fbf-488a-9bc9-2d54e18e09dc",
+      "code": "PO-4E7R34RY",
+      "status": "COMPLETED",
+      "totalPaise": 659700,
+      "createdAt": "2026-10-07T12:45:10.427Z",
+      "units": 3,
+      "parcels": [
+        {
+          "code": "SO-JZF5ZC8M0",
+          "status": "RETURN_REQUESTED",
+          "vendor": "Happy Tails 7109"
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "4f1b48c8-d552-4d7a-8db3-cd06bba7b86f",
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "data": {
+    "frozen": false,
+    "publicWeight": 100,
+    "rows": [
+      {
+        "rank": 1,
+        "entryId": "ee3a3f5f-9a41-438f-b682-8d13a1bdcd63",
+        "pet": {
+          "id": "ba13af61-5dfc-4f25-aaef-58bb0595ce84",
+          "name": "Tara",
+          "handle": "tara.1a17c0",
+          "avatarUrl": null
+        },
+        "owner": {
+          "id": "1ab80f52-e996-48cf-a75d-50c9aadc1e20",
+          "name": "Asha Entrant"
+        },
+        "status": "SUBMITTED",
+        "votes": 0,
+        "voteScore": 0,
+        "judgeScore": 0,
+        "combined": 0
+      },
+      {
+        "rank": 2,
+        "entryId": "c3a0f022-789f-4250-a480-8866932bded2",
+        "pet": {
+          "id": "9fee69bf-2d14-42b5-b1d3-e034c16ed27c",
+          "name": "Bolt",
+          "handle": "bolt.e5a7a7",
+          "avatarUrl": null
+        },
+        "owner": {
+          "id": "7cb93c8e-6d08-4ab9-82fd-a3c72a53974b",
+          "name": "Ravi Entrant"
+        },
+        "status": "SUBMITTED",
+        "votes": 0,
+        "voteScore": 0,
+        "judgeScore": 0,
+        "combined": 0
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "533a691a-d338-4ceb-bf96-9d774d7fe32f"
+  }
+}

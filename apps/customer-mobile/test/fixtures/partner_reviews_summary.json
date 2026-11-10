@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "data": {
+    "summary": {
+      "avg": 5,
+      "count": 1,
+      "stars": [
+        {
+          "stars": 5,
+          "count": 1
+        },
+        {
+          "stars": 4,
+          "count": 0
+        },
+        {
+          "stars": 3,
+          "count": 0
+        },
+        {
+          "stars": 2,
+          "count": 0
+        },
+        {
+          "stars": 1,
+          "count": 0
+        }
+      ]
+    },
+    "unanswered": 1
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "0134ca2e-c11b-441b-b3e4-b5ec07931426"
+  }
+}

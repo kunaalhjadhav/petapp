@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "a4bfe0b0-6c55-47a6-9833-b7c6061721fe",
+      "kind": "CUSTOMER",
+      "title": "TAX_INVOICE",
+      "number": "WAGI/2627/00001",
+      "issuedAt": "2026-10-11T01:09:29.136Z",
+      "totalPaise": 99800,
+      "sourceKey": "SubOrder:554cfffb-3ca6-4e1a-882b-f1200be964e0",
+      "recipient": {
+        "name": "Ravi Kumar",
+        "gstin": null,
+        "state": "Karnataka",
+        "address": "21 MG Road, Indiranagar, Bengaluru, 560038",
+        "orderCode": "PO-WL8VLZE4",
+        "parcelCode": "SO-JPQZJJSZ0"
+      },
+      "issuer": {
+        "pan": null,
+        "name": "Wag and Co Pvt Ltd",
+        "gstin": "27ABCDE1234F1Z5",
+        "state": "Maharashtra",
+        "address": "7 Baner Road, Pune 411045"
+      },
+      "payeeKey": "VENDOR:e30daf20-9c31-473f-8259-7b0a97171203"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "9e4d7395-8064-45c9-b950-17a001449d60",
+    "page": 1,
+    "limit": 20,
+    "total": 1,
+    "totalPages": 1
+  }
+}

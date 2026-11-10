@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "city": {
+      "id": "52cc1872-8cf0-46b8-bf58-039f4c692c3f",
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "servicesLive": false,
+      "state": {
+        "code": "MH",
+        "name": "Maharashtra"
+      }
+    },
+    "locality": null,
+    "distanceKm": 5.4,
+    "place": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "4f043745-a35a-4c55-b7ae-32432e499586"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "data": {
+    "enabled": true,
+    "current": {
+      "id": "69b6dc2e-af74-45b3-80e3-e6fc90e9bba6",
+      "plan": {
+        "id": "1fd72b22-2fea-48f3-8d62-457ffea413c9",
+        "key": "PLUS",
+        "name": "Plus",
+        "description": "Members-only contests and challenges, and member discounts.",
+        "pricePaise": 14900,
+        "periodDays": 30,
+        "rank": 10,
+        "benefits": {
+          "exclusiveContests": true,
+          "premiumChallenges": true,
+          "memberDiscounts": true,
+          "priorityDays": 0,
+          "badge": true
+        },
+        "lines": [
+          "Members-only contests",
+          "Premium challenges",
+          "Member discounts in the shop",
+          "Member badge on your profile"
+        ]
+      },
+      "status": "ACTIVE",
+      "startsAt": "2026-10-20T01:02:08.896Z",
+      "endsAt": "2026-11-19T01:02:08.896Z",
+      "pricePaise": 14900,
+      "source": "PURCHASE"
+    },
+    "upcoming": [
+      {
+        "id": "1e94e7ae-2c66-4a02-a5b1-d6c88940635b",
+        "plan": {
+          "id": "1fd72b22-2fea-48f3-8d62-457ffea413c9",
+          "key": "PLUS",
+          "name": "Plus",
+          "description": "Members-only contests and challenges, and member discounts.",
+          "pricePaise": 14900,
+          "periodDays": 30,
+          "rank": 10,
+          "benefits": {
+            "exclusiveContests": true,
+            "premiumChallenges": true,
+            "memberDiscounts": true,
+            "priorityDays": 0,
+            "badge": true
+          },
+          "lines": [
+            "Members-only contests",
+            "Premium challenges",
+            "Member discounts in the shop",
+            "Member badge on your profile"
+          ]
+        },
+        "status": "ACTIVE",
+        "startsAt": "2026-11-19T01:02:08.896Z",
+        "endsAt": "2026-12-19T01:02:08.896Z",
+        "pricePaise": 14900,
+        "source": "PURCHASE"
+      }
+    ],
+    "history": [],
+    "benefits": {
+      "exclusiveContests": true,
+      "premiumChallenges": true,
+      "memberDiscounts": true,
+      "priorityDays": 0,
+      "badge": true,
+      "planKey": "PLUS",
+      "planName": "Plus"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "3a014ef2-0f2a-4593-b192-b14e9a255f6c"
+  }
+}

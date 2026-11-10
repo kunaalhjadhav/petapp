@@ -1,0 +1,327 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "eec7f7e9-9cf8-40ea-8e3d-b85b2e2ed14d",
+        "type": "PHOTO",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Beach day with @bruno.9e28ce #beach",
+        "locationName": null,
+        "author": {
+          "id": "fadf43bd-1848-48d3-ae1b-8caad549f06f",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [
+          {
+            "id": "ea9cd0ab-f33e-43ac-a708-bad744fcf0e6",
+            "name": "Bruno",
+            "handle": "bruno.9e28ce",
+            "avatarUrl": null
+          }
+        ],
+        "hashtags": [
+          "beach"
+        ],
+        "media": [
+          {
+            "id": "f7778ebf-ddc0-4091-b377-20265aefd603",
+            "kind": "IMAGE",
+            "status": "READY",
+            "width": 1600,
+            "height": 1200,
+            "durationMs": null,
+            "images": [
+              {
+                "width": 1080,
+                "url": "http://127.0.0.1:9000/petapp-media/media/f7778ebf-ddc0-4091-b377-20265aefd603/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=ce76763509fa70bd69b3887d04d656141c9610f7ff873626f79256adc0c31b47&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 640,
+                "url": "http://127.0.0.1:9000/petapp-media/media/f7778ebf-ddc0-4091-b377-20265aefd603/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=0e9418b4abb2bc706f29380d51896cb7335d9f74ab8bffb5722e99063797225c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 320,
+                "url": "http://127.0.0.1:9000/petapp-media/media/f7778ebf-ddc0-4091-b377-20265aefd603/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=4fb692f39c4383fb4686108cac058ff87b70d4075367831d2237a80508dabe69&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              }
+            ]
+          }
+        ],
+        "counts": {
+          "likes": 1,
+          "comments": 3,
+          "saves": 1,
+          "shares": 1,
+          "views": 1
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:02:17.489Z",
+        "createdAt": "2026-10-02T12:02:17.489Z"
+      },
+      {
+        "id": "2cc881f3-5878-4d31-b6d0-233290eed652",
+        "type": "PHOTO",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Beach day with @bruno.706241 #beach",
+        "locationName": null,
+        "author": {
+          "id": "6ddf3de3-1186-4fea-b490-483cd28f1eae",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [
+          {
+            "id": "756fe553-3b8d-4bbe-b11d-94cae51a3418",
+            "name": "Bruno",
+            "handle": "bruno.706241",
+            "avatarUrl": null
+          }
+        ],
+        "hashtags": [
+          "beach"
+        ],
+        "media": [
+          {
+            "id": "12dabd3a-339d-4284-bbf0-c591dc531e6c",
+            "kind": "IMAGE",
+            "status": "READY",
+            "width": 1600,
+            "height": 1200,
+            "durationMs": null,
+            "images": [
+              {
+                "width": 1080,
+                "url": "http://127.0.0.1:9000/petapp-media/media/12dabd3a-339d-4284-bbf0-c591dc531e6c/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=c9f4063be73b747fb97c515d171c26703610004f77edab41da920be73926e791&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 640,
+                "url": "http://127.0.0.1:9000/petapp-media/media/12dabd3a-339d-4284-bbf0-c591dc531e6c/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=0eeb641ed5637440208a35f930021e15256ed806dc99cad75d5066bb36553da8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 320,
+                "url": "http://127.0.0.1:9000/petapp-media/media/12dabd3a-339d-4284-bbf0-c591dc531e6c/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=a7819aaa5873b8e988b37af23cbeb76afdad7b1b68a2b0fa128ead9521a108d3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              }
+            ]
+          }
+        ],
+        "counts": {
+          "likes": 1,
+          "comments": 3,
+          "saves": 1,
+          "shares": 1,
+          "views": 1
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:02:00.681Z",
+        "createdAt": "2026-10-02T12:02:00.685Z"
+      },
+      {
+        "id": "655f2581-edce-486b-a57b-21b05672a16c",
+        "type": "REEL",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Zoomies #zoomies",
+        "locationName": null,
+        "author": {
+          "id": "fadf43bd-1848-48d3-ae1b-8caad549f06f",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [],
+        "hashtags": [
+          "zoomies"
+        ],
+        "media": [
+          {
+            "id": "2b0ff378-f7ab-46b4-86be-c2a3a7362681",
+            "kind": "VIDEO",
+            "status": "READY",
+            "width": 720,
+            "height": 1280,
+            "durationMs": 3000,
+            "hls": "http://127.0.0.1:9000/petapp-media/media/2b0ff378-f7ab-46b4-86be-c2a3a7362681/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=8022baeaac40a102d0d6b3b875a06e65e7d5f752eccd0721f2a3b56713934efd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+            "poster": "http://127.0.0.1:9000/petapp-media/media/2b0ff378-f7ab-46b4-86be-c2a3a7362681/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=74cfb87ad83c2c4af6e832099ae9bc10d97561b844f6265c12152de561d3f3ea&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ],
+        "counts": {
+          "likes": 0,
+          "comments": 0,
+          "saves": 0,
+          "shares": 0,
+          "views": 0
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:02:19.422Z",
+        "createdAt": "2026-10-02T12:02:19.422Z"
+      },
+      {
+        "id": "fc929a3b-139e-416d-bef3-1817ba632adc",
+        "type": "REEL",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Zoomies #zoomies",
+        "locationName": null,
+        "author": {
+          "id": "6ddf3de3-1186-4fea-b490-483cd28f1eae",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [],
+        "hashtags": [
+          "zoomies"
+        ],
+        "media": [
+          {
+            "id": "cf88be48-04c1-4e06-b8cd-c1e3381622df",
+            "kind": "VIDEO",
+            "status": "READY",
+            "width": 720,
+            "height": 1280,
+            "durationMs": 3000,
+            "hls": "http://127.0.0.1:9000/petapp-media/media/cf88be48-04c1-4e06-b8cd-c1e3381622df/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=a0e196ba7929a6432521a8ec8027904e7da4a355d4e6442f07854cce67fc2bcf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+            "poster": "http://127.0.0.1:9000/petapp-media/media/cf88be48-04c1-4e06-b8cd-c1e3381622df/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=642b60a3def9bcaafca854c20d164704363b2c294f768c6c6533e343212ea8a6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ],
+        "counts": {
+          "likes": 0,
+          "comments": 0,
+          "saves": 0,
+          "shares": 0,
+          "views": 0
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:02:02.598Z",
+        "createdAt": "2026-10-02T12:02:02.599Z"
+      },
+      {
+        "id": "d8f9f46d-8992-470f-8816-aec08b29dad2",
+        "type": "REEL",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Zoomies #zoomies",
+        "locationName": null,
+        "author": {
+          "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [],
+        "hashtags": [
+          "zoomies"
+        ],
+        "media": [
+          {
+            "id": "d69143e6-ddf6-4bd7-bbc8-118e94c9147a",
+            "kind": "VIDEO",
+            "status": "READY",
+            "width": 720,
+            "height": 1280,
+            "durationMs": 3000,
+            "hls": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=553ef03d95bd4a67936c0fb7d0a4b9c3fb1884b8ef90011f84b82901dcd62853&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+            "poster": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=43425f9e0205dcc9442499e39566acb8b2ce2284c8bcdd3bab191c1ffa2c4770&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+          }
+        ],
+        "counts": {
+          "likes": 0,
+          "comments": 0,
+          "saves": 0,
+          "shares": 0,
+          "views": 0
+        },
+        "viewer": {
+          "liked": false,
+          "saved": false,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:14:40.181Z",
+        "createdAt": "2026-10-02T12:14:40.183Z"
+      },
+      {
+        "id": "f155c5e3-75fd-4ce5-9c74-1021881eeb06",
+        "type": "PHOTO",
+        "status": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "caption": "Beach day with @bruno.b9ca76 #beach",
+        "locationName": null,
+        "author": {
+          "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+          "name": "Aanya Test",
+          "avatarUrl": null
+        },
+        "pets": [
+          {
+            "id": "75dec7af-f327-4f1d-a856-b63879493d33",
+            "name": "Bruno",
+            "handle": "bruno.b9ca76",
+            "avatarUrl": null
+          }
+        ],
+        "hashtags": [
+          "beach"
+        ],
+        "media": [
+          {
+            "id": "dc2b871c-e068-4480-8c3d-d25ba2767ce6",
+            "kind": "IMAGE",
+            "status": "READY",
+            "width": 1600,
+            "height": 1200,
+            "durationMs": null,
+            "images": [
+              {
+                "width": 1080,
+                "url": "http://127.0.0.1:9000/petapp-media/media/dc2b871c-e068-4480-8c3d-d25ba2767ce6/1080.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=05b2d3c32efb3ce23af8ac213ea6ccbbd1aa3d5de5a360967b30d4bc357f919a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 640,
+                "url": "http://127.0.0.1:9000/petapp-media/media/dc2b871c-e068-4480-8c3d-d25ba2767ce6/640.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=c6f5e704b9d2b7f55c2b42682f329e75eb850405d25acfdd875c5c08d6a236d9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              },
+              {
+                "width": 320,
+                "url": "http://127.0.0.1:9000/petapp-media/media/dc2b871c-e068-4480-8c3d-d25ba2767ce6/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=5563b86a40e4ad27b311a0658548410d93d9d81c9ef1ac56fd8d5b01b6d8c7bf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+              }
+            ]
+          }
+        ],
+        "counts": {
+          "likes": 1,
+          "comments": 2,
+          "saves": 1,
+          "shares": 1,
+          "views": 1
+        },
+        "viewer": {
+          "liked": true,
+          "saved": true,
+          "isAuthor": false
+        },
+        "publishedAt": "2026-10-02T12:14:38.491Z",
+        "createdAt": "2026-10-02T12:14:38.497Z"
+      }
+    ],
+    "nextCursor": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "97f92ba8-8b22-4ab3-a92d-4dded14f620c"
+  }
+}

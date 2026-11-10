@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": {
+    "paymentId": "663dda13-1b91-4782-b890-6d02c2bc1e35",
+    "provider": "fake",
+    "orderId": "fake_order_18b69030471c4f2c8201787cd19a26b7",
+    "amountPaise": 9900,
+    "currency": "INR",
+    "key": "fake_key",
+    "status": "CAPTURED"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "60b63562-b5bc-420e-a46e-7ccd81b7ebb1"
+  }
+}

@@ -1,0 +1,31 @@
+# syntax=docker/dockerfile:1.7
+# PetApp admin dashboard (Next.js standalone). Build from the repo root:
+#   docker build -f infrastructure/Dockerfile.admin -t petapp-admin .
+
+FROM node:22-bookworm-slim AS deps
+WORKDIR /app
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false NPM_CONFIG_FUND=false NEXT_TELEMETRY_DISABLED=1
+COPY package.json package-lock.json tsconfig.base.json prisma.config.ts ./
+COPY prisma ./prisma
+COPY packages/types ./packages/types
+COPY apps/backend/package.json ./apps/backend/package.json
+COPY apps/admin-dashboard/package.json ./apps/admin-dashboard/package.json
+RUN DATABASE_URL=postgresql://build:build@localhost:5432/build npm ci
+
+FROM deps AS build
+COPY apps/admin-dashboard ./apps/admin-dashboard
+# NEXT_PUBLIC_* values are baked in at build time.
+ARG NEXT_PUBLIC_ENV_LABEL=Development
+ENV NEXT_PUBLIC_ENV_LABEL=$NEXT_PUBLIC_ENV_LABEL
+RUN npm run build -w @petapp/admin-dashboard
+
+FROM node:22-bookworm-slim AS runtime
+WORKDIR /app
+ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=3000 HOSTNAME=0.0.0.0
+COPY --from=build --chown=node:node /app/apps/admin-dashboard/.next/standalone ./
+COPY --from=build --chown=node:node /app/apps/admin-dashboard/.next/static ./apps/admin-dashboard/.next/static
+USER node
+EXPOSE 3000
+HEALTHCHECK --interval=15s --timeout=3s --start-period=20s --retries=3 \
+  CMD node -e "fetch('http://127.0.0.1:3000/login').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+CMD ["node", "apps/admin-dashboard/server.js"]

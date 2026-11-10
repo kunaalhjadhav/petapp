@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "name": "PetApp Assistant",
+    "usesModel": false,
+    "intro": "Ask me to find services, products, contests and challenges, explain how the app works, or share general pet-care tips.",
+    "healthNotice": "I’m not a vet. I can share general information, but I can’t diagnose or suggest medicine doses. In an emergency, contact a vet straight away.",
+    "privacy": "Your chats are kept for 30 days so you can come back to them, and you can delete them at any time.",
+    "dailyLimit": 40,
+    "usedToday": 0,
+    "suggestions": [
+      "Find a groomer near me",
+      "Food for my puppy",
+      "Which contests can my pet enter?",
+      "How do I add my pet?",
+      "Which foods are poisonous to dogs?"
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "2ed7ba75-560c-4e13-b625-e73d0bdb553f"
+  }
+}

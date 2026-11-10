@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+      "kind": "SHOP",
+      "status": "OPEN",
+      "side": "CUSTOMER",
+      "counterpart": {
+        "type": "SELLER",
+        "id": "e61d7a9f-7b91-4880-968e-6dc6aedbc745",
+        "slug": "wag-co-5960-7f3c74",
+        "name": "Wag & Co 5960",
+        "city": "Pune",
+        "avatarUrl": null
+      },
+      "canSend": true,
+      "cannotSendReason": null,
+      "blockedByMe": false,
+      "unread": 0,
+      "otherReadAt": null,
+      "ticket": null
+    },
+    "context": {
+      "refType": "PRODUCT",
+      "refId": "7ed33510-f55a-4ddb-b672-2507cd674d61"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "64dab26d-559a-476d-b389-febb1df667cf"
+  }
+}

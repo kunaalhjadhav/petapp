@@ -1,0 +1,33 @@
+node_modules
+dist
+coverage
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+apps/backend/src/generated
+# Build output and caches
+.next
+*.tsbuildinfo
+next-env.d.ts.bak
+# Browser tests: sign-in state (holds a session token) and reports
+apps/admin-dashboard/e2e/.auth
+test-results
+playwright-report
+# Flutter
+.dart_tool
+.flutter-plugins
+.flutter-plugins-dependencies
+apps/*/build
+# Local backups and load-test output (they contain personal data / are machine-specific)
+backups
+*.dump
+*.dump.enc
+drill.json
+# Signing keys (CI writes them from secrets)
+*.jks
+*.keystore
+key.properties
+*.p12
+*.mobileprovision

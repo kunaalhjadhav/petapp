@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "categories": [
+      {
+        "id": "19c34195-65c8-4829-98da-f3a4db6d96a5",
+        "key": "account",
+        "name": "Account and signing in"
+      },
+      {
+        "id": "d781ad0a-288a-42be-8937-122545d44e43",
+        "key": "payments",
+        "name": "Payments and refunds"
+      },
+      {
+        "id": "f9804b4f-6afd-4d2a-bdac-722193262ec6",
+        "key": "partner-business",
+        "name": "My business, services and bookings"
+      },
+      {
+        "id": "b94ef98c-60c9-4ef8-8e6e-88cd9c01b82f",
+        "key": "payouts",
+        "name": "Payouts, invoices and tax"
+      },
+      {
+        "id": "d5dd1836-5049-450a-b7fc-a4435a6af5d2",
+        "key": "safety",
+        "name": "Safety, abuse or a report"
+      },
+      {
+        "id": "cefb7e69-183d-48ef-9822-a4ab7c7bf87a",
+        "key": "app",
+        "name": "Something isn’t working in the app"
+      },
+      {
+        "id": "be61ea90-40aa-40eb-b108-48e2600f6909",
+        "key": "other",
+        "name": "Something else"
+      }
+    ],
+    "faqs": [
+      {
+        "id": "1617893b-058d-4908-8dda-c94c3aacd420",
+        "question": "When will my refund arrive?",
+        "answer": "We send refunds to your bank or card straight away. Most banks show them within 5–7 working days. You can follow a refund on the order or booking, and you’ll get a notification when the payment gateway confirms it. If it hasn’t arrived after 7 working days, open a ticket and include the order or booking.",
+        "categoryId": "d781ad0a-288a-42be-8937-122545d44e43"
+      },
+      {
+        "id": "427a2bff-cffa-42bc-9900-62b311089d7c",
+        "question": "How do I delete my account?",
+        "answer": "Go to **Settings → Your data and privacy → Delete account**. You’re signed out everywhere straight away and your account is erased after a short grace period; signing in before then keeps it. You can download a copy of your data first from the same screen.",
+        "categoryId": "19c34195-65c8-4829-98da-f3a4db6d96a5"
+      },
+      {
+        "id": "3bf3d8da-8715-40dd-af3d-305376cf0796",
+        "question": "How do I report a person, a post or a message?",
+        "answer": "Use the **⋯** menu on a post, profile or message and choose **Report**. Our moderators review every report. You can also block someone from the same menu: you won’t see each other’s posts, and neither of you can message the other.",
+        "categoryId": "d5dd1836-5049-450a-b7fc-a4435a6af5d2"
+      },
+      {
+        "id": "033276c8-6c58-4457-9f91-e2b67448e85d",
+        "question": "When are my earnings paid out?",
+        "answer": "Earnings from a completed booking become payable after a short holding period, then go out in the next payout batch to your verified bank account or UPI ID. Your **Statement** shows each booking, PetApp’s fee, taxes deducted and every payout with its bank reference.",
+        "categoryId": "b94ef98c-60c9-4ef8-8e6e-88cd9c01b82f"
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9329da9c-d4f8-4bc4-a718-21250e77274f"
+  }
+}

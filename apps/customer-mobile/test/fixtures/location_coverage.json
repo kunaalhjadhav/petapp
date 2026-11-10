@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": {
+    "covered": true,
+    "city": null,
+    "nearest": null,
+    "liveCities": 0
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "4fcf0385-8ce7-4ed6-9cb6-f6dd1d63ac01"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "data": {
+    "id": "7081925b-a136-45d7-b591-774559305405",
+    "userId": "d835cfb6-be24-4680-a3e7-0651532c216b",
+    "businessName": "Wag & Co 6687",
+    "slug": "wag-co-6687-075b53",
+    "legalName": "Wag and Co Pvt Ltd",
+    "gstin": "27ABCDE1234F1Z5",
+    "phone": "+919863668731",
+    "email": "orders@wag.example",
+    "addressLine": "7 Baner Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411045",
+    "status": "DRAFT",
+    "statusReason": null,
+    "commissionBps": null,
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "submittedAt": null,
+    "reviewedAt": null,
+    "reviewedById": null,
+    "createdAt": "2026-10-10T12:51:28.764Z",
+    "updatedAt": "2026-10-10T12:51:28.764Z",
+    "documents": [],
+    "checklist": [
+      "Upload an ID proof.",
+      "Upload your GST certificate."
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "6c252125-8b91-4299-b812-9ac51a31445f"
+  }
+}

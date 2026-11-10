@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": {
+    "id": "95909860-8a53-4a4d-ba35-755ea6787763",
+    "body": "So cute!",
+    "parentId": null,
+    "replyCount": 0,
+    "author": {
+      "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+      "name": "Riya Test",
+      "avatarUrl": null
+    },
+    "createdAt": "2026-10-02T12:14:40.347Z",
+    "isAuthor": true
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "04a1bf8c-936e-4c79-9ae4-c1fa4cde2c26"
+  }
+}

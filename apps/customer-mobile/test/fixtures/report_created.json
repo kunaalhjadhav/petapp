@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "id": "cd29316b-2c4f-4ab7-81c4-a64a7c05f9ff",
+    "status": "received"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "c051b59e-3974-468c-a6f4-13a8e7de3266"
+  }
+}

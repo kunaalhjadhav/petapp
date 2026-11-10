@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "id": "60282b83-7d6c-4949-9da3-1e791119aec2",
+    "code": "FLAT6687",
+    "description": null,
+    "kind": "FLAT",
+    "value": 5000,
+    "maxDiscountPaise": null,
+    "minOrderPaise": 50000,
+    "vendorId": "7081925b-a136-45d7-b591-774559305405",
+    "startsAt": "2026-10-10T11:51:30.178Z",
+    "endsAt": "2026-10-20T12:51:30.178Z",
+    "usageLimit": null,
+    "perUserLimit": 1,
+    "usedCount": 0,
+    "isActive": false,
+    "createdAt": "2026-10-10T12:51:30.187Z",
+    "updatedAt": "2026-10-10T12:51:30.213Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "19375476-3950-46e5-92d5-b1ef893965b3"
+  }
+}

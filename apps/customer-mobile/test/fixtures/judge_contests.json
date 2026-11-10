@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "e429e668-b074-4bb6-8956-a803f1a06794",
+      "title": "Fixture Judged Cup 8727",
+      "status": "VOTING",
+      "frozen": false,
+      "entries": 1,
+      "criteria": [
+        {
+          "id": "bc7f1ef1-df83-49f0-b2b5-c93319f5344f",
+          "contestId": "e429e668-b074-4bb6-8956-a803f1a06794",
+          "name": "Skill",
+          "weight": 60
+        },
+        {
+          "id": "7110c5f4-8a7c-4fe7-8477-ebacfe1660d0",
+          "contestId": "e429e668-b074-4bb6-8956-a803f1a06794",
+          "name": "Style",
+          "weight": 40
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "51ae21dd-dc37-4d9d-9a47-c9f967bf68b8"
+  }
+}

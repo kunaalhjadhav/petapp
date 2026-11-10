@@ -1,0 +1,150 @@
+# Local development stack:  docker compose up --build
+# API → http://localhost:4000   Docs → http://localhost:4000/api/docs   Admin → http://localhost:3000
+# MinIO console → http://localhost:9001 (petapp / petapp-minio-secret)
+name: petapp
+
+x-storage-env: &storage-env
+  S3_ENDPOINT: http://minio:9000
+  S3_BUCKET: petapp-media
+  S3_ACCESS_KEY_ID: petapp
+  S3_SECRET_ACCESS_KEY: petapp-minio-secret
+  S3_FORCE_PATH_STYLE: "true"
+  # Phones and browsers can't resolve "minio"; URLs handed to clients are signed for this address.
+  S3_PUBLIC_ENDPOINT: http://localhost:9000
+  # Required for HLS video: playlists reference segments by relative path, which signed URLs can't cover.
+  MEDIA_PUBLIC_BASE_URL: http://localhost:9000/petapp-media
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4   # PostGIS is used from Phase 4 (nearby services)
+    environment:
+      POSTGRES_USER: petapp
+      POSTGRES_PASSWORD: petapp
+      POSTGRES_DB: petapp
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infrastructure/postgres-init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U petapp -d petapp"]
+      interval: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["6379:6379"]
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+
+  # S3-compatible object storage for development. Use S3 or Cloudflare R2 in production.
+  minio:
+    image: minio/minio:latest
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment: { MINIO_ROOT_USER: petapp, MINIO_ROOT_PASSWORD: petapp-minio-secret }
+    ports: ["9000:9000", "9001:9001"]
+    volumes: [miniodata:/data]
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      retries: 20
+
+  minio-init:
+    image: minio/mc:latest
+    depends_on: { minio: { condition: service_healthy } }
+    # Processed media (media/ prefix) is publicly readable, like a CDN. Originals (uploads/) stay private.
+    entrypoint: ["/bin/sh", "-c", "mc alias set local http://minio:9000 petapp petapp-minio-secret && mc mb --ignore-existing local/petapp-media && mc mb --ignore-existing local/petapp-backups && mc anonymous set download local/petapp-media/media"]
+    restart: "no"
+
+  migrate:
+    build: { context: ., dockerfile: infrastructure/Dockerfile.backend, target: migrate }
+    environment:
+      DATABASE_URL: postgresql://petapp:petapp@postgres:5432/petapp
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+
+  backend:
+    build: { context: ., dockerfile: infrastructure/Dockerfile.backend, target: runtime }
+    env_file: .env
+    environment:
+      <<: *storage-env
+      NODE_ENV: development
+      DATABASE_URL: postgresql://petapp:petapp@postgres:5432/petapp
+      REDIS_URL: redis://redis:6379
+      PORT: "4000"
+    ports: ["4000:4000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      minio-init: { condition: service_completed_successfully }
+      migrate: { condition: service_completed_successfully }
+
+  # Media processing and scheduled jobs. Same image as the API, different command.
+  worker:
+    build: { context: ., dockerfile: infrastructure/Dockerfile.backend, target: runtime }
+    command: ["node", "apps/backend/dist/worker.js"]
+    env_file: .env
+    environment:
+      <<: *storage-env
+      NODE_ENV: development
+      DATABASE_URL: postgresql://petapp:petapp@postgres:5432/petapp
+      REDIS_URL: redis://redis:6379
+      MEDIA_CONCURRENCY: "2"
+    healthcheck: { disable: true }
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      minio-init: { condition: service_completed_successfully }
+      migrate: { condition: service_completed_successfully }
+
+  admin:
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile.admin
+      args: { NEXT_PUBLIC_ENV_LABEL: Development }
+    environment:
+      BACKEND_URL: http://backend:4000   # server-side only; the browser never calls the API directly
+      COOKIE_SECURE: "false"             # set "true" behind HTTPS
+    ports: ["3000:3000"]
+    depends_on:
+      backend: { condition: service_healthy }
+
+  web:
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile.web
+    environment:
+      API_URL: http://backend:4000          # server-side only
+      SITE_URL: http://localhost:3001       # the public address, e.g. https://petapp.in
+      SITE_INDEXABLE: "false"               # "true" only on the production site
+      # PLAY_STORE_URL, APP_STORE_URL, ANDROID_PACKAGE_NAME, ANDROID_SHA256_FINGERPRINTS, IOS_APP_ID: see apps/web/README.md
+    ports: ["3001:3001"]
+    depends_on:
+      backend: { condition: service_healthy }
+
+  # Operations jobs (not started by `docker compose up`). Backups: schedule `docker compose run --rm backup` daily.
+  backup:
+    profiles: ["ops"]
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile.ops
+    environment:
+      DATABASE_URL: postgresql://petapp:petapp@postgres:5432/petapp
+      BACKUP_BUCKET: petapp-backups
+      BACKUP_S3_ENDPOINT: http://minio:9000
+      BACKUP_S3_FORCE_PATH_STYLE: "true"
+      BACKUP_S3_ACCESS_KEY_ID: petapp
+      BACKUP_S3_SECRET_ACCESS_KEY: petapp-minio-secret
+      # BACKUP_ENCRYPTION_KEY: 32 random bytes, base64 — keep it in your secret manager, apart from the backups
+    command: ["node", "scripts/ops/backup.mjs"]
+    depends_on:
+      postgres: { condition: service_healthy }
+
+volumes:
+  pgdata:
+  redisdata:
+  miniodata:

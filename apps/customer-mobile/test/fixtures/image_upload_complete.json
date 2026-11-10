@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": {
+    "id": "dc2b871c-e068-4480-8c3d-d25ba2767ce6",
+    "kind": "IMAGE",
+    "status": "UPLOADED",
+    "width": null,
+    "height": null,
+    "durationMs": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "7985bc17-ed01-4c80-8c74-e064da4738c8"
+  }
+}

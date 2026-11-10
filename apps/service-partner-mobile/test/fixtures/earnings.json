@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "data": {
+    "completed": {
+      "visits": 1,
+      "grossPaise": 84900,
+      "platformFeesPaise": 12735,
+      "earnedPaise": 72165
+    },
+    "upcoming": {
+      "visits": 0,
+      "expectedPaise": 0
+    },
+    "noShows": 0,
+    "months": [
+      {
+        "month": "2026-10",
+        "visits": 1,
+        "grossPaise": 84900,
+        "platformFeesPaise": 12735,
+        "earnedPaise": 72165
+      }
+    ],
+    "payouts": "Payouts to your bank account start with the finance release. Earnings are recorded from every completed visit."
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "635e6bb3-fe79-4a5a-81ae-7f4c8ed1b9d4"
+  }
+}

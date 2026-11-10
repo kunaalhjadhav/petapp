@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "data": {
+    "id": "eef9e891-d1ae-4047-9883-638406e65744",
+    "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+    "side": "CUSTOMER",
+    "mine": true,
+    "body": null,
+    "removed": false,
+    "media": null,
+    "ref": {
+      "type": "BOOKING",
+      "id": "6d12605d-f2a5-46ca-9c1a-4b7251ff3f24",
+      "code": "PB-XLEXNV",
+      "title": "Full groom",
+      "petName": "Coco",
+      "startsAt": "2026-10-11T00:47:06.761Z",
+      "status": "COMPLETED"
+    },
+    "clientId": "k1792344704b",
+    "createdAt": "2026-10-18T17:31:44.088Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "b96c1b5f-77ba-46ca-9979-c463b2599f21"
+  }
+}

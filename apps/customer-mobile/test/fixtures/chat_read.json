@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "read": true,
+    "at": "2026-10-18T17:31:44.661Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "b6d958cb-76d9-4879-b3bf-cbdbf09763b9"
+  }
+}

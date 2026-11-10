@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "11b3ccec-fd0e-42b1-8e2c-af2b9ef28937",
+      "key": "FREE",
+      "name": "Free",
+      "description": "Everything in PetApp that isn’t members-only.",
+      "pricePaise": 0,
+      "periodDays": 30,
+      "rank": 0,
+      "benefits": {
+        "exclusiveContests": false,
+        "premiumChallenges": false,
+        "memberDiscounts": false,
+        "priorityDays": 0,
+        "badge": false
+      },
+      "lines": []
+    },
+    {
+      "id": "1fd72b22-2fea-48f3-8d62-457ffea413c9",
+      "key": "PLUS",
+      "name": "Plus",
+      "description": "Members-only contests and challenges, and member discounts.",
+      "pricePaise": 14900,
+      "periodDays": 30,
+      "rank": 10,
+      "benefits": {
+        "exclusiveContests": true,
+        "premiumChallenges": true,
+        "memberDiscounts": true,
+        "priorityDays": 0,
+        "badge": true
+      },
+      "lines": [
+        "Members-only contests",
+        "Premium challenges",
+        "Member discounts in the shop",
+        "Member badge on your profile"
+      ]
+    },
+    {
+      "id": "8a3d81d8-3eab-48bc-acb7-152130d89d27",
+      "key": "PREMIUM",
+      "name": "Premium",
+      "description": "Everything in Plus, and book services before everyone else.",
+      "pricePaise": 39900,
+      "periodDays": 30,
+      "rank": 20,
+      "benefits": {
+        "exclusiveContests": true,
+        "premiumChallenges": true,
+        "memberDiscounts": true,
+        "priorityDays": 30,
+        "badge": true
+      },
+      "lines": [
+        "Members-only contests",
+        "Premium challenges",
+        "Member discounts in the shop",
+        "Book services up to 30 days earlier than everyone else",
+        "Member badge on your profile"
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "8db66949-356d-4c5c-9da7-05471a8d2699"
+  }
+}

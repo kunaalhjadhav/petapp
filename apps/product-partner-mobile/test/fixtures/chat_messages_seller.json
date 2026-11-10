@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "3685ab2c-0d97-439d-9947-a85d1cb92530",
+        "conversationId": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+        "side": "BUSINESS",
+        "mine": true,
+        "body": "About your earlier order: it’s soft enough for puppies.",
+        "removed": false,
+        "media": null,
+        "ref": {
+          "type": "ORDER",
+          "id": "599c7ff3-998a-4133-91e7-68225c184127",
+          "code": "SO-TQW8JRYY0",
+          "status": "CANCELLED",
+          "totalPaise": 34800,
+          "units": 1
+        },
+        "clientId": "w1792344704a",
+        "createdAt": "2026-10-18T17:31:44.930Z"
+      },
+      {
+        "id": "478ab2d7-93b7-400b-b85a-4b473ce8b3d7",
+        "conversationId": "986a2518-dcf7-4a0c-a3e3-4dcfd8e32aa2",
+        "side": "CUSTOMER",
+        "mine": false,
+        "body": "Is this suitable for a 3-month-old puppy?",
+        "removed": false,
+        "media": null,
+        "ref": {
+          "type": "PRODUCT",
+          "id": "7ed33510-f55a-4ddb-b672-2507cd674d61",
+          "slug": "chicken-jerky-5960-813fb3",
+          "title": "Chicken Jerky 5960",
+          "available": true,
+          "pricePaise": 29900,
+          "imageUrl": "http://127.0.0.1:9000/petapp-media/media/a7229592-ef7c-4990-bcf2-4c63e278d134/320.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261018%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T173144Z&X-Amz-Expires=3600&X-Amz-Signature=9f4af9925ded918c93672535bc50200cb6cdbe0d80edd91b6d99bc919b662c6c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        },
+        "clientId": "r1792344704a",
+        "createdAt": "2026-10-18T17:31:44.874Z"
+      }
+    ],
+    "nextCursor": null,
+    "more": false
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "25c58946-a167-49e1-a62d-63bd6ac5c9aa"
+  }
+}

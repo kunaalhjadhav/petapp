@@ -1,0 +1,127 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "fadc8683-74e9-4e9a-8c19-f7172379687b",
+      "slug": "fixture-talent-cup-3154-6b68b6",
+      "title": "Fixture Talent Cup 3154",
+      "bannerUrl": null,
+      "category": {
+        "name": "Best Trick",
+        "group": "TALENT"
+      },
+      "status": "VOTING",
+      "feePaise": 9900,
+      "currency": "INR",
+      "entries": 2,
+      "maxParticipants": 50,
+      "registrationOpensAt": "2026-10-03T09:25:55.101Z",
+      "registrationClosesAt": "2026-10-03T11:25:55.101Z",
+      "submissionClosesAt": "2026-10-03T12:25:55.101Z",
+      "votingClosesAt": "2026-10-03T13:25:55.101Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "Winner",
+          "kind": "CASH",
+          "amountPaise": 50000
+        },
+        {
+          "rank": null,
+          "title": "Crowd favourite",
+          "kind": "VOUCHER",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "d7217601-74d2-41e1-b159-027e5bf535f2",
+      "slug": "fixture-talent-cup-8725-b390a7",
+      "title": "Fixture Talent Cup 8725",
+      "bannerUrl": null,
+      "category": {
+        "name": "Best Trick",
+        "group": "TALENT"
+      },
+      "status": "LIVE",
+      "feePaise": 9900,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 50,
+      "registrationOpensAt": "2026-10-04T00:52:06.809Z",
+      "registrationClosesAt": "2026-10-04T02:52:06.809Z",
+      "submissionClosesAt": "2026-10-04T03:52:06.809Z",
+      "votingClosesAt": "2026-10-04T04:52:06.809Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "Winner",
+          "kind": "CASH",
+          "amountPaise": 50000
+        },
+        {
+          "rank": null,
+          "title": "Crowd favourite",
+          "kind": "VOUCHER",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "946d55ff-7a55-4b42-bc87-a276e4256f0f",
+      "slug": "e2e-glam-contest-mus8ujj-0946dc",
+      "title": "E2E Glam Contest mus8ujjd",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "registrationOpensAt": "2026-10-04T10:23:00.000Z",
+      "registrationClosesAt": "2026-10-11T10:23:00.000Z",
+      "submissionClosesAt": "2026-10-15T10:23:00.000Z",
+      "votingClosesAt": "2026-10-22T10:23:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    },
+    {
+      "id": "bcec3bfc-ac2a-41b8-b6ae-87736ce09cb8",
+      "slug": "e2e-glam-contest-mut5xls-aa969e",
+      "title": "E2E Glam Contest mut5xlse",
+      "bannerUrl": null,
+      "category": null,
+      "status": "LIVE",
+      "feePaise": 10000,
+      "currency": "INR",
+      "entries": 0,
+      "maxParticipants": 100,
+      "registrationOpensAt": "2026-10-05T01:49:00.000Z",
+      "registrationClosesAt": "2026-10-12T01:49:00.000Z",
+      "submissionClosesAt": "2026-10-16T01:49:00.000Z",
+      "votingClosesAt": "2026-10-23T01:49:00.000Z",
+      "prizes": [
+        {
+          "rank": 1,
+          "title": "1st prize",
+          "kind": "CASH",
+          "amountPaise": null
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "b4e416c4-b2f9-4b7b-ba54-c8386036487b",
+    "page": 1,
+    "limit": 20,
+    "total": 4,
+    "totalPages": 1
+  }
+}

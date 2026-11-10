@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "ca2b534a-b3f1-45dc-a958-4673aa2a0905",
+      "pet": {
+        "id": "cc343e56-a3b5-49c4-a469-bf1009b15838",
+        "name": "Juno",
+        "handle": "juno.0a97ea"
+      },
+      "submissions": [
+        {
+          "task": {
+            "title": "Describe your pet’s best trick",
+            "type": "TEXT"
+          },
+          "postId": null,
+          "text": "Balances a treat on her nose."
+        }
+      ],
+      "myScores": [
+        {
+          "criterionId": "7110c5f4-8a7c-4fe7-8477-ebacfe1660d0",
+          "score": 7.5
+        },
+        {
+          "criterionId": "bc7f1ef1-df83-49f0-b2b5-c93319f5344f",
+          "score": 9
+        }
+      ]
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "f3feb597-9524-48d5-a4e7-ab686096810d"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "data": {
+    "conversation": {
+      "id": "ba583466-8cce-45e2-b0eb-ec7e7eab4502",
+      "title": "Find a groomer near me"
+    },
+    "question": {
+      "id": "08a253ad-52f8-4f65-8017-c4e60073d0f6",
+      "role": "USER",
+      "text": "How much paracetamol can I give my dog?",
+      "cards": [],
+      "safety": "NONE",
+      "notice": null,
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.161Z"
+    },
+    "answer": {
+      "id": "9591e97d-fca2-4635-b852-926e6c4fd463",
+      "role": "ASSISTANT",
+      "text": "I can’t suggest medicine doses. The right amount depends on your pet’s weight, age, health and the exact product, and several human medicines (such as paracetamol and ibuprofen) are poisonous to pets. Please ask a vet before giving any medicine. I can help you find one nearby.",
+      "cards": [
+        {
+          "item": {
+            "id": "services",
+            "route": "/services",
+            "steps": [
+              "Open Services and choose your location to see partners near you."
+            ],
+            "title": "Pet services"
+          },
+          "type": "LINK"
+        }
+      ],
+      "safety": "GENERAL_INFO",
+      "notice": "General information, not a diagnosis. For anything about your pet’s health, talk to a vet.",
+      "rating": null,
+      "createdAt": "2026-10-11T10:02:05.169Z"
+    }
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "aff3d8f8-10ae-40c0-8ce1-e22065b7e3fc"
+  }
+}

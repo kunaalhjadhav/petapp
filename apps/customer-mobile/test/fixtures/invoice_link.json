@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "path": "/invoices/c64f31f9-62d4-4233-a6d5-d5c4605b4cd9/file?expires=1791681329&sig=d22e804a9a19a1316f6c89ccfa188b6f8b92b8fe534aafabebfa205815fb4abf",
+    "expiresAt": "2026-10-11T01:15:29.000Z",
+    "fileName": "PAWS-2627-00001.pdf"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "291fbbb5-98aa-4c77-8248-19b98a18efd8"
+  }
+}

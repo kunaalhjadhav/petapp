@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+      "name": "Riya Test",
+      "avatarUrl": null,
+      "blockedAt": "2026-10-02T12:14:43.274Z"
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "cf4a680c-022a-4c7a-8cf5-05f7c838b0d3"
+  }
+}

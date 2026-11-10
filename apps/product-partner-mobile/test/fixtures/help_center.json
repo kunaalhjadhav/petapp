@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "categories": [
+      {
+        "id": "19c34195-65c8-4829-98da-f3a4db6d96a5",
+        "key": "account",
+        "name": "Account and signing in"
+      },
+      {
+        "id": "d781ad0a-288a-42be-8937-122545d44e43",
+        "key": "payments",
+        "name": "Payments and refunds"
+      },
+      {
+        "id": "d84af903-22fe-4eef-84cd-b267a0d33819",
+        "key": "seller-shop",
+        "name": "My shop, products and orders"
+      },
+      {
+        "id": "b94ef98c-60c9-4ef8-8e6e-88cd9c01b82f",
+        "key": "payouts",
+        "name": "Payouts, invoices and tax"
+      },
+      {
+        "id": "d5dd1836-5049-450a-b7fc-a4435a6af5d2",
+        "key": "safety",
+        "name": "Safety, abuse or a report"
+      },
+      {
+        "id": "cefb7e69-183d-48ef-9822-a4ab7c7bf87a",
+        "key": "app",
+        "name": "Something isn’t working in the app"
+      },
+      {
+        "id": "be61ea90-40aa-40eb-b108-48e2600f6909",
+        "key": "other",
+        "name": "Something else"
+      }
+    ],
+    "faqs": [
+      {
+        "id": "1617893b-058d-4908-8dda-c94c3aacd420",
+        "question": "When will my refund arrive?",
+        "answer": "We send refunds to your bank or card straight away. Most banks show them within 5–7 working days. You can follow a refund on the order or booking, and you’ll get a notification when the payment gateway confirms it. If it hasn’t arrived after 7 working days, open a ticket and include the order or booking.",
+        "categoryId": "d781ad0a-288a-42be-8937-122545d44e43"
+      },
+      {
+        "id": "427a2bff-cffa-42bc-9900-62b311089d7c",
+        "question": "How do I delete my account?",
+        "answer": "Go to **Settings → Your data and privacy → Delete account**. You’re signed out everywhere straight away and your account is erased after a short grace period; signing in before then keeps it. You can download a copy of your data first from the same screen.",
+        "categoryId": "19c34195-65c8-4829-98da-f3a4db6d96a5"
+      },
+      {
+        "id": "3bf3d8da-8715-40dd-af3d-305376cf0796",
+        "question": "How do I report a person, a post or a message?",
+        "answer": "Use the **⋯** menu on a post, profile or message and choose **Report**. Our moderators review every report. You can also block someone from the same menu: you won’t see each other’s posts, and neither of you can message the other.",
+        "categoryId": "d5dd1836-5049-450a-b7fc-a4435a6af5d2"
+      },
+      {
+        "id": "73b46815-0fc5-4578-b15c-1b75daa2ce10",
+        "question": "How do I ship an order?",
+        "answer": "Open **Orders**, pack the parcel and tap **Mark packed**. When the courier collects it, tap **Mark shipped** and enter the courier and tracking number: the customer gets them straight away. Mark it delivered once it arrives.",
+        "categoryId": "d84af903-22fe-4eef-84cd-b267a0d33819"
+      }
+    ]
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "8c739b7e-a423-4f49-8998-b3dee4b650d0"
+  }
+}

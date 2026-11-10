@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "data": {
+    "id": "b256886f-69ff-488b-8772-a13821dbab1a",
+    "role": "ASSISTANT",
+    "text": "Here are grooming partners near you, best rated first. Tap one to see services, prices and free times.",
+    "cards": [
+      {
+        "item": {
+          "id": "b53ce8ca-36fb-49dd-871e-be049c61d43d",
+          "area": "Bandra West",
+          "city": "Mumbai",
+          "slug": "pawfect-grooming-0216-1592",
+          "fromPaise": 84900,
+          "ratingAvg": 0,
+          "distanceKm": 0,
+          "ratingCount": 0,
+          "businessName": "Pawfect Grooming 0216",
+          "homeVisitRadiusKm": 5
+        },
+        "type": "SERVICE"
+      },
+      {
+        "item": {
+          "id": "da895388-2578-482e-b399-3071689fb3d2",
+          "area": "Bandra West",
+          "city": "Mumbai",
+          "slug": "pawfect-grooming-0966-191d",
+          "fromPaise": 84900,
+          "ratingAvg": 0,
+          "distanceKm": 0,
+          "ratingCount": 0,
+          "businessName": "Pawfect Grooming 0966",
+          "homeVisitRadiusKm": 5
+        },
+        "type": "SERVICE"
+      },
+      {
+        "item": {
+          "id": "e55e8afb-44ec-426e-b520-74cdc1d4a4a8",
+          "area": "Bandra West",
+          "city": "Mumbai",
+          "slug": "pawfect-grooming-0433-488d",
+          "fromPaise": 84900,
+          "ratingAvg": 0,
+          "distanceKm": 0,
+          "ratingCount": 0,
+          "businessName": "Pawfect Grooming 0433",
+          "homeVisitRadiusKm": 5
+        },
+        "type": "SERVICE"
+      }
+    ],
+    "safety": "NONE",
+    "notice": null,
+    "rating": "UP",
+    "createdAt": "2026-10-11T10:02:04.848Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "269f3876-ae08-4bd8-9e87-9d52d8eccbc7"
+  }
+}

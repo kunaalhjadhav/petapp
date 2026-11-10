@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "5a24461d-3ff0-40f3-99bf-dfe3a1a3b0b3",
+      "key": "treats-5736",
+      "name": "Treats 5736",
+      "parentId": null
+    },
+    {
+      "id": "5ec0cb48-416c-4c14-8933-f9a9a857dbc7",
+      "key": "treats-5960",
+      "name": "Treats 5960",
+      "parentId": null
+    },
+    {
+      "id": "90496adb-2315-4683-9462-e4a7fc0f9d02",
+      "key": "treats-6078",
+      "name": "Treats 6078",
+      "parentId": null
+    },
+    {
+      "id": "7a81a55a-856e-491c-8bf6-0afb98ecc51e",
+      "key": "treats-6687",
+      "name": "Treats 6687",
+      "parentId": null
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "6633aee2-ad5e-41b9-bdb2-dbf9022849e3"
+  }
+}

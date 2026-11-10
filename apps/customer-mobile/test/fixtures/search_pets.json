@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "PET",
+      "id": "0787c314-4af2-448d-94e1-d03d682ffe3e",
+      "title": "Bagel",
+      "subtitle": "@bagel.e23b6b · Dog · Mumbai",
+      "imageUrl": null,
+      "link": {
+        "kind": "pet",
+        "key": "bagel.e23b6b"
+      },
+      "meta": {
+        "followers": 0,
+        "verified": false,
+        "species": "Dog"
+      }
+    },
+    {
+      "type": "PET",
+      "id": "4f977277-24cb-4e23-8c4f-57650529f833",
+      "title": "Bagel",
+      "subtitle": "@bagel.ad417b · Dog · Mumbai",
+      "imageUrl": null,
+      "link": {
+        "kind": "pet",
+        "key": "bagel.ad417b"
+      },
+      "meta": {
+        "followers": 0,
+        "verified": false,
+        "species": "Dog"
+      }
+    }
+  ],
+  "message": "Success",
+  "meta": {
+    "requestId": "51dfe86b-7394-4ee6-95a9-777669a21ff1",
+    "page": 1,
+    "limit": 20,
+    "total": 2,
+    "totalPages": 1
+  }
+}

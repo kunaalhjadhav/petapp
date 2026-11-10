@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": "4623b3fe-e953-4d29-b93f-9f684fe6cc5e",
+    "code": "T-NVRQFY",
+    "subject": "Invoice question",
+    "status": "OPEN",
+    "statusLabel": "Open",
+    "category": "Payouts, invoices and tax",
+    "conversationId": "041b7f3e-356e-409a-9bbe-4f830f0a7859",
+    "refType": null,
+    "refId": null,
+    "unread": 0,
+    "lastMessageText": "Where do I find last month’s commission invoice?",
+    "lastMessageAt": "2026-10-18T17:31:45.649Z",
+    "canReply": true,
+    "createdAt": "2026-10-18T17:31:45.647Z",
+    "updatedAt": "2026-10-18T17:31:45.647Z"
+  },
+  "message": "Thanks. Your ticket is T-NVRQFY; we’ll reply here.",
+  "meta": {
+    "requestId": "68cbf4b4-e43f-49cd-8b7a-a2d7fca4bde8"
+  }
+}

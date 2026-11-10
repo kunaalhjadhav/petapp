@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "data": {
+    "balancePaise": 83172,
+    "availablePaise": 83172,
+    "holdDays": 0,
+    "account": null,
+    "payouts": []
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "943a559f-b76f-4b22-ae98-b514544d28b2"
+  }
+}

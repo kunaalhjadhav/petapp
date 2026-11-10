@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+    "variantId": "b59d5d6c-0606-4d38-a782-e9f33a756c78",
+    "stock": 30
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "9466b780-6435-4a77-b522-d4dcb00732d4"
+  }
+}

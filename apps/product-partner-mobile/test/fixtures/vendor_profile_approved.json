@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "data": {
+    "id": "7081925b-a136-45d7-b591-774559305405",
+    "userId": "d835cfb6-be24-4680-a3e7-0651532c216b",
+    "businessName": "Wag & Co 6687",
+    "slug": "wag-co-6687-075b53",
+    "legalName": "Wag and Co Pvt Ltd",
+    "gstin": "27ABCDE1234F1Z5",
+    "phone": "+919863668731",
+    "email": "orders@wag.example",
+    "addressLine": "7 Baner Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411045",
+    "status": "APPROVED",
+    "statusReason": null,
+    "commissionBps": null,
+    "ratingAvg": 0,
+    "ratingCount": 0,
+    "submittedAt": "2026-10-10T12:51:29.025Z",
+    "reviewedAt": "2026-10-10T12:51:29.123Z",
+    "reviewedById": "4ad7d6b5-8d46-4692-85ab-b23aff4271ee",
+    "createdAt": "2026-10-10T12:51:28.764Z",
+    "updatedAt": "2026-10-10T12:51:29.132Z",
+    "documents": [
+      {
+        "id": "45fdae55-2eb7-4cff-8de2-b55c1b584c2a",
+        "kind": "ID_PROOF",
+        "status": "ACCEPTED",
+        "note": null,
+        "createdAt": "2026-10-10T12:51:28.889Z",
+        "mimeType": "application/pdf",
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/d835cfb6-be24-4680-a3e7-0651532c216b/d874dae4-1abc-4478-b7c7-76af8fe4b5e2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125129Z&X-Amz-Expires=300&X-Amz-Signature=6ea91a0e13aebfedce66dc9f77796d182a10ca130003f1a657d5cc92af299b60&X-Amz-SignedHeaders=host&response-content-disposition=inline&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      },
+      {
+        "id": "597ab430-b765-46e4-a48d-ea06587a7e50",
+        "kind": "GST_CERTIFICATE",
+        "status": "ACCEPTED",
+        "note": null,
+        "createdAt": "2026-10-10T12:51:29.002Z",
+        "mimeType": "application/pdf",
+        "url": "http://127.0.0.1:9000/petapp-media/uploads/d835cfb6-be24-4680-a3e7-0651532c216b/6981c5ad-da2d-4ed5-9432-a23b8268e229?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261010%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261010T125129Z&X-Amz-Expires=300&X-Amz-Signature=fc19cd9e68a2c7c299eddffde3d9584acdf717bc4a48ea2fcf02de09fd8cf4ca&X-Amz-SignedHeaders=host&response-content-disposition=inline&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "checklist": []
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "07cbff85-00a6-4cac-bc94-5725b6c1cc1a"
+  }
+}

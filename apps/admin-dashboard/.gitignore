@@ -1,0 +1,5 @@
+.next
+playwright-report
+test-results
+.env.local
+e2e/.auth

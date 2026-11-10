@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "d3e332a9-37d3-44ce-8498-826847a086d2",
+        "kind": "SERVICE",
+        "status": "OPEN",
+        "counterpart": {
+          "type": "CUSTOMER",
+          "name": "Kabir Customer",
+          "avatarUrl": null
+        },
+        "lastMessageText": "This is how Coco looked after last time 😍",
+        "lastMessageAt": "2026-10-18T17:31:44.441Z",
+        "unread": 3,
+        "blocked": false
+      }
+    ],
+    "nextCursor": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "ce2ef657-e02c-41e5-b9f0-358bdf474c09"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "entryId": "a373ec7a-136b-4d81-9c3c-d23f0636acff",
+    "status": "ACTIVE",
+    "payment": null
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "ca0dd013-719b-4b7a-8d59-106b523620b8"
+  }
+}

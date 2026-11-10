@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": {
+    "id": "d8f9f46d-8992-470f-8816-aec08b29dad2",
+    "type": "REEL",
+    "status": "PUBLISHED",
+    "visibility": "PUBLIC",
+    "caption": "Zoomies #zoomies",
+    "locationName": null,
+    "author": {
+      "id": "9c69809d-dc55-4aed-a9fe-dd65e11d991c",
+      "name": "Aanya Test",
+      "avatarUrl": null
+    },
+    "pets": [],
+    "hashtags": [
+      "zoomies"
+    ],
+    "media": [
+      {
+        "id": "d69143e6-ddf6-4bd7-bbc8-118e94c9147a",
+        "kind": "VIDEO",
+        "status": "READY",
+        "width": 720,
+        "height": 1280,
+        "durationMs": 3000,
+        "hls": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/master.m3u8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=553ef03d95bd4a67936c0fb7d0a4b9c3fb1884b8ef90011f84b82901dcd62853&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "poster": "http://127.0.0.1:9000/petapp-media/media/d69143e6-ddf6-4bd7-bbc8-118e94c9147a/poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=test%2F20261002%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20261002T121440Z&X-Amz-Expires=3600&X-Amz-Signature=43425f9e0205dcc9442499e39566acb8b2ce2284c8bcdd3bab191c1ffa2c4770&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "counts": {
+      "likes": 0,
+      "comments": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "viewer": {
+      "liked": false,
+      "saved": false,
+      "isAuthor": true
+    },
+    "publishedAt": "2026-10-02T12:14:40.181Z",
+    "createdAt": "2026-10-02T12:14:40.183Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "24155936-79ed-4096-9754-792c1c193f2b"
+  }
+}

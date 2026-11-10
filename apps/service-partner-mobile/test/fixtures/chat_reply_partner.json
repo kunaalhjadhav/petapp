@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "id": "9fe6c322-db13-4ac2-99a4-692b4623a3dc",
+    "conversationId": "d3e332a9-37d3-44ce-8498-826847a086d2",
+    "side": "BUSINESS",
+    "mine": true,
+    "body": "Yes! Saturday 11am is free. Book it from our page and I’ll be there.",
+    "removed": false,
+    "media": null,
+    "ref": null,
+    "clientId": "m1792344704a",
+    "createdAt": "2026-10-18T17:31:44.522Z"
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "50fdbdf4-52be-4b71-ae0f-0b555ad02449"
+  }
+}

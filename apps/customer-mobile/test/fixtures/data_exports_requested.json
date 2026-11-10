@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "27ea5172-9238-478e-b439-6fc8f8fa1e2b",
+        "status": "PENDING",
+        "sizeBytes": null,
+        "createdAt": "2026-10-11T19:07:45.157Z",
+        "readyAt": null,
+        "expiresAt": null
+      }
+    ],
+    "canRequest": false,
+    "nextAllowedAt": "2026-10-11T19:08:45.166Z"
+  },
+  "message": "We’re preparing a copy of your data. We’ll notify you when it’s ready to download.",
+  "meta": {
+    "requestId": "77f0a560-6d85-425d-8d65-f8e49af04272"
+  }
+}

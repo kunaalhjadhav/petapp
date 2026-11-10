@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": "9d24e92c-772b-492d-86a2-ee6f488a7ebc",
+        "type": "POST_COMMENT",
+        "title": "New comment",
+        "body": "Riya Test commented: “So cute!”",
+        "actor": {
+          "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+          "name": "Riya Test",
+          "avatarUrl": null
+        },
+        "entityType": "Post",
+        "entityId": "f155c5e3-75fd-4ce5-9c74-1021881eeb06",
+        "count": 1,
+        "read": false,
+        "at": "2026-10-02T12:14:40.366Z"
+      },
+      {
+        "id": "43eb9be2-9d02-4033-b7a4-5ecc05bc1feb",
+        "type": "POST_LIKE",
+        "title": "New likes",
+        "body": "Riya Test liked your post: “Beach day with @bruno.b9ca76 #beach”",
+        "actor": {
+          "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+          "name": "Riya Test",
+          "avatarUrl": null
+        },
+        "entityType": "Post",
+        "entityId": "f155c5e3-75fd-4ce5-9c74-1021881eeb06",
+        "count": 1,
+        "read": false,
+        "at": "2026-10-02T12:14:40.311Z"
+      },
+      {
+        "id": "b6922bae-0fd8-4f1f-a053-cb6725782ad2",
+        "type": "PET_FOLLOWER",
+        "title": "Bruno has new followers",
+        "body": "Riya Test started following Bruno.",
+        "actor": {
+          "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+          "name": "Riya Test",
+          "avatarUrl": null
+        },
+        "entityType": "Pet",
+        "entityId": "75dec7af-f327-4f1d-a856-b63879493d33",
+        "count": 1,
+        "read": false,
+        "at": "2026-10-02T12:14:40.293Z"
+      },
+      {
+        "id": "078341b8-5306-4c4c-94e7-8964870bf4ff",
+        "type": "NEW_FOLLOWER",
+        "title": "New followers",
+        "body": "Riya Test started following you.",
+        "actor": {
+          "id": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+          "name": "Riya Test",
+          "avatarUrl": null
+        },
+        "entityType": "User",
+        "entityId": "0659570f-6352-4c2f-8929-8c930d51b7ac",
+        "count": 1,
+        "read": false,
+        "at": "2026-10-02T12:14:40.270Z"
+      }
+    ],
+    "nextCursor": null,
+    "unread": 4
+  },
+  "message": "Success",
+  "meta": {
+    "requestId": "b3f8d328-0998-4dd6-b8e9-852ffe7fbae6"
+  }
+}
