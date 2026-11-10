@@ -33,7 +33,7 @@
     "google-auth-library": "^10.9.1",
     "helmet": "^8.0.0",
     "ioredis": "^5.4.1",
-    "jose": "^5.9.6",
+    "jose": "^6.2.15",
     "nodemailer": "^10.1.7",
     "pdfkit": "^0.17.2",
     "pg": "^8.13.1",
