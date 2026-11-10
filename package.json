@@ -47,7 +47,7 @@
     "@prisma/adapter-pg": "7.10.1",
     "pg": "^8.13.1",
     "dotenv": "^16.4.7",
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^3.0.3"
   },
   "overrides": {
     "rxjs": "7.8.1",
